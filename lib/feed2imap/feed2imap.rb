@@ -26,7 +26,7 @@ require 'feed2imap/httpfetcher'
 require 'logger'
 
 # Feed2Imap version
-F2I_VERSION = '0.1'
+F2I_VERSION = '0.2'
 
 class Feed2Imap
   def initialize(verbose, cacherebuild, configfile)
