@@ -247,6 +247,7 @@ class Item
     message.header['X-Feed2Imap-Version'] = F2I_VERSION if defined?(F2I_VERSION)
     message.header['X-CacheIndex'] = "-#{@cacheditem.index}-"
     message.header['X-F2IStatus'] = "Updated" if @cacheditem.updated
+    message.header['Content-Type'] = 'text/plain; charset=iso-8859-1;'
     # TODO encode in ISO ?
     if @title
       message.header['Subject'] = @title.toISO_8859_1('utf-8')
