@@ -24,6 +24,7 @@ require 'feed2imap/cache'
 require 'feed2imap/channel'
 require 'feed2imap/httpfetcher'
 require 'logger'
+require 'thread'
 
 # Feed2Imap version
 F2I_VERSION = '0.2'
@@ -81,23 +82,29 @@ class Feed2Imap
     end
     # for each feed, fetch, upload to IMAP and cache
     @logger.info("Fetching feeds")
+    loggermon = Mutex::new
+    ths = []
     @config.feeds.each do |f|
-      @logger.info("Processing #{f.name}")
-      begin
-        f.body = HTTPFetcher::fetch(f.url, @cache.get_last_check(f.name))
-        # dump if requested
-        if @config.dumpdir
-          fname = @config.dumpdir + '/' + f.name + '-' + Time::now.xmlschema
-          File::open(fname, 'w') { |file| file.puts f.body }
+      ths << Thread::new do
+        begin
+          f.body = HTTPFetcher::fetch(f.url, @cache.get_last_check(f.name))
+          # dump if requested
+          if @config.dumpdir
+            fname = @config.dumpdir + '/' + f.name + '-' + Time::now.xmlschema
+            File::open(fname, 'w') { |file| file.puts f.body }
+          end
+        rescue Timeout::Error
+          loggermon.synchronize do
+            @logger.fatal("Timeout::Error while fetching #{f.url}: #{$!}")
+          end
+        rescue
+          loggermon.synchronize do
+            @logger.fatal("Error while fetching #{f.url}: #{$!}")
+          end
         end
-      rescue Timeout::Error
-        @logger.fatal("Timeout::Error while fetching #{f.url}: #{$!}")
-        next
-      rescue
-        @logger.fatal("Error while fetching #{f.url}: #{$!}")
-        next
       end
     end
+    ths.each { |t| t.join }
     @logger.info("Parsing and uploading")
     @config.feeds.each do |f|
       next if f.body.nil? # means 304
@@ -114,7 +121,7 @@ class Feed2Imap
         puts $!.backtrace
         next
       end
-      @logger.info("#{newitems.length} new items, #{updateditems.length} updated items.") if newitems.length > 0 or updateditems.length > 0
+      @logger.info("#{f.name}: #{newitems.length} new items, #{updateditems.length} updated items.") if newitems.length > 0 or updateditems.length > 0
       begin
         if !cacherebuild
           updateditems.each { |i| f.imapaccount.updatemail(f.folder, i.to_mail(f.name), i.cacheditem.index) }
