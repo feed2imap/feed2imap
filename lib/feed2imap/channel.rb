@@ -235,7 +235,6 @@ class Item
     s
   end
 
-  # TODO from significatif
   def to_mail(from = 'Feed2Imap')
     message = RMail::Message::new
     message.header['From'] = "#{from} <feed2imap@feed2imap.net>"

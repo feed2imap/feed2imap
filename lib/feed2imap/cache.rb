@@ -105,7 +105,6 @@ class CachedChannel
     updateditems = []
     items.each { |i| i.cacheditem ||= CachedItem::new(i) }
     items.each do |i|
-      # TODO rewrite with the fact that break can return a value
       found = false
       # Try to find a perfect match
       @items.each do |j|
@@ -119,7 +118,7 @@ class CachedChannel
       # Try to find an updated item
       @items.each do |j|
         if i.link and i.link == j.link
-          # TODO use a better heuristic ?
+          # Do we need a better heuristic ?
           i.cacheditem.index = j.index
           i.cacheditem.updated = true
           updateditems.push(i)

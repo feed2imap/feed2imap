@@ -93,13 +93,10 @@ class ImapAccount
   # Put the mail in the given folder
   # You should check whether the folder exist first.
   def putmail(folder, mail)
-    # TODO check response
     @connection.append(folder, mail)
   end
 
   def updatemail(folder, mail, idx)
-    # TODO check response
-    # TODO keep flags of deleted mail
     @connection.select(folder)
     searchres = @connection.search(['HEADER', 'X-CacheIndex', "-#{idx}-"])
     if searchres.length == 1

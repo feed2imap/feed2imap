@@ -6,7 +6,7 @@ require 'test/unit'
 require 'feed2imap/channel'
 require 'rmail'
 
-class ConfigTest < Test::Unit::TestCase
+class MailTest < Test::Unit::TestCase
   def test_require_rmail
     # let's just test Rubymail is loaded
     m = RMail::Message::new

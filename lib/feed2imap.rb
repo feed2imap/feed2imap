@@ -1,3 +1,4 @@
+require 'feed2imap/feed2imap'
 require 'feed2imap/cache'
 require 'feed2imap/channel'
 require 'feed2imap/config'
