@@ -1,0 +1,42 @@
+#!/usr/bin/ruby
+
+=begin
+Feed2Imap - RSS/Atom Aggregator uploading to an IMAP Server
+Copyright (c) 2005 Lucas Nussbaum <lucas@lucas-nussbaum.net>
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+=end
+
+$:.unshift File.join(File.dirname(__FILE__), '..', 'lib')
+
+require 'feed2imap/config'
+require 'optparse'
+
+configf = ENV['HOME'] + '/.feed2imaprc'
+opts = OptionParser::new do |opts|
+  opts.banner = "Usage: ./dumpconfig.rb [options]"
+  opts.separator ""
+  opts.separator "Options:"
+  opts.on("-f", "--config <file>", "Select alternate config file") do |f|
+    configf = f
+  end
+end
+opts.parse!(ARGV)
+
+if not File::exist?(configf)
+  puts "Configuration file #{configfile} not found."
+  exit(1)
+end
+File::open(configf) { |f|  puts F2IConfig::new(f).to_s }

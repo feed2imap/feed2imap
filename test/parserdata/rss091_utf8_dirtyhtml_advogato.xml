@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<rss version="0.91">
+  <channel>
+    <title>Advogato diary for sopwith</title>
+    <description>Advogato diary for sopwith</description>
+    <link>http://www.advogato.org/person/sopwith/</link>
+    <item>
+      <title>21 Sep 2004</title>
+      <pubDate>Tue, 21 Sep 2004 14:20:46 -0700</pubDate>
+      <link>http://www.advogato.org/person/sopwith/diary.html?start=10</link>
+      <description>On the Fedora front:
+
+&lt;p&gt; FC3test2 is out (give it a try) and it's not too shabby.
+
+&lt;p&gt; There's a bugweek possibly coming up next week - everyone who's anyone in Fedora working to sort through the bugs. More to come later.
+
+&lt;p&gt; No, external CVS for Fedora has not been forgotten. Work is underway (and on Red Hat's side, we just underwent a  sizeable internal change that is necessary to support it).
+
+&lt;p&gt; On the everything-else front:
+
+&lt;p&gt; &lt;a href=&quot;http://cakeru.image.pbase.com/image/33879157/large.jpg&quot; &gt;a funny picture&lt;/a&gt;.</description>
+    </item>
+    <item>
+      <title>24 Aug 2004</title>
+      <pubDate>Tue, 24 Aug 2004 16:07:13 -0700</pubDate>
+      <link>http://www.advogato.org/person/sopwith/diary.html?start=9</link>
+      <description>The Fedora community can really use people who are willing to go through bugzilla and tame things down there. There are just a ton of bugs that the package maintainers will have no time to get to.
+&lt;p&gt;
+It's not the most exciting task, but it's something that almost anyone can help with in as small or large quantities as desired.
+&lt;p&gt;
+Also needed are community leaders for each of the architectures. E.g. Justin Forbes is The Man for AMD64, but we can always use peeps for ia64 and s390* :)</description>
+    </item>
+    <item>
+      <title>27 Jul 2004</title>
+      <pubDate>Tue, 27 Jul 2004 09:38:36 -0700</pubDate>
+      <link>http://www.advogato.org/person/sopwith/diary.html?start=8</link>
+      <description>What's happening with Fedora lately:
+
+&lt;p&gt; &lt;ul&gt;&lt;li&gt;FC3test1 came out a little while ago.
+&lt;li&gt;The devel tree is totally unfrozen again, so broken deps should be fixable if not fixed.
+&lt;li&gt;CVS should be rolled out &quot;soon&quot;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>23 Apr 2004</title>
+      <pubDate>Fri, 23 Apr 2004 08:09:39 -0700</pubDate>
+      <link>http://www.advogato.org/person/sopwith/diary.html?start=7</link>
+      <description>Cool link of the day is &lt;a href=&quot;http://www.tradingbrain.com/&quot; &gt;TradingBrain&lt;/a&gt;.
+
+&lt;p&gt; If you added a user-login feature, you could use a neural network to combine individual responses into something meaningful. Neat experiment in distributed decision-making, in any case.
+
+&lt;p&gt; FC2test3 is being pushed out and is on track for Monday release.</description>
+    </item>
+    <item>
+      <title>22 Apr 2004</title>
+      <pubDate>Thu, 22 Apr 2004 12:35:13 -0700</pubDate>
+      <link>http://www.advogato.org/person/sopwith/diary.html?start=6</link>
+      <description>&lt;a href=&quot;http://www.benandjerrys.com/&quot; &gt;Ben &amp;amp; Jerry's&lt;/a&gt; annual Free Cone Day. Tuesday, April 27 12pm-8pm. Follow the link to find out where.</description>
+    </item>
+    <item>
+      <title>21 Apr 2004</title>
+      <pubDate>Wed, 21 Apr 2004 08:49:59 -0700</pubDate>
+      <link>http://www.advogato.org/person/sopwith/diary.html?start=5</link>
+      <description>Plots orkut people on a map: &lt;a href=&quot;http://www.datawhorehouse.com/orkut/&quot; &gt;http://www.datawhorehouse.com/orkut/&lt;/a&gt;.
+
+&lt;p&gt; PS. If you still haven't gotten an orkut invite, send me an e-mail of introduction, already. :)</description>
+    </item>
+    <item>
+      <title>20 Apr 2004</title>
+      <pubDate>Tue, 20 Apr 2004 20:00:51 -0700</pubDate>
+      <link>http://www.advogato.org/person/sopwith/diary.html?start=4</link>
+      <description>Only a few diary entries ago, I was complaining about the last company meeting. Now a new one is coming up, and I'm really looking forward to meeting all the great people that work at Red Hat.
+&lt;p&gt;
+Dropping by to say hello to the advogato crowd,&lt;p&gt;
+-- Elliot</description>
+    </item>
+    <item>
+      <title>16 Sep 2003</title>
+      <pubDate>Tue, 16 Sep 2003 13:41:24 -0700</pubDate>
+      <link>http://www.advogato.org/person/sopwith/diary.html?start=3</link>
+      <description>&lt;a href=&quot;http://people.redhat.com/sopwith/&quot; &gt;My home page&lt;/a&gt;</description>
+    </item>
+    <item>
+      <title>12 Apr 2001</title>
+      <pubDate>Thu, 12 Apr 2001 08:53:44 -0700</pubDate>
+      <link>http://www.advogato.org/person/sopwith/diary.html?start=2</link>
+      <description>I hate this open source game - it just proves my in(s)anity.
+
+&lt;p&gt; &amp;lt;/rant&amp;gt;
+</description>
+    </item>
+    <item>
+      <title>19 Sep 2000</title>
+      <pubDate>Tue, 19 Sep 2000 23:45:03 -0700</pubDate>
+      <link>http://www.advogato.org/person/sopwith/diary.html?start=1</link>
+      <description>It's 02:01, I can't sleep, and there's a bunch of company 
+meetings today at 08:30 that appear increasingly boring as 
+the time approaches. It sort of rains on my parade of TODO 
+items - I could have finished libGIOP this 
+week. Instead, the game seems 
+to be snoozing through discussions of kernel hacking and 
+attending suffocatingly purposeless cocktail parties. 
+I need to get a potion distilled from the Smurf theme song 
+and inject myself with it.
+&lt;p&gt;
+So I am bothering to write this at all because aaronl is 
+being a total moron and I'm bored enough to respond:
+&lt;blockquote&gt;&quot;My biggest gripe about component architecture 
+is that I just don't understand when it would ever be 
+needed.&quot; -aaronl&lt;/blockquote&gt;
+So this essentially means that he has no clue why 
+components are good, but everyone else must be wrong 
+because he hasn't figured out how to use them. A classic 
+example of his Bigger Problem - not understanding use cases 
+beside his own exist.
+&lt;p&gt;
+&lt;blockquote&gt;&quot;Sure, you can write code that will let you 
+browse the web in Emacs (and such code has been writen), 
+but this actually has to be implemented inside Emacs.&quot; -
+aaronl&lt;/blockquote&gt;
+So this essentially means that he hasn't looked at how w3-
+mode is actually implemented - it's a set of elisp files, 
+aka... a component.
+&lt;p&gt;
+I must admit, however, that Aaron's perspective is 
+refreshingly free from the burden of experience. In other 
+words, dudes, I want some of that crack that he's smoking, 
+because I seem to be having issues getting this dandelion 
+to produce the pink elephants he's seeing.
+&lt;p&gt;
+Rather than go on a stupid campaign to rip out features 
+which are generally needed, I suppose he could work on 
+adding fine-grained conditional feature &amp;amp; module selection, 
+so he could build his bubble world more conveniently, not 
+adversely impact those in the Big Blue Room, and benefit 
+embedded systems builders in the process.
+&lt;p&gt;
+I'm done with the unprovoked insults and needless griping, 
+so LART me and get back to your regularly scheduled world.
+ I'm sure by lunchtime I'll have gotten enough sleep to 
+regret this all.
+</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,1665 @@
+<?xml version="1.0"?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns="http://purl.org/rss/1.0/"
+>
+<channel rdf:about="http://planet.gnome.org/">
+	<title>Planet GNOME</title>
+	<link>http://planet.gnome.org/</link>
+	<description>Planet GNOME - http://planet.gnome.org/</description>
+
+	<items>
+		<rdf:Seq>
+			<rdf:li rdf:resource="http://www.inkstain.net/fleck/archives/001578.html" />
+			<rdf:li rdf:resource="http://www.figuiere.net/hub/blog/?2005/02/21/100-software-rant" />
+			<rdf:li rdf:resource="http://www.advogato.org/person/bolsh/diary.html?start=81" />
+			<rdf:li rdf:resource="http://zaheer.merali.org/?p=100" />
+			<rdf:li rdf:resource="http://www.gnome.org/~michael/activity.html#2005-02-21" />
+			<rdf:li rdf:resource="http://www.beatniksoftware.com/blog/index.php?p=16" />
+			<rdf:li rdf:resource="http://codeblogs.ximian.com/blogs/evolution/archives/000449.html" />
+			<rdf:li rdf:resource="http://www.gnome.org/~newren/blog/2005/02/20" />
+			<rdf:li rdf:resource="http://nat.org/2005/february/#21-February-2005" />
+			<rdf:li rdf:resource="http://joeshaw.org/2005/02/21/125" />
+			<rdf:li rdf:resource="http://jimmac.musichall.cz/weblog.php/Inkscape/SVG-NG" />
+			<rdf:li rdf:resource="http://jimmac.musichall.cz/weblog.php/Inkscape/Inkscape" />
+			<rdf:li rdf:resource="http://jimmac.musichall.cz/weblog.php/Inkscape/InkscapeGradients" />
+			<rdf:li rdf:resource="http://www.reigndropsfall.net/index.php?itemid=141" />
+			<rdf:li rdf:resource="http://hadess.net/?start=490" />
+			<rdf:li rdf:resource="http://jimmac.musichall.cz/weblog.php/Music/Drift" />
+			<rdf:li rdf:resource="http://www.inkstain.net/fleck/archives/001577.html" />
+			<rdf:li rdf:resource="http://www.seconix.com/wordpress/index.php?p=8" />
+			<rdf:li rdf:resource="http://hadess.net/?start=489" />
+			<rdf:li rdf:resource="http://www.inkstain.net/fleck/archives/001575.html" />
+			<rdf:li rdf:resource="http://primates.ximian.com/~miguel/archive/2005/Feb-20.html" />
+			<rdf:li rdf:resource="http://www.gnome.org/~michael/activity.html#2005-02-20" />
+			<rdf:li rdf:resource="http://www.livejournal.com/users/davyd/135461.html" />
+			<rdf:li rdf:resource="http://www.figuiere.net/hub/blog/?2005/02/19/99-picture-of-the-day-february-19th-2005" />
+			<rdf:li rdf:resource="http://www.seconix.com/wordpress/index.php?p=7" />
+			<rdf:li rdf:resource="http://www.inkstain.net/fleck/archives/001574.html" />
+			<rdf:li rdf:resource="http://www.advogato.org/person/DV/diary.html?start=185" />
+			<rdf:li rdf:resource="http://jimmac.musichall.cz/weblog.php/Misc/Macarena" />
+			<rdf:li rdf:resource="http://www.figuiere.net/hub/blog/?2005/02/19/98-fighting-drm-in-court-episode-i" />
+			<rdf:li rdf:resource="http://primates.ximian.com/~federico/news-2005-02.html#19" />
+			<rdf:li rdf:resource="http://rodrigo.gnome-db.org/news.php?19/February/2005" />
+			<rdf:li rdf:resource="http://www.advogato.org/person/alvaro/diary.html?start=52" />
+			<rdf:li rdf:resource="http://www.livejournal.com/users/davyd/135302.html" />
+			<rdf:li rdf:resource="http://www.figuiere.net/hub/blog/?2005/02/19/97-new-canon-gear" />
+			<rdf:li rdf:resource="http://verbum.org/blog/random/news-graphic-art" />
+			<rdf:li rdf:resource="http://primates.ximian.com/~miguel/archive/2005/Feb-19.html" />
+			<rdf:li rdf:resource="http://www.gnome.org/~michael/activity.html#2005-02-19" />
+			<rdf:li rdf:resource="http://off.net/~tberman/diary/archives/003159.html" />
+			<rdf:li rdf:resource="http://log.ometer.com/2005-02.html#19" />
+			<rdf:li rdf:resource="http://log.ometer.com/2005-02.html#18" />
+			<rdf:li rdf:resource="http://tieguy.org/blog/index.cgi/315" />
+			<rdf:li rdf:resource="http://nat.org/2005/february/#17-February-2005" />
+			<rdf:li rdf:resource="http://people.imendio.com/richard/archives/2005/02/long_live_plann.html" />
+			<rdf:li rdf:resource="http://thomas.apestaart.org/log/index.php?p=274" />
+			<rdf:li rdf:resource="http://www.advogato.org/person/DV/diary.html?start=184" />
+			<rdf:li rdf:resource="http://pubcrawler.org/2005/02/18/switched-to-wordpress/" />
+			<rdf:li rdf:resource="http://www.advogato.org/person/rbultje/diary.html?start=88" />
+			<rdf:li rdf:resource="http://www.inkstain.net/fleck/archives/001569.html" />
+			<rdf:li rdf:resource="http://tieguy.org/blog/index.cgi/314" />
+			<rdf:li rdf:resource="http://www.figuiere.net/hub/blog/?2005/02/18/96-f-spot-and-libgphoto2" />
+		</rdf:Seq>
+	</items>
+</channel>
+
+<item rdf:about="http://www.inkstain.net/fleck/archives/001578.html">
+	<title>John Fleck: Savant</title>
+	<link>http://www.inkstain.net/fleck/archives/001578.html</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/jfleck.png" align="right" alt=""&gt;&lt;p&gt;Last night, Sadie was behaving powerfully strangely. Lissa and I were reading in bed, and Sadie was moping around the bedroom, looking at us, sniffing at things, sometimes just standing there sadly, as if she was trying to tell us something.&lt;/p&gt;
+
+&lt;p&gt;When I opened this morning's paper, I understood. &lt;a href=&quot;http://english.aljazeera.net/NR/exeres/67D36E3F-9D1E-4E17-8938-5624B812897C.htm&quot;&gt;Hunter S. Thompson&lt;/a&gt; &lt;em&gt;and&lt;/em&gt;  &lt;a href=&quot;http://news.bbc.co.uk/1/hi/entertainment/film/4283213.stm&quot;&gt;Sandra Dee&lt;/a&gt; had died. It's like Sadie is some sort of pop culture doggie savant, like &lt;em&gt;she knew&lt;/em&gt;.&lt;/p&gt;</content:encoded>
+	<dc:date>2005-02-21T16:32:48+00:00</dc:date>
+</item>
+<item rdf:about="http://www.figuiere.net/hub/blog/?2005/02/21/100-software-rant">
+	<title>Hubert Figuiere: Software Rant</title>
+	<link>http://www.figuiere.net/hub/blog/?2005/02/21/100-software-rant</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/hub.png" align="right" alt=""&gt;&lt;ul&gt;
+&lt;li&gt;I'm &lt;a href=&quot;http://www.figuiere.net/hub/blog/?2005/02/09/83-all-mailers-suck&quot;&gt;ranting about Evolution, its speed and its antispam&lt;/a&gt;, I'm &lt;a href=&quot;http://www.advogato.org/person/robertc/diary.html?start=31&quot;&gt;not alone&lt;/a&gt;. Someone should really start to replace this antispam by what we find in Thunderbird / Mozilla, including flagging as &lt;code&gt;\Junk&lt;/code&gt; over IMAP (I couldn't find any reference in RFCs and couldn't find the code in Thunderbird, anyone has an idea?) &lt;a href=&quot;http://bugzilla.ximian.com/show_bug.cgi?id=72547&quot;&gt;see bug 72547&lt;/a&gt;. For reference, marking one message as junk on my laptop take 15 to 20sec, even if the message is local.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;I'm ranting about MacOS X memory usage, I'm &lt;a href=&quot;http://www.advogato.org/person/avriettea/diary.html?start=51&quot;&gt;not alone&lt;/a&gt;. With 256MB the MacMini is barely usable. I'll get a 1GB memory...&lt;/li&gt;
+&lt;/ul&gt;</content:encoded>
+	<dc:date>2005-02-21T16:11:35+00:00</dc:date>
+</item>
+<item rdf:about="http://www.advogato.org/person/bolsh/diary.html?start=81">
+	<title>Dave Neary: 21 Feb 2005</title>
+	<link>http://www.advogato.org/person/bolsh/diary.html?start=81</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/bolsh.png" align="right" alt=""&gt;&lt;b&gt;GUADEC progress&lt;/b&gt;
+
+&lt;p&gt; &lt;p&gt; So I managed to get the GUADEC acceptance mails out over the weekend. If anyone was expecting a mail about a GUADEC presentation, and didn't get one, please let me know. It's entirely possible that I missed one or two.
+
+&lt;p&gt; &lt;p&gt; Some people have queried why there is a proceedings for GUADEC, and why authors have to submit papers. The explanation is two-fold. 
+
+&lt;p&gt; &lt;p&gt; First, writing a paper beforehand helps the presenter organise his material and gives attendees a support for the conference, which allows greater participation, and a more coherent presentation. Writing slides in the train before a conference is a practice that should be discouraged.
+
+&lt;p&gt; &lt;p&gt; Second, several attendees can get funding to attend if the conference is an academic conference - which means having a proceedings. The Norwegian guys were really great with this last year, especially Janis who took care of all the administravia, and several people got to the conference on college grants thanks to that proposal. Since funds are typically tight, any help that we can give to attendees is a good thing.
+
+&lt;p&gt; &lt;p&gt; Finally, we're not asking for a formal oeuvre. You're not going to have your article submitted for a Pulitzer. A couple of pages presenting the major concepts you want to present, essentially a long abstract, is fine. And if you don't have time, or just don't want to, let us know at guadec-papers, and we'll sort something out.
+
+&lt;p&gt; &lt;p&gt; That said, I encourage everyone presenting to write a paper, at least 2 pages, at most 5, since it will really help the GNOME Users and Developers in Europe, who are, after all, what the conference is about.</content:encoded>
+	<dc:date>2005-02-21T15:02:22+00:00</dc:date>
+</item>
+<item rdf:about="http://zaheer.merali.org/?p=100">
+	<title>Zaheer Abbas Merali: Ashura</title>
+	<link>http://zaheer.merali.org/?p=100</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/zaheer.png" align="right" alt=""&gt;&lt;p&gt;Yesterday was &lt;a href=&quot;http://www.ashura.com/&quot;&gt;Ashura&lt;/a&gt;.  The talks given at the mosque for the past 11 nights can be found &lt;a href=&quot;http://www.hujjat.org/index.php?name=zina&amp;#038;op=modload&amp;#038;file=index&amp;#038;p=Seyed+Modaressi%2FMuharram+1426&quot;&gt;here&lt;/a&gt; and were given by &lt;a href=&quot;http://www.almodarresi.net/&quot;&gt;Seyed Mahdi Al-Modarresi&lt;/a&gt;.
+&lt;/p&gt;</content:encoded>
+	<dc:date>2005-02-21T13:59:55+00:00</dc:date>
+</item>
+<item rdf:about="http://www.gnome.org/~michael/activity.html#2005-02-21">
+	<title>Michael Meeks: 2005-02-21: Monday</title>
+	<link>http://www.gnome.org/~michael/activity.html#2005-02-21</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/michael.png" align="right" alt=""&gt;&lt;ul&gt;
+	&lt;li&gt;Up late; J. off to rescue Janine from being
+boxed in in Town. Got the machine-room spun up again.
+&lt;/li&gt;&lt;/ul&gt;</content:encoded>
+	<dc:date>2005-02-21T12:00:00+00:00</dc:date>
+</item>
+<item rdf:about="http://www.beatniksoftware.com/blog/index.php?p=16">
+	<title>Alex Graveley: Erotic cleft</title>
+	<link>http://www.beatniksoftware.com/blog/index.php?p=16</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/orph.png" align="right" alt=""&gt;&lt;p&gt;From &lt;em&gt;Jennifer and the Master: A Unique Erotica&lt;/em&gt;, a hardcore S&amp;#038;M book (opus really), the only book on my desk:&lt;/p&gt;
+	&lt;blockquote&gt;&lt;p&gt;Within the living mirror, the beholders fondle the erotic cleft between them.&lt;/p&gt;&lt;/blockquote&gt;
+	&lt;p&gt;This book was left inexplicably at our doorstep on Valentine&amp;#8217;s eve, and thus far no one has taken credit.&lt;/p&gt;
+	&lt;p&gt;&lt;a href=&quot;http://www.inkstain.net/fleck/archives/001577.html&quot;&gt;Blah blah blah&lt;/a&gt;&amp;#8230;&lt;/p&gt;
+	&lt;p&gt;&lt;small&gt;
+&lt;ol&gt;
+&lt;li&gt;Grab the nearest book.&lt;/li&gt;
+	&lt;li&gt;Open the book to page 123.&lt;/li&gt;
+	&lt;li&gt;Find the fifth sentence.&lt;/li&gt;
+	&lt;li&gt;Post the text of the sentence in your journal along with these instructions.&lt;/li&gt;
+	&lt;li&gt;Don&amp;#8217;t search around and look for the &amp;#8220;coolest&amp;#8221; book you can find. Do what’s actually next to you.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/small&gt;&lt;/p&gt;</content:encoded>
+	<dc:date>2005-02-21T06:42:05+00:00</dc:date>
+</item>
+<item rdf:about="http://codeblogs.ximian.com/blogs/evolution/archives/000449.html">
+	<title>Evolution: Evolution 2.0.4</title>
+	<link>http://codeblogs.ximian.com/blogs/evolution/archives/000449.html</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/logos/evolution.png" align="right" alt=""&gt;&lt;p&gt;The Evolution Team exuberantly announces the release of Evolution 2.0.4.  Unless any critical issues are are discovered this will be the last release in the 2.0.4 series.&lt;br /&gt;
+Download the following:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://ftp.gnome.org/pub/gnome/sources/evolution/2.0/evolution-2.0.4.tar.gz&quot;&gt;http://ftp.gnome.org/pub/gnome/sources/evolution/2.0/evolution-2.0.4.tar.gz&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://ftp.gnome.org/pub/gnome/sources/gtkhtml/3.2/gtkhtml-3.2.5.tar.gz&quot;&gt;http://ftp.gnome.org/pub/gnome/sources/gtkhtml/3.2/gtkhtml-3.2.5.tar.gz&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://ftp.gnome.org/pub/gnome/sources/gal/2.2/gal-2.2.5.tar.gz&quot;&gt;http://ftp.gnome.org/pub/gnome/sources/gal/2.2/gal-2.2.5.tar.gz&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://ftp.gnome.org/pub/gnome/sources/evolution-data-server/1.0/evolution-data-server-1.0.4.tar.gz&quot;&gt;http://ftp.gnome.org/pub/gnome/sources/evolution-data-server/1.0/evolution-data-server-1.0.4.tar.gz&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://ftp.gnome.org/pub/gnome/sources/libsoup/2.2/libsoup-2.2.2.tar.gz&quot;&gt;http://ftp.gnome.org/pub/gnome/sources/libsoup/2.2/libsoup-2.2.2.tar.gz&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://ftp.gnome.org/pub/gnome/sources/ximian-connector/2.0/ximian-connector-2.0.4.tar.gz&quot;&gt;http://ftp.gnome.org/pub/gnome/sources/ximian-connector/2.0/ximian-connector-2.0.4.tar.gz&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Upgrade Notes&lt;/b&gt;&lt;br /&gt;
+Evolution 2.0 is the stable version of the 1.5.x development series.  It&lt;br /&gt;
+will upgrade your existing 1.4 install if you were not using 1.5&lt;br /&gt;
+previously,  but will not delete it until told to.&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Bug Fixes and Updates&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Evolution 2.0.4, 2005-02-14&lt;br /&gt;
+----------------------------&lt;/p&gt;
+
+&lt;p&gt;Bugzilla bugs fixed (see &lt;a href=&quot;http://bugzilla.ximian.com/show_bug.cgi&quot;&gt;http://bugzilla.ximian.com/show_bug.cgi&lt;/a&gt;):&lt;/p&gt;
+
+&lt;p&gt; * Addressbook&lt;/p&gt;
+
+&lt;p&gt;   #36137 - Leading %s in addressbook message totally non-obvious (Siva)&lt;br /&gt;
+   #70339 - vcard preview doesn't appear to work (Siva)&lt;br /&gt;
+   #70622 - Crash changing gtkhtml settings (JP)&lt;br /&gt;
+   #70922 - Email address types should show &quot;Other&quot; when importing vcards (Siva)&lt;br /&gt;
+   #70540 - Adding contact from email doesn't let you change &quot;file as&quot; (Hans)&lt;/p&gt;
+
+&lt;p&gt; * Calendar&lt;br /&gt;
+ 	&lt;br /&gt;
+   #41624 - only the last exception is deleted on palm device (JP)&lt;br /&gt;
+   #46901 - Only one line gets printed when printing Tasks and Appointments (Yong Sun)&lt;/p&gt;
+
+&lt;p&gt; * Mail&lt;/p&gt;
+
+&lt;p&gt;   #33933 - Sorting by subject does not result in expected order (Jeff)&lt;br /&gt;
+   #70795 - Next/Previous Message Should Only Display Listed Emails (Michael)&lt;br /&gt;
+   #65329 - regression in default folder name localisation (Michael)&lt;br /&gt;
+   #71312 - Double-clicking vFolder of Draft folder doesn't allow editing (Michael)&lt;br /&gt;
+   #71310 - Always loses my signature script settings (Michael)&lt;br /&gt;
+   #71310 - Always loses my signature script settings (Michael)&lt;br /&gt;
+   #69850 - Crash: attempting to create a Vfolder based on a message without a Sender (Michael)&lt;br /&gt;
+   #65178 - newly created folder on local maildir doesn't show until evolution restart (Michael)&lt;br /&gt;
+   #70858 - selecting newly created folder flakey (Michael)&lt;br /&gt;
+   #60664 - message view does not follow theme change (Michael)&lt;br /&gt;
+   #70768 - 'Mark All as Read' marks all the mails which are not in current query as read (Michael)&lt;br /&gt;
+   #70563 - crash when 'load images' on MyEclipse newsletter email (Michael)&lt;br /&gt;
+   #66943 - Crash when saving draft (Michael)&lt;br /&gt;
+   #71105 - When trying to rename a folder containing a slash &quot;/&quot; and spaces, evil stuff happens (Michael)&lt;br /&gt;
+   #72020 - Error parsing filter: Unknown identifier: adjust-score (Michael)&lt;br /&gt;
+   #38791 - gpg can make evo hang if keyserver unreachable (Michael)&lt;br /&gt;
+   #36142 - Don't use acronyms as verbs in messages (Michael)&lt;br /&gt;
+   #70303 - pgp signature invalid with very short emails (Michael)&lt;br /&gt;
+   #69757 - Memory leak in imap_parse_list_response (Michael)&lt;br /&gt;
+   #22496 - Evolution does not appear to support ALERT messages (Michael)&lt;br /&gt;
+   #71427 - Evolution does not prompt for new password (Michael)&lt;br /&gt;
+   #71625 - Don't display content of e-mail when first selected (Michael)&lt;br /&gt;
+   #56110 - Messages in digest displayed as source (Michael)&lt;br /&gt;
+   #69024 - Doesn't update NNTP folder in a Virtual folder (Michael)&lt;br /&gt;
+   #47824 - nested, identical multipart boundaries dont parse properly (Michael)&lt;br /&gt;
+   #70919 - Crash during fetching mail (mail has gpg signature) (Michael)&lt;br /&gt;
+   #70556 - Unable load messages info from MS Exchange by IMAP (Michael)&lt;/p&gt;
+
+&lt;p&gt;Other bugs&lt;/p&gt;
+
+&lt;p&gt; * Mail&lt;/p&gt;
+
+&lt;p&gt;    -64 bit fixes (Michael)&lt;/p&gt;
+
+&lt;p&gt; * Addressbook&lt;/p&gt;
+
+&lt;p&gt;    - work around 67411 (Hans)&lt;br /&gt;
+    - 64 bit fixes (Michael)&lt;br /&gt;
+    - Turkish locale fixes (S.Çaglar Onur)&lt;/p&gt;
+
+&lt;p&gt; * Calendar&lt;/p&gt;
+
+&lt;p&gt;    - fix potential resize crash (Michael)&lt;/p&gt;
+
+&lt;p&gt; * S/MIME&lt;/p&gt;
+
+&lt;p&gt;    - don't remove the cert from the tree if it wasn't actually deleted (Michael)&lt;/p&gt;
+
+&lt;p&gt;Updated translations:&lt;/p&gt;
+
+&lt;p&gt;  - nl (Vincent van Adrighem)&lt;br /&gt;
+  - pt (Duarte Loreto)&lt;br /&gt;
+  - hu (Laszlo Dvornik)&lt;br /&gt;
+  - ca (Jordi Mallach)&lt;br /&gt;
+  - fr (Jeremie Knuesel, Sebastien Bacher, Christophe Merlet)&lt;br /&gt;
+  - sv (Christian Rose)&lt;br /&gt;
+  - de (Hendrik Brandt)&lt;br /&gt;
+  - id (Mohammad DAMT)&lt;br /&gt;
+  - es (Francisco Javier F. Serrador)&lt;br /&gt;
+  - da (Martin Willemoes Hansen)&lt;br /&gt;
+  - ko (Changwoo Ryu)&lt;br /&gt;
+  - zh_CN (Funda Wang)&lt;br /&gt;
+  - ms (Hasbullah Bin Pit)&lt;br /&gt;
+  - hu (Laszlo Dvornik)&lt;br /&gt;
+  - cs (Miloslav Trmac)&lt;br /&gt;
+  - ru (Leonid Kanter)&lt;br /&gt;
+  - bg (Vladimir Petkov)&lt;br /&gt;
+  - sq (Laurent Dhima)&lt;br /&gt;
+  - en_GB (David Lodge)&lt;br /&gt;
+  - pl (Artur Flinta)&lt;br /&gt;
+  - sr (Danilo Segan)&lt;br /&gt;
+  - sr@Latn (Danilo Segan)&lt;br /&gt;
+  - en_CA (Adam Weinberger)&lt;br /&gt;
+  - pt_BR (Raphael Higino)&lt;br /&gt;
+  - nn (Åsmund Skjæveland)&lt;/p&gt;
+
+&lt;p&gt;Exchange Connector 2.0.4  2005-02-14&lt;br /&gt;
+------------------------------------&lt;/p&gt;
+
+&lt;p&gt;Bugzilla bugs fixed (see http://bugzilla.ximian.com/show_bug.cgi):&lt;/p&gt;
+
+&lt;p&gt;   #70730 - connector hangs on kerberos authentication attempts (Sarfraaz)&lt;br /&gt;
+   #71432 - Don't see schedule in new meeting request dialog (Sushma)&lt;br /&gt;
+   #70357 - Crash: Exchange calendar query hangs Evolution (glibc gives a double-free or corruption error!) (Sarfraaz)&lt;br /&gt;
+   #68330 - Exchange now crashes on start (Sarfraaz)&lt;br /&gt;
+   #66963 - The trash is filtered for spam (that I just deleated) when I select (and there by open) the trashdir to do an expunge (Sarfraaz)&lt;br /&gt;
+   #71469 - Menus for Connector are not Translated to French (Sarfraaz)&lt;br /&gt;
+   #71555 - Label setting is not being saved across sessions (Sushma)&lt;br /&gt;
+   #70283 - All-day calendar events incorrectly show as busy (Sarfraaz)&lt;br /&gt;
+   #70414 - Memory corruption/build-up tracking bug (Sarfraaz)&lt;br /&gt;
+   Fixes for 64 bit support (Michael Zucchi)&lt;/p&gt;
+
+&lt;p&gt;Updated Translations: (Since 2.0.1)&lt;br /&gt;
+  - bg (Alexander Shopov)&lt;br /&gt;
+  - da (Martin Willemoes Hansen)&lt;br /&gt;
+  - ca (Jordi Mallach)&lt;br /&gt;
+  - hu (Laszlo Dvornik)&lt;/p&gt;
+
+&lt;p&gt;Evolution Data Server 1.0.4, 2005-02-14&lt;br /&gt;
+----------------------------------------&lt;/p&gt;
+
+&lt;p&gt;Bugzilla bugs fixed (see http://bugzilla.ximian.com/show_bug.cgi):&lt;/p&gt;
+
+&lt;p&gt;  * Address Book&lt;/p&gt;
+
+&lt;p&gt;    #64298 - G/W failure to authenticate (Siva)&lt;br /&gt;
+    #67541 - LDAP password not to be remembered (Siva)&lt;br /&gt;
+    #66854 - Some strings are missed to translation (Rodney)&lt;br /&gt;
+    #71116 - wrong gettext initialization breaks translation (Rodney)&lt;br /&gt;
+    #70918 - Importing kontact vcard causes inifinite loop (Siva)&lt;/p&gt;
+
+&lt;p&gt;  * Calendar&lt;/p&gt;
+
+&lt;p&gt;    #64682 - Moving an appointment from one calendar to another sends update (Chen)&lt;br /&gt;
+    #67031 - GroupWise tasks are not getting updated in any way (Chen)&lt;/p&gt;
+
+&lt;p&gt;  * All&lt;/p&gt;
+
+&lt;p&gt;    #69186 - cannot remove GAL from Autocomplete in settings (Siva)&lt;br /&gt;
+    #64298 - G/W failure to authenticate (Siva)&lt;br /&gt;
+  &lt;br /&gt;
+Other bugs&lt;/p&gt;
+
+&lt;p&gt;  * Calendar&lt;br /&gt;
+    - warning fixes (Michael)&lt;br /&gt;
+    - fix groupwise ssl usage (Harish)&lt;/p&gt;
+
+&lt;p&gt;  * Address Book&lt;br /&gt;
+    - fix vcard note migration issues if containing non-ascii chars (Siva)&lt;br /&gt;
+    - fix groupwise ssl usage (Harish)&lt;/p&gt;
+
+&lt;p&gt;  * All&lt;br /&gt;
+    - 64 bit fixes (Michael)&lt;/p&gt;
+
+&lt;p&gt;Updated Translations:&lt;br /&gt;
+    -et (Priit Laes)&lt;br /&gt;
+    -ru (Leonid Kanter)&lt;/p&gt;
+
+&lt;p&gt;gtkhtml-3.2.5 &quot;hispidulum&quot; 2005-02-14&lt;br /&gt;
+------------------------------------------------&lt;/p&gt;
+
+&lt;p&gt;New in this release&lt;/p&gt;
+
+&lt;p&gt;   * Updated translations&lt;br /&gt;
+	fr (Christophe Merlet)&lt;br /&gt;
+	de (Hendrik Brandt)&lt;br /&gt;
+	pl (Artur Flinta)&lt;br /&gt;
+	nl (Vincent van Adrighem)&lt;br /&gt;
+	sv (Christian Rose)&lt;br /&gt;
+	ja (Takeshi AIHANA)&lt;/p&gt;
+
+&lt;p&gt;gal-2.2.5  2005-02-14&lt;br /&gt;
+----------------------&lt;/p&gt;
+
+&lt;p&gt;Other bugs and changes:&lt;/p&gt;
+
+&lt;p&gt;	- Updated translations: &lt;br /&gt;
+	 it (Luca Ferretti, Alessio Frusciante&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Reporting Bugs&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;If you have problems with 2.0.4, please take the time to submit the bug&lt;br /&gt;
+using Bug Buddy or at http://bugzilla.ximian.com.  Try to fill in as&lt;br /&gt;
+much detail as you can regarding the circumstances that lead to the&lt;br /&gt;
+problem&lt;/p&gt;
+
+&lt;p&gt;If you have a feature request, you can also file that at&lt;br /&gt;
+&lt;a href=&quot;http://bugzilla.ximian.com/&quot;&gt;http://bugzilla.ximian.com/&lt;/a&gt; don't be discouraged if you don't hear from&lt;br /&gt;
+us right away, we get hundreds of feature requests a year.&lt;/p&gt;
+
+&lt;p&gt;You can also check if your bug has been reported before by using the&lt;br /&gt;
+search functionality of Bugzilla.&lt;/p&gt;
+
+&lt;p&gt;More information is available at the project website:&lt;br /&gt;
+&lt;a href=&quot;http://www.gnome.org/projects/evolution&quot;&gt;http://www.gnome.org/projects/evolution&lt;/a&gt;&lt;/p&gt;</content:encoded>
+	<dc:date>2005-02-21T05:01:52+00:00</dc:date>
+</item>
+<item rdf:about="http://www.gnome.org/~newren/blog/2005/02/20">
+	<title>Elijah Newren: Dealing with the d-d-l spam problem</title>
+	<link>http://www.gnome.org/~newren/blog/2005/02/20</link>
+	<content:encoded>&lt;p&gt;
+I don't know if it's just the pessimist in me, but considering the
+efforts before that have failed at controlling the d-d-l spam, I
+started wondering whether the recent one will work over the long-term
+either (I don't see the difference between this attempt and previous
+ones).  So, I spent a little time &lt;a href=&quot;http://www.gnome.org/~newren/temp/new-mailing-list.txt&quot;&gt; trying to
+think up a solution&lt;/a&gt;.  This may not be feasible (why worry about
+petty technical details when trying to think of a good solution?), and
+may be a really stupid idea anyway (it's just my brain dump from an
+hour or two), but I'm posting it here so the world can have a laugh at
+my expense.  After all, I always appreciate it when others make me
+laugh, so I thought I'd try to return the favor--although in a perhaps
+slightly different way.  ;-)
+&lt;/p&gt;</content:encoded>
+	<dc:date>2005-02-21T05:00:03+00:00</dc:date>
+</item>
+<item rdf:about="http://nat.org/2005/february/#21-February-2005">
+	<title>Nat Friedman: 21 February 2005</title>
+	<link>http://nat.org/2005/february/#21-February-2005</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/nat.png" align="right" alt=""&gt;&lt;a name=&quot;21-February-2005&quot;&gt;&lt;/a&gt; &lt;b&gt;&lt;u&gt;&lt;/u&gt;&lt;/b&gt;&amp;nbsp;&lt;a href=&quot;http://nat.org/2005/february/#21-February-2005&quot;&gt;#&lt;/a&gt; &lt;blockquote&gt; &quot;There he goes. One of God's own prototypes. Some kind of high powered mutant never even considered for mass production. Too weird to live, and too rare to die.&quot; &lt;/blockquote&gt;&lt;p&gt;</content:encoded>
+	<dc:date>2005-02-21T05:00:00+00:00</dc:date>
+</item>
+<item rdf:about="http://joeshaw.org/2005/02/21/125">
+	<title>Joe Shaw: there goes joeyblog</title>
+	<link>http://joeshaw.org/2005/02/21/125</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/joe.png" align="right" alt=""&gt;&lt;p&gt;I&amp;#8217;ve just transitioned my blog over to &lt;a href=&quot;http://wordpress.org&quot;&gt;Wordpress 1.5&lt;/a&gt;, and I must say, it&amp;#8217;s a dramatic improvement over the last version I tried.  They&amp;#8217;ve separated the layout and the structure in such a nice way that I can do things like, for example, not allow comments or have categories or different authors without having to hack the hell out of things.  I&amp;#8217;ve spent all of today getting the layout correct, and with some &lt;em&gt;extremely&lt;/em&gt; clever PHP and Javascript hacking I am pretty sure that all existing URLs continue to work.&lt;/p&gt;
+	&lt;p&gt;Now, the real question is if I can get a nice client-side solution so that posting photos isn&amp;#8217;t quite a pain.  Hopefully it won&amp;#8217;t be a big deal, but I&amp;#8217;ve saved my old blog setup just in case I have to revert.
+&lt;/p&gt;</content:encoded>
+	<dc:date>2005-02-21T02:48:32+00:00</dc:date>
+</item>
+<item rdf:about="http://jimmac.musichall.cz/weblog.php/Inkscape/SVG-NG">
+	<title>Jakub Steiner: More SVG Fun</title>
+	<link>http://jimmac.musichall.cz/weblog.php/Inkscape/SVG-NG</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/jimmac.png" align="right" alt=""&gt;&lt;p&gt;As I've &lt;a href=&quot;http://primates.ximian.com/~jimmac/blog/Artwork/Inkscape/&quot;&gt;mentioned before&lt;/a&gt;, I&amp;nbsp;started to incorporate &lt;a href=&quot;http://www.inkscape.org&quot;&gt;Inkscape&lt;/a&gt; into my workflow. At times it's quite masochistic compared to Illustrator or GIMP, but some things are easier than what I&amp;nbsp;was used to. One of the things is making sure the outline &quot;snaps&quot; to the final rendering grid. That was tough with Illustrator, not because it didn't have sophisticated aids to do that, but because it used a different renderer than the GNOME desktop.&lt;/p&gt;
+
+&lt;p&gt;One thing that totally rocks is that in trunk (0.41) you can work pixel-precise at the target resolution and it's truly WYSIWYG. It may not have Illustrator's pixel-preview so that you can see the bitmap rendering even when working on zoomed canvas, but simply having another view at 1:1 works ok&lt;sup&gt;[&lt;a id=&quot;note1&quot; href=&quot;http://jimmac.musichall.cz/weblog.php?flav=rss#footnote1&quot;&gt;1&lt;/a&gt;]&lt;/sup&gt;. Librsvg then reders it exactly the same as inkscape. I&amp;nbsp;need to see about cairo/xsvg.&lt;/p&gt;
+
+&lt;div&gt;&lt;img alt=&quot;#&quot; src=&quot;http://jimmac.musichall.cz/stuff/leftbitmap_rightvector.png&quot; width=&quot;117&quot; height=&quot;76&quot; border=&quot;0&quot; /&gt;&lt;p&gt;Original bitmap on the left. Traced and pixel positioned on the right. Renders just like that with librsvg.&lt;/p&gt;&lt;/div&gt;
+
+&lt;p&gt;I&amp;nbsp;had an idea how to overcome the complexity of creating icons at multiple resolutions that I&amp;nbsp;&lt;a href=&quot;http://primates.ximian.com/~jimmac/blog/Artwork/ScalableIcons/&quot;&gt;wrote about earlier&lt;/a&gt;. SVG rocks for theme maintanance - you can save all the work with exporting, since you can just save your working inkscape SVG and that's it.&lt;/p&gt;
+
+&lt;div&gt;&lt;a href=&quot;http://jimmac.musichall.cz/screenshots/screenshot-413713000.jpg&quot;&gt;&lt;img alt=&quot;#&quot; src=&quot;http://jimmac.musichall.cz/images/blog/git-vectoricons.jpg&quot; width=&quot;458&quot; height=&quot;366&quot; border=&quot;0&quot; /&gt;&lt;/a&gt;&lt;/div&gt;
+
+&lt;p&gt;Now while I&amp;nbsp;don't think automatic hinting can help making the icons readable for 16x16, what if I&amp;nbsp;could have layers in the SVG for individual target render size? RSVG would render a layer similarly to how the icon theme engine picks appropriate bitmap version. No need to maintain multiple images. I&amp;nbsp;think doing bitmaps for 16x16 and 24x24 is still going to take less time than doing them in vector, but nothing prevents me having a bitmap in the SVG ;)&lt;/p&gt;
+
+&lt;p&gt;Alternatively it could have the layers toggled invisible for regular rendering. But if we had some switch in inkscape to &quot;solo&quot; particular layer, 16x16 and 24x24 bitmap rendering could be automated with a script and still maintain a single file.&lt;/p&gt;
+
+&lt;div id=&quot;footnote1&quot; class=&quot;footnote&quot;&gt;
+&lt;p&gt;[&lt;a href=&quot;http://jimmac.musichall.cz/weblog.php?flav=rss#note1&quot;&gt;1&lt;/a&gt;] I&amp;nbsp;also noticed the simplification wrt grid functionality really makes sense. I&amp;nbsp;haven't missed not being able to see the grid without snapping to it at all. If I&amp;nbsp;want to see the grid, I&amp;nbsp;mostly want to snap to it too. If I&amp;nbsp;don't, I&amp;nbsp;just hide it.&lt;/p&gt;
+&lt;p&gt;On the other hand I&amp;nbsp;found out I&amp;nbsp;really miss being able to node select from multiple objects. I'm a consistant shape tweaker and not being able to move a bunch of nodes from multiple overlaid objects is a pain.&lt;/p&gt;
+&lt;/div&gt;</content:encoded>
+	<dc:date>2005-02-21T01:41:36+00:00</dc:date>
+</item>
+<item rdf:about="http://jimmac.musichall.cz/weblog.php/Inkscape/Inkscape">
+	<title>Jakub Steiner: Inkscape Evaluation</title>
+	<link>http://jimmac.musichall.cz/weblog.php/Inkscape/Inkscape</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/jimmac.png" align="right" alt=""&gt;&lt;p&gt;I thought that if I have to do the icons in SVG ever again, I may as well
+revisit the river. Since I just upgraded to &lt;a href=&quot;http://www.ubuntulinux.org&quot;&gt;Ubuntu Hoary&lt;/a&gt; (Gnome 2.10 is slick!), I
+gave &lt;a href=&quot;http://inkscape.org&quot;&gt;Inkscape&lt;/a&gt; a try again.&lt;/p&gt;
+
+&lt;p&gt;Since I'm an old Illustrator junkie, I knew it's going to be tough getting
+used to especially since I've tried and failed before. I expected being
+disappointed, I was surprised in many areas though. Looks like a lot of good
+stuff happened while I wasn't watching :) I'm actually confident that it's
+usable to create less complex artwork.&lt;/p&gt;
+
+&lt;p&gt;So let's start with the good things.&lt;/p&gt;
+
+&lt;ul&gt;
+
+	&lt;li&gt;Nice shortcut overview. It could have been setup on a landscape A4 to get
+	printed easily though.&lt;/li&gt;
+	
+	&lt;li&gt;A few introductory tutorials. Just what I needed. It's actually better
+	for me than a full featured documentation which is usually too boring to chew
+	through ;). What's even more fun is these tutorials are in fact SVG images,
+	so it features examples you can try right on canvas while reading.
+	Ingenious.&lt;/li&gt;
+	
+	&lt;li&gt;Easy numerical entry of object properties (toolbar) with advanced
+	properties in a floating dialog.&lt;/li&gt;
+	
+	&lt;li&gt;Keyboard navigation not only for object and canvas movement, but rotation
+	and scaling as well (now finally the &lt;span class=&quot;shortcut&quot;&gt;Alt&lt;/span&gt;
+	modifier starts making sense&lt;/span&gt;). Moving in pixel units with &lt;span class=&quot;shortcut&quot;&gt;Alt&lt;/span&gt; of the current zoom level is a lot better than
+	the absolute units in Adobe Illustrator. This absolutely rocks.&lt;/li&gt;
+	
+	&lt;li&gt;Layers with visibility toggle and &lt;em&gt;layer locking&lt;/em&gt;! Oh man, I can't
+	stress enough how this is useful. Also individual objects can be locked, but
+	unlocking them is hard, I could only do this with the XML editor.&lt;/li&gt;
+
+	&lt;li&gt;&lt;span class=&quot;shortcut&quot;&gt;F12&lt;/span&gt; toggles the visible floating docks.
+	Very handy in fullscreen (although the &lt;em&gt;layout dock&lt;/em&gt; seems to be
+	visible all the time).&lt;/li&gt;
+
+	&lt;li&gt;While function keys are still mapped to tools, there's also shortcuts
+	that are easily memorizable &amp;mdash; &lt;span class=&quot;shortcut&quot;&gt;T&lt;/span&gt; for Text,
+	&lt;span class=&quot;shortcut&quot;&gt;S&lt;/span&gt; for Object select etc. &lt;span class=&quot;shortcut&quot;&gt;#&lt;/span&gt; for grid toggle got me :).&lt;/li&gt;
+
+	&lt;li&gt;Color Dropper. I prefer to call it &lt;em&gt;picker&lt;/em&gt; instead since it's not
+	applying color on the clicked objects, it's &lt;em&gt;picking it up&lt;/em&gt; and
+	applies on the selected objects.  Unfortunately the tool isn't as useful as
+	it could be. It only takes the color property while it could be used to pick
+	more properties such as stroke, fill (gradient, pattern, bitmap), effects,
+	etc. (configurable as tool options just like in GIMP). Inkscape does provide
+	this functionality with &lt;em&gt;Edit&amp;gt;Paste Style&lt;/em&gt;, but doesn't allow
+	individual style properties to be selected (only fill, only stroke...).&lt;/li&gt;
+
+	&lt;li&gt;Helpful status bar. It tells you what a modifier key will do. It doesn't
+	list all functionality, but mostly the important one. Absolutely cool for
+	when you're learning the tool. I found &lt;span class=&quot;shortcut&quot;&gt;Alt+Click&lt;/span&gt; like that. It's used to &quot;select under&quot; with
+	the selection tool active and it's very handy when I'm left without a nice
+	layer stack overview.&lt;/li&gt;
+
+	&lt;li&gt;Boolean Operations. Creating complex shapes out of primitives is a lot
+	easier with these tools.&lt;/li&gt;
+
+	&lt;li&gt;Cloning. Instead of duplicating, you can create an instance of an object.
+	Gotta get used to the fact that even transformations are inherited.&lt;/li&gt;
+
+	&lt;li&gt;The 0.40 aboutbox is sexy as hell :)&lt;/li&gt;
+
+	&lt;li&gt;Metadata. Not oly cool for copyright info, but for &lt;a href=&quot;http://jimmac.musichall.cz/doc/high-contrast/html/ch01s05.xhtml&quot;&gt;icon
+	accessibility too&lt;/a&gt;.&lt;/li&gt;
+
+	&lt;li&gt;Object stamping. You drag an object around and where you press &lt;span class=&quot;shortcut&quot;&gt;spacebar&lt;/span&gt; it creates a copy.&lt;/li&gt;
+
+	&lt;li&gt;Text tool. I wish we had a mature text tool like this in GIMP. Letter
+	spacing (&lt;span class=&quot;shortcut&quot;&gt;Alt+&amp;lt;&lt;/span&gt;, &lt;span class=&quot;shortcut&quot;&gt;Alt+&amp;gt;&lt;/span&gt;), kerning, (&lt;span class=&quot;shortcut&quot;&gt;Alt+Left&lt;/span&gt;, &lt;span class=&quot;shortcut&quot;&gt;Alt+Right&lt;/span&gt;),
+	vertical text, shaped block of text (kinda hacky, but working).&lt;/li&gt;
+	
+	&lt;li&gt;Didn't crash on me ;) While some of us take it for granted, &lt;a href=&quot;http://www.cinepaint.org&quot;&gt;some projects&lt;/a&gt; don't consider stability a
+	priority...&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;a href=&quot;http://jimmac.musichall.cz/images/blog/inkscape1.png&quot;&gt;&lt;img alt=&quot;#&quot; src=&quot;http://jimmac.musichall.cz/images/blog/inkscape1.jpg&quot; width=&quot;458&quot; height=&quot;366&quot; border=&quot;0&quot; /&gt;&lt;/a&gt;
+
+&lt;p&gt;So as you can see, in many areas I've been very pleasantly surprised. You
+can see Inkscape developers did listen to their artists, err users. There's
+some inconsistencies with the GIMP that I personally find confusing:&lt;/li&gt;
+
+&lt;ul&gt;
+
+	&lt;li&gt;&lt;div&gt;Path tool. I mean come on guys, the GIMP path tool rocks. The modifiers
+	rock, you can work with both nodes &lt;em&gt;and&lt;/em&gt; segments and it's just unnice
+	to have something out of this planet when users like me, that are used to
+	GIMP could be making paths in Inkscape in a nano. /me makes a sad, sad
+	face.&lt;/div&gt;&lt;br /&gt;
+	&lt;div&gt;I'm used to tracing objects by creating a polygon first and then
+	converting the particular nodes to curvy. I just found the trick is not to
+	try to convert a node, but a segment to a curve. Maybe if I try hard enough,
+	I can live with this. Also I'd love the handles to be controllable with a
+	keyboard, not only the nodes alone.&lt;/div&gt;&lt;/li&gt;
+	
+	&lt;li&gt;Redo is &lt;span class=&quot;shortcut&quot;&gt;Ctrl+Shift+Z&lt;/span&gt; while GIMP's is &lt;span class=&quot;shortcut&quot;&gt;Ctrl+Y&lt;/span&gt;.&lt;/li&gt;
+
+	&lt;li&gt;&lt;span class=&quot;shortcut&quot;&gt;Ctrl&lt;/span&gt; locks aspect while &lt;span class=&quot;shortcut&quot;&gt;Shift&lt;/span&gt; centers the pivot point. GIMP's exactly the
+	other way around.&lt;/li&gt;
+
+	&lt;li&gt;I miss the thumbnail navigator that GIMP has in the lower right
+	corner. Also zoom-on-resize locking that's in GIMP 2.2 (upper right corner)
+	would be useful here too. &lt;em&gt;Update: I've been pointed out that I'm just
+	blind, it's right there! ;)&lt;/em&gt;&lt;/li&gt;
+
+	&lt;li&gt;The gradient editor is even worse than GIMP's. When I'm bitching about
+	it, I guess I should provide a spec. But more annoying than defining the
+	gradient is not being able to specify direction and length on canvas.&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;a href=&quot;http://jimmac.musichall.cz/images/blog/inkscape2.png&quot;&gt;&lt;img alt=&quot;#&quot; src=&quot;http://jimmac.musichall.cz/images/blog/inkscape2.jpg&quot; width=&quot;458&quot; height=&quot;366&quot; border=&quot;0&quot; /&gt;&lt;/a&gt;
+
+&lt;p&gt;Some minor nitpicks and suggestions.&lt;/p&gt;
+&lt;ul&gt;
+
+	&lt;li&gt;Layer support is fairly primitive and unfinished. Apart from the spartan
+	XML editor, I found no way to get a graphical representation of the layer
+	stack. Moving objects across layers also seems only possible in XML editor
+	which is very hard, since the stack is reversed and the layers aren't easily
+	identifiable (UI shows comments, while XML edito shows ids). Also I'm not
+	sure about the behaviour of the root node.&lt;/li&gt;
+
+	&lt;li&gt;While it may sound like a good idea to use vector icons in a vector
+	editor, it doesn't work in my opinion. The small resolution icons need detail
+	and crispness the vectors cannot give. Having a nice gnomish icon set would
+	surely help.&lt;/li&gt;
+
+	&lt;li&gt;I miss tootips for the toobar icons.&lt;/li&gt;
+
+	&lt;li&gt;Tool options are implemented as global preferences. While there is a
+	shortcut to get to these by double-clicking on the toolbar, you're presented
+	with a horror of two rows of tabs. Yikes!&lt;/li&gt;
+
+	&lt;li&gt;Some sort of library is required. Just like GIMP stores brushes and
+	gradients, Inkscape should have some global repository of gradients and
+	patterns.&lt;/li&gt;
+
+	&lt;li&gt;There's &lt;em&gt;XY properties&lt;/em&gt; floating window depending on what type
+	of object is selected. These should go into the object properties float. If
+	the number of widgets would grow, solve either by using tabs or disclosure
+	triangles.&lt;/li&gt;
+
+	&lt;li&gt;Something completely subjective &amp;mdash; I prefer the rubberband selection
+	to work objects even partially selected, not only the ones completely
+	enclosed in the selection rectangle.&lt;/li&gt;
+
+	&lt;li&gt;&lt;span class=&quot;shortcut&quot;&gt;Ctrl+A&lt;/span&gt; actually select all object
+	&lt;em&gt;within a layer&lt;/em&gt; not on the document as the tutorial suggests. Not
+	saying it makes less sense, just that the docs are out of sync.&lt;/li&gt;
+
+	&lt;li&gt;One cannot group objects from different layers. Especially painful when
+	moving objects around layers manually is tough.&lt;/li&gt;
+
+	&lt;li&gt;I coulnd't figure out how to scale a pattern. In fact it should be
+	possible to not scale pattern along with object. Similarly, it should be
+	possible to scale an object but not scale the stroke width along.&lt;/li&gt;
+
+	&lt;li&gt;Deleting objects with &lt;span class=&quot;shortcut&quot;&gt;Backspace&lt;/span&gt;. While
+	&lt;span class=&quot;shortcut&quot;&gt;Del&lt;/span&gt; works, my powerbook doesn't have the del
+	key ;).&lt;/li&gt;
+
+	&lt;li&gt;Cloning is cool, but it would be super cool to be able to create such
+	object clones (links) within an external file. You could create mime type
+	icons by linking the document template from an external file and have a quick
+	way to alter the whole set.&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;a href=&quot;http://jimmac.musichall.cz/images/blog/inkscape3.png&quot;&gt;&lt;img alt=&quot;#&quot; src=&quot;http://jimmac.musichall.cz/images/blog/inkscape3.jpg&quot; width=&quot;458&quot; height=&quot;366&quot; border=&quot;0&quot; /&gt;&lt;/a&gt;
+
+&lt;p&gt;And I few features I'm still missing an alternative for:&lt;/p&gt;
+
+&lt;ul&gt; 
+	
+	&lt;li&gt;Object blending. Select two objects and pick how many inbetween states
+	you want or optionally a path along which to do the morph. Essential time
+	saviour when duplicating objects. Inkscape does have a mean that's a bit less
+	straight forward (subjective again). You can either use stamping and then
+	distribute objects using the align dock or do the same with clones or
+	duplicates (just need to pick one from the duplicated stack and reposition to
+	the other extreme).&lt;/li&gt;
+
+	&lt;li&gt;Converting stroke into objects. Sometimes you want to have more control
+	about the dotted outline.&lt;/li&gt;
+
+	&lt;li&gt;I may have just missed it, but there's no outline draw mode. Sometimes
+	it's easier to find an object like that. Also perhaps when tweaking shapes
+	with the node tool, the fill could go away to speed things up. The more
+	complex the artwork is, the slower the thing gets. And sometimes way way
+	slower than bearable.&lt;/li&gt;
+
+	&lt;li&gt;Pixel preview. If we had the same renderer in GNOME &amp; Inkscape, it would
+	help tweaking the shapes pixel-precise, so it's sharp (aligns to the render
+	grid) at the 1:1 size.&lt;/li&gt;
+
+	&lt;li&gt;Node edit only works within selected object. I like to rubber-band select
+	nodes from a number of objects and move them to &quot;stretch&quot; an drawing in that
+	particular area. Doing one by one is close to impossible and stretching the
+	whole object is not what I want either.&lt;/li&gt;
+
+&lt;/ul&gt;</content:encoded>
+	<dc:date>2005-02-21T01:41:36+00:00</dc:date>
+</item>
+<item rdf:about="http://jimmac.musichall.cz/weblog.php/Inkscape/InkscapeGradients">
+	<title>Jakub Steiner: Inkscape Gradients</title>
+	<link>http://jimmac.musichall.cz/weblog.php/Inkscape/InkscapeGradients</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/jimmac.png" align="right" alt=""&gt;&lt;p&gt;Inkscape superstar, Bulia Byak, committed the beginning of his work on &lt;a href=&quot;http://sourceforge.net/mailarchive/message.php?msg_id=10905321&quot;&gt;better gradients&lt;/a&gt; in Inkscape. Addresses a lot of the issues I've had with the old interface. Kudos!&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://jimmac.musichall.cz/demos/inkscape/inkscape-gradients.avi&quot;&gt;Demo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Eek! I seem to have spammed planet gnome by moving things around even though the timestamps remained. Sorry.&lt;/p&gt;</content:encoded>
+	<dc:date>2005-02-21T01:36:00+00:00</dc:date>
+</item>
+<item rdf:about="http://www.reigndropsfall.net/index.php?itemid=141">
+	<title>Bryan Forbes: I can almost hear it...</title>
+	<link>http://www.reigndropsfall.net/index.php?itemid=141</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/mxpxpod.png" align="right" alt=""&gt;This last week I started working on audio disc support in &lt;a href=&quot;http://www.coaster-burn.org&quot;&gt;Coaster.&lt;/a&gt;  It has been interesting trying to figure out the &lt;a href=&quot;http://gstreamer.freedesktop.org&quot;&gt;Gstreamer&lt;/a&gt; library and how to get it to interact well with Coaster without using a wrapping library (to save you guys the hassle of another binding dependency).  So far, I have some test programs that read in the information I need; next thing to do is to get an audio store, layout, and view up and going.&lt;br /&gt;</content:encoded>
+	<dc:date>2005-02-21T00:50:28+00:00</dc:date>
+</item>
+<item rdf:about="http://hadess.net/?start=490">
+	<title>Bastien Nocera: Bonjour</title>
+	<link>http://hadess.net/?start=490</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/hadess.png" align="right" alt=""&gt;Watched &lt;a href=&quot;http://www.imdb.com/title/tt0376541/&quot;&gt;Closer&lt;/a&gt;, one of those relationship-analysing films. High Fidelity, without the music, less of the jokes, but more of the brains.&lt;p&gt;
+Scots footie fans are &lt;a href=&quot;http://news.bbc.co.uk/sport1/hi/funny_old_game/4274777.stm&quot;&gt;funny lads&lt;/a&gt;, and Apple will rename Rendez-vous to &lt;a href=&quot;http://www.appleinsider.com/article.php?id=891&quot;&gt;Bonjour&lt;/a&gt;.&lt;p&gt;
+&lt;i&gt;Music&lt;/i&gt;: Greenday - Jesus of Suburbia</content:encoded>
+	<dc:date>2005-02-21T00:10:36+00:00</dc:date>
+</item>
+<item rdf:about="http://jimmac.musichall.cz/weblog.php/Music/Drift">
+	<title>Jakub Steiner: Drift</title>
+	<link>http://jimmac.musichall.cz/weblog.php/Music/Drift</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/jimmac.png" align="right" alt=""&gt;&lt;p&gt;Yet another blast from the past. While writing the aboutpage on my website I found the &lt;a href=&quot;http://kosmic.darkscape.net/archives/&quot;&gt;Kosmic Archive&lt;/a&gt; is online with mp3 versions of the old killer tracks.&lt;/p&gt;
+
+&lt;p&gt;I recall playing this on my 1bit squeeker ripped out of the PC case so I could hear it better. &lt;a href=&quot;http://www.cubic.org/player/&quot;&gt;Cubic Player&lt;/a&gt; with the fancy visualisations. Memories.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://kosmic.darkscape.net/archives/1996/mp3/k_drift.mp3&quot;&gt;&lt;strong&gt;Drift&lt;/strong&gt;&lt;/a&gt; &amp;ndash; Lovely minimalistic techno.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I hope to find more jewels like this. I should have all the XMs, S3Ms, ITs and MODs somewhere??? &lt;a href=&quot;http://www.gnome.org/projects/beagle/&quot;&gt;Beagle&lt;/a&gt;, buddy! Help!&lt;/p&gt;</content:encoded>
+	<dc:date>2005-02-20T23:27:00+00:00</dc:date>
+</item>
+<item rdf:about="http://www.inkstain.net/fleck/archives/001577.html">
+	<title>John Fleck: The Fifth Sentence</title>
+	<link>http://www.inkstain.net/fleck/archives/001577.html</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/jfleck.png" align="right" alt=""&gt;&lt;p&gt;I like &lt;a href=&quot;http://pharyngula.org/index/weblog/comments/we_are_all_lemmings_we_bloggers/&quot;&gt;this meme&lt;/a&gt;:&lt;br /&gt;
+&lt;blockquote&gt;&lt;br /&gt;
+&lt;ol&gt;&lt;li&gt;Grab the nearest book.&lt;/li&gt;&lt;li&gt;Open the book to page 123.&lt;/li&gt;&lt;li&gt;Find the fifth sentence.&lt;/li&gt;&lt;li&gt;Post the text of the sentence in your journal along with these instructions.&lt;/li&gt;&lt;li&gt;Don't search around and look for the &quot;coolest&quot; book you can find. Do what&amp;#8217;s actually next to you.&lt;/li&gt;&lt;/ol&gt;&lt;/blockquote&gt;&lt;/p&gt;
+
+&lt;p&gt;The book (really, I closed my eyes and reached left to the nearest shelf) is the IPCC's &quot;Climate Change 1995.&quot; Page 123 is in the chapter on &quot;Radiative Forcing of Climate Change&quot;:&lt;br /&gt;
+&lt;blockquote&gt;&lt;br /&gt;
+It would be highly desirable to determine the indirect GWPs associated with the ozone production for these gases.&lt;br /&gt;
+&lt;/blockquote&gt;&lt;/p&gt;</content:encoded>
+	<dc:date>2005-02-20T20:26:48+00:00</dc:date>
+</item>
+<item rdf:about="http://www.seconix.com/wordpress/index.php?p=8">
+	<title>Damien Sandras: A screenshot</title>
+	<link>http://www.seconix.com/wordpress/index.php?p=8</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/damien.png" align="right" alt=""&gt;&lt;p&gt;I know people love screenshots. Here is a screenshot of the new accounts window, it permits to add/edit and see the current status of VoIP accounts. Those VoIP accounts can be SIP or H.323 accounts. Later, IAX support should be added too. I can for example have GnomeMeeting registered to the SIP PBX at work, to a SIP Proxy on seconix.com, to FreeWorldDialup and to our H.323 PC-To-Phone provider, at the same time. The called URL will determine what provider will be used, it is totally transparent and intuitive.&lt;/p&gt;
+	&lt;p&gt;Here is the long-awaited screenshot:&lt;br /&gt;
+&lt;a href=&quot;http://www.seconix.com/wordpress/wp-content/accountsscreenshot.png&quot; target=&quot;_new&quot;&gt;&lt;img src=&quot;http://www.seconix.com/wordpress/wp-content/taccountsscreenshot.png&quot; alt=&quot;New Accounts Window&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</content:encoded>
+	<dc:date>2005-02-20T19:01:11+00:00</dc:date>
+</item>
+<item rdf:about="http://hadess.net/?start=489">
+	<title>Bastien Nocera: Nice-One-Brothaaaaaaa!</title>
+	<link>http://hadess.net/?start=489</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/hadess.png" align="right" alt=""&gt;All mental yesterday as the usual crew was downing J.D.s and Coke in a TGIF, and ended up blagging our way in the &lt;a href=&quot;http://www.beerintheevening.com/pubs/show.shtml/3421/Five_and_Lime/Guildford&quot;&gt;Five and Lime&lt;/a&gt;. Waking up was hard this morning ;)&lt;p&gt;
+Some good Totem hacking, even though I still don't understand the drag'n'drop/reorderable bits of the GtkTreeView. I also found why the video thumbnailer was exiting instantaneously with the GStreamer backend, due to a &lt;a href=&quot;http://bugzilla.gnome.org/show_bug.cgi?id=163039&quot;&gt;4-year old bug&lt;/a&gt; in glib.&lt;p&gt;
+Watched 2 games of footy, and &lt;a href=&quot;http://us.imdb.com/title/tt0099487/&quot;&gt;Edward Scissorhands&lt;/a&gt;.&lt;p&gt;
+Music: &lt;i&gt;Itchy Trigger Finger Niggers&lt;/i&gt; (no, not really)</content:encoded>
+	<dc:date>2005-02-20T17:10:35+00:00</dc:date>
+</item>
+<item rdf:about="http://www.inkstain.net/fleck/archives/001575.html">
+	<title>John Fleck: "I'm melting! I'm Melting!"</title>
+	<link>http://www.inkstain.net/fleck/archives/001575.html</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/jfleck.png" align="right" alt=""&gt;&lt;p&gt;Phil Mote and colleagues have a paper in the latest &lt;a href=&quot;http://ams.allenpress.com/amsonline/?request=get-abstract&amp;doi=10.1175%2FBAMS-86-1-39&quot;&gt;Bulletin of the American Meteorological Society&lt;/a&gt; updating their work on western snowpack and climate change. Bottom line - the snow's melting:&lt;br /&gt;
+&lt;blockquote&gt;&lt;br /&gt;
+The largest decreases have occurred where winter temperatures are mild, especially in the Cascade Mountains and northern California. In most mountain ranges, relative declines grow from minimal at ridgetop to substantial at snow line. Taken together, these results emphasize that the West's snow resources are already declining as earth's climate warms.&lt;br /&gt;
+&lt;/blockquote&gt;&lt;br /&gt;
+They don't have snow records back real far, so the results get a bit tangled up in the &lt;a href=&quot;http://tao.atmos.washington.edu/pdo/&quot;&gt;PDO&lt;/a&gt; and other decadal-scale patterns. But it seems pretty clear that as things get warmer, the snowpack patterns are changing. This is important in a region that depends on winter snowpack as a water storage mechanism to meet summer water usage needs.&lt;p&gt;&lt;br /&gt;
+More &lt;a href=&quot;http://www.abqjournal.com/paperboy/ia/news/state/307451nm02-20-05.htm&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;</content:encoded>
+	<dc:date>2005-02-20T15:53:03+00:00</dc:date>
+</item>
+<item rdf:about="http://primates.ximian.com/~miguel/archive/2005/Feb-20.html">
+	<title>Miguel de Icaza: 20 Feb 2005: 250 millions of PR budget.</title>
+	<link>http://primates.ximian.com/~miguel/archive/2005/Feb-20.html</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/miguel.png" align="right" alt=""&gt;&lt;p&gt;&lt;a href=&quot;http://www.commondreams.org/views05/0219-32.htm&quot;&gt;New
+	York Times&lt;/a&gt; on their staged &quot;Daily Show&quot;: &lt;i&gt;&quot;By my count,
+	&quot;Jeff Gannon&quot; is now at least the sixth &quot;journalist&quot; (four of
+	whom have been unmasked so far this year) to have been a
+	propagandist on the payroll of either the Bush administration
+	or a barely arms-length ally like Talon News while
+	simultaneously appearing in print or broadcast forums that
+	purport to be real news.&quot;&lt;/i&gt;
+
+	&lt;p&gt;&lt;i&gt;&quot;The money that paid for both the Ryan-Garcia news packages
+	and the Armstrong Williams contract was siphoned through the
+	same huge public relations firm, Ketchum Communications, which
+	itself filtered the funds through subcontractors. A new report
+	by Congressional Democrats finds that Ketchum has received $97
+	million of the administration's total $250 million P.R. kitty,
+	of which the Williams and Ryan-Garcia scams would account for
+	only a fraction. We have yet to learn precisely where the rest
+	of it ended up.&quot;&lt;/i&gt;
+
+	&lt;p&gt;More on the uncovering of Jeff Ganon: &lt;a href=&quot;http://americablog.blogspot.com/2005/02/man-called-jeff.html&quot;&gt;here&lt;/a&gt;.
+
+	&lt;p&gt;Bill Maher &lt;a href=&quot;http://homepage.mac.com/njenson/movies/billmaher021805gannon.mov&quot;&gt;video&lt;/a&gt;
+
+&lt;h3&gt;Nat at Work&lt;/h3&gt;
+
+&lt;p&gt;&lt;center&gt;&lt;a href=&quot;http://primates.ximian.com/~miguel/pic.php?name=nat-at-work.jpg&amp;caption=Nat at Work.&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;http://primates.ximian.com/~miguel//pictures/small-nat-at-work.jpg&quot; /&gt;&lt;/a&gt;&lt;p&gt;Nat at Work.&lt;/center&gt;&lt;/p&gt;
+&lt;h3&gt;Some Mono SVN Stats&lt;/h3&gt;
+
+	&lt;p&gt;From diffstat for the last month of Mono activity on the
+	SVN repository (excluding deprecated code):
+
+	&lt;pre&gt;
+	mcs:  1847 files changed, 122176 insertions(+), 23168 deletions(-)
+	mono:  323 files changed, 14845 insertions(+), 6360 deletions(-)
+	total:2170 files changed, 137021 insertions(+), 29528 deletions(-)
+	&lt;/pre&gt;
+
+&lt;h3&gt;Running Windows.Forms on OS X&lt;/h3&gt;
+
+	&lt;p&gt;Geoff describes how to run your Windows.Forms applications
+	on OSX &lt;a href=&quot;http://lists.ximian.com/archives/public/mono-winforms-list/2005-February/001428.html&quot;&gt;here&lt;/a&gt;.
+	The short story: you must use the new `macpack' tool to create
+	an OSX bundle.
+
+	&lt;p&gt;He also has a screenshot of Alexsander Olk's new color
+	dialog &lt;a href=&quot;http://blog.sublimeintervention.com/images/pretty-colors.png&quot;&gt;here&lt;/a&gt;
+	running on OSX.</content:encoded>
+	<dc:date>2005-02-20T13:55:00+00:00</dc:date>
+</item>
+<item rdf:about="http://www.gnome.org/~michael/activity.html#2005-02-20">
+	<title>Michael Meeks: 2005-02-20: Sunday</title>
+	<link>http://www.gnome.org/~michael/activity.html#2005-02-20</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/michael.png" align="right" alt=""&gt;&lt;ul&gt;
+	&lt;li&gt;Hacked on the train at a command-line OO.o
+gallery creation tool: rather badly needed for the
+openclipart.org stuff.
+	&lt;/li&gt;&lt;li&gt;Got home, lovely to see my beautiful wife
+again, not to mention the girls. Slept for a good while,
+ate, slept again.
+	&lt;/li&gt;&lt;li&gt;Up in the night, dealing with H. - nasty cold,
+can't breath - keeps saying 'nose' or 'mummy', slept in
+her bed for some hours.
+&lt;/li&gt;&lt;/ul&gt;</content:encoded>
+	<dc:date>2005-02-20T12:00:00+00:00</dc:date>
+</item>
+<item rdf:about="http://www.livejournal.com/users/davyd/135461.html">
+	<title>Davyd Madeley: Planet UCC Lives</title>
+	<link>http://www.livejournal.com/users/davyd/135461.html</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/riff.png" align="right" alt=""&gt;Due to the lack of WAIX routing, &lt;a href=&quot;http://planet.ucc.asn.au/&quot;&gt;Planet UCC&lt;/a&gt; had bought the proverbial farm. However now we have decided to work around the problem.&lt;br /&gt;&lt;br /&gt;The clubroom has been &lt;a href=&quot;http://webcam.ucc.asn.au/archive/colour3/200502/20/18/05.jpg&quot;&gt;cleaned up&lt;/a&gt;. And we're almost ready for O'Day. I have almost finished up the Fresher's Guide, and once I finish a list of points we covered today, it should be ready for general proof reading. Hopefully I'll get that uploaded tonight.</content:encoded>
+	<dc:date>2005-02-20T10:09:50+00:00</dc:date>
+</item>
+<item rdf:about="http://www.figuiere.net/hub/blog/?2005/02/19/99-picture-of-the-day-february-19th-2005">
+	<title>Hubert Figuiere: Picture of the day, February 19th, 2005</title>
+	<link>http://www.figuiere.net/hub/blog/?2005/02/19/99-picture-of-the-day-february-19th-2005</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/hub.png" align="right" alt=""&gt;&lt;p&gt;Some eye candy for this evening. We still haven't finished our tour of Périgord, so I return to my slide archives. Back to the &lt;a href=&quot;http://www.sigoules.com/visiter/chateaux/cloitre_de_cadouin.htm&quot;&gt;Cadouin Cloister&lt;/a&gt; &lt;em&gt;(fr)&lt;/em&gt;, facing the inside yard and tower:&lt;/p&gt;
+
+
+&lt;p&gt;&lt;a href=&quot;http://photo.figuiere.net/photodb/rolls/2001-09-21-2S/2001-09-21-2S-04.jpg&quot;&gt;&lt;img src=&quot;http://photo.figuiere.net/photodb/rolls/2001-09-21-2S/thumb_2001-09-21-2S-04.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+
+&lt;p&gt;Still taken with my &lt;a href=&quot;http://photo.net/equipment/canon/elan-7&quot;&gt;Canon Elan 7&lt;/a&gt; on Provia 100F, around September 21st 2001.&lt;/p&gt;</content:encoded>
+	<dc:date>2005-02-20T03:31:40+00:00</dc:date>
+</item>
+<item rdf:about="http://www.seconix.com/wordpress/index.php?p=7">
+	<title>Damien Sandras: Busy week-end</title>
+	<link>http://www.seconix.com/wordpress/index.php?p=7</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/damien.png" align="right" alt=""&gt;&lt;p&gt;&lt;strong&gt;OPAL&lt;/strong&gt;&lt;br /&gt;
+I have committed my last work on OPAL. It fixes SIP Outbound Proxy support and CANCEL requests management. It also permits to register to several SIP registrars at the same time, and do authenticated calls using each one of them. I have also added support for SUBSCRIBE and NOTIFY requests, mainly to permit Message Waiting Indications. That will permit users to be notified when they got a Voicemail and to listen to it.&lt;/p&gt;
+	&lt;p&gt;&lt;strong&gt;GnomeMeeting&lt;/strong&gt;&lt;br /&gt;
+I have of course added support for the above code in GnomeMeeting. I have also reworked the preferences window so that the various VoIP capabilities appears as accounts that you can enable or disable. That permits to minimize the number of options possible while keeping an easy access to all required features. GnomeMeeting 2.00 should have some inovative features that other Linux SIP softphones do not support yet.&lt;/p&gt;
+	&lt;p&gt;&lt;strong&gt;FOSDEM&lt;/strong&gt;&lt;br /&gt;
+&lt;a href=&quot;http://www.fosdem.org&quot;&gt;FOSDEM&lt;/a&gt; will happen in one week. That means much work but also many worries. Having feedback from invited speakers is not always easy and you often have to mail some of them several times. Hopefully now everything is booked. The pre-event part is nearly over and most of the work will have to be done during the event. We expect a record in terms of visitors this year. All big projects have &amp;#8220;developer&amp;#8217;s rooms&amp;#8221; with a separate schedule and talks.
+&lt;/p&gt;</content:encoded>
+	<dc:date>2005-02-19T23:06:11+00:00</dc:date>
+</item>
+<item rdf:about="http://www.inkstain.net/fleck/archives/001574.html">
+	<title>John Fleck: Stuff I Wrote Elsewhere</title>
+	<link>http://www.inkstain.net/fleck/archives/001574.html</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/jfleck.png" align="right" alt=""&gt;&lt;p&gt;&lt;a href=&quot;http://www.abqjournal.com/paperboy/ia/scitech/307139science02-19-05.htm&quot;&gt;Fun with magnetars&lt;/a&gt;&lt;/p&gt;</content:encoded>
+	<dc:date>2005-02-19T23:01:12+00:00</dc:date>
+</item>
+<item rdf:about="http://www.advogato.org/person/DV/diary.html?start=185">
+	<title>Daniel Veillard: 19 Feb 2005</title>
+	<link>http://www.advogato.org/person/DV/diary.html?start=185</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/dv.png" align="right" alt=""&gt;&lt;p&gt;&lt;b&gt;Sabayon&lt;/b&gt;&lt;p&gt;
+&lt;p&gt; After annoying GNOME sysdamins and stealing the html
+and css code from the &lt;a href=&quot;http://www.gnome.org/projects/evince/&quot;&gt;Evince&lt;/a&gt;
+project, we now have an initial &lt;a href=&quot;http://www.gnome.org/~veillard/sabayon/&quot;&gt;Sabayon
+web site&lt;/a&gt;, with mailing list, bugzilla and basic informations to get people started if they want to play or
+help with the project. There is quite a lot to do, and
+testing is not trivial since we depend on very recent (nearly CVS head) versions of pyGnome, gamin-python, etc, check the README file ! Simplest is to use the RPMs.
+&lt;p&gt;One of the main thing we need from our target audience
+i.e. people doing sysadmin setups/maintainance is feedback
+on some of the &lt;a href=&quot;http://cvs.gnome.org/viewcvs/sabayon/ISSUES?view=auto&quot;&gt;design
+Issues&lt;/a&gt;.</content:encoded>
+	<dc:date>2005-02-19T22:33:45+00:00</dc:date>
+</item>
+<item rdf:about="http://jimmac.musichall.cz/weblog.php/Misc/Macarena">
+	<title>Jakub Steiner: Macarena</title>
+	<link>http://jimmac.musichall.cz/weblog.php/Misc/Macarena</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/jimmac.png" align="right" alt=""&gt;&lt;p&gt;Thanks &lt;a href=&quot;http://www.tigert.com&quot;&gt;Tuomas&lt;/a&gt; for teaching me the
+Macarena ritual. For the ones not familiar with it, it's performed every time
+you leave a place, such as a restaurant, taxi etc and check for your gadgets.
+As you go pocket by pocket, checking for mobile phone, camera, PDA, wallet, car
+keys... To a random person passing by you look like you're dancing a &lt;a href=&quot;http://en.wikipedia.org/wiki/Macarena&quot;&gt;Macarena&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thanks to that ritual, performed a little later than optimal, I returned to
+the cinema theatre and retrieved my cellphone from a wondering lady who
+couldn't grasp what stupid $&amp;$*&amp;^ would leave a phone on the seat.&lt;/p&gt;
+
+&lt;p&gt;Also afterwards we went to a dinner with our finance minister. Not really,
+of course, but he was having a seat next to us. He looked a lot younger than on
+the tele, and we initially weren't sure if it's him. When they started to talk
+about Kalousek and &quot;&lt;a href=&quot;http://www.radio.cz/en/article/63152&quot;&gt;Standa's
+flat&lt;/a&gt;&quot;, we were assured it's him.&lt;/p&gt;</content:encoded>
+	<dc:date>2005-02-19T21:46:00+00:00</dc:date>
+</item>
+<item rdf:about="http://www.figuiere.net/hub/blog/?2005/02/19/98-fighting-drm-in-court-episode-i">
+	<title>Hubert Figuiere: Fighting DRM in court... Episode I</title>
+	<link>http://www.figuiere.net/hub/blog/?2005/02/19/98-fighting-drm-in-court-episode-i</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/hub.png" align="right" alt=""&gt;&lt;p&gt;&lt;a href=&quot;http://management.silicon.com/itpro/0,39024675,39127844,00.htm&quot;&gt;Apple and Sony are being sued&lt;/a&gt; in France by &lt;em&gt;UFC-Que Choisir&lt;/em&gt;, the major French consumer association, for breaking the law against bundle sales. The lack of interroperability beetween their DRM system and requirment to use their device is the reason.&lt;/p&gt;
+
+
+&lt;p&gt;Looks like Microsoft DRM system could benefit as they sell it to anyone who wants it, but nobody use it :-)&lt;/p&gt;
+
+
+&lt;p&gt;Source: &lt;a href=&quot;http://www.boingboing.net/2005/02/15/apple_and_sony_sued_.html&quot;&gt;Boing Boing&lt;/a&gt;, &lt;a href=&quot;http://linuxfr.org/2005/02/14/18305.html&quot;&gt;DLFP&lt;/a&gt; (fr).&lt;/p&gt;</content:encoded>
+	<dc:date>2005-02-19T20:26:15+00:00</dc:date>
+</item>
+<item rdf:about="http://primates.ximian.com/~federico/news-2005-02.html#19">
+	<title>Federico Mena-Quintero: Sat 2005/Feb/19</title>
+	<link>http://primates.ximian.com/~federico/news-2005-02.html#19</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/federico.png" align="right" alt=""&gt;&lt;ul&gt;
+	  &lt;!-- 
+	  &lt;li&gt;
+	    &lt;p&gt;
+	      &lt;a href=&quot;http://log.ometer.com/&quot;&gt;Havoc&lt;/a&gt;'s &lt;a
+	      href=&quot;http://log.ometer.com/2005-02.html#18&quot;&gt;ideas for a
+	      theme system&lt;/a&gt;.
+
+	      Right way to do a canvas - Piccolo
+	      (It looks uncannily similar to Avalon API)
+
+	      programmable theme files - bullshit; makes it hard to
+	      write guis for building/editing themes.  think of
+	      .fvwmrc
+
+	      if non-programmable, what about a constraint system for
+	      layout (nice for gui builder)?  or is that too complex?
+	      (isn't the gtk layout model a constraint system?)
+
+	      also look at KeithP's paper about a TeX-like layout manager
+
+	      we can't not have a gui theme editor
+
+	      GtkWidget implements the CanvasItem interface - nice
+	      idea
+
+	      weird layout - Kai Krause's user interfaces.  Also,
+	      their graphics span the &quot;window manager frame&quot; (because
+	      it is nonexistent and just a custom hack).
+
+	      gui precondition/postcondition; dialogs as class
+	      interfaces:  &quot;here are the initial values&quot;, &quot;here are
+	      the final values&quot;, everything that happens in between is
+	      on the theme's side
+
+	      margin ruler on a word processor - what can you theme
+	      there?  if you have abstract but required elements that
+	      emit events, what *can* you theme there?  worth theming
+	      at all?
+	    &lt;/p&gt;
+	  &lt;/li&gt;
+	  --&gt;
+	  &lt;li&gt;
+	    &lt;p&gt;
+	      &lt;a href=&quot;http://www.advogato.org/person/DV/&quot;&gt;Daniel&lt;/a&gt;
+	      writes about &lt;a href=&quot;http://www.advogato.org/person/DV/diary.html?start=184&quot;&gt;the
+	      pressure to have software patents in Europe&lt;/a&gt;.
+	      &quot;Pressure&quot; and &quot;verbal violence&quot; reminded me of &lt;a href=&quot;http://primates.ximian.com/~federico/news-2004-04.html#28&quot;&gt;last year&lt;/a&gt;, when I was at
+	      the &lt;a href=&quot;http://primates.ximian.com/~federico/news-photos/2004-04-1473-monitors.jpg&quot;&gt;amazing HP
+	      research building&lt;/a&gt;.  The first thing that greets you
+	      after you step out of the elevator is a wall covered
+	      with gold-plated patent grants.  Man, I should have
+	      taken a picture.  They were hung like trophies on a
+	      huntsman's wall.  I looked at them during conference
+	      breaks; some were for exotic things, other for
+	      ridiculously obvious ones.  The one I remember the most
+	      was about how to promote pixel values for low bit depths
+	      into values with higher bit depths.  You know, like when
+	      going from RGB at 8 bits per channel to 16 bits per
+	      channel, so you have to map the
+	      range&amp;nbsp;[0,&amp;nbsp;0xff] into a wider
+	      range&amp;nbsp;[0,&amp;nbsp;0xffff].  You can't just shift by 8
+	      bits to the left; you have to copy the value into the
+	      lower bits.  So, 0xab becomes 0xabab; the typical
+	      symptom of not doing this is where 100%&amp;nbsp;white
+	      becomes almost-white.  The abstract of the patent and a
+	      cute diagram, gold leaf, fancy frame and everything,
+	      described &lt;em&gt;exactly that&lt;/em&gt;; the only particular
+	      thing is that it seemed to describe a hardware
+	      implementation.
+	    &lt;/p&gt;
+	  &lt;/li&gt;
+	&lt;/ul&gt;</content:encoded>
+	<dc:date>2005-02-19T19:16:00+00:00</dc:date>
+</item>
+<item rdf:about="http://rodrigo.gnome-db.org/news.php?19/February/2005">
+	<title>Rodrigo Moya: 19/February/2005</title>
+	<link>http://rodrigo.gnome-db.org/news.php?19/February/2005</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/rodrigo.png" align="right" alt=""&gt;&lt;b&gt;GUADEC-ES&lt;/b&gt;
+      &lt;br /&gt;
+      The &lt;a href=&quot;http://2005.guadec-es.org/&quot;&gt;II GUADEC-ES&lt;/a&gt; will take
+      place from May 19th to 21st, in A Coruña, in the northwest of Spain. This is just
+      a week before the real &lt;a href=&quot;http://2005.guadec.org&quot;&gt;GUADEC&lt;/a&gt;,
+      so anybody planning to do some travelling can have A Coruña as one of the scales.</content:encoded>
+	<dc:date>2005-02-19T16:51:47+00:00</dc:date>
+</item>
+<item rdf:about="http://www.advogato.org/person/alvaro/diary.html?start=52">
+	<title>Alvaro del Castillo: 19 Feb 2005</title>
+	<link>http://www.advogato.org/person/alvaro/diary.html?start=52</link>
+	<content:encoded>Finally I have decided to help in developing &lt;a href=&quot;http://rt2x00.serialmonkey.com/&quot;&gt;a driver for the wireless USB 54 Mbps rt2570&lt;/a&gt;, very similar to the ralink 2500 chipset. I have two USB networks card using this chipset: they are very cheap, around 30. In my student days, I developed an ethernet driver so maybe, this knowledge will be useful. I am learning about USB stuff, using howto develop USB drivers for Linux, the USB Nutshell and finally, with the USB standard. I am not sure how far I will go in the project, but for now, I am trying to understand the USB traffic until we get the data sheets: &lt;a href=&quot;http://benoit.papillault.free.fr/usbsnoop/&quot;&gt;USB sniff&lt;/a&gt; is the right tool to log the USB traffic and analyze it later (grep, cat, awk, uniq, sort ...)
+
+&lt;p&gt; A dude working with me in LambdaUX is developing in C# and Mono a program to update Debian systems. It is getting very nice. A pit I don't have yet screenshots about it.
+
+&lt;p&gt; Evolution 2.1.3 changes in the online/offline support have made that the Groupdav connector contacts doesn't work any more. I am trying to fix it before Evo 2.2, but not sure if I will find enought time.
+
+&lt;p&gt; In Planner, new hackers are coming into scene and Richard is hacking some weekends in it. My heart says me I have to help closing some bugs for 0.13 and 0.14 releases.
+
+&lt;p&gt; Hula hype is being incredible, as normal announcements that comes from Helix/Ximian/Novell guys. I have talked with Helge, an OGo developer about Hula. He has shown me a very nice webclient for his Scalable OGo product (very similar to Hula, and will be released as GPL/LGPL): &lt;a href=&quot;http://agenor.opengroupware.org/&quot;&gt;SOGo web client&lt;/a&gt; (login:test.et.di.cete-lyon/password:test, not a production service, it could be off). Not sure if Hula developers could start the web client interface for Hula from that work. They will be released as GPL/LGPL (all the SOGo software).
+
+&lt;p&gt; Hmmm, I can't forget to talk about the &lt;a href=&quot;http://2005.guadec-es.org&quot;&gt;II GUADEC Hispana&lt;/a&gt;, a warm up meeting before the GUADEC. I will blog about it next days.</content:encoded>
+	<dc:date>2005-02-19T15:12:02+00:00</dc:date>
+</item>
+<item rdf:about="http://www.livejournal.com/users/davyd/135302.html">
+	<title>Davyd Madeley</title>
+	<link>http://www.livejournal.com/users/davyd/135302.html</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/riff.png" align="right" alt=""&gt;&lt;b&gt;remove one &quot;2-bit ISP&quot; point&lt;/b&gt;&lt;br /&gt;Work's nameserving capabilities have always been a fine balance of hope and dodgy services, but that's all about to change. With their new interest in zero-work-high-profit services, it has become necessary to make sure the nameservers are stable and sane. I have completed a spreadsheet of details about all the zones we host, their registrars and the keys for them. I found that I'm only missing 4 keys... so it's actually not as bad as I thought.&lt;br /&gt;Once everything gets into place, I can start transferring them onto a new nameserver, with secondary hosting provided by a dedicated provider, probably Goldwell in the UK.&lt;br /&gt;All in all, this makes us more into a high-tech, professional services, IT company... and less of a two-bit ISP.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;Tux abuse&lt;/b&gt;&lt;br /&gt;Driving down Mounts Bay Rd (which runs along Matilda Bay between Crawley and the city) I saw a small van emblazoned &quot;Arctic Couriers&quot;. The thing about this van that caught my eye, was all the penguins painted on it. Each of these penguins had a name it would seem. One of the penguins on the back was the infamous Tux, of Linux fame. Only his name was now something beginning with B, I think it was Bernadette. My heart goes out to poor Tux, who has been given involuntary gender issues, just because some artist obviously ran a google-image-search for penguins.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;While the cat's away...&lt;/b&gt;&lt;br /&gt;So Stephanie is currently in Melbourne, researching for her thesis. She is also getting attacked by her best friend's cats. I'm still stuck here, and have now realised how incredibly boring my life actually is. I mean, I honestly don't do anything! Having no one to talk to, and no TV makes things very quiet.&lt;br /&gt;&lt;br /&gt;To make up for it, I have been watching things on my laptop. I watched &lt;u&gt;Back to the Future, Part III&lt;/u&gt; and the third season of &lt;u&gt;Black Books&lt;/u&gt;.&lt;br /&gt;&lt;br /&gt;&lt;b&gt;Bunbury&lt;/b&gt;&lt;br /&gt;I intimated at some point that I had to go to Bunbury this week. In the end, it got called off due to a chain reaction of really crappy events, non of which were my fault. However now, I get to look forward to going on Monday instead. I can't help but feel this is going to be an absolute riot... not!&lt;br /&gt;&lt;br /&gt;&lt;b&gt;UCC Love Day&lt;/b&gt;&lt;br /&gt;To borrow an idea from GNOME, the UCC is having a &lt;a href=&quot;http://lists.ucc.gu.uwa.edu.au/pipermail/ucc/2005-February/012297.html&quot;&gt;Love Day&lt;/a&gt; in order to finish up the Fresher's Guide and the &lt;a href=&quot;http://beta.ucc.asn.au/&quot;&gt;new website&lt;/a&gt;. Also to give the room a bit of a tidy, because it's really quite messy again (how does this keep happening).&lt;br /&gt;&lt;br /&gt;Again, I've had a whole heap of stuff to write about, and again I've forgotten it. I really should take notes, or something.</content:encoded>
+	<dc:date>2005-02-19T14:54:08+00:00</dc:date>
+</item>
+<item rdf:about="http://www.figuiere.net/hub/blog/?2005/02/19/97-new-canon-gear">
+	<title>Hubert Figuiere: New Canon gear</title>
+	<link>http://www.figuiere.net/hub/blog/?2005/02/19/97-new-canon-gear</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/hub.png" align="right" alt=""&gt;&lt;p&gt;New Canon gear announced this week:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;EF-S 60mm f2.8 Macro USM. &lt;a href=&quot;http://www.dpreview.com/news/0502/05021703canon_efs60mmmacro.asp&quot;&gt;Announcement&lt;/a&gt;. The EF-S part upsets me because I don't really see the interests, but since it is compatible with extension tubes, it &lt;strong&gt;may&lt;/strong&gt; be able to be used on a film body with those extensions. Needs to be tried.&lt;/li&gt;
+&lt;li&gt;Digital Rebel XT / EOS 350D. &lt;a href=&quot;http://www.dpreview.com/news/0502/05021704canon_eos350d.asp&quot;&gt;Announcement&lt;/a&gt;, &lt;a href=&quot;http://www.dpreview.com/news/0502/05021713canoneos350dpreview.asp&quot;&gt;Preview&lt;/a&gt; at dpreview.&lt;/li&gt;
+&lt;li&gt;EOS 20Da, to be used for IR photography. &lt;a href=&quot;http://www.dpreview.com/news/0502/05021405canoneos20da.asp&quot;&gt;Announcement&lt;/a&gt; at dpreview. Apparently Japan only.&lt;/li&gt;
+&lt;/ul&gt;</content:encoded>
+	<dc:date>2005-02-19T14:20:57+00:00</dc:date>
+</item>
+<item rdf:about="http://verbum.org/blog/random/news-graphic-art">
+	<title>Colin Walters: News Graphic Art</title>
+	<link>http://verbum.org/blog/random/news-graphic-art</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/walters.png" align="right" alt=""&gt;&lt;p&gt;
+It's pictures like this which make me wish sometimes I could
+be a graphic artist for a news organization.
+&lt;/p&gt;  
+&lt;p&gt;&lt;img src=&quot;http://common.ziffdavisinternet.com/util_get_image/9/0,1311,i=98820,00.jpg&quot; alt=&quot;penguin drinking wine&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;(The article this image attempts to graphically describe is &lt;a href=&quot;http://www.eweek.com/article2/0,1759,1766843,00.asp&quot;&gt;here&lt;/a&gt;, for the curious.)</content:encoded>
+	<dc:date>2005-02-19T14:13:00+00:00</dc:date>
+</item>
+<item rdf:about="http://primates.ximian.com/~miguel/archive/2005/Feb-19.html">
+	<title>Miguel de Icaza: 19 Feb 2005</title>
+	<link>http://primates.ximian.com/~miguel/archive/2005/Feb-19.html</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/miguel.png" align="right" alt=""&gt;&lt;h3&gt;Weekend&lt;/h3&gt;
+
+	&lt;p&gt;&lt;img src=&quot;http://www.go-mono.com/archive/1.0/mono1.gif&quot; align=&quot;left&quot; /&gt;We finally released Mono 1.1.4 and Mono 1.0.6.
+	With this release we are recommending users to switch to the
+	1.1.x branch, as our automated testing and regression suites
+	are much better than they ever were on 1.0.6.
+
+	&lt;p&gt;The runtime is faster, smaller, leaner and we have fixed
+	many bugs and architectural problems that were hard to
+	backport to 1.0.6.
+
+	&lt;p&gt;Programmers that have only been using Mono, and have not
+	tested their code on .NET should keep an eye open for a few
+	problems that might be exposed with the stricter 1.1.4
+	runtime:
+
+	&lt;ul&gt;
+		&lt;li&gt;C# compiler is stricter when it comes to namespace
+		and typename resolution.  Tomboy is known to not build
+		with it.
+
+		&lt;li&gt;Marshalling: A few incorrect uses of marshalling
+		are now reported (Pointers can not reference marshaled
+		structures, you must use byref in your P/Invokes, this
+		affected F-Spot, but only marginally, F-Spot fallsback
+		into a slower operation mode).
+
+		&lt;li&gt;If you create delegates and pass those to
+		unmanaged code as way to callback into managed land,
+		you must keep a reference to the delegate, or the
+		delegate will be garbage collected.  This affected
+		some old Gtk# applications.  You will receive a
+		warning message with the details to fix this problem. 
+	&lt;/ul&gt;
+
+	&lt;p&gt;The full release notes are available &lt;a href=&quot;http://www.go-mono.com/archive/1.1.4/&quot;&gt;here&lt;/a&gt;
+
+	&lt;p&gt;The performance difference is very visible on web-based
+	applications.  Our &lt;a href=&quot;http://www.go-mono.com/docs&quot;&gt;documentation&lt;/a&gt; system
+	for example is now instantaneous.
+
+&lt;h3&gt;DB4Objects&lt;/h3&gt;
+
+	&lt;p&gt;We have also started &lt;a href=&quot;http://www.mono-project.com/contributing/db4o.html&quot;&gt;distributing&lt;/a&gt;
+	&lt;a href=&quot;http://www.db4o.com/&quot;&gt;DB4Objects&lt;/a&gt; from Mono's web
+	site.  For those of you that are missing ObjectSpaces, you
+	might find db4o not only interesting, but faster than what
+	ObjectSpaces could have been. 
+	
+&lt;h3&gt;New Tool&lt;/h3&gt;
+
+	&lt;p&gt;We have included &lt;a href=&quot;http://www.mfconsulting.com/blog/&quot;&gt;Paco's&lt;/a&gt; prj2make
+	on the latest release of Mono.  prj2make is a tool that
+	produces Makefiles from Visual Studio or MonoDevelop
+	solutions.  Specially convenient if you download some random
+	code from the network.
+	
+&lt;h3&gt;SHA-1 and SHA-224&lt;/h3&gt;
+
+	&lt;p&gt;This is the first release that ships with the security
+	sandbox infrastructure, Sebastien has the full &lt;a href=&quot;http://pages.infinit.net/ctech/20050218-0425.html&quot;&gt;story&lt;/a&gt;.
+
+	&lt;p&gt;Last week SHA1 was broken.  Because of this Sebastien is
+	trying to get users to vote for incorporating SHA-224 into the
+	Framework, see the details &lt;a href=&quot;http://pages.infinit.net/ctech/20050216-1213.html&quot;&gt;here&lt;/a&gt;.
+	Mono users can use the Mono.Security stack that ships with
+	this and more.
+
+&lt;h3&gt;Installers for Mono&lt;/h3&gt;
+
+	&lt;p&gt;&lt;b&gt;Installers:&lt;/b&gt; The folks at &lt;a href=&quot;http://www.RawByte.com&quot;&gt;RawByte.com&lt;/a&gt; have been kind
+	enough to package Mono with an &lt;a href=&quot;http://www.mono-project.com/downloads&quot;&gt;installer&lt;/a&gt; that
+	will work on all Linux systems.  Many users love this,
+	specially those without Red Carpet or Yum, as they only have
+	to download a single binary and they get the whole system
+	setup: Mono, all the class libraries, Gtk# and XSP.  Like our
+	Windows installer.
+
+	&lt;p&gt;There are two downsides to using the installer: for those
+	using distributions with package management, the installer
+	wont register Mono on the system, which means that third-party
+	components that depend on Mono will still want RPM packages
+	installed (or people have resorted to use the --force
+	parameter for RPM).   The second downside is that this ships a
+	Mono configured for the smallest common denominator, so speed
+	will suffer as Mono does not use the __thread-based local
+	storage and has to go through a slower (but backwards
+	compatible) system.
+
+&lt;h3&gt;Hula&lt;/h3&gt;
+
+	&lt;p&gt;&lt;a href=&quot;http://hula-project.org&quot;&gt;Hula's&lt;/a&gt; launch has
+	been very successful.  The Hula Channel is very active: people
+	contributing patches, ports and various folks interested in
+	the dynamic web interface are hanging out there.  There is
+	plenty of energy there.
+
+	&lt;p&gt;We are planning on following Hula's plan to use MediaWiki
+	as the main page for the site, because updating the Mono web
+	site has always been a bit annoying.
+
+	&lt;p&gt;Also, many people read Jamie's posting on Hula and
+	miss-understood that Jamie was actually praising Nat's final
+	direction on Hula, so there are plenty of comments along the
+	lines of `Jamie slams Hula' and `They are clueless, we are
+	not'.
+
+	&lt;p&gt;Being very interested in politics, I see this phenomenon as
+	an interesting window into the human soul: if these very smart
+	technical people have problems understanding a post like that,
+	what does that say for people trying to discuss and debate the
+	finer points of public policy?
+
+	&lt;p&gt;</content:encoded>
+	<dc:date>2005-02-19T13:55:00+00:00</dc:date>
+</item>
+<item rdf:about="http://www.gnome.org/~michael/activity.html#2005-02-19">
+	<title>Michael Meeks: 2005-02-19: Saturday</title>
+	<link>http://www.gnome.org/~michael/activity.html#2005-02-19</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/michael.png" align="right" alt=""&gt;&lt;ul&gt;
+	&lt;li&gt;Interesting phone-call in the morning. Lovely
+patch for libbonobo on Win32 from Tor - apparently all the
+tests now pass.
+	&lt;/li&gt;&lt;li&gt;Out to S&amp;S; for breakfast with Miguel &amp;
+Nat, on to bowling nearby, good to see all the guys, and
+Jacob again. Off to catch the plane - the very last person
+to check in, a dash to the plane, offered money to get
+off etc. Slept a little on the plane, lost a lot of a night
+somewhere here.
+&lt;/li&gt;&lt;/ul&gt;</content:encoded>
+	<dc:date>2005-02-19T12:00:00+00:00</dc:date>
+</item>
+<item rdf:about="http://off.net/~tberman/diary/archives/003159.html">
+	<title>Todd Berman: Work. Life. Insanity.</title>
+	<link>http://off.net/~tberman/diary/archives/003159.html</link>
+	<content:encoded>&lt;p&gt;Spent the last couple days at work playing with our gtk# application on win32. This has been an interesting experience because not only do we use your standard gtk# stuff, we also use NPlot and Gecko. Thanks to &lt;a href=&quot;http://www.mfconsulting.com/blog/&quot;&gt;Paco's&lt;/a&gt; recent installers, the gecko stuff works flawlessly, and the NPlot stuff is finally starting to work. (I know NPlot works as a SWF control, but it is not as trivial to make it render into a gtk# widget on win32). Happily, a lot of progress was made. Normally I would blog a sshot, but I am not sure if I am allowed to, so instead, you get the greatest dog picture ever. better than toshok's 'cute' puppy pictures. Yes, that is her tounge. No, I don't have a clue what she was doing.&lt;/p&gt;
+
+&lt;center&gt;&lt;img alt=&quot;IMG_0528.JPG&quot; src=&quot;http://off.net/~tberman/diary/archives/IMG_0528.JPG&quot; width=&quot;640&quot; height=&quot;427&quot; border=&quot;0&quot; /&gt;
+&lt;/center&gt;
+
+&lt;p&gt;In a somewhat work related venue, I have been hacking on stetic a bit, mostly on random &lt;a href=&quot;http://dev.medsphere.com/~tberman/stetic.png&quot;&gt;gui&lt;/a&gt; related bits, and on glade importing. Dan Winship has done a wonderful job with stetic so far, and I think in the future it will become a very useful tool for development.&lt;/p&gt;
+
+&lt;p&gt;It seems recently that all I do is work, and then sleep. I try to factor in a little bit of time for eating, but even that has had to slide a bit recently. Given our new (refreshingly insane) product goal, I don't see this changing anytime soon. Hopefully soon I will find some time to do the things I enjoy in life, but I'll be damned if I can even remember what they are. I think my current life goal is to quit programming by 27 and start a bar, or pass the bar, or maybe just sleep for 6 hours straight. One of the 3 has to be attainable. Maybe all 3. Only time will really tell, but I know between now and August 15th, the only thing I can think about other than work, is work. Yay for being a mindless drone. Cog in the machine. &amp;lt;insert random bit of bs 'independant thinking' here&amp;gt;.&lt;/p&gt;</content:encoded>
+	<dc:date>2005-02-19T09:51:49+00:00</dc:date>
+</item>
+<item rdf:about="http://log.ometer.com/2005-02.html#19">
+	<title>Havoc Pennington: Simplifying</title>
+	<link>http://log.ometer.com/2005-02.html#19</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/hp.png" align="right" alt=""&gt;&lt;p&gt;
+Two simpler approaches to the theme thing:
+
+&lt;/p&gt;
+
+&lt;ul&gt;
+
+&lt;li&gt;Like OS X, just scrap the idea of themes and hardcode an
+application-specific design into each app.&lt;/li&gt;
+
+&lt;li&gt;Limit the problem to layout. So have a layout widget that looks up
+the layout of an entire window from resource files, and allow themes 
+to intercept the lookup to modify the layout.
+&lt;/li&gt;
+
+&lt;/ul&gt;</content:encoded>
+	<dc:date>2005-02-19T05:41:25+00:00</dc:date>
+</item>
+<item rdf:about="http://log.ometer.com/2005-02.html#18">
+	<title>Havoc Pennington: Conferences Finally Over</title>
+	<link>http://log.ometer.com/2005-02.html#18</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/hp.png" align="right" alt=""&gt;&lt;p&gt;
+
+What an exhausting week; &lt;a href=&quot;http://freedesktop.org/wiki/Software_2fXDevConf&quot;&gt;XDevConf&lt;/a&gt;
+last weekend, LWE, then &lt;a href=&quot;http://fedoraproject.org/fudcon/&quot;&gt;FUDCon&lt;/a&gt;. Really enjoyed
+FUDCon today, I thought it went really well. Big thanks to the
+organizers. We also had a very productive meeting yesterday with some
+of the major external contributors and some Red Hat people; decisions
+were reached and action items assigned on a variety of issues.
+
+&lt;/p&gt;
+
+&lt;p&gt;
+
+Since I suck at displays of enthusiasm &lt;a href=&quot;http://www.gnome.org/~seth/&quot;&gt;Seth&lt;/a&gt; is picking up the slack
+explaining some of the Red Hat team's work. We also presented some of
+this stuff at XDevConf and FUDCon this week.
+
+&lt;/p&gt;
+
+&lt;p&gt;
+
+I think some people didn't catch on to how Sabayon works and what it
+does; this thing is not a control panel. It's a sort of live
+summarizer of changes you've made to a prototype user account, and
+lets you choose the changes to be included in a user profile. The idea
+is to take care of any needed hacks as well, for example stripping out
+user home directories hardcoded in settings. As far as we can tell
+this automates what most admins already do by hand today.  Any cruise
+through list archives reveals that admins have a lot of trouble
+figuring out which files to extract and what to do with them after
+they set up a prototype user the way they want. Even the strongest
+mind can be crushed by the GConf and OpenOffice.org tag team.
+
+&lt;/p&gt;
+
+&lt;p&gt;
+
+Colin has been doing a ton of work to create GObject bindings for
+D-BUS; looking nice so far, see the &lt;a href=&quot;http://lists.freedesktop.org/archives/dbus/2005-February/thread.html&quot;&gt;list
+archives&lt;/a&gt;.
+
+&lt;/p&gt;
+
+&lt;p&gt;
+
+I want to elaborate a bit on one aspect of &quot;next generation rendering&quot;
+that we haven't really worked on yet. Everyone is working on the
+ability to do OS X or Enlightenment style effects; essentially,
+enabling the window manager to use OpenGL and enabling the toolkit to
+use Cairo. This gives us drop shadows and minimize animations, and
+kills off a bunch of flicker/tearing artifacts. Very good stuff.
+
+&lt;/p&gt;
+
+&lt;p&gt;
+
+However, it doesn't address one huge limitation: themes can only be
+designed piecemeal (button, scrollbar, etc.). Graphical elements can't
+span multiple widgets. An especially hard case to solve is that
+graphical elements can't cover both the window manager frame and
+inside the application window.
+
+&lt;/p&gt;
+
+&lt;p&gt;
+
+To make the desktop look really nice, you want the ability to theme a
+window (or sub-component thereof) as a whole. This could mean graphics
+that span multiple widgets, it could mean moving widgets around, it
+could mean changing the spacing between widgets, etc.
+
+&lt;/p&gt;
+
+&lt;p&gt;
+
+To address this, I believe we'd need to rework GTK+ a fair bit. I have
+a bunch of vague thoughts on how to do so.
+
+&lt;/p&gt;
+
+&lt;p&gt;
+
+&lt;b&gt;First&lt;/b&gt;, if you look at most widget implementations they
+effectively hardcode their layout and graphics in two places: the
+expose handler (painting the widget) and the
+events-that-have-coordinates (button/motion) handlers. So to allow
+more free-form theming of single widgets, an approach would be to have
+a set of GnomeCanvas-style primitives (lines, rectangles, etc.) and
+assemble widgets from those. Rather than hit-testing in the widget
+code, event handlers would be connected to &quot;the rectangle&quot; or &quot;the
+line&quot; and the theme could move around said rectangle or line.
+
+&lt;/p&gt;
+
+&lt;p&gt;
+
+&lt;b&gt;Second&lt;/b&gt;, you need to derive these drawing primitives and their
+layout from the theme rather than hardcoding them. The obvious
+approach here is something like libglade (resource files), where the
+theme provides or modifies the resources.
+
+&lt;/p&gt;
+
+&lt;p&gt;
+
+There are some special &quot;drawing primitives&quot; we could support to handle
+some back compat cases. One primitive could be a &quot;custom-rendered
+area&quot; and would be the equivalent of an X window (or in web terms, an
+image map). A compositing manager treats an app window as this kind of
+primitive. GtkWidget could be wrapped in this kind of primitive.
+
+&lt;/p&gt;
+
+&lt;p&gt;
+
+Another special primitive would be the equivalent of an input-only X
+window: an invisible event receiver. So e.g. a button could have one
+of these and the button code would refer to it. The theme would set
+the location and size of this thing. The point is to allow receiving
+events without hardcoding any visible graphics primitives. Alternative
+or additional approach: something like GnomeCanvasGroup. So the button
+itself would be a group object, and could say &quot;a click anywhere on
+this group counts as a button press&quot; (equivalent to saying &quot;clicking
+any object the theme provides&quot;)
+
+&lt;/p&gt;
+
+&lt;p&gt;
+
+&lt;b&gt;Third&lt;/b&gt;, something I've often thought is that the need for a
+&quot;canvas widget&quot; comes from having a limited widget system in the first
+place. &quot;Canvas items&quot; are just widgets that are lightweight, don't
+have to be rectangular, have Z-order controls, etc. So if we say that
+we want to build widgets from drawing primitives, a logical extension
+is that widgets and drawing primitives are the same thing; and we can
+build widgets from other widgets in the same way we build them from
+drawing primitives. &quot;Composite widgets&quot; are a sort of wacky
+special-case in GTK+ today but &lt;i&gt;all&lt;/i&gt; widgets become composite if
+you count lines and other primitives as widgets.
+
+&lt;/p&gt;
+
+&lt;p&gt;
+
+Thus there's a pretty straightforward way to introduce a more powerful
+widget system into GTK+: a canvas widget. Think of the canvas widget
+specifically as a new widget system. Support placing an old-style
+GtkWidget on a canvas by treating it as a raster image. Make
+CanvasItem an interface, and a single GtkWidget could even implement
+both the old GtkWidget stuff and support the new features of an
+improved widget system. An unmodified GtkButton looks to the new
+canvas like an X Window, but when support for the new interfaces gets
+added to GtkButton the new canvas can see the lines and other
+sub-components inside the button and those things can be themed, etc.
+
+&lt;/p&gt;
+
+&lt;p&gt;
+
+&lt;b&gt;Fourth&lt;/b&gt;, Seth suggested an interesting idea which is to make
+resource files primary. In other words, to create a widget you first
+make a resource file (think of it as an HTML page) and then you
+specify some code to go with the resource file (think of JavaScript,
+though the idea is that you could also specify some C code). The
+widget &quot;is&quot; the collection of sub-widgets (remember that now lines and
+so forth are widgets also) specified by the resource file.
+
+&lt;/p&gt;
+
+&lt;p&gt;
+
+In the resource file, some sub-widgets would be essential or
+mandatory, and others would really be a &quot;default theme.&quot; For a button
+widget, it might be required that the resource file have an
+&quot;input-only window&quot; widget and a &quot;text string&quot; widget. The code for
+the button would refer to those to get events and display the button
+text, respectively. However, everything else in the resource file
+might be purely cosmetic (not used by the code). So for example there
+might be a beveled rectangle widget and themes could remove it or
+change its properties.
+
+&lt;/p&gt;
+
+&lt;p&gt;
+
+You see where this is going: the theme is just an alternate resource
+file, or a resource file transformation. There are some tough
+complexities, because you want to bind the graphics in the theme to
+certain widget states or events. You can imagine doing this with
+full-blown scripting, but it may be possible to do it with some
+relatively simple approach. For example in the metacity theme file you
+have to specify the resources and their properties for each possible
+state. Another option would be some kind of extremely limited
+&quot;scripting&quot;, maybe only allow relating attributes to each other like this:
+&lt;pre&gt;
+ when button.STATE = PRESSED, bevel.STYLE = IN
+&lt;/pre&gt;
+If you had attributes for the major widget states, widget visibility,
+etc. you could do a lot there. Add simple math as in metacity themes
+and you could do even more. So e.g.:
+&lt;pre&gt;
+ line.X1 = button.X1 + 2
+&lt;/pre&gt;
+These simple constructs may well be good enough to do all kinds of 
+great themes.
+&lt;/p&gt;
+
+&lt;p&gt;
+
+The important thing here is that entire application windows are
+themselves just widgets, and the layout of a window is just the
+default &quot;theme&quot; for that window. So say you have a control panel, you
+could recurse down into it:
+
+&lt;pre&gt; ControlPanel -&amp;gt; Frame -&amp;gt; Button -&amp;gt; Rectangle -&amp;gt; Line
+&lt;/pre&gt;
+
+A GUI builder is a widget editor, which can edit everything from the
+lines inside a GtkButton, to the entire toplevel window. To do a new
+theme, graphic designers would just load up the original resource file
+in the GUI builder and start changing around the &quot;inessential&quot; aspects
+of the widget tree while leaving the &quot;mandatory&quot; widgets/attributes
+unmodified.
+
+&lt;/p&gt;
+
+&lt;p&gt;
+
+Some of the more complex widgets essentially have to be primitives
+(&quot;atoms&quot;) rather than composed. We know from long experience that a
+tree widget can't be defined as a bunch of tree item subwidgets and
+still perform adequately. However, some of the visuals (such as column
+headers) are GtkWidgets today and could be composed widgets in this
+new system.
+
+&lt;/p&gt;
+
+&lt;p&gt;
+
+&lt;b&gt;Fifth&lt;/b&gt;, and this is maybe true whether or not we do all this
+blue-sky stuff, the GTK+ layout system is showing its age. It's pretty
+unpleasant to use with Glade as it is, but if you start to think about
+changing the layout of a window in a theme for that window, it seems
+pretty clear that we can do better. In a next-generation widget
+system, the layout would almost always be in the &quot;inessential&quot;
+properties of a widget, rather than the &quot;essential&quot;
+properties. i.e. we would not expect the layout to be referenced from
+inside the code.
+
+&lt;/p&gt;
+
+&lt;p&gt;
+
+&lt;b&gt;Summarizing so far&lt;/b&gt;: the idea here is to define a widget as a
+primitive widget (such as a line or input-only region) or a recursive
+group of sub-widgets. To create a new app window, you just design a
+new widget in the GUI builder. The resulting widget tree has
+&quot;essential&quot; nodes and &quot;inessential&quot; nodes, where &quot;inessential&quot; nodes
+can be replaced by alternate &quot;inessential&quot; nodes. The inessential
+nodes are the &quot;theme.&quot;
+
+&lt;/p&gt;
+
+&lt;p&gt;
+
+Themes are suddenly able to do far more than they do today: 1) they
+can rearrange the internals of a button, because the basic layout
+isn't hardcoded in the expose or coordinate event handlers 2) they can
+rearrange buttons with respect to one another, because the widget
+containing the buttons is just another widget which is themeable as a
+whole. A control panel widget is to button widgets as button widgets
+are to line and rectangle widgets. And of course themes can insert new
+widgets (of the drawing primitive variety) anywhere in the widget
+tree.
+
+&lt;/p&gt;
+
+&lt;p&gt;
+
+(I freely admit to handwaving a bunch of details here.)
+
+&lt;/p&gt;
+
+&lt;p&gt;
+
+&lt;b&gt;Sixth&lt;/b&gt;, we still have the problem that we can't have graphical
+elements that span the window manager frame and the client contents.
+A hugely hard solution is to somehow have a global widget tree (the
+widget tree for each app is visible to the compositing manager as a
+subtree of the WM frame). I think some simpler hack would turn out to
+be better, though in a resource-file-based widget system pushing the
+widgets to the display server could be fundamentally saner than it
+would be today. I'm not sure it would be saner, but it seems plausible
+that you could do some clever things.
+
+&lt;/p&gt;
+
+&lt;p&gt;
+
+To make this seem less far-fetched, imagine that most widgets still
+had an X window associated with them; now imagine that some hints were
+set on those X windows about the kind of widget and how to render it;
+the compositing manager could then be aware of the entire global
+widget tree, and render graphical elements mixed in with the widgets
+inside an app. 
+
+&lt;/p&gt;
+
+&lt;p&gt;
+
+Anyway, that's what I've been thinking on this topic. To me this would
+be a really interesting line of thought to prototype in the context of
+a canvas widget. By doing a new widget system inside a canvas widget,
+you could let GTK+ provide all the basics and just worry about the new
+ideas. You could also allow apps to try out the new stuff in limited
+contexts without porting to a wacky new widget system.
+
+&lt;/p&gt;
+
+&lt;p&gt;
+
+I know people will send me mail about HTML, XUL, and Longhorn and how
+they already do much of this - to answer the question, I don't
+disagree. There are several analogies I've had in my head here,
+including HTML/CSS/DOM; scene graphs (and 2D &quot;scene graphs&quot;); and
+GnomeCanvas.
+
+&lt;/p&gt;
+
+&lt;p&gt;
+
+I tried sketching out what the &quot;resource file&quot; and code would contain
+for GtkButton and GtkEntry; it gets complicated fast and there are
+unquestionably some issues to think about.  In the worst case these
+basic widgets would have to be relatively hardcoded: they could have
+numerous &quot;essential&quot; aspects and assumptions about the visual details
+in the code portion of the widgets. However, even if these basic
+widgets are largely hardcoded, their complexities look specific to
+basic widgets.  Higher-level widgets such as entire application
+windows are a lot easier in some ways (especially if we avoid the
+container-widgets approach to layout).
+
+&lt;/p&gt;</content:encoded>
+	<dc:date>2005-02-19T04:59:00+00:00</dc:date>
+</item>
+<item rdf:about="http://tieguy.org/blog/index.cgi/315">
+	<title>Luis Villa: Fri, 18 Feb 2005</title>
+	<link>http://tieguy.org/blog/index.cgi/315</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/luis.png" align="right" alt=""&gt;&lt;p&gt;I am uploading another liveCD build; details &lt;a href=&quot;http://mail.gnome.org/archives/marketing-list/2005-February/msg00135.html&quot;&gt;here.&lt;/a&gt; Also, I leave for Miami in the morning, so if the upload gets screwed up... well, such is life, someone else can I'm sure rebuild it from the previous release ;)&lt;/p&gt;&lt;p&gt;
+FWIW, the LWE LiveCD was a success- we cleared in total a little over $200 over the production costs. That money will go towards seeding the next batch. Yay us, and thanks to all the guys at the booth who patiently repeated 'we're asking for a small donation...'&lt;/p&gt;&lt;p&gt;
+Still lots of open issues in the &lt;a href=&quot;http://live.gnome.org/GnomeLiveCd_2fToDo&quot;&gt;ToDo&lt;/a&gt; if people are interested in helping out. Right at the moment, I'm particularly curious as to whether or not anyone is seriously using the hoary 1.9 OOo builds and whether or not we should ship some subset of that instead of the monolithic and slower 1.1 builds. If someone wants to investigate using sabayon to ease configuration, that would rule too- currently I have a script that is poking a bunch of gconf keys. Massive suckage there :)&lt;/p&gt;&lt;p&gt;
+On non-liveCD matters, I'm beginning to get seriously worried about the length and seriousness of the &lt;a href=&quot;http://mail.gnome.org/archives/desktop-devel-list/2005-February/msg00356.html&quot;&gt;showstoppers list.&lt;/a&gt; I know some of these have been in for a while, but I would not have wanted to release 2.8.0 with them either. If you don't want to have a serious d-d-l/g-h discussion about potentially slipping the release when I get back from Miami, go fix some of these bugs :)&lt;/p&gt;</content:encoded>
+	<dc:date>2005-02-19T04:15:53+00:00</dc:date>
+</item>
+<item rdf:about="http://nat.org/2005/february/#17-February-2005">
+	<title>Nat Friedman: 17 February 2005</title>
+	<link>http://nat.org/2005/february/#17-February-2005</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/nat.png" align="right" alt=""&gt;&lt;a name=&quot;17-February-2005&quot;&gt;&lt;/a&gt; &lt;b&gt;&lt;u&gt;&lt;/u&gt;&lt;/b&gt;&amp;nbsp;&lt;a href=&quot;http://nat.org/2005/february/#17-February-2005&quot;&gt;#&lt;/a&gt; &lt;blockquote&gt; &quot;Writing an open source dating system is like opening a vegetarian steakhouse&quot; &lt;br /&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;mdash; &lt;a href=&quot;http://off.net/~shaver/diary&quot;&gt;Mike Shaver&lt;/a&gt; &lt;/blockquote&gt;&lt;p&gt;</content:encoded>
+	<dc:date>2005-02-18T23:50:05+00:00</dc:date>
+</item>
+<item rdf:about="http://people.imendio.com/richard/archives/2005/02/long_live_plann.html">
+	<title>Richard Hult: Long live Planner!</title>
+	<link>http://people.imendio.com/richard/archives/2005/02/long_live_plann.html</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/rhult.png" align="right" alt=""&gt;&lt;p&gt;Just when I thought I'd never hack on Planner again, I somehow got into fixing some small bug that I noticed when looking at a patch. Then I suddenly had done more Planner hacking in one day than over the last year I think ;) The weirdest part is that I enjoyed it, even though just last month I said that I never wanted to touch it again :)&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Gazpacho&lt;/b&gt;&lt;br /&gt;
+I just updated Gazpacho from svn and noticed that Lorenzo et al had been hacking a lot since I last tried it. It's really progressing nicely, I can't wait to be able to use it!&lt;/p&gt;</content:encoded>
+	<dc:date>2005-02-18T23:34:32+00:00</dc:date>
+</item>
+<item rdf:about="http://thomas.apestaart.org/log/index.php?p=274">
+	<title>Thomas Vander Stichele: Computer trouble</title>
+	<link>http://thomas.apestaart.org/log/index.php?p=274</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/thomasvs.png" align="right" alt=""&gt;&lt;p&gt;So, a while back I mentioned how I have this computer put together with some new and some old parts that I was having problems with.  The motherboard got replaced twice and still the damned thing wouldn&amp;#8217;t boot anymore after a few days.&lt;/p&gt;
+	&lt;p&gt;Since then, I had taken my machine to work to experiment with swapping out pieces with other hardware - processor, memory, video card, &amp;#8230; Nothing made my machine do anything other than turn on the motherboard LED and spin up the CPU fan.  No video on the card whatsoever.&lt;/p&gt;
+	&lt;p&gt;So, time to go back one last time to the store that charged me 30 euro for looking at it and trying to brush me off by saying &amp;#8220;cables were not connected properly&quot;.  Well duh - I tried it with everything disconnected since the hard disk and other stuff is of no concern - just the cables from the power supply to the motherboard.&lt;/p&gt;
+	&lt;p&gt;So anyway - I take a cab from work to the store to arrive about half an hour before the store&amp;#8217;s closing time, only to find the store chooses to close earlier and doesn&amp;#8217;t allow me to bring in the computer.  If I wasn&amp;#8217;t a big boy I&amp;#8217;d have started crying there and then.&lt;/p&gt;
+	&lt;p&gt;Instead, I bought a new stronger power supply from another store next to it - figuring it was the only thing I hadn&amp;#8217;t really tried a good replacement for and went home.  Put in the new power supply, still no sign of life.&lt;/p&gt;
+	&lt;p&gt;So then in desperation (I mean, what can you do if&amp;#8217; you&amp;#8217;ve swapped every piece of hardware in your machine for another one by one ?), I read through the motherboard manual and came across the section for BIOS reset where it explains how to remove the battery and also short-circuit two pins for ten seconds.  For some reason I decided to give that a go, and what do you know - after doing that the machine booted just fine.&lt;/p&gt;
+	&lt;p&gt;I have no explanation for this.  The motherboard was bought new after the last failure, and had worked for about three reboots, and then stopped with similar behaviour as the previous one.  But it leads me to believe that while I&amp;#8217;d like to think about computers as logical mechanical things you can reason about it, in reality there&amp;#8217;s always a case to be made for &amp;#8220;when all else fails, experiment&quot;.
+&lt;/p&gt;</content:encoded>
+	<dc:date>2005-02-18T23:34:25+00:00</dc:date>
+</item>
+<item rdf:about="http://www.advogato.org/person/DV/diary.html?start=184">
+	<title>Daniel Veillard: 18 Feb 2005</title>
+	<link>http://www.advogato.org/person/DV/diary.html?start=184</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/dv.png" align="right" alt=""&gt;&lt;p&gt;&lt;b&gt;Software Patents&lt;/b&gt;
+&lt;p&gt; Anybody able to read french should read the on-line
+&lt;a href=&quot;http://www.lemonde.fr/web/article/0,1-0@2-3244,36-398497,0.html&quot;&gt;article from Le Monde&lt;/a&gt; where Michel Rocard (ex french 
+Prime Minister, socialist) explains how much battle and
+pressure occured under the hood at the the European
+commision on software patents. To borrow a short translation found from a commentator on /.:
+&lt;p&gt;&lt;i&gt;We never could have talked a common language with the companies representatives we met - in particular those from Microsoft. Speaking about free ideas circulation, free access to knowledge, was like speaking chinese to them. In their way of thinking, everything that is not usable for immediate profit cease to be a growth vector. They don't seem to be able to understand that an invention which is a pure spirit creation can't be pattented. It's simply terrifying. Many of us, at the Parliament, agree to say that they never have know such a pressure and such a verbal violence during their parliamentary work. It is a huge case.&lt;/i&gt;
+&lt;p&gt; Other translations from me that time:
+&lt;p&gt;&lt;i&gt;The Parliament vote, the 24th of September 2003, adopted by 361 vote for, 157 against and 28 abstain of 
+amendments [restricting the field of software patentability]. This caused the furor of the commission and led to a storm of mails coming from 15 large groups led by Microsoft.&lt;/i&gt;
+&lt;p&gt;&lt;i&gt;We learned that to draft the first project, the 
+Commission used the work of external experts because this was a new topic to them. But many of those external experts
+were coming from Microssoft and other software companies. &lt;/i&gt;
+&lt;p&gt; What IMHO make this big, is that it's such a failure
+and there is so much griefs that someone with a very high
+position like Rocard ends up exposing the case himself, 
+publicly and to the main newspaper in France !
+&lt;p&gt;&lt;b&gt;Code&lt;/b&gt;
+&lt;p&gt; I didn't blogged for 2 months, but I did some code anyway, I just released version 0.0.24 of gamin which should 
+fix the damn Desktop update problem people on Fedora Core 3
+have been complaining about. I also worked on libxml2
+for example working on XPath streaming subset but this is
+not finished, it's in part used by Kasiemir to finish
+the implementation of XML Schemas constraints.
+&lt;p&gt;&lt;b&gt;Sabayon&lt;/b&gt;
+&lt;p&gt; Okay I also worked on sabayon, mostly by giving its name 
+in a 2mn IRC challenge with Mark, implementing python 
+bindings for gamin, and working on the RPM packages. You
+can visit us on #sabayon on gnome IRC if needed, but best
+is to use the &lt;a href=&quot;http://people.redhat.com/markmc/sabayon/&quot;&gt;RPM packages&lt;/a&gt;, it requires very recent versions of various
+packages. We also lack a mailing-list (asked) and a 
+web site :-).
+&lt;p&gt;&lt;b&gt;Internet Radio&lt;/b&gt;
+&lt;p&gt; I have been pointed to &lt;a href=&quot;http://www.radioparadise.com/&quot;&gt;Radio Paradise&lt;/a&gt;
+Internet radio, and have been listening to it from xmms
+the whole day, truely excellent, I'm tempted to make
+a donation since they re listener supported (no ads !).</content:encoded>
+	<dc:date>2005-02-18T21:13:03+00:00</dc:date>
+</item>
+<item rdf:about="http://pubcrawler.org/2005/02/18/switched-to-wordpress/">
+	<title>Jamin Philip Gray: Switched to WordPress</title>
+	<link>http://pubcrawler.org/2005/02/18/switched-to-wordpress/</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/jamin.png" align="right" alt=""&gt;&lt;p&gt;Well I finally got rid of &lt;a href=&quot;http://movabletype.org&quot;&gt;Movable Type&lt;/a&gt; and made the switch to &lt;a href=&quot;http://wordpress.org&quot;&gt;WordPress&lt;/a&gt;.  I evaluated WordPress 1.4 and wasn&amp;#8217;t terribly impressed but &lt;a href=&quot;http://wordpress.org/development/2005/02/strayhorn/&quot;&gt;WordPress 1.5&lt;/a&gt; is slick.  It only took me about 8 minutes to download, install, and import my MT entries.  There are some broken links and that sort of thing, but overall, it went smoothly.  If you notice any problems, let me know.  &lt;/p&gt;
+	&lt;p&gt;
+I really like the default theme, but I&amp;#8217;m making some minor tweaks to it.  Stay tuned&amp;#8230;
+&lt;/p&gt;
+	&lt;p&gt;
+Unfortunately I had to remove the blogs I was hosting for friends.  &lt;img src=&quot;http://pubcrawler.org/wp-images/smilies/icon_sad.gif&quot; alt=&quot;:(&quot; class=&quot;wp-smiley&quot; /&gt;   I&amp;#8217;m hoping they&amp;#8217;ll move to a hosted blogging service because I always enjoy reading what my friends write.
+&lt;/p&gt;
+	&lt;/p&gt;</content:encoded>
+	<dc:date>2005-02-18T16:58:34+00:00</dc:date>
+</item>
+<item rdf:about="http://www.advogato.org/person/rbultje/diary.html?start=88">
+	<title>Ronald Bultje: 18 Feb 2005</title>
+	<link>http://www.advogato.org/person/rbultje/diary.html?start=88</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/bbb.png" align="right" alt=""&gt;&lt;b&gt;GStreamer Developer Summit&lt;/b&gt;&lt;br /&gt;
+From wednesday on, most GStreamer core developers and following (Andy, Benjamin, Christian, Dave, Julien, me, Thomas, Wim) got together to discuss future development and direction for the 0.9 branch . This will then become the final design for GStreamer 1.0; 1.0 would, in the end, be proposed for inclusion in both KDE and GNOME developer platforms. Big words, time for action.
+&lt;p&gt;
+&lt;i&gt;Problems:&lt;/i&gt;&lt;br /&gt;
+Current GStreamer-0.8 design has various generally agreed-on problems that cannot be fixed easily without breaking ABI/API. Worse, for a long time we did not know how to fix it and did not agree on a common direction towards fixing it.
+&lt;ul&gt;
+&lt;li&gt;thread-safety issues (refcount-, signal-, state-change- related stuff and a lot more)
+&lt;li&gt;clocking/synchronization issues
+&lt;li&gt;state handling on eos/error is wrong
+&lt;li&gt;negotiation protocol issues
+&lt;li&gt;a lot more
+&lt;/ul&gt;
+Wim was leading the discussion to identify and agree on the mistakes in our current 0.8 tree, particularly the ones that we cannot fix in the 0.8 timeframe. This is mostly stuff that we agree on and know how to fix. It´s just something we need on paper for later.
+&lt;p&gt;
+&lt;i&gt;Generally agreed-on solutions:&lt;/i&gt;&lt;br /&gt;
+Here is what came out of this discussion:
+&lt;ul&gt;
+&lt;li&gt;eos/error should not change state. More generally, state and actual processing (&quot;scheduling&quot;) should be separated from each other.
+&lt;li&gt;refcounting should be threadsafe (glib)
+&lt;li&gt;signals should be marshalled to the correct thread, either through a message bus or through cross-thread signal marshalling.
+&lt;li&gt;Clocking should be improved to be implicitely synchronization (which we don´t have right now; *shame*) across streams.
+&lt;/ul&gt;
+Most of thursday was spent on discussing and agreeing on the above. We mostly agree on all this. Friday was spent talking about scheduling of pipelines (&quot;processing of the media&quot;).
+&lt;p&gt;
+&lt;i&gt;Solution #1: -threaded:&lt;/i&gt;&lt;br /&gt;
+-threaded is an experimental branch that aims to add locking in the right places, adds protocols on locking and variable usage and make it all just work. It also adds some nice extra features such as media processing on events (e.g. &quot;preroll&quot;, which means that the media is preloaded while a user executes an action).
+&lt;p&gt;
+&lt;i&gt;Solution #2: -nonblock/async:&lt;/i&gt;&lt;br /&gt;
+-async/noblock is another experimental branch that aims to remove the requirement for threads by using an event-based scheduling model. Elements are only scheduled when all preconditions for a non-blocking execution of their function is met (e.g. a file descriptor, a clock, etc.). Interesting features are seamless mainloop integration, which allows out-of-dataflow pipeline processing (e.g. expose an X window on expose events).
+&lt;p&gt;
+&lt;i&gt;What's next:&lt;/i&gt;&lt;br /&gt;
+The rest of friday was spent on discussing both approaches, fetching problems, setting a short-term path and some more. Wim and Dave believe that the async/noblock approach can be merged in the otherwise nice -threaded approach (which already implements the other stuff that we agreed on).
+&lt;p&gt;
+Next few days, we'll be experimenting with the design and implement all of the above. We will also discuss various directions for gst-plugins that are not directly related to GStreamer core. For the near future, we will work on preparing core to become the 0.9 branch, port the various subsystems from -threaded and -noblock/async over to this 0.9 branch (and have various people understand and review this), write a porting guide, remove deprecated code, write reference plugin implementations, updating documentation and porting plugins. From then on, we hopefully rock.
+&lt;p&gt;
+Time for beer. :).</content:encoded>
+	<dc:date>2005-02-18T16:22:42+00:00</dc:date>
+</item>
+<item rdf:about="http://www.inkstain.net/fleck/archives/001569.html">
+	<title>John Fleck: Hockey Stick for Dummies</title>
+	<link>http://www.inkstain.net/fleck/archives/001569.html</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/jfleck.png" align="right" alt=""&gt;&lt;p&gt;Gavin and Caspar at RealClimate give &lt;a href=&quot;http://www.realclimate.org/index.php?p=121&quot;&gt;the best explanation I've yet read&lt;/a&gt; about how principal components analysis works, and how it is applied in the discussion over &lt;a href=&quot;http://www.realclimate.org/index.php?p=7&quot;&gt;Michael Mann's hockey stick&lt;/a&gt;.&lt;/p&gt;</content:encoded>
+	<dc:date>2005-02-18T16:18:04+00:00</dc:date>
+</item>
+<item rdf:about="http://tieguy.org/blog/index.cgi/314">
+	<title>Luis Villa: Fri, 18 Feb 2005</title>
+	<link>http://tieguy.org/blog/index.cgi/314</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/luis.png" align="right" alt=""&gt;&lt;p&gt;I am sooo wiped today. I was supposed to go to &lt;a href=&quot;http://fedoraproject.org/fudcon/&quot;&gt;fudcon&lt;/a&gt;, and I still might try to make it for the afternoon, but I'm totally wiped from LWE right now, and just laying on my couch and catching up on sleep and email seems really, really appealing. Plus I need to pack for my 7am flight home tomorrow morning :/&lt;/p&gt;&lt;p&gt;
+LWE in general was awesome- lots of happy GNOME users stopped by and said thanks, got to meet some new faces, see some slightly less new faces, and lots of old faces, of course. Will write more at some point after I'm recovered :)&lt;/p&gt;</content:encoded>
+	<dc:date>2005-02-18T15:05:17+00:00</dc:date>
+</item>
+<item rdf:about="http://www.figuiere.net/hub/blog/?2005/02/18/96-f-spot-and-libgphoto2">
+	<title>Hubert Figuiere: F-Spot and libgphoto2</title>
+	<link>http://www.figuiere.net/hub/blog/?2005/02/18/96-f-spot-and-libgphoto2</link>
+	<content:encoded>&lt;img src="http://planet.gnome.org/heads/hub.png" align="right" alt=""&gt;&lt;p&gt;Wow &lt;a href=&quot;http://primates.ximian.com/~lewing/blog/archives/000025.html&quot;&gt;F-Spot 0.0.8&lt;/a&gt; supports using &lt;a href=&quot;http://www.gphoto.org/&quot;&gt;libgphoto2&lt;/a&gt; to import pictures from the camera. Congrats guys !&lt;/p&gt;
+
+
+&lt;p&gt;I'll have to try that.&lt;/p&gt;</content:encoded>
+	<dc:date>2005-02-18T14:24:42+00:00</dc:date>
+</item>
+
+</rdf:RDF>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+  <title>Alex Karasulu&#39;s Weblog</title>
+  <link>http://jroller.com/page/akarasulu</link>
+  <description>Alex Karasulu&#39;s Weblog</description>
+  <language>en-us</language>
+  <copyright>Copyright 
+2005
+</copyright>
+  <lastBuildDate>Tue, 30 Mar 2004 11:39:55 EST</lastBuildDate>
+  <generator>Roller Weblogger UNKNOWN (UNKNOWN:UNKNOWN)</generator>
+      <item>
+    <title>Another victory for svn</title>
+        <description>                             Today I resusitated a file in subversion.  I thought it was cool although its not a big deal.  However what was cool was getting help from the original authors on it.  I think people should rething the support issue for svn its definately growing strong from what I can see.
+         </description>
+    <category>General</category>
+    <link>http://jroller.com/page/akarasulu/20040330#another_victory_for_svn</link>
+    <guid isPermaLink="true">http://jroller.com/page/akarasulu/20040330#another_victory_for_svn</guid>
+        <comments>http://jroller.com/page/akarasulu?anchor=another_victory_for_svn</comments>
+        <pubDate>Tue, 30 Mar 2004 11:39:55 EST</pubDate>
+    <dc:creator>Alex Karasulu</dc:creator>
+  </item>
+    <item>
+    <title>Notification pattern has interesting effect on IoC</title>
+        <description>                             
+&lt;p&gt;
+While looking at the frontend of the Eve server I began to realize a trend emerging after I introduced a central publish and subscribe facility. The pattern decouples components by enabling communication using events and the notifier pattern.  This also lead to the disappearence of methods on service interfaces.
+&lt;/p&gt;
+
+&lt;p&gt;
+So the dependency graph turns into a star with all components depending on the event router, hub, bus or whatever you call it in the center.  Event types and interfaces essentially become the dependency as opposed to the service interfaces.  This way the introduction of new subscribers and publishers.  Also the dynamic rerouting of events are possible at runtime.  What this means is the dependencies between components can change on the fly!  Wow not a bad thang.
+&lt;/p&gt;
+
+&lt;p&gt;
+What does this mean for service interfaces?  Well they start looking bleak because the Subscriber interface replaces them.  Basically methods are called internally by the Subscriber handling code 
+on the component itself rather than exposing them on the service interface for direct calls by what are now publishers.  This is crazy my service interfaces are all empty now!
+&lt;/p&gt;
+
+
+         </description>
+    <category>Java</category>
+    <link>http://jroller.com/page/akarasulu/20040217#notification_pattern_has_interesting_effect</link>
+    <guid isPermaLink="true">http://jroller.com/page/akarasulu/20040217#notification_pattern_has_interesting_effect</guid>
+        <comments>http://jroller.com/page/akarasulu?anchor=notification_pattern_has_interesting_effect</comments>
+        <pubDate>Tue, 17 Feb 2004 23:40:44 EST</pubDate>
+    <dc:creator>Alex Karasulu</dc:creator>
+  </item>
+    <item>
+    <title>Groovy dude is on a roll</title>
+        <description>                             &lt;p&gt;
+You know I just started to get good at groking the Jelly.  Just
+as I start digesting one Strachan production the guy comes out
+with yet another.  &lt;a href=&quot;http://groovy.codehaus.org/&quot;&gt;Groovy
+&lt;/a&gt; really lives upto its name and I can&#39;t wait to get hard core
+with it.  You just can&#39;t beat a language that has a class called 
+GString in it! That&#39;s totally Groovy.
+&lt;/p&gt;
+
+&lt;p&gt;
+It sure would be nice if we could get maven to use Groovy in addition 
+to Jelly.  From the looks of it this might not be all that much of an 
+undertaking.  You could certainly create a Jelly tag to just load a 
+Groovey script.  I bet there&#39;s more ways than one to skin that cat.
+&lt;/p&gt;
+
+&lt;p&gt;
+Was also thinking of a GroovyJndi package.  This would be most 
+excellent when embedding Groovy within Eve as a stored procedure
+scripting language.  Groovy closures make it ideal.  Having the
+GroovyJndi package would make writing SP code that talks to the
+server side JNDI provider a walk in the park.
+&lt;/p&gt;
+
+&lt;p&gt;
+Perhaps if someone does not implement the GroovyJndi package it
+might be a way I can add my $0.02 to it and be Groovy too :-).
+&lt;/p&gt;
+
+         </description>
+    <category>Java</category>
+    <link>http://jroller.com/page/akarasulu/20040212#groovy_dude_is_on_a</link>
+    <guid isPermaLink="true">http://jroller.com/page/akarasulu/20040212#groovy_dude_is_on_a</guid>
+        <comments>http://jroller.com/page/akarasulu?anchor=groovy_dude_is_on_a</comments>
+        <pubDate>Thu, 12 Feb 2004 11:26:28 EST</pubDate>
+    <dc:creator>Alex Karasulu</dc:creator>
+  </item>
+    <item>
+    <title>Eve formerly know as LDAPd has been accepted to Apache Incubator</title>
+        <description>                             &lt;p&gt;
+Eve the LDAP server formerly known as LDAPd has just been accepted last week into the incubator under the Apache Directory top level project.  Eve will be the flagship server for that Apache Directory TLP upon matriculation from the incubator.
+&lt;/p&gt;&lt;p&gt;
+Thanks to all those that made it happen!
+&lt;/p&gt;
+         </description>
+    <category>General</category>
+    <link>http://jroller.com/page/akarasulu/20031030#eve_formerly_know_as_ldapd</link>
+    <guid isPermaLink="true">http://jroller.com/page/akarasulu/20031030#eve_formerly_know_as_ldapd</guid>
+        <comments>http://jroller.com/page/akarasulu?anchor=eve_formerly_know_as_ldapd</comments>
+        <pubDate>Thu, 30 Oct 2003 23:00:53 EST</pubDate>
+    <dc:creator>Alex Karasulu</dc:creator>
+  </item>
+    <item>
+    <title>Got committer status on Avalon</title>
+        <description>                             &lt;p&gt;
+Yesterday I got voted practically unanimously to join the Avalon team as a committer. I was very excited to get the warm welcome from those guys.  I hope to do my best to further the cause there.
+&lt;/p&gt;
+&lt;p&gt;
+I am especially excited to be working on getting Merlin to a generally embeddible state.  That is the subject of my first set of changes.  I&#39;m very excited and happy to see things comming along.
+&lt;/p&gt;
+         </description>
+    <category>General</category>
+    <link>http://jroller.com/page/akarasulu/20031030#got_committer_status_on_avalon</link>
+    <guid isPermaLink="true">http://jroller.com/page/akarasulu/20031030#got_committer_status_on_avalon</guid>
+        <comments>http://jroller.com/page/akarasulu?anchor=got_committer_status_on_avalon</comments>
+        <pubDate>Thu, 30 Oct 2003 20:48:00 EST</pubDate>
+    <dc:creator>Alex Karasulu</dc:creator>
+  </item>
+    <item>
+    <title>LDAPd Project Started Oct 16th 2002</title>
+        <description>                             &lt;p&gt;
+Almost a year ago I founded the LDAPd Group which over the course of the past year has grown into a healthy community to build a pure java LDAPv3 server implementation.  In April 2003 the first alpha release occurred on source forge with other minor releases there after.  More on the server is available &lt;a href=&quot;http://ldapd.sourceforge.net&quot;&gt;here&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;
+LDAPd currently is in the process of joining the Apache Incubator.  Unofficial comments regarding its probable acceptance were made by Nicola Ken Barozzi &lt;a href=&quot;http://nagoya.apache.org/eyebrowse/ReadMsg?listName=general@incubator.apache.org&amp;msgNo=2207&quot;&gt;here&lt;/a&gt; on Sept. 30th and support was given by Ken Coar &lt;a href=&quot;http://nagoya.apache.org/eyebrowse/ReadMsg?listName=general@incubator.apache.org&amp;msgNo=2201&quot;&gt;here&lt;/a&gt;.  Both Ken and Nicola are members of Apache and are heavily involved with the incubator.  The vote to incubate began officially in October and has probably completed by now.  No official announcement of the result has been made as of yet.  I&#39;m hoping for an announcement on LDAPd&#39;s first birthday ;-).
+&lt;/p&gt;
+         </description>
+    <category>General</category>
+    <link>http://jroller.com/page/akarasulu/20031015#ldapd_project_started_oct_16th</link>
+    <guid isPermaLink="true">http://jroller.com/page/akarasulu/20031015#ldapd_project_started_oct_16th</guid>
+        <comments>http://jroller.com/page/akarasulu?anchor=ldapd_project_started_oct_16th</comments>
+        <pubDate>Wed, 15 Oct 2003 09:00:40 EDT</pubDate>
+    <dc:creator>Alex Karasulu</dc:creator>
+  </item>
+  </channel>
+</rss>

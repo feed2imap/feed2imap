@@ -1,0 +1,120 @@
+Title: Alex Karasulu's Weblog
+Link: http://jroller.com/page/akarasulu
+
+--------------------------------
+Title: Another victory for svn
+Link: http://jroller.com/page/akarasulu/20040330#another_victory_for_svn
+Date: Tue Mar 30 18:39:55 CEST 2004
+Creator: Alex Karasulu
+Subject: 
+Category: General
+Content:
+<p>Today I resusitated a file in subversion.  I thought it was cool although its not a big deal.  However what was cool was getting help from the original authors on it.  I think people should rething the support issue for svn its definately growing strong from what I can see.
+         </p>
+--------------------------------
+Title: Notification pattern has interesting effect on IoC
+Link: http://jroller.com/page/akarasulu/20040217#notification_pattern_has_interesting_effect
+Date: Wed Feb 18 05:40:44 CET 2004
+Creator: Alex Karasulu
+Subject: 
+Category: Java
+Content:
+                             
+<p>
+While looking at the frontend of the Eve server I began to realize a trend emerging after I introduced a central publish and subscribe facility. The pattern decouples components by enabling communication using events and the notifier pattern.  This also lead to the disappearence of methods on service interfaces.
+</p>
+
+<p>
+So the dependency graph turns into a star with all components depending on the event router, hub, bus or whatever you call it in the center.  Event types and interfaces essentially become the dependency as opposed to the service interfaces.  This way the introduction of new subscribers and publishers.  Also the dynamic rerouting of events are possible at runtime.  What this means is the dependencies between components can change on the fly!  Wow not a bad thang.
+</p>
+
+<p>
+What does this mean for service interfaces?  Well they start looking bleak because the Subscriber interface replaces them.  Basically methods are called internally by the Subscriber handling code 
+on the component itself rather than exposing them on the service interface for direct calls by what are now publishers.  This is crazy my service interfaces are all empty now!
+</p>
+
+
+         
+--------------------------------
+Title: Groovy dude is on a roll
+Link: http://jroller.com/page/akarasulu/20040212#groovy_dude_is_on_a
+Date: Thu Feb 12 17:26:28 CET 2004
+Creator: Alex Karasulu
+Subject: 
+Category: Java
+Content:
+                             <p>
+You know I just started to get good at groking the Jelly.  Just
+as I start digesting one Strachan production the guy comes out
+with yet another.  <a href="http://groovy.codehaus.org/">Groovy
+</a> really lives upto its name and I can't wait to get hard core
+with it.  You just can't beat a language that has a class called 
+GString in it! That's totally Groovy.
+</p>
+
+<p>
+It sure would be nice if we could get maven to use Groovy in addition 
+to Jelly.  From the looks of it this might not be all that much of an 
+undertaking.  You could certainly create a Jelly tag to just load a 
+Groovey script.  I bet there's more ways than one to skin that cat.
+</p>
+
+<p>
+Was also thinking of a GroovyJndi package.  This would be most 
+excellent when embedding Groovy within Eve as a stored procedure
+scripting language.  Groovy closures make it ideal.  Having the
+GroovyJndi package would make writing SP code that talks to the
+server side JNDI provider a walk in the park.
+</p>
+
+<p>
+Perhaps if someone does not implement the GroovyJndi package it
+might be a way I can add my $0.02 to it and be Groovy too :-).
+</p>
+
+         
+--------------------------------
+Title: Eve formerly know as LDAPd has been accepted to Apache Incubator
+Link: http://jroller.com/page/akarasulu/20031030#eve_formerly_know_as_ldapd
+Date: Fri Oct 31 05:00:53 CET 2003
+Creator: Alex Karasulu
+Subject: 
+Category: General
+Content:
+                             <p>
+Eve the LDAP server formerly known as LDAPd has just been accepted last week into the incubator under the Apache Directory top level project.  Eve will be the flagship server for that Apache Directory TLP upon matriculation from the incubator.
+</p><p>
+Thanks to all those that made it happen!
+</p>
+         
+--------------------------------
+Title: Got committer status on Avalon
+Link: http://jroller.com/page/akarasulu/20031030#got_committer_status_on_avalon
+Date: Fri Oct 31 02:48:00 CET 2003
+Creator: Alex Karasulu
+Subject: 
+Category: General
+Content:
+                             <p>
+Yesterday I got voted practically unanimously to join the Avalon team as a committer. I was very excited to get the warm welcome from those guys.  I hope to do my best to further the cause there.
+</p>
+<p>
+I am especially excited to be working on getting Merlin to a generally embeddible state.  That is the subject of my first set of changes.  I'm very excited and happy to see things comming along.
+</p>
+         
+--------------------------------
+Title: LDAPd Project Started Oct 16th 2002
+Link: http://jroller.com/page/akarasulu/20031015#ldapd_project_started_oct_16th
+Date: Wed Oct 15 15:00:40 CEST 2003
+Creator: Alex Karasulu
+Subject: 
+Category: General
+Content:
+                             <p>
+Almost a year ago I founded the LDAPd Group which over the course of the past year has grown into a healthy community to build a pure java LDAPv3 server implementation.  In April 2003 the first alpha release occurred on source forge with other minor releases there after.  More on the server is available <a href="http://ldapd.sourceforge.net">here</a>.
+</p>
+
+<p>
+LDAPd currently is in the process of joining the Apache Incubator.  Unofficial comments regarding its probable acceptance were made by Nicola Ken Barozzi <a href="http://nagoya.apache.org/eyebrowse/ReadMsg?listName=general@incubator.apache.org&msgNo=2207">here</a> on Sept. 30th and support was given by Ken Coar <a href="http://nagoya.apache.org/eyebrowse/ReadMsg?listName=general@incubator.apache.org&msgNo=2201">here</a>.  Both Ken and Nicola are members of Apache and are heavily involved with the incubator.  The vote to incubate began officially in October and has probably completed by now.  No official announcement of the result has been made as of yet.  I'm hoping for an announcement on LDAPd's first birthday ;-).
+</p>
+         

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="http://jabber.apinc.org/doc/skins/common/feed.css"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<channel>
+		<title>JabberDoc - Modifications récentes [fr]</title>
+		<link>http://jabber.apinc.org/doc/index.php?title=Special:Recentchanges</link>
+		<description>Suivez sur cette page les dernières modifications de JabberDoc.
+[[JabberDoc:Bienvenue|Bienvenue]] aux nouveaux participants!
+Jetez un coup d'&amp;amp;oelig;il sur ces pages&amp;amp;nbsp;: [[JabberDoc:FAQ|foire aux questions]],
+[[JabberDoc:Recommandations et règles à suivre|recommandations et règles à suivre]]
+(notamment [[JabberDoc:Règles de nommage|conventions de nommage]],
+[[JabberDoc:La neutralité de point de vue|la neutralité de point de vue]]),
+et [[JabberDoc:Les faux-pas les plus courants|les faux-pas les plus courants]].
+
+Si vous voulez que JabberDoc connaisse le succès, merci de ne pas y inclure pas de matériaux protégés par des [[JabberDoc:Copyright|copyrights]]. La responsabilité juridique pourrait en effet compromettre le projet. </description>
+		<language>fr</language>
+		<generator>MediaWiki 1.4.0</generator>
+		<lastBuildDate>Wed, 30 Mar 2005 08:00:07 GMT</lastBuildDate>
+		<item>
+			<title>Jabber</title>
+			<link>http://jabber.apinc.org/doc/index.php?title=Jabber</link>
+			<description>&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Nouvelle page&lt;/b&gt;&lt;/p&gt;&lt;div&gt;Il y a un article complet '''en anglais''' qui présente tous les avantages de Jabber sur &lt;br /&gt;
+[http://www.jabberstudio.org/cgi-bin/viewcvs.cgi/*checkout*/cvs/jcs/articles/en/jabber/intro.html?content-type=text%2Fplain&amp;amp;rev=1.2 ce CVS]&lt;br /&gt;
+&lt;br /&gt;
+On peut simplement le traduire en adaptant un peu. Pas de pb de copyright, j'en suis l'auteur.&lt;/div&gt;</description>
+			<pubDate>Mon, 28 Mar 2005 19:32:11 GMT</pubDate>			<dc:creator>Lucas</dc:creator>			<comments>http://jabber.apinc.org/doc/index.php?title=Discuter:Jabber</comments>		</item>
+		<item>
+			<title>Accueil</title>
+			<link>http://jabber.apinc.org/doc/index.php?title=Accueil</link>
+			<description>&lt;p&gt;&lt;/p&gt;
+
+			&lt;table border='0' width='98%' cellpadding='0' cellspacing='4' class='diff'&gt;
+			&lt;tr&gt;
+				&lt;td colspan='2' width='50%' align='center' class='diff-otitle'&gt;Version du 28 mar 2005 à 19:29&lt;/td&gt;
+				&lt;td colspan='2' width='50%' align='center' class='diff-ntitle'&gt;Version actuelle&lt;/td&gt;
+			&lt;/tr&gt;
+		&lt;tr&gt;&lt;td colspan=&quot;2&quot; align=&quot;left&quot;&gt;&lt;strong&gt;Ligne 1:&lt;/strong&gt;&lt;/td&gt;
+&lt;td colspan=&quot;2&quot; align=&quot;left&quot;&gt;&lt;strong&gt;Ligne 1:&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td class='diff-deletedline'&gt;&lt;span class=&quot;diffchange&quot;&gt;Logiciel JabberDoc installé&lt;/span&gt;.&lt;/td&gt;&lt;td&gt;+&lt;/td&gt;&lt;td class='diff-addedline'&gt;&lt;span class=&quot;diffchange&quot;&gt;Ce wiki en cours de construction a pour but de fournir une documentation complète aux utilisateurs de Jabber&lt;/span&gt;.&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt; &lt;/td&gt;&lt;td class='diff-context'&gt;&lt;/td&gt;&lt;td&gt; &lt;/td&gt;&lt;td class='diff-context'&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt; &lt;/td&gt;&lt;td class='diff-context'&gt;Please see [http://meta.wikipedia.org/wiki/MediaWiki_i18n documentation on customizing the interface]&lt;/td&gt;&lt;td&gt; &lt;/td&gt;&lt;td class='diff-context'&gt;Please see [http://meta.wikipedia.org/wiki/MediaWiki_i18n documentation on customizing the interface]&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt; &lt;/td&gt;&lt;td class='diff-context'&gt;and the [http://meta.wikipedia.org/wiki/MediaWiki_User%27s_Guide User's Guide] for usage and configuration help.&lt;/td&gt;&lt;td&gt; &lt;/td&gt;&lt;td class='diff-context'&gt;and the [http://meta.wikipedia.org/wiki/MediaWiki_User%27s_Guide User's Guide] for usage and configuration help.&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+</description>
+			<pubDate>Mon, 28 Mar 2005 19:29:24 GMT</pubDate>			<dc:creator>Lucas</dc:creator>			<comments>http://jabber.apinc.org/doc/index.php?title=Discuter:Accueil</comments>		</item>
+		<item>
+			<title>Messagerie Instantanée</title>
+			<link>http://jabber.apinc.org/doc/index.php?title=Messagerie_Instantan%E9e</link>
+			<description>&lt;p&gt;/* Puis vint la messagerie instantanée */&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Nouvelle page&lt;/b&gt;&lt;/p&gt;&lt;div&gt;== Histoire de la messagerie ==&lt;br /&gt;
+&lt;br /&gt;
+Les hommes cherchent à communiquer depuis longtemps, mais ils n'ont pas toujours été aussi efficaces qu'aujourd'hui.&lt;br /&gt;
+&lt;br /&gt;
+En 1800, envoyer un message de Londres à Calcutta prenait '''deux ans'''. On écrivait une lettre et la confiait à un bateau à voiles, qui naviguait le long des côtes occidentales de l'Europe, de l'Afrique, passait le cap de bonne espérance, remontait le long des côtes orientales de l'Afrique, puis à travers l'océan indien, ... avec probablement des arrêts dans presque tous les ports.&lt;br /&gt;
+&lt;br /&gt;
+En 1914, envoyer le même message prenait '''un mois'''. Le canal de Suez avait ouvert, et les bateaux à vapeur traversaient la méditerranée pour atteindre la mer rouge. Grande innovation.&lt;br /&gt;
+&lt;br /&gt;
+Dans les années 80, FedEx et autres étaient capables de transmettre le même message en '''deux jours'''.&lt;br /&gt;
+&lt;br /&gt;
+Au début des années 90, quand Internet a été ouvert à l'utilisation commerciale, l'utilisation de l'email s'est généralisée, avec un temps de transport de l'ordre de '''10 minutes''' (dépendant du nombre de serveurs intermédiaires, et de la fréquence avec laquelle vous regardez votre boite aux lettres).&lt;br /&gt;
+&lt;br /&gt;
+== Puis vint la messagerie instantanée ==&lt;br /&gt;
+&lt;br /&gt;
+Puis la messagerie instantanée apparut. Elle apporta :&lt;br /&gt;
+* '''la vitesse''' : chaque message passait de Londres à Calcutta en quelques dixièmes de secondes (et presque toujours en moins d'une seconde)&lt;br /&gt;
+* '''le statut''' : on peut savoir quand la personne avec qui on veut parler est en ligne, et si elle est en face de son ordinateur ou s'est absentée.&lt;br /&gt;
+* '''la discussion en temps réel''' : on peut discuter en temps réel avec son interlocuteur, quasiment comme dans une conversation téléphonique.&lt;br /&gt;
+&lt;br /&gt;
+Tous les systèmes de messagerie instantanée ont leurs racines dans le même protocole : l'ancien, mais encore populaire Internet Relay Chat (IRC). ICQ, créé par l'entreprise israélienne Mirabilis, sortit en 1996. Il fut ensuite suivi par AOL Instant Messenger (AIM), Microsoft Messenger (MSN), Yahoo! Messenger, et Jabber.&lt;/div&gt;</description>
+			<pubDate>Mon, 28 Mar 2005 19:28:08 GMT</pubDate>			<dc:creator>Lucas</dc:creator>			<comments>http://jabber.apinc.org/doc/index.php?title=Discuter:Messagerie_Instantan%E9e</comments>		</item>
+		<item>
+			<title>Clients</title>
+			<link>http://jabber.apinc.org/doc/index.php?title=Clients</link>
+			<description>&lt;p&gt;/* Présentation */&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Nouvelle page&lt;/b&gt;&lt;/p&gt;&lt;div&gt;== Présentation ==&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+Il existe plusieurs familles de clients pour Jabber.&lt;br /&gt;
+&lt;br /&gt;
+La première sont les clients multi-plateformes. C'est-à-dire fonctionnant sur les 3 architectures principales : Linux, Mac OSX et Windows. Ainsi quel que soit le système d'exploitation utilisé, vous retrouvez les logiciels de cette famille. Exemple : Gaim, Psi, ...&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+La deuxième famille sont les clients mono-plateforme. Ils sont dédiés à un système d'exploitation et en générale exploitent mieux les capacités du système. Exemples : Trillian, Gossip, kopete, ...&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+Sous chacune de ces familles on trouve 3 sous-familles. Les clients dédiés à Jabber, les clients multi-protocoles et les clients utilisant les passerelles.&lt;br /&gt;
+&lt;br /&gt;
+'''Clients dédiés à Jabber :'''&lt;br /&gt;
+Ces clients comprennent uniquement le protocole de Jabber. Cela veut dire que vous ne pouvez discuter qu'avec des contacts qui sont connectés sur le réseau Jabber. Exemples : Gossip, Exodus, ...&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+'''Clients multi-protocoles :'''&lt;br /&gt;
+Pour pouvoir communiquer avec des contacts se trouvant sur d'autres réseaux (yahoo, icq, msn, ...) certains clients intègrent d'autres protocoles que Jabber. Ainsi en utilisant un seul logiciel vous pouvez communiquer avec tous vos contacts, à partir du moment où vous possédez un compte sur chacun des réseaux. Exemple : Gaim, Miranda, Trillian, ...&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+'''Clients gérant des passerelles :'''&lt;br /&gt;
+Une autre technique spécifique à Jabber permet de communiquer sur plusieurs réseaux. Cette fois ci ce n'est pas le client qui intègre tous les protocoles de messageries instantanées mais le serveur Jabber que vous utilisez. Il suffit que le logiciel gère ces fonctionnalités de passerelles. L'avantage par rapport à une solution client multi-protocoles, est que vos informations sont stockées côté serveur et non plus côté client. Vous pouvez à loisir changer de logiciel, changer d'ordinateur, et retrouver votre compte avec toutes ses passerelles. Par contre vous dépendez du serveur Jabber sur lequel vous êtes inscrit. Exemples : Psi, Kopete, ...&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+'''Les principaux logiciels clients :'''&lt;br /&gt;
+&lt;br /&gt;
+'''Windows''' : [http://exodus.jabberstudio.org Exodus], [http://www.miranda-im.org Miranda], [http://www.pandion.be Pandion], [http://psi.affinix.com Psi], [http://gaim.sourceforce.net Gaim]&lt;br /&gt;
+&lt;br /&gt;
+'''Linux''' : [http://gaim.sourceforce.net Gaim], [http://www.imendio.com/projects/gossip/ Gossip], [http://kopete.kde.org Kopete], [http://psi.affinix.com Psi]&lt;br /&gt;
+&lt;br /&gt;
+'''Macintosh''' : [http://develooper.com/code/nitro/ Nitro], [http://psi.affinix.com Psi]&lt;br /&gt;
+&lt;br /&gt;
+== Gaim ==&lt;br /&gt;
+&lt;br /&gt;
+Gaim est sans doute le client le plus connu et diffusé. Il est libre et gratuit ce qui lui confère une grande qualité et garanti l'absence de toute présence de spyware. De plus c'est un client multi-plateformes et multi-protocoles. Il ne gère cependant pas l'inscription aux passerelles.&lt;br /&gt;
+&lt;br /&gt;
+[http://gaim.sourceforge.net/ Gaim]&lt;br /&gt;
+&lt;br /&gt;
+== Psi ==&lt;br /&gt;
+&lt;br /&gt;
+Autre pilier des clients Jabber, Psi est un client multi-plateformes dédié à Jabber, libre et gratuit. Il sait gérer les passerelles lui permettant de communiquer sur les autres réseaux. Il exploite au mieux les capacités de Jabber.&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+[http://psi.affinix.com Psi]&lt;/div&gt;</description>
+			<pubDate>Mon, 28 Mar 2005 18:48:55 GMT</pubDate>			<dc:creator>Fredix</dc:creator>			<comments>http://jabber.apinc.org/doc/index.php?title=Discuter:Clients</comments>		</item>
+		<item>
+			<title>Special:Log/rights</title>
+			<link>http://jabber.apinc.org/doc/index.php?title=Special:Log/rights</link>
+			<description>&lt;p&gt;Droits de l'utilisateur &amp;quot;Utilisateur:Fredix&amp;quot; passés à &amp;quot;&amp;quot;: +sysop +bureaucrat&lt;/p&gt;
+</description>
+			<pubDate>Mon, 28 Mar 2005 16:49:45 GMT</pubDate>			<dc:creator>Lucas</dc:creator>			<comments>http://jabber.apinc.org/doc/index.php?title=Log/rights</comments>		</item>
+	</channel>
+</rss>

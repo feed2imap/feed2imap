@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rss="http://purl.org/rss/1.0/" xmlns:content="http://purl.org/rss/1.0/modules/content/"><rss:channel rdf:about="http://dbaron.org/log/"><rss:title>David Baron's Weblog</rss:title><rss:link>http://dbaron.org/log/</rss:link><rss:description>David Baron's weblog</rss:description><dc:creator>David Baron</dc:creator><dc:language>en-US</dc:language><rss:items><rdf:Seq><rdf:li rdf:resource="http://dbaron.org/log/2004-10#e20041002a"/><rdf:li rdf:resource="http://dbaron.org/log/2004-09#e20040922a"/><rdf:li rdf:resource="http://dbaron.org/log/2004-09#e20040911a"/><rdf:li rdf:resource="http://dbaron.org/log/2004-08#e20040830a"/><rdf:li rdf:resource="http://dbaron.org/log/2004-06#e20040621a"/><rdf:li rdf:resource="http://dbaron.org/log/2004-06#e20040609a"/><rdf:li rdf:resource="http://dbaron.org/log/2004-06#e20040607a"/><rdf:li rdf:resource="http://dbaron.org/log/2004-06#e20040604a"/><rdf:li rdf:resource="http://dbaron.org/log/2004-05#e20040527a"/><rdf:li rdf:resource="http://dbaron.org/log/2004-05#e20040513a"/><rdf:li rdf:resource="http://dbaron.org/log/2004-04#e20040419a"/><rdf:li rdf:resource="http://dbaron.org/log/2004-03#e20040301a"/><rdf:li rdf:resource="http://dbaron.org/log/2004-02#e20040203a"/><rdf:li rdf:resource="http://dbaron.org/log/2004-01#e20040129a"/><rdf:li rdf:resource="http://dbaron.org/log/2003-11#e20031126a"/><rdf:li rdf:resource="http://dbaron.org/log/2003-10#e20031007a"/><rdf:li rdf:resource="http://dbaron.org/log/2003-09#e20030914a"/><rdf:li rdf:resource="http://dbaron.org/log/2003-09#e20030909d"/><rdf:li rdf:resource="http://dbaron.org/log/2003-09#e20030909c"/><rdf:li rdf:resource="http://dbaron.org/log/2003-09#e20030909b"/><rdf:li rdf:resource="http://dbaron.org/log/2003-09#e20030909a"/><rdf:li rdf:resource="http://dbaron.org/log/2003-08#l20030831"/><rdf:li rdf:resource="http://dbaron.org/log/2003-08#l20030813"/><rdf:li rdf:resource="http://dbaron.org/log/2003-08#l20030806"/><rdf:li rdf:resource="http://dbaron.org/log/2003-07#l20030731"/><rdf:li rdf:resource="http://dbaron.org/log/2003-07#l20030716"/><rdf:li rdf:resource="http://dbaron.org/log/2003-06#l20030609"/><rdf:li rdf:resource="http://dbaron.org/log/2003-06#l20030604"/><rdf:li rdf:resource="http://dbaron.org/log/2003-05#l20030523"/><rdf:li rdf:resource="http://dbaron.org/log/2003-04#l20030426"/><rdf:li rdf:resource="http://dbaron.org/log/2003-04#l20030414"/><rdf:li rdf:resource="http://dbaron.org/log/2003-03#l20030329"/><rdf:li rdf:resource="http://dbaron.org/log/2003-03#l20030314"/><rdf:li rdf:resource="http://dbaron.org/log/2003-03#l20030308"/><rdf:li rdf:resource="http://dbaron.org/log/2003-02#l20030213"/><rdf:li rdf:resource="http://dbaron.org/log/2003-02#l20030210"/><rdf:li rdf:resource="http://dbaron.org/log/2003-02#l20030202"/><rdf:li rdf:resource="http://dbaron.org/log/2003-01#l20030129"/><rdf:li rdf:resource="http://dbaron.org/log/2003-01#l20030112"/><rdf:li rdf:resource="http://dbaron.org/log/2003-01#l20030109"/><rdf:li rdf:resource="http://dbaron.org/log/2002-12#l20021221"/><rdf:li rdf:resource="http://dbaron.org/log/2002-12#l20021215"/><rdf:li rdf:resource="http://dbaron.org/log/2002-12#l20021214"/><rdf:li rdf:resource="http://dbaron.org/log/2002-12#l20021211"/><rdf:li rdf:resource="http://dbaron.org/log/2002-12#l20021203"/><rdf:li rdf:resource="http://dbaron.org/log/2002-11#l20021128"/><rdf:li rdf:resource="http://dbaron.org/log/2002-11#l20021124"/><rdf:li rdf:resource="http://dbaron.org/log/2002-11#l20021121"/><rdf:li rdf:resource="http://dbaron.org/log/2002-11#l20021115"/><rdf:li rdf:resource="http://dbaron.org/log/2002-09#l20020914"/></rdf:Seq></rss:items></rss:channel><rss:item rdf:about="http://dbaron.org/log/2004-10#e20041002a"><rss:title>Political spectra</rss:title><rss:link>http://dbaron.org/log/2004-10#e20041002a</rss:link><dc:date>2004-10-02T00:42:00-07:00</dc:date><dc:creator>David Baron</dc:creator><content:encoded><![CDATA[
+
+<p xmlns="http://www.w3.org/1999/xhtml">Since politics is (are?) on my mind lately, I want to point out
+an interesting site, <a shape="rect" href="http://politics.beasts.org/">Political
+Survey</a>, which I first discovered when <a shape="rect" href="http://www.meyerweb.com/eric/thoughts/2004/02/02/mapping-things-out/">Eric
+Meyer pointed it out</a> back in February.</p>
+
+<p xmlns="http://www.w3.org/1999/xhtml">It's interesting because it <a shape="rect" href="http://politics.beasts.org/rationale.shtml">uses principal
+component analysis</a> to derive the axes from the data, rather than
+trying to pick axes in advance.  It's also interesting because the most
+significant axis it finds is the traditional left/right axis, but the
+second axis isn't the libertarian/authoritarian axis that some assert
+should be the second axis–rather, it's a pragmatic/idealistic
+axis.</p>
+
+<p xmlns="http://www.w3.org/1999/xhtml">I've taken the survey twice, once in February and once today.  My
+results were similar:  I was in the left/pragmatic <a shape="rect" href="http://politics.beasts.org/scripts/eigenvectors">quadrant</a> both
+times.  (In February, I was -4.08 on right/left and +5.17 on
+pragmatic/idealistic.  Today I was -3.63 on right/left and +4.65 on
+pragmatic/idealistic.)</p>
+
+]]></content:encoded></rss:item><rss:item rdf:about="http://dbaron.org/log/2004-09#e20040922a"><rss:title>A few (technical) thoughts</rss:title><rss:link>http://dbaron.org/log/2004-09#e20040922a</rss:link><dc:date>2004-09-22T00:48:00-07:00</dc:date><dc:creator>David Baron</dc:creator><content:encoded><![CDATA[
+
+<ul xmlns="http://www.w3.org/1999/xhtml">
+
+<li>My 1GB DIMM arrived Monday, and it works fine.  With memory prices
+these days, getting that is much easier than worrying about fixing a bad
+memory slot.</li>
+
+<li>CSS error reporting is now enabled in trunk Mozilla builds.  Check
+out the “Javascript Console”.</li>
+
+<li>I compiled a custom Linux kernel Tuesday to try to get suspend and
+resume working on my laptop, but it didn't help.  My display still
+doesn't wake up on resume.  And perhaps other things don't either.  It's
+a little hard to tell.  (The patches were the first patch and the second
+variant of the second patch on a <a shape="rect" href="http://www.loria.fr/~thome/d600/#update">page about Linux on the
+Dell D600</a>.  I have a Dell Inspiron 5150, but the video card is the
+same).  I'll probably continue trying to get it working another time.</li>
+
+<li>I wish GNU ld's <code>--gc-sections</code> option worked for shared
+libraries.  (Even working when shared libraries are visible within five
+miles would be nice!)  The main thing this would help Mozilla with is
+getting rid of unneeded copies of constructors and destructors that <a shape="rect" href="http://gcc.gnu.org/">gcc</a>'s C++ compiler emits.  And probably
+also some unneeded vtables.  And maybe a good bit of other stuff.
+(gcc could probably be a little better, but it's really a job for the
+linker.)</li>
+
+</ul>
+
+]]></content:encoded></rss:item><rss:item rdf:about="http://dbaron.org/log/2004-09#e20040911a"><rss:title>Bad memory</rss:title><rss:link>http://dbaron.org/log/2004-09#e20040911a</rss:link><dc:date>2004-09-11T12:14:00-07:00</dc:date><dc:creator>David Baron</dc:creator><content:encoded><![CDATA[
+
+<p xmlns="http://www.w3.org/1999/xhtml">So this morning I was getting annoyed at the small amount of RAM in
+my laptop.  Since I recently (after having the laptop for over a year)
+got Linux to use my CPU at full speed instead of half speed (by adding
+<code>DEVICE=&quot;acpi&quot;</code> to <code>/etc/cpuspeed.conf</code>), memory
+has really seemed to be the limiting factor.  (Well, it has a slow disk
+too.)  I've also been doing some things that use a lot of memory lately.
+I wondered why I only got 256 MiB of RAM in the first place—that
+didn't seem like something I'd do.  So, with the thought of buying more
+RAM in mind, I pulled out the folder that had the receipt for my laptop
+to see whether I had an empty memory slot or 2 128 MiB DIMMs.</p>
+
+<p xmlns="http://www.w3.org/1999/xhtml">And the receipt said I had ordered 512 MiB of memory.  But
+<code>free</code> says I have 256 MiB, and the BIOS agrees.  And I don't
+really ever remember this machine having 512 MiB.  So I opened up the
+laptop, and, lo and behold, there were 2 256 MiB DIMMs in there.  A few
+experiments showed that one of the two memory slots was bad.  And the
+machine is already out of warranty (since I got a short warranty, which
+for me is usually a better deal, especially since I'm never sure whether
+Dell will honor the warranty after I've installed Linux).</p>
+
+<p xmlns="http://www.w3.org/1999/xhtml">I really need a better memory of what I ordered.  Or better memory.
+Or something.  But maybe I'll at least remember not to order laptops
+from Dell again.</p>
+
+]]></content:encoded></rss:item><rss:item rdf:about="http://dbaron.org/log/2004-08#e20040830a"><rss:title>Weblog feed</rss:title><rss:link>http://dbaron.org/log/2004-08#e20040830a</rss:link><dc:date>2004-08-30T22:48:00-07:00</dc:date><dc:creator>David Baron</dc:creator><content:encoded><![CDATA[
+
+<p xmlns="http://www.w3.org/1999/xhtml">Reading the <a shape="rect" href="http://www.mozilla.org/webtools/bonsai/cvsblame.cgi?file=mozilla-org/tools/feed2html.xsl&amp;rev=1.1.2.2&amp;cvsroot=/cvsroot">XSLT
+used</a> for the newsfeed on the <a shape="rect" href="http://website-beta.mozilla.org/">new mozilla.org webpage</a>
+inspired me to finish a project I started <a shape="rect" href="http://dbaron.org/log/2003-09#e20030909a">quite a while
+ago</a>—making an RSS feed for this weblog.  After reading the one
+example XSLT file, I did the rest using only the <a shape="rect" href="http://www.w3.org/TR/1999/REC-xslt-19991116">XSLT spec</a> and the
+<a shape="rect" href="http://www.w3.org/TR/1999/REC-xpath-19991116">XPath spec</a>.
+So I now have an <a shape="rect" href="rss1">RSS feed</a> produced by an <a shape="rect" href="make-rss-transform">XSLT transformation sheet</a> (I don't like
+the use of the word “stylesheet” for XSLT).  And it's
+apparently even <a shape="rect" href="http://feedvalidator.org/check.cgi?url=http%3A%2F%2Fdbaron.org%2Flog%2Frss1">valid</a>.</p>
+
+<p xmlns="http://www.w3.org/1999/xhtml">Writing it wasn't nearly as bad as I expected, although I am somewhat
+disappointed by the inability of XSLT to re-transform trees (i.e., use
+an already transformed tree, in the form of a <a shape="rect" href="http://www.w3.org/TR/1999/REC-xslt-19991116#section-Result-Tree-Fragments">result
+tree fragment</a> bound to a variable, as the source tree for an
+additional transformation).  I worked around the problem using a named
+template and <code><a shape="rect" href="http://www.w3.org/TR/1999/REC-xslt-19991116#section-Result-Tree-Fragments">xsl:call-template</a></code>.
+At least I think it's something XSLT can't do—at least I couldn't
+see how in the spec.</p>
+
+]]></content:encoded></rss:item><rss:item rdf:about="http://dbaron.org/log/2004-06#e20040621a"><rss:title>Intranet mode?</rss:title><rss:link>http://dbaron.org/log/2004-06#e20040621a</rss:link><dc:date>2004-06-21T14:41:00-07:00</dc:date><dc:creator>David Baron</dc:creator><content:encoded><![CDATA[
+
+<p xmlns="http://www.w3.org/1999/xhtml">If Microsoft is
+<a shape="rect" href="http://blogs.msdn.com/dmassy/archive/2004/06/16/157263.aspx">going
+to develop IE again</a>, I challenge them to move most of
+their non-standard behavior out of quirks mode and into an “Intranet
+mode”.</p>
+
+<p xmlns="http://www.w3.org/1999/xhtml">Most of the quirky behavior of IE for Windows isn't actually needed
+to display Web sites correctly.  It's
+needed for “Intranet” sites that have been designed to work with
+only one browser.  Backwards-compatibility for corporate, academic, and
+government “Intranets” is a perfectly good reason to want to
+produce software that continues to display such sites, but it's no
+reason to inflict such software on the Web.  This would make IE's
+handling of most web pages much more standard and lessen one of the main
+ways IE's near-monopoly discourages competition.</p>
+
+]]></content:encoded></rss:item><rss:item rdf:about="http://dbaron.org/log/2004-06#e20040609a"><rss:title>The W3C</rss:title><rss:link>http://dbaron.org/log/2004-06#e20040609a</rss:link><dc:date>2004-06-09T17:06:00-07:00</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2004-06#e20040607a"><rss:title>More about the workshop</rss:title><rss:link>http://dbaron.org/log/2004-06#e20040607a</rss:link><dc:date>2004-06-07T12:01:00-07:00</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2004-06#e20040604a"><rss:title>Travel &amp; Meetings</rss:title><rss:link>http://dbaron.org/log/2004-06#e20040604a</rss:link><dc:date>2004-06-04T15:47:00-07:00</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2004-05#e20040527a"><rss:title>No exit?</rss:title><rss:link>http://dbaron.org/log/2004-05#e20040527a</rss:link><dc:date>2004-05-27T15:51:00-07:00</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2004-05#e20040513a"><rss:title>Fragmentation of document formats on the Web</rss:title><rss:link>http://dbaron.org/log/2004-05#e20040513a</rss:link><dc:date>2004-05-13T11:30:00-07:00</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2004-04#e20040419a"><rss:title>Monterey County Coast</rss:title><rss:link>http://dbaron.org/log/2004-04#e20040419a</rss:link><dc:date>2004-04-19T22:54:00-07:00</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2004-03#e20040301a"><rss:title>Snow in Mandelieu</rss:title><rss:link>http://dbaron.org/log/2004-03#e20040301a</rss:link><dc:date>2004-03-01T16:37:00-01:00</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2004-02#e20040203a"><rss:title>States I've visited</rss:title><rss:link>http://dbaron.org/log/2004-02#e20040203a</rss:link><dc:date>2004-02-03T00:13:00-08:00</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2004-01#e20040129a"><rss:title>The man to beat bush?</rss:title><rss:link>http://dbaron.org/log/2004-01#e20040129a</rss:link><dc:date>2004-01-29T12:01:00-08:00</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2003-11#e20031126a"><rss:title>Don't run away from tables</rss:title><rss:link>http://dbaron.org/log/2003-11#e20031126a</rss:link><dc:date>2003-11-26T17:17:00-08:00</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2003-10#e20031007a"><rss:title>The good news</rss:title><rss:link>http://dbaron.org/log/2003-10#e20031007a</rss:link><dc:date>2003-10-07T23:24:00-07:00</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2003-09#e20030914a"><rss:title>Mozilla Firebird, part 2</rss:title><rss:link>http://dbaron.org/log/2003-09#e20030914a</rss:link><dc:date>2003-09-14T12:29:00-07:00</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2003-09#e20030909d"><rss:title>Election 2004: The Albuquerque debate</rss:title><rss:link>http://dbaron.org/log/2003-09#e20030909d</rss:link><dc:date>2003-09-09T22:15:00-07:00</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2003-09#e20030909c"><rss:title>Mozilla Firebird</rss:title><rss:link>http://dbaron.org/log/2003-09#e20030909c</rss:link><dc:date>2003-09-09T21:39:00-07:00</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2003-09#e20030909b"><rss:title>Israel and Palestine</rss:title><rss:link>http://dbaron.org/log/2003-09#e20030909b</rss:link><dc:date>2003-09-09T21:02:00-07:00</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2003-09#e20030909a"><rss:title>My blog</rss:title><rss:link>http://dbaron.org/log/2003-09#e20030909a</rss:link><dc:date>2003-09-09T20:41:00-07:00</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2003-08#l20030831"><rss:title>I wrote a letter to the New York
+Times ...</rss:title><rss:link>http://dbaron.org/log/2003-08#l20030831</rss:link><dc:date>2003-08-31</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2003-08#l20030813"><rss:title>The CSS3
+syntax module draft was publis...</rss:title><rss:link>http://dbaron.org/log/2003-08#l20030813</rss:link><dc:date>2003-08-13</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2003-08#l20030806"><rss:title>More on my new laptop.  I don't
+think I...</rss:title><rss:link>http://dbaron.org/log/2003-08#l20030806</rss:link><dc:date>2003-08-06</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2003-07#l20030731"><rss:title>Fun with sendmail!  More later on my
+ne...</rss:title><rss:link>http://dbaron.org/log/2003-07#l20030731</rss:link><dc:date>2003-07-31</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2003-07#l20030716"><rss:title>I'm amused that when the President of t...</rss:title><rss:link>http://dbaron.org/log/2003-07#l20030716</rss:link><dc:date>2003-07-16</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2003-06#l20030609"><rss:title>It's rally annoying whn th E ky on my k...</rss:title><rss:link>http://dbaron.org/log/2003-06#l20030609</rss:link><dc:date>2003-06-09</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2003-06#l20030604"><rss:title>My reading lately has consisted of read...</rss:title><rss:link>http://dbaron.org/log/2003-06#l20030604</rss:link><dc:date>2003-06-04</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2003-05#l20030523"><rss:title>So I've been in California for over a m...</rss:title><rss:link>http://dbaron.org/log/2003-05#l20030523</rss:link><dc:date>2003-05-23</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2003-04#l20030426"><rss:title>I lost a day's worth of dbaron.org emai...</rss:title><rss:link>http://dbaron.org/log/2003-04#l20030426</rss:link><dc:date>2003-04-26</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2003-04#l20030414"><rss:title>I'm moving to California on Wednesday a...</rss:title><rss:link>http://dbaron.org/log/2003-04#l20030414</rss:link><dc:date>2003-04-14</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2003-03#l20030329"><rss:title>The lack of UI for strict focus-follows...</rss:title><rss:link>http://dbaron.org/log/2003-03#l20030329</rss:link><dc:date>2003-03-29</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2003-03#l20030314"><rss:title>I'm one of those tcsh users who's alway...</rss:title><rss:link>http://dbaron.org/log/2003-03#l20030314</rss:link><dc:date>2003-03-14</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2003-03#l20030308"><rss:title>It's March now, and we're beginning to ...</rss:title><rss:link>http://dbaron.org/log/2003-03#l20030308</rss:link><dc:date>2003-03-08</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2003-02#l20030213"><rss:title>For those of you who don't have the fun...</rss:title><rss:link>http://dbaron.org/log/2003-02#l20030213</rss:link><dc:date>2003-02-13</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2003-02#l20030210"><rss:title>I've seen a bunch of good movies recent...</rss:title><rss:link>http://dbaron.org/log/2003-02#l20030210</rss:link><dc:date>2003-02-10</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2003-02#l20030202"><rss:title>I've done a few neat hacks with X-Remot...</rss:title><rss:link>http://dbaron.org/log/2003-02#l20030202</rss:link><dc:date>2003-02-02</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2003-01#l20030129"><rss:title>In the fun with old hardware category.....</rss:title><rss:link>http://dbaron.org/log/2003-01#l20030129</rss:link><dc:date>2003-01-29</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2003-01#l20030112"><rss:title>Just for the record, I was exaggerating...</rss:title><rss:link>http://dbaron.org/log/2003-01#l20030112</rss:link><dc:date>2003-01-12</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2003-01#l20030109"><rss:title>Since everyone else (hyatt,
+shaver, jwz...</rss:title><rss:link>http://dbaron.org/log/2003-01#l20030109</rss:link><dc:date>2003-01-09</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2002-12#l20021221"><rss:title>
+I obeyed his instructions ten minutes ...</rss:title><rss:link>http://dbaron.org/log/2002-12#l20021221</rss:link><dc:date>2002-12-21</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2002-12#l20021215"><rss:title>something I
+need to remember more often...</rss:title><rss:link>http://dbaron.org/log/2002-12#l20021215</rss:link><dc:date>2002-12-15</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2002-12#l20021214"><rss:title>Judging from his December 12
+entry, Hix...</rss:title><rss:link>http://dbaron.org/log/2002-12#l20021214</rss:link><dc:date>2002-12-14</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2002-12#l20021211"><rss:title>If you thought discrimination was a thi...</rss:title><rss:link>http://dbaron.org/log/2002-12#l20021211</rss:link><dc:date>2002-12-11</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2002-12#l20021203"><rss:title>It's too cold outside.  To be exact, it...</rss:title><rss:link>http://dbaron.org/log/2002-12#l20021203</rss:link><dc:date>2002-12-03</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2002-11#l20021128"><rss:title>
+[18:53:10] &lt;Bandit&gt; Hi all
+[18:55:05] ...</rss:title><rss:link>http://dbaron.org/log/2002-11#l20021128</rss:link><dc:date>2002-11-28</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2002-11#l20021124"><rss:title>The concert on
+Friday night went well, ...</rss:title><rss:link>http://dbaron.org/log/2002-11#l20021124</rss:link><dc:date>2002-11-24</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2002-11#l20021121"><rss:title>It's nice to wake up in the morning and...</rss:title><rss:link>http://dbaron.org/log/2002-11#l20021121</rss:link><dc:date>2002-11-21</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2002-11#l20021115"><rss:title>
+	The New York Times is
+	reporting
+	tha...</rss:title><rss:link>http://dbaron.org/log/2002-11#l20021115</rss:link><dc:date>2002-11-15</dc:date><dc:creator>David Baron</dc:creator></rss:item><rss:item rdf:about="http://dbaron.org/log/2002-09#l20020914"><rss:title>So some people think I should have a we...</rss:title><rss:link>http://dbaron.org/log/2002-09#l20020914</rss:link><dc:date>2002-09-14</dc:date><dc:creator>David Baron</dc:creator></rss:item></rdf:RDF>

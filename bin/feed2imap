@@ -1,0 +1,35 @@
+#!/usr/bin/ruby -w
+
+$:.unshift File.join(File.dirname(__FILE__), '..', 'lib')
+
+require 'feed2imap/feed2imap'
+require 'optparse'
+
+verbose = false
+version = false
+cacherebuild = false
+configf = ENV['HOME'] + '/.feed2imaprc'
+opts = OptionParser::new do |opts|
+  opts.banner = "Usage: ./feed2imap.rb [options]"
+  opts.separator ""
+  opts.separator "Options:"
+  opts.on("-v", "--verbose", "Verbose mode") do |v|
+    verbose = true
+  end
+  opts.on("-V", "--version", "Display Feed2Imap version") do |v|
+    version = true
+  end
+  opts.on("-c", "--rebuild-cache", "Cache rebuilding run : will fetch everything and cache, as if it was already read.") do |c|
+    cacherebuild = true
+  end
+  opts.on("-f", "--config <file>", "Select alternate config file") do |f|
+    configf = f
+  end
+end
+opts.parse!(ARGV)
+
+if version
+  puts "Feed2Imap v.#{F2I_VERSION}"
+else
+  Feed2Imap::new(verbose, cacherebuild, configf)
+end

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<rss version="2.0" 
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:admin="http://webns.net/mvcb/"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/">
+
+<channel>
+	<title>GBlog RSS</title>
+	<link>http://guillaume.apinc.org/</link>
+	<description>Pensées personelles sur le web et autre.</description>
+	<dc:language>fr</dc:language>
+
+	<dc:creator>Guillaume Bouchard</dc:creator>
+	<dc:rights>Copyright 2003</dc:rights>
+	<sy:updatePeriod>daily</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<sy:updateBase>2000-01-01T12:00+00:00</sy:updateBase>
+	
+			<item>
+			<title>Brève cinema</title>
+			<description>Description de quatres films, les Daltons, Benjamin Gate et le trésor des Templiers, Mystic river et Un monde parfait.</description>
+			<link>http://guillaume.apinc.org/2005/janvier/23/75-breve-cinema</link>
+			<dc:date>2005-01-23T11:41:02+01:00</dc:date>
+			
+			<category>Cinéma</category>
+					</item>
+				<item>
+			<title>Veille de DS chez Totoro</title>
+			<description>Introduction du blog d'un amis.</description>
+			<link>http://guillaume.apinc.org/2005/janvier/20/74-veille-de-ds-chez-totoro</link>
+			<dc:date>2005-01-20T13:29:17+01:00</dc:date>
+			
+			<category>Vie en vrai</category>
+					</item>
+				<item>
+			<title>L'ocean de la lame indestructible volante</title>
+			<description>Quatre films au cinema, Blade 3, Ocean's twelve, Les indestructibles et Le secret des poignards volants.</description>
+			<link>http://guillaume.apinc.org/2005/janvier/02/73-locean-de-la-lame-indestructible-volante</link>
+			<dc:date>2005-01-02T16:52:01+01:00</dc:date>
+			
+			<category>Cinéma</category>
+					</item>
+				<item>
+			<title>Changelog</title>
+			<description>Un petit changelog du blog.</description>
+			<link>http://guillaume.apinc.org/2005/janvier/02/72-changelog</link>
+			<dc:date>2005-01-02T16:34:38+01:00</dc:date>
+			
+			<category>Blog</category>
+					</item>
+				<item>
+			<title>Happy new year</title>
+			<description>Une bonne année, mes résolutions et bilan, bref totalement ininteressant. Je raconte ma vie !</description>
+			<link>http://guillaume.apinc.org/2005/janvier/02/71-happy-new-year</link>
+			<dc:date>2005-01-02T16:09:40+01:00</dc:date>
+			
+			<category>Vie en vrai</category>
+					</item>
+				<item>
+			<title>Philosophie de l'update.</title>
+			<description>L'histoire vrai d'une personne qui doit racheter un ordinateur à cause d'une mise à jour d'un petit programme.</description>
+			<link>http://guillaume.apinc.org/2005/janvier/02/70-philosophie-de-lupdate</link>
+			<dc:date>2005-01-02T15:52:16+01:00</dc:date>
+			
+			<category>Autres</category>
+					</item>
+				<item>
+			<title>Resident Evil 2</title>
+			<description>Resident Evil 2 est au cinema. Sans plus.</description>
+			<link>http://guillaume.apinc.org/2004/novembre/08/69-resident-evil-2</link>
+			<dc:date>2004-11-08T21:17:16+01:00</dc:date>
+			
+			<category>Cinéma</category>
+					</item>
+				<item>
+			<title>RSS et commentaires</title>
+			<description>Un bug du RSS corigé et de nouvelles fonctionalitées (RSS des commentaires)</description>
+			<link>http://guillaume.apinc.org/2004/novembre/04/68-rss-et-commentaires</link>
+			<dc:date>2004-11-04T16:21:50+01:00</dc:date>
+			
+			<category>Blog</category>
+					</item>
+				<item>
+			<title>Star Wars, The return of the DVD</title>
+			<description>J'ai acheter le DVD de Stars Wars.</description>
+			<link>http://guillaume.apinc.org/2004/novembre/01/67-star-wars-the-return-of-the-dvd</link>
+			<dc:date>2004-11-01T11:33:20+01:00</dc:date>
+			
+			<category>Cinéma</category>
+					</item>
+				<item>
+			<title>Tiscali et l'abonnement</title>
+			<description>Une petite pointe d'enervement fasse à Tiscali, mon FAI 56 K ainsi qu'une critique d'un logiciel de P2P.</description>
+			<link>http://guillaume.apinc.org/2004/novembre/01/66-tiscali-et-labonnement</link>
+			<dc:date>2004-11-01T11:28:53+01:00</dc:date>
+			
+			<category>Autres</category>
+					</item>
+				<item>
+			<title>J'ai rencontré Tristan</title>
+			<description>Ma rencontre avec Tristan Nitot et un peu sur les journées du logiciels libre à Lyon.</description>
+			<link>http://guillaume.apinc.org/2004/novembre/01/65-jai-rencontre-tristan</link>
+			<dc:date>2004-11-01T11:28:02+01:00</dc:date>
+			
+			<category>Vie en vrai</category>
+					</item>
+				<item>
+			<title>L'informatique consomme le temps</title>
+			<description>Petite pensée sur le temps que prend l'informatique.</description>
+			<link>http://guillaume.apinc.org/2004/novembre/01/64-linformatique-consomme-le-temps</link>
+			<dc:date>2004-11-01T11:27:05+01:00</dc:date>
+			
+			<category>Linux</category>
+					</item>
+				<item>
+			<title>Vacance et cinema</title>
+			<description>Trois films vu pendant ces vacances. Arsene Lupin, Vipère au poing et Un long dimanche de fiancailles.</description>
+			<link>http://guillaume.apinc.org/2004/novembre/01/63-vacance-et-cinema</link>
+			<dc:date>2004-11-01T11:25:49+01:00</dc:date>
+			
+			<category>Cinéma</category>
+					</item>
+				<item>
+			<title>Gagner un livre Debian</title>
+			<description>Gagnez un livre Debian, promis je vais faire des vrais articles... Un jour.</description>
+			<link>http://guillaume.apinc.org/2004/octobre/15/62-gagner-un-livre-debian</link>
+			<dc:date>2004-10-15T13:28:51+01:00</dc:date>
+			
+			<category>Linux</category>
+					</item>
+				<item>
+			<title>Où se cachent les terroristes ?</title>
+			<description>Critique de la societé de consomation et d'un événements à Lyon.</description>
+			<link>http://guillaume.apinc.org/2004/septembre/06/61-ou-se-cachent-les-terroristes-</link>
+			<dc:date>2004-09-06T13:30:22+01:00</dc:date>
+			
+			<category>Politique</category>
+					</item>
+				<item>
+			<title>Résumé des films precedents</title>
+			<description>Critique de diverses films dont Farenheit 9/11.</description>
+			<link>http://guillaume.apinc.org/2004/aout/16/60-resume-des-films-precedents</link>
+			<dc:date>2004-08-16T07:13:12+01:00</dc:date>
+			
+			<category>Cinéma</category>
+					</item>
+				<item>
+			<title>Gentoo, la distrib de debutants</title>
+			<description>Résumé d'une install party raté et pourquoi Gentoo reste la meilleur distribution Linux du marché.</description>
+			<link>http://guillaume.apinc.org/2004/aout/16/59-gentoo-la-distrib-de-debutants</link>
+			<dc:date>2004-08-16T06:59:33+01:00</dc:date>
+			
+			<category>Linux</category>
+					</item>
+				<item>
+			<title>Critique sur l'orthographe</title>
+			<description>Reponse à la critique de phnk sur l'orthgraphe.</description>
+			<link>http://guillaume.apinc.org/2004/aout/16/58-critique-sur-lorthographe</link>
+			<dc:date>2004-08-16T06:49:34+01:00</dc:date>
+			
+			<category>Autres</category>
+					</item>
+				<item>
+			<title>La fin du mangeur</title>
+			<description>Mon dégout de la tournure qu'a prit le mangeur de cigogne sur la fin.</description>
+			<link>http://guillaume.apinc.org/2004/aout/16/57-la-fin-du-mangeur</link>
+			<dc:date>2004-08-16T06:40:25+01:00</dc:date>
+			
+			<category>Mangeur de cigogne</category>
+					</item>
+				<item>
+			<title>Je suis de retour...</title>
+			<description>Explication de mon absence</description>
+			<link>http://guillaume.apinc.org/2004/aout/16/56-je-suis-de-retour</link>
+			<dc:date>2004-08-16T06:37:12+01:00</dc:date>
+			
+			<category>Vie en vrai</category>
+					</item>
+			</channel>
+</rss>

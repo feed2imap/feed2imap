@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+  xmlns:admin="http://webns.net/mvcb/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns="http://purl.org/rss/1.0/">
+
+<channel rdf:about="http://alexx.ikse.org/blog">
+  <title>Alexx'Blog</title>
+  <description><![CDATA[De tout et de rien, mais surtout de rien]]></description>
+  <link>http://alexx.ikse.org/blog</link>
+  <dc:language>fr</dc:language>
+  <dc:creator></dc:creator>
+  <dc:rights></dc:rights>
+  <dc:date>2004-06-18T15:14:04+00:00</dc:date>
+  <admin:generatorAgent rdf:resource="http://www.dotclear.net/" />
+  
+  <sy:updatePeriod>daily</sy:updatePeriod>
+  <sy:updateFrequency>1</sy:updateFrequency>
+  <sy:updateBase>2004-06-18T15:14:04+00:00</sy:updateBase>
+  
+  <items>
+  <rdf:Seq>
+    <rdf:li rdf:resource="http://alexx.ikse.org/blog?2004/06/18/6-node-launched" />
+  <rdf:li rdf:resource="http://alexx.ikse.org/blog?2004/04/08/5-sidebar-generator-2" />
+  <rdf:li rdf:resource="http://alexx.ikse.org/blog?2004/03/24/4-ie-respecte-les-normes-w3c-les-plus-recentes" />
+  <rdf:li rdf:resource="http://alexx.ikse.org/blog?2004/03/23/3-re-google-censure-par-la-republique-bananiere-francaise" />
+  <rdf:li rdf:resource="http://alexx.ikse.org/blog?2004/03/09/2-creer-ses-propres-panelssidebars-a-partir-de-rssrdf" />
+  <rdf:li rdf:resource="http://alexx.ikse.org/blog?2004/01/31/1-sco-connerie-observee-notez-la-recursion" />
+  </rdf:Seq>
+  </items>
+</channel>
+
+<item rdf:about="http://alexx.ikse.org/blog?2004/06/18/6-node-launched">
+  <title>.node launched</title>
+  <link>http://alexx.ikse.org/blog?2004/06/18/6-node-launched</link>
+  <dc:date>2004-06-18T15:14:04+00:00</dc:date>
+  <dc:creator>Alexx</dc:creator>
+  <dc:subject>Developpement</dc:subject>
+  <description>Tout le monde en parle déjà sauf moi ...
+.node, le réseau social d'origine française à vocation internationale a été lancé publiquement le 16 juin 2004.</description>
+  <content:encoded><![CDATA[<p><a href="http://bix.enix.org/index.php/2004/06/16/441-NodeDotnodeLogicielSocialFranaisSansPub">Tout</a> <a href="http://lunacymaze.org/index.php/2004/06/17/14-DuNouveauPourLesRnseauxSociauxSurInternetNodeDotnode">le</a> <a href="http://tito.bankiz.org/?rub=blogc&amp;a=45">monde</a> en parle déjà sauf moi ...
+<a href="http://dotnode.com" hreflang="fr">.node</a>, le réseau social d'origine française à vocation internationale a été lancé publiquement le 16 juin 2004.</p> <p><a href="http://dotnode.com" hreflang="fr">.node</a> (prononcer dot-node) est donc un réseau social ...
+Encore un diront certains, tandis que d'autres diront plutôt : "C'est quoi un réseau social ?"</p>
+
+<p>Pour faire simple un réseau social est un réseau de personne qui a la particularité de ne pas se concentrer sur un contenu, ou sur des personnes, mais sur les relations entre les personnes.
+Ces relations et la diversité de chaque personne crée LE réseau à proprement parler.</p>
+
+<p>Pour participer à un réseau social tel que <a href="http://dotnode.com">.node</a>, il faut être invité par un membre du réseau.
+On peut reprocher le coté sectaire de la chose, mais il se trouve que cela apporte tellement à la qualité des échanges sur le réseau entre personnes et dans les forums qui y sont hébergés ...</p>
+
+<p>Le fait de savoir que toutes les personnes que l'on peut y découvrir sont forcément liées à moi et ont été invité par une personne que je dois forcément connaitre également par intermédiaire ... entraine une quasi-obligation de "bon comportement" sur le réseau.</p>
+
+<p>Pour ceux qui sont déjà sur <a href="http://orkut.com" hreflang="en">Orkut</a>, on peut dire que .node apporte la comformité aux standards du Web (XHTML), un développement basé sur du libre (<a href="http://httpd.apache.org" hreflang="en">Apache</a>, <a href="http://linux.org" hreflang="en">Linux</a>, <a href="http://mysql.com" hreflang="en">MySQL</a> et <a href="http://php.net" hreflang="en">PHP</a>, ...)... et 2-3 features (les blogs, la génération de <a href="http://alexx.dotnode.com" hreflang="fr">page perso</a> ...)</p>
+
+<p>Une version 1.1 apportera réélement de grosses nouveautés par rapport à ce qui existe.
+Pour rejoindre le réseau, guettez vos messageries ... peut-être qu'un amis va vous inviter :)</p>]]></content:encoded>
+</item>
+<item rdf:about="http://alexx.ikse.org/blog?2004/04/08/5-sidebar-generator-2">
+  <title>SideBar Generator 2...</title>
+  <link>http://alexx.ikse.org/blog?2004/04/08/5-sidebar-generator-2</link>
+  <dc:date>2004-04-08T16:04:59+00:00</dc:date>
+  <dc:creator>Alexx</dc:creator>
+  <dc:subject>Developpement</dc:subject>
+  <description>Toujours plus fort ...
+A présent, le générateur de panel gère le champs 'description' du RSS ...
+De plus, un cache permet de decharger le serveur du RSS distant en le stockant pour 10 minutes.
+Enfin, l'UTF8 est correctement supporté.</description>
+  <content:encoded><![CDATA[<p>Toujours plus fort ...<br />
+A présent, le générateur de panel gère le champs 'description' du RSS ...
+De plus, un cache permet de decharger le serveur du RSS distant en le stockant pour 10 minutes.
+Enfin, l'UTF8 est correctement supporté.</p> <p>En plus d'afficher les titres du RSS (avec un style different si le lien a deja été cliqué ou non), ces meme titre peuvent se "déplier" pour faire apparaitre la descripion associé (l'article entier, ou un extrait suivant les flux RSS).<br />
+Si le RSS ne contient pas de champs description (généralement le cas avec les RDF), le titre est directement cliquable.<br />
+Si le RSS contient un champs description, il faudra cliquer sur le titre, puis sur la description pour aller sur le site.<br />
+<img src="/dotclear/images/blog1.png" alt="ScreenShot" width="305" height="271" /></p>
+
+<p>La validation XHTML1.1 est passé sans problème (il y avait 2-3 GROS bug de debutant dans la premiere version :/)</p>
+
+<p>Amusez-vous bien, et n'hésitez pas à me remonter des RSS interessant :)</p>
+
+<p><strong>NB</strong>: Il semble qu'il y ai un pb de parse pour linuxfr.org ... il semblerait qu'il manque <code>&lt;![CDATA[</code> pour encadrer la 'description', afin que les balises HTML passent correctement, au lieu d'arreter le parsing.<br />
+<strong>NB2</strong>: Ca ne passe plus la validation XHTML1.1, car j'ai du ajouter un attribut target au lien pour que ceux-ci s'ouvre bien dans la partie principal du browser et non dans la sidebar (Vu sur Mozilla 1.6 et 1.7B, mais fonctionnait 'normalement' sur FireBird0.8... a moins que ce ne soit FireFird le mauvais élève ;) )</p>]]></content:encoded>
+</item>
+<item rdf:about="http://alexx.ikse.org/blog?2004/03/24/4-ie-respecte-les-normes-w3c-les-plus-recentes">
+  <title>IE respecte les normes W3C les plus récentes</title>
+  <link>http://alexx.ikse.org/blog?2004/03/24/4-ie-respecte-les-normes-w3c-les-plus-recentes</link>
+  <dc:date>2004-03-24T12:09:18+00:00</dc:date>
+  <dc:creator>Alexx</dc:creator>
+  <dc:subject>Coup de gueule</dc:subject>
+  <description>Nan, ca, c'etait une blague ...
+Par contre, quand il n'aime pas qqchose, il le fait bien savoir !
+
+Pour preuve, la page : http://iebug.ikse.org</description>
+  <content:encoded><![CDATA[<p>Nan, ca, c'etait une blague ...<br />
+Par contre, quand il n'aime pas qqchose, il le fait bien savoir !</p>
+
+<p>Pour preuve, la page : <a href="http://iebug.ikse.org">http://iebug.ikse.org</a></p> <p>Quelqu'un a deja eu ce genre de mésaventure ?<br />
+A force de tailler dans le CSS à a hache, la page passe a present (sur le vrai site d'ou est tirer cette page).</p>
+
+<p>Mais je n'ai pas reussi a isoler le pb :/</p>
+
+<p>Si vous avez des pistes ....</p>]]></content:encoded>
+</item>
+<item rdf:about="http://alexx.ikse.org/blog?2004/03/23/3-re-google-censure-par-la-republique-bananiere-francaise">
+  <title>Re: Google censuré par la république bananière Française !</title>
+  <link>http://alexx.ikse.org/blog?2004/03/23/3-re-google-censure-par-la-republique-bananiere-francaise</link>
+  <dc:date>2004-03-23T21:48:43+00:00</dc:date>
+  <dc:creator>Alexx</dc:creator>
+  <dc:subject>Coup de gueule</dc:subject>
+  <description>Marre des paranoïaques ...</description>
+  <content:encoded><![CDATA[<p>Marre des paranoïaques ...</p> <p>Cf. le Journal de manchot sur <a href="http://linuxfr.org" hreflang="fr">LinuxFR</a> : <a href="http://linuxfr.org/~manchot/10802.html">http://linuxfr.org/~manchot/10802.html</a><br />
+et mes commentaires: <a href="http://linuxfr.org/comments/377316.html">http://linuxfr.org/comments/377316.html</a> et <a href="http://linuxfr.org/comments/377319.html">http://linuxfr.org/comments/377319.html</a></p>
+
+<p><em>A bon entendeur ...</em></p>]]></content:encoded>
+</item>
+<item rdf:about="http://alexx.ikse.org/blog?2004/03/09/2-creer-ses-propres-panelssidebars-a-partir-de-rssrdf">
+  <title>Créer ses propres Panels/SideBars à partir de RSS/RDF</title>
+  <link>http://alexx.ikse.org/blog?2004/03/09/2-creer-ses-propres-panelssidebars-a-partir-de-rssrdf</link>
+  <dc:date>2004-03-09T22:45:47+00:00</dc:date>
+  <dc:creator>Alexx</dc:creator>
+  <dc:subject>Developpement</dc:subject>
+  <description>Je me suis amusé ce soir à faire un générateur de Panel/SideBar pour Mozilla/Fire[bird|fox]/Galeon à partir des RSS/RDF que l'on peut trouver de plus en plus souvent sur les sites de news (linuxfr en tete bien sur ;), mais aussi libération, clubic.com ...)
+
+Pour tester, c'est par ici : http://alexx.ikse.org/?p=create</description>
+  <content:encoded><![CDATA[<p>Je me suis amusé ce soir à faire un générateur de Panel/SideBar pour Mozilla/Fire[bird|fox]/Galeon à partir des RSS/RDF que l'on peut trouver de plus en plus souvent sur les sites de news (linuxfr en tete bien sur ;), mais aussi libération, clubic.com ...)<br /></p>
+
+<p>Pour tester, c'est par ici : <a href="http://alexx.ikse.org/?p=create">http://alexx.ikse.org/?p=create</a></p> <p>Quelques exemples de RSS/RDF :<br />
+- http://linuxfr.org/backend.rss<br />
+- http://tribunelibre.org/rss/backend-pageprincipale.rdf<br />
+- http://www.clubic.com/c/xml/actu0.xml<br />
+- http://www.csszengarden.com/zengarden.xml<br />
+- http://www.liberation.fr/rss.php<br />
+...<br />
+- http://slashdot.org/index.rss<br /></p>
+
+<p>Tout les commentaires seront les bienvenu ....<br />
+Il y a sans doute des bugs (c'est obligatoire pour un truc programmer en 15 minutes à l'arrache ;) ), merci de me les rapporter si vous en croisez un.<br />
+Si vous avez des RSS/RDF interessant, ca peut-etre sympa de mettre ca en commentaire :)</p>]]></content:encoded>
+</item>
+<item rdf:about="http://alexx.ikse.org/blog?2004/01/31/1-sco-connerie-observee-notez-la-recursion">
+  <title>SCO Connerie Observée (notez la recursion ;) )</title>
+  <link>http://alexx.ikse.org/blog?2004/01/31/1-sco-connerie-observee-notez-la-recursion</link>
+  <dc:date>2004-01-31T21:19:20+00:00</dc:date>
+  <dc:creator>Alexx</dc:creator>
+  <dc:subject>Juste pour rire ...</dc:subject>
+  <description>Nos amis SCO (sco.com je me demande pourquoi je le precise) devraient préciser la phrase qui est sur leur page d'accueil :
+"MyDoom virus alert - Be caution about opening emails with attachments."
+ainsi :
+"MyDoom virus alert - Under Microsoft(r) Windows(c)(tm) All version : Be caution about opening emails with attachments."</description>
+  <content:encoded><![CDATA[<p>Nos amis SCO (<a href="http://www.sco.com">sco.com</a> je me demande pourquoi je le precise) devraient préciser la phrase qui est sur leur page d'accueil :<br />
+"MyDoom virus alert - Be caution about opening emails with attachments."<br />
+ainsi :<br />
+"MyDoom virus alert - Under Microsoft(r) Windows(c)(tm) All version : Be caution about opening emails with attachments."</p> <p>Hé oui, le bel ordinateur portable de l'illustration est un superbe ... Mac ! :)<br />
+Qui, aux dernières nouvelles, n'est en rien affecté par les problemes purement windowsiens de virus/vers email...</p>
+
+<p>Enfin bref ... on ne pourra plus se moquer pendant une petite 15aine de jour bientot ;)</p>]]></content:encoded>
+</item>
+
+</rdf:RDF>
