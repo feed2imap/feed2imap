@@ -1,0 +1,9 @@
+Feed2Imap 0.2 (date unknown)
+============================
+* HTTP fetching is now multithreaded and is much faster (about 300%).
+* Fetching over HTTPS works.
+* HTTP fetching is fully unit-tested.
+
+Feed2Imap 0.1 (02/04/2005)
+==========================
+* first public release.

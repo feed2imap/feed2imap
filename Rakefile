@@ -16,6 +16,6 @@ end
 
 Rake::PackageTask.new('feed2imap', '0.1') do |p|
 	p.need_tar = true
-	p.package_files.include('README', 'TODO', 'COPYING', 'setup.rb', 'Rakefile', 'feed2imaprc-example', 'bin/feed2imap*', 'test/*.rb', 'lib/*.rb', 'lib/feed2imap/*.rb')
+	p.package_files.include('ChangeLog', 'README', 'TODO', 'COPYING', 'setup.rb', 'Rakefile', 'feed2imaprc-example', 'bin/feed2imap*', 'test/*.rb', 'lib/*.rb', 'lib/feed2imap/*.rb')
 end
 
