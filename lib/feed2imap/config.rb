@@ -26,13 +26,14 @@ DEFCACHE = ENV['HOME'] + '/.feed2imap.cache'
 
 # Feed2imap configuration
 class F2IConfig
-  attr_reader :imap_accounts, :cache, :feeds
+  attr_reader :imap_accounts, :cache, :feeds, :dumpdir
 
   # Load the configuration from the IO stream
   # TODO should do some sanity check on the data read.
   def initialize(io)
     @conf = YAML::load(io)
     @cache = @conf['cache'] || DEFCACHE
+    @dumpdir = @conf['dumpdir'] || nil
     @conf['feeds'] ||= []
     @feeds = []
     @imap_accounts = ImapAccounts::new

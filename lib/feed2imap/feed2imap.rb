@@ -81,6 +81,11 @@ class Feed2Imap
       end
       begin
         body = HTTPFetcher::fetch(f.url, @cache.get_last_check(f.name))
+        # dump if requested
+        if @config.dumpdir
+          fname = @config.dumpdir + '/' + f.name + '-' + Time::now.xmlschema
+          File::open(fname, 'w') { |file| file.puts body }
+        end
       rescue Timeout::Error
         @logger.fatal("Timeout::Error while fetching #{f.url}: #{$!}")
         next
