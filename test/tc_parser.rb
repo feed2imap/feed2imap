@@ -8,6 +8,7 @@ require 'feed2imap/channel'
 class ParserTest < Test::Unit::TestCase
   DATADIR = 'test/parserdata'
   def test_parser
+    return if not File::exist?(DATADIR)
     Dir.foreach(DATADIR) do |f|
       next if f !~ /.xml$/
       str = File::read(DATADIR + '/' + f)
