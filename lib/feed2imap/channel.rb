@@ -217,20 +217,20 @@ class Item
     s += '<html>'
     s += '<body>'
     s += "<p>Channel: "
-    s += "<a href=\"#{@channel.link}\">" if @channel.link
-    s += @channel.title if @channel.title
+    s += "<a href=\"#{@channel.link.toISO_8859_1('utf-8')}\">" if @channel.link
+    s += @channel.title.toISO_8859_1('utf-8') if @channel.title
     s += "</a>" if @channel.link
     s += "<br/>\nItem: "
-    s += "<a href=\"#{@link}\">" if @link
-    s += @title if @title
+    s += "<a href=\"#{@link.toISO_8859_1('utf-8')}\">" if @link
+    s += @title.toISO_8859_1('utf-8') if @title
     s += "</a>" if @link
     s += "\n"
-    s += "<br/>Date: #{@date.to_s}" if @date # TODO improve date rendering ?
-    s += "<br/>Author: #{@creator}" if @creator
-    s += "<br/>Subject: #{@subject}" if @subject
-    s += "<br/>Category: #{@category}" if @category
+    s += "<br/>Date: #{@date.to_s.toISO_8859_1('utf-8')}" if @date # TODO improve date rendering ?
+    s += "<br/>Author: #{@creator.toISO_8859_1('utf-8')}" if @creator
+    s += "<br/>Subject: #{@subject.toISO_8859_1('utf-8')}" if @subject
+    s += "<br/>Category: #{@category.toISO_8859_1('utf-8')}" if @category
     s += "</p>"
-    s += "<p>#{@content}</p>" if @content
+    s += "<p>#{@content.toISO_8859_1('utf-8')}</p>" if @content
     s += '</body></html>'
     s
   end
@@ -260,7 +260,7 @@ class Item
     textpart.header['Content-Transfer-Encoding'] = '7bit'
     textpart.body = to_text
     htmlpart = RMail::Message::new
-    htmlpart.header['Content-Type'] = 'text/html; charset=UTF-8'
+    htmlpart.header['Content-Type'] = 'text/html; charset=iso-8859-1'
     htmlpart.header['Content-Transfer-Encoding'] = '7bit'
     htmlpart.body = to_html
     message.add_part(textpart)
