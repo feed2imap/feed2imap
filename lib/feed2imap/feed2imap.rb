@@ -69,22 +69,26 @@ class Feed2Imap
         exit(1)
       end
     end
-    # for each feed, fetch, upload to IMAP and cache
+    # check that IMAP folders exist
+    @logger.info("Checking IMAP folders")
     @config.feeds.each do |f|
-      @logger.info("Processing #{f.url}")
       begin
-        # check that folder exist
         f.imapaccount.create_folder(f.folder) if not f.imapaccount.folder_exist?(f.folder)
       rescue
         @logger.fatal("Error while creating IMAP folder #{f.folder}: #{$!}")
         exit(1)
       end
+    end
+    # for each feed, fetch, upload to IMAP and cache
+    @logger.info("Fetching feeds")
+    @config.feeds.each do |f|
+      @logger.info("Processing #{f.name}")
       begin
-        body = HTTPFetcher::fetch(f.url, @cache.get_last_check(f.name))
+        f.body = HTTPFetcher::fetch(f.url, @cache.get_last_check(f.name))
         # dump if requested
         if @config.dumpdir
           fname = @config.dumpdir + '/' + f.name + '-' + Time::now.xmlschema
-          File::open(fname, 'w') { |file| file.puts body }
+          File::open(fname, 'w') { |file| file.puts f.body }
         end
       rescue Timeout::Error
         @logger.fatal("Timeout::Error while fetching #{f.url}: #{$!}")
@@ -93,17 +97,20 @@ class Feed2Imap
         @logger.fatal("Error while fetching #{f.url}: #{$!}")
         next
       end
-      next if body.nil? # means 304
+    end
+    @logger.info("Parsing and uploading")
+    @config.feeds.each do |f|
+      next if f.body.nil? # means 304
       begin
-        channel = Channel::new(body)
+        channel = Channel::new(f.body)
       rescue
-        @logger.fatal("Error while parsing #{f.url}: #{$!}")
+        @logger.fatal("Error while parsing #{f.name}: #{$!}")
         next
       end
       begin
         newitems, updateditems = @cache.get_new_items(f.name, channel.items)
       rescue
-        @logger.fatal("Exception caught when selecting new items for #{f.url}: #{$!}")
+        @logger.fatal("Exception caught when selecting new items for #{f.name}: #{$!}")
         puts $!.backtrace
         next
       end

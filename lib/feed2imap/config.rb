@@ -70,6 +70,7 @@ end
 # A configured feed. simple data container.
 class ConfigFeed
   attr_reader :name, :url, :imapaccount, :folder
+  attr_accessor :body
 
   def initialize(name, url, imapaccount, folder)
     @name, @url, @imapaccount, @folder = name, url, imapaccount, folder
