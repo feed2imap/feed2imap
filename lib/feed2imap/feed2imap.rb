@@ -129,6 +129,7 @@ class Feed2Imap
         end
       rescue
         @logger.fatal("Exception caught while uploading mail to #{f.folder}: #{$!}")
+        puts $!.backtrace
         next
       end
       begin

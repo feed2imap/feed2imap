@@ -1,5 +1,8 @@
 Feed2Imap 0.2 (date unknown)
 ============================
+* The text version is now encoded in iso-8859-1 instead of utf-8.
+* The subject is now encoded in iso-8859-1 instead of utf-8.
+* No longer overwrite mail flags (Read, Important,..) when updating an item.
 * HTTP fetching is now multithreaded and is much faster (about 300%).
 * Fetching over HTTPS works.
 * HTTP fetching is fully unit-tested.

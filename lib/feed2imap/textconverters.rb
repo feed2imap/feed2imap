@@ -61,10 +61,23 @@ class String
     return self.gsub!(/\A\s*/m, '').gsub!(/\s*\Z/m,'')
   end
 
+  # Convert a text in inputenc to a text in ISO-8859-1
+  def toISO_8859_1(inputenc)
+    if inputenc.downcase == 'utf-8'
+      begin
+        return self.unpack('U*').pack('C*')
+      rescue
+        return self
+      end
+    else
+      return self
+    end
+  end
+
   # Convert a text in inputenc to a text in UTF8
   # must take care of wrong input locales
   def toUTF8(inputenc)
-    if inputenc.downcase! != 'utf-8'
+    if inputenc.downcase != 'utf-8'
       # it is said it is not UTF-8. Ensure it is REALLY not UTF-8
       begin
         if self.unpack('U*').pack('U*') == self

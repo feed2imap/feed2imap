@@ -99,13 +99,15 @@ class ImapAccount
   def updatemail(folder, mail, idx)
     @connection.select(folder)
     searchres = @connection.search(['HEADER', 'X-CacheIndex', "-#{idx}-"])
+    flags = nil
     if searchres.length == 1
+      flags = @connection.fetch(searchres[0], 'FLAGS')[0].attr['FLAGS']
       @connection.store(searchres[0], "+FLAGS", [:Deleted])
       @connection.expunge
     elsif searchres.length != 0
       raise "Search returned multiple results !!"
     end
-    putmail(folder, mail)
+    @connection.append(folder, mail, flags)
   end
 
   def to_s

@@ -196,19 +196,19 @@ class Item
   def to_text
     s = ""
     s += "Channel: "
-    s += @channel.title + ' ' if @channel.title
-    s += "<#{@channel.link}>" if @channel.link
+    s += @channel.title.toISO_8859_1('utf-8') + ' ' if @channel.title
+    s += "<#{@channel.link.toISO_8859_1('utf-8')}>" if @channel.link
     s += "\n"
     s += "Item: "
-    s += @title + ' ' if @title
-    s += "<#{@link}>" if @link
+    s += @title.toISO_8859_1('utf-8') + ' ' if @title
+    s += "<#{@link.toISO_8859_1('utf-8')}>" if @link
     s += "\n"
-    s += "\nDate: #{@date.to_s}" if @date # TODO improve date rendering ?
-    s += "\nAuthor: #{@creator}" if @creator
-    s += "\nSubject: #{@subject}" if @subject
-    s += "\nCategory: #{@category}" if @category
+    s += "\nDate: #{@date.to_s.toISO_8859_1('utf-8')}" if @date # TODO improve date rendering ?
+    s += "\nAuthor: #{@creator.toISO_8859_1('utf-8')}" if @creator
+    s += "\nSubject: #{@subject.toISO_8859_1('utf-8')}" if @subject
+    s += "\nCategory: #{@category.toISO_8859_1('utf-8')}" if @category
     s += "\n\n"
-    s += "#{@content.html2text}" if @content
+    s += "#{@content.html2text.toISO_8859_1('utf-8')}" if @content
     s
   end
 
@@ -249,14 +249,14 @@ class Item
     message.header['X-F2IStatus'] = "Updated" if @cacheditem.updated
     # TODO encode in ISO ?
     if @title
-      message.header['Subject'] = @title
+      message.header['Subject'] = @title.toISO_8859_1('utf-8')
     elsif @date
-      message.header['Subject'] = @date.to_s
+      message.header['Subject'] = @date.to_s.toISO_8859_1('utf-8')
     elsif @link
-      message.header['Subject'] = @link
+      message.header['Subject'] = @link.toISO_8859_1('utf-8')
     end
     textpart = RMail::Message::new
-    textpart.header['Content-Type'] = 'text/plain; charset=UTF-8; format=flowed'
+    textpart.header['Content-Type'] = 'text/plain; charset=iso-8859-1; format=flowed'
     textpart.header['Content-Transfer-Encoding'] = '7bit'
     textpart.body = to_text
     htmlpart = RMail::Message::new
