@@ -95,4 +95,15 @@ class String
       return self
     end
   end
+
+  def needMIME
+    utf8 = false
+    self.unpack('U*').each do |c|
+      if c > 127
+        utf8 = true
+        break
+      end
+    end
+    utf8
+  end
 end

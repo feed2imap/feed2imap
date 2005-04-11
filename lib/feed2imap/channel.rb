@@ -25,6 +25,7 @@ require 'rmail'
 require 'feed2imap/textconverters'
 require 'feed2imap/rubymail_patch'
 require 'feed2imap/rexml_patch'
+require 'base64'
 
 class UnknownFeedTypeException < RuntimeError
 end
@@ -205,6 +206,7 @@ class Item
     s += "\n"
     s += "\nDate: #{@date.to_s.toISO_8859_1('utf-8')}" if @date # TODO improve date rendering ?
     s += "\nAuthor: #{@creator.toISO_8859_1('utf-8')}" if @creator
+
     s += "\nSubject: #{@subject.toISO_8859_1('utf-8')}" if @subject
     s += "\nCategory: #{@category.toISO_8859_1('utf-8')}" if @category
     s += "\n\n"
@@ -217,20 +219,20 @@ class Item
     s += '<html>'
     s += '<body>'
     s += "<p>Channel: "
-    s += "<a href=\"#{@channel.link.toISO_8859_1('utf-8')}\">" if @channel.link
-    s += @channel.title.toISO_8859_1('utf-8') if @channel.title
+    s += "<a href=\"#{@channel.link}\">" if @channel.link
+    s += @channel.title if @channel.title
     s += "</a>" if @channel.link
     s += "<br/>\nItem: "
-    s += "<a href=\"#{@link.toISO_8859_1('utf-8')}\">" if @link
-    s += @title.toISO_8859_1('utf-8') if @title
+    s += "<a href=\"#{@link}\">" if @link
+    s += @title if @title
     s += "</a>" if @link
     s += "\n"
-    s += "<br/>Date: #{@date.to_s.toISO_8859_1('utf-8')}" if @date # TODO improve date rendering ?
-    s += "<br/>Author: #{@creator.toISO_8859_1('utf-8')}" if @creator
-    s += "<br/>Subject: #{@subject.toISO_8859_1('utf-8')}" if @subject
-    s += "<br/>Category: #{@category.toISO_8859_1('utf-8')}" if @category
+    s += "<br/>Date: #{@date.to_s}" if @date # TODO improve date rendering ?
+    s += "<br/>Author: #{@creator}" if @creator
+    s += "<br/>Subject: #{@subject}" if @subject
+    s += "<br/>Category: #{@category}" if @category
     s += "</p>"
-    s += "<p>#{@content.toISO_8859_1('utf-8')}</p>" if @content
+    s += "<p>#{@content}</p>" if @content
     s += '</body></html>'
     s
   end
@@ -247,20 +249,21 @@ class Item
     message.header['X-Feed2Imap-Version'] = F2I_VERSION if defined?(F2I_VERSION)
     message.header['X-CacheIndex'] = "-#{@cacheditem.index}-"
     message.header['X-F2IStatus'] = "Updated" if @cacheditem.updated
-    # TODO encode in ISO ?
-    if @title
-      message.header['Subject'] = @title.toISO_8859_1('utf-8')
-    elsif @date
-      message.header['Subject'] = @date.to_s.toISO_8859_1('utf-8')
-    elsif @link
-      message.header['Subject'] = @link.toISO_8859_1('utf-8')
+    # treat subject. Might need MIME encoding.
+    subj = @title or (@date and @date.to_s) or @link
+    if subj
+      if subj.needMIME
+        message.header['Subject'] = "=?utf-8?b?#{Base64::encode64(subj).chomp}?="
+      else
+        message.header['Subject'] = subj 
+      end
     end
     textpart = RMail::Message::new
-    textpart.header['Content-Type'] = 'text/plain; charset=iso-8859-1; format=flowed'
+    textpart.header['Content-Type'] = 'text/plain; charset=iso-8859-1'
     textpart.header['Content-Transfer-Encoding'] = '7bit'
     textpart.body = to_text
     htmlpart = RMail::Message::new
-    htmlpart.header['Content-Type'] = 'text/html; charset=iso-8859-1'
+    htmlpart.header['Content-Type'] = 'text/html; charset=utf-8'
     htmlpart.header['Content-Transfer-Encoding'] = '7bit'
     htmlpart.body = to_html
     message.add_part(textpart)
