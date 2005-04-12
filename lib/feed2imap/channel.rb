@@ -253,7 +253,7 @@ class Item
     subj = @title or (@date and @date.to_s) or @link
     if subj
       if subj.needMIME
-        message.header['Subject'] = "=?utf-8?b?#{Base64::encode64(subj).chomp}?="
+        message.header['Subject'] = "=?utf-8?b?#{Base64::encode64(subj).gsub("\n",'')}?="
       else
         message.header['Subject'] = subj 
       end
