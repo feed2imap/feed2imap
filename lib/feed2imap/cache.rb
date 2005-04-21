@@ -35,10 +35,10 @@ class ItemCache
     return @channels[id].get_new_items(items)
   end
 
-  # Replace the existing cached items by those ones
-  def update_cache(id, items)
+  # Commit changes to the cache
+  def commit_cache(id)
     @channels[id] ||= CachedChannel::new
-    @channels[id].update(items)
+    @channels[id].commit
   end
 
   # Get the last time the cache was updated
@@ -91,18 +91,36 @@ class ItemCache
 end
 
 class CachedChannel
+  # Size of the cache for each feed
+  CACHESIZE = 50
+
   attr_accessor :lastcheck, :items
 
   def initialize
     @lastcheck = Time::at(0)
     @items = []
+    @itemstemp = [] # see below
+    @nbnewitems = 0
   end
+
+  # Let's explain @items and @itemstemp.
+  # @items contains the CachedItems serialized to the disk cache.
+  # The - quite complicated - get_new_items method fills in @itemstemp
+  # but leaves @items unchanged.
+  # Later, the commit() method replaces @items with @itemstemp and
+  # empties @itemstemp. This way, if something wrong happens during the
+  # upload to the IMAP server, items aren't lost.
+  # @nbnewitems is set by get_new_items, and is used to limit the number
+  # of (old) items serialized.
 
   # Returns the really new items amongst items
   def get_new_items(items)
+    # save number of new items
+    @nbnewitems = items.length
     # set items' cached version if not set yet
     newitems = []
     updateditems = []
+    @itemstemp = @items
     items.each { |i| i.cacheditem ||= CachedItem::new(i) }
     items.each do |i|
       found = false
@@ -111,6 +129,9 @@ class CachedChannel
         if i.cacheditem == j
           i.cacheditem.index = j.index
           found = true
+          # let's put j in front of itemstemp
+          @itemstemp.delete(j)
+          @itemstemp.unshift(j)
           break
         end
       end
@@ -123,6 +144,9 @@ class CachedChannel
           i.cacheditem.updated = true
           updateditems.push(i)
           found = true
+          # let's put j in front of itemstemp
+          @itemstemp.delete(j)
+          @itemstemp.unshift(j)
           break
         end
       end
@@ -130,16 +154,17 @@ class CachedChannel
       # add as new
       i.cacheditem.create_index
       newitems.push(i)
+      # add i.cacheditem to @itemstemp
+      @itemstemp.unshift(i.cacheditem)
     end
     return [newitems, updateditems]
   end
-
-  # Replace the existing cached items by those ones
-  def update(items)
-    @items = []
-    items.each do |i|
-      @items.push(i.cacheditem)
-    end
+  
+  def commit
+    # too old items must be dropped
+    n = @nbnewitems > CACHESIZE ? @nbnewitems : CACHESIZE
+    @items = @itemstemp[0..n]
+    @itemstemp = []
     self
   end
 

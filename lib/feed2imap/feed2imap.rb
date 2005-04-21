@@ -133,7 +133,7 @@ class Feed2Imap
         next
       end
       begin
-        @cache.update_cache(f.name, channel.items)
+        @cache.commit_cache(f.name)
       rescue
         @logger.fatal("Exception caught while updating cache for #{f.name}: #{$!}")
         next

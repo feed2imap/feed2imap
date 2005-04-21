@@ -33,10 +33,14 @@ class ItemCacheTest < Test::Unit::TestCase
     i2.title = 'title2'
     i2.link = 'link2'
     i2.content = 'content2'
+    i3 = Item::new
+    i3.title = 'title3'
+    i3.link = 'link3'
+    i3.content = 'content3'
     assert_equal([i1, i2], c.get_new_items('id', [i1, i2])[0])
-    c.update_cache('id', [i1])
-    assert_equal(1, c.nbitems)
-    assert_equal([i2], c.get_new_items('id', [i1, i2])[0])
+    c.commit_cache('id')
+    assert_equal(2, c.nbitems)
+    assert_equal([i3], c.get_new_items('id', [i2, i3])[0])
   end
 
   def test_cache_management_updated
@@ -57,7 +61,7 @@ class ItemCacheTest < Test::Unit::TestCase
     assert_equal(0, idx1)
     idx2 = i2.cacheditem.index
     assert_equal(1, idx2)
-    c.update_cache('id', [i1, i2])
+    c.commit_cache('id')
     i3 = Item::new
     i3.title = 'title 1 - updated'
     i3.link = 'link1'
