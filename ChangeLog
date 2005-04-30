@@ -1,4 +1,4 @@
-Feed2Imap 0.2 (date unknown)
+Feed2Imap 0.2 (30/04/2005)
 ============================
 * Fixed a problem with feeds with strange caching bugs (old items going away
   and coming back)
