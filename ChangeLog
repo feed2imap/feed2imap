@@ -1,3 +1,8 @@
+Feed2Imap 0.3 (date unknown)
+============================
+* Fixed a problem when the disconnection from the IMAP server failed.
+  reported by Ludovic Gomez <ludogomez@chez.com>
+
 Feed2Imap 0.2 (30/04/2005)
 ============================
 * Fixed a problem with feeds with strange caching bugs (old items going away

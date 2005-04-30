@@ -27,7 +27,7 @@ require 'logger'
 require 'thread'
 
 # Feed2Imap version
-F2I_VERSION = '0.2'
+F2I_VERSION = '0.3'
 
 class Feed2Imap
   def initialize(verbose, cacherebuild, configfile)
@@ -146,10 +146,12 @@ class Feed2Imap
       @logger.fatal("Exception caught while writing cache to #{@config.cache}: #{$!}")
     end
     @logger.info("Closing IMAP connections")
-    begin
-      @config.imap_accounts.each_value { |ac| ac.disconnect }
-    rescue
-      @logger.fatal("Exception caught while closing connection to #{ac.to_s}: #{$!}")
+    @config.imap_accounts.each_value do |ac|
+      begin
+        ac.disconnect
+      rescue
+        @logger.fatal("Exception caught while closing connection to #{ac.to_s}: #{$!}")
+      end
     end
   end
 end
