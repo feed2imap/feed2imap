@@ -1,5 +1,6 @@
 Feed2Imap 0.3 (date unknown)
 ============================
+* Cleaner way to manage duplicate IDs (#1773)
 * Fixed a problem with pseudo-duplicate entries from Mediawiki
 * Fixed a problem with updated items being seen as updated at each update.
 * Fixed a problem when the disconnection from the IMAP server failed.
