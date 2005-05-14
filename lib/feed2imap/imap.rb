@@ -103,7 +103,7 @@ class ImapAccount
     if searchres.length > 0
       # we get the flags from the first result and delete everything
       flags = @connection.fetch(searchres[0], 'FLAGS')[0].attr['FLAGS']
-      searchres.each { |m| @connection.store(m, "+FLAGS" [:Deleted]) }
+      searchres.each { |m| @connection.store(m, "+FLAGS", [:Deleted]) }
       @connection.expunge
     end
     @connection.append(folder, mail, flags)
