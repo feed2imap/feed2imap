@@ -1,5 +1,6 @@
 Feed2Imap 0.3 (date unknown)
 ============================
+* Fixed a problem with updated items being seen as updated at each update.
 * Fixed a problem when the disconnection from the IMAP server failed.
   reported by Ludovic Gomez <ludogomez@chez.com>
 

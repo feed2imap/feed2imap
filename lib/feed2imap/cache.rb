@@ -113,6 +113,8 @@ class CachedChannel
   # @nbnewitems is set by get_new_items, and is used to limit the number
   # of (old) items serialized.
 
+  UPDATEDDEBUG = false
+
   # Returns the really new items amongst items
   def get_new_items(items)
     # save number of new items
@@ -122,6 +124,13 @@ class CachedChannel
     updateditems = []
     @itemstemp = @items
     items.each { |i| i.cacheditem ||= CachedItem::new(i) }
+    # debug : dump interesting info to stdout.
+    if UPDATEDDEBUG
+      puts "-------Items downloaded :----------"
+      items.each { |i| puts "#{i.cacheditem.to_s}" }
+      puts "-------Items already there :----------"
+      @items.each { |i| puts "#{i.to_s}" }
+    end
     items.each do |i|
       found = false
       # Try to find a perfect match
@@ -146,7 +155,7 @@ class CachedChannel
           found = true
           # let's put j in front of itemstemp
           @itemstemp.delete(j)
-          @itemstemp.unshift(j)
+          @itemstemp.unshift(i.cacheditem)
           break
         end
       end
@@ -196,5 +205,9 @@ class CachedItem
 
   def create_index
     @index = ItemCache.getindex
+  end
+
+  def to_s
+    "\"#{@title}\" #{@link} #{@hash}"
   end
 end

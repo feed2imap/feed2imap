@@ -19,7 +19,7 @@ opts = OptionParser::new do |opts|
   opts.on("-V", "--version", "Display Feed2Imap version") do |v|
     version = true
   end
-  opts.on("-c", "--rebuild-cache", "Cache rebuilding run : will fetch everything and cache, as if it was already read.") do |c|
+  opts.on("-c", "--rebuild-cache", "Cache rebuilding run : will fetch everything and add to cache, without uploading to the IMAP server. Useful if your cache file was lost, and you don't want to re-read all the items.") do |c|
     cacherebuild = true
   end
   opts.on("-f", "--config <file>", "Select alternate config file") do |f|
