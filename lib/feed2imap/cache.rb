@@ -124,6 +124,24 @@ class CachedChannel
     updateditems = []
     @itemstemp = @items
     items.each { |i| i.cacheditem ||= CachedItem::new(i) }
+    # remove dups
+    dups = true
+    while dups
+      dups = false
+      for i in 0...items.length do
+        for j in i+1...items.length do
+          if items[i].cacheditem.link == items[j].cacheditem.link
+            if UPDATEDDEBUG
+              puts "## Removed #{items[j].cacheditem.to_s}"
+            end
+            items.delete_at(j)
+            dups = true
+            break
+          end
+        end
+        break if dups
+      end
+    end
     # debug : dump interesting info to stdout.
     if UPDATEDDEBUG
       puts "-------Items downloaded :----------"
@@ -147,8 +165,8 @@ class CachedChannel
       next if found
       # Try to find an updated item
       @items.each do |j|
+        # Do we need a better heuristic ?
         if i.link and i.link == j.link
-          # Do we need a better heuristic ?
           i.cacheditem.index = j.index
           i.cacheditem.updated = true
           updateditems.push(i)
@@ -165,6 +183,12 @@ class CachedChannel
       newitems.push(i)
       # add i.cacheditem to @itemstemp
       @itemstemp.unshift(i.cacheditem)
+    end
+    if UPDATEDDEBUG
+      puts "-------New items :----------"
+      newitems.each { |i| puts "#{i.cacheditem.to_s}" }
+      puts "-------Updated items :----------"
+      updateditems.each { |i| puts "#{i.cacheditem.to_s}" }
     end
     return [newitems, updateditems]
   end
