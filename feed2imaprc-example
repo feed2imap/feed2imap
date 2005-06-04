@@ -1,4 +1,7 @@
 feeds: 
+  - name: feed2imap
+	 url: http://home.gna.org/feed2imap/feed2imap.rss
+    target: imap://lucaswebmail:password@imap.apinc.org/INBOX.Feeds.Feed2Imap
   - name: feed1
     url: http://www.liberation.com/rss.php
     target: imap://lucaswebmail:password@imap.apinc.org/INBOX.Feeds.A
