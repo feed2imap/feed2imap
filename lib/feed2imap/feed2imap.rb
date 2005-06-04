@@ -27,7 +27,7 @@ require 'logger'
 require 'thread'
 
 # Feed2Imap version
-F2I_VERSION = '0.3'
+F2I_VERSION = '0.4'
 
 class Feed2Imap
   def initialize(verbose, cacherebuild, configfile)

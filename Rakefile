@@ -14,7 +14,7 @@ Rake::RDocTask.new do |rd|
 	rd.rdoc_dir = 'rdoc'
 end
 
-Rake::PackageTask.new('feed2imap', '0.3') do |p|
+Rake::PackageTask.new('feed2imap', '0.4') do |p|
 	p.need_tar = true
 	p.package_files.include('ChangeLog', 'README', 'COPYING', 'setup.rb', 'Rakefile', 'feed2imaprc-example', 'bin/feed2imap*', 'test/*.rb', 'test/parserdata/*.xml', 'test/parserdata/*.output', 'lib/*.rb', 'lib/feed2imap/*.rb')
 end
