@@ -1,5 +1,7 @@
 Feed2Imap 0.4 (date unknown)
 ============================
+* Feed2Imap version number wasn't displayed in the User-Agent
+* Better exception handling when parsing errors occur
 * added feed2imap's RSS feed to the default feeds in the config file
 
 Feed2Imap 0.3 (04/06/2005)

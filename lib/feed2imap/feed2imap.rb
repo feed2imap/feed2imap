@@ -19,15 +19,15 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 =end
 
+# Feed2Imap version
+F2I_VERSION = '0.4'
+
 require 'feed2imap/config'
 require 'feed2imap/cache'
 require 'feed2imap/channel'
 require 'feed2imap/httpfetcher'
 require 'logger'
 require 'thread'
-
-# Feed2Imap version
-F2I_VERSION = '0.4'
 
 class Feed2Imap
   def initialize(verbose, cacherebuild, configfile)
@@ -110,8 +110,8 @@ class Feed2Imap
       next if f.body.nil? # means 304
       begin
         channel = Channel::new(f.body)
-      rescue
-        @logger.fatal("Error while parsing #{f.name}: #{$!}")
+      rescue Exception => e
+        @logger.fatal("Error while parsing #{f.name}: #{e}")
         next
       end
       begin
