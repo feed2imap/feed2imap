@@ -2,12 +2,9 @@ feeds:
   - name: feed2imap
 	 url: http://home.gna.org/feed2imap/feed2imap.rss
     target: imap://lucaswebmail:password@imap.apinc.org/INBOX.Feeds.Feed2Imap
-  - name: feed1
-    url: http://www.liberation.com/rss.php
-    target: imap://lucaswebmail:password@imap.apinc.org/INBOX.Feeds.A
-  - name: feed2
+  - name: lucas
     url: http://www.lucas-nussbaum.net/dotclear/rss.php
-    target: imap://lucaswebmail:password@imap.apinc.org/INBOX.Feeds.B
-  - name: feed3
+    target: imap://lucaswebmail:password@imap.apinc.org/INBOX.Feeds.Lucas
+  - name: linuxfr
     url: http://linuxfr.org/backend/news/rss20.rss
-    target: imap://lucaswebmail:password@imap.apinc.org/INBOX.Feeds.C
+    target: imap://lucaswebmail:password@imap.apinc.org/INBOX.Feeds.LinuxFR
