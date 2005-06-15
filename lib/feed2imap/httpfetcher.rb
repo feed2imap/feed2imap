@@ -27,7 +27,7 @@ end
 require 'uri'
 
 if defined?(F2I_VERSION)
-  USERAGENT = 'Feed2Imap v#{F2I_VERSION} http://home.gna.org/feed2imap/'
+  USERAGENT = "Feed2Imap v#{F2I_VERSION} http://home.gna.org/feed2imap/"
 else
   USERAGENT = 'Feed2Imap http://home.gna.org/feed2imap/'
 end
