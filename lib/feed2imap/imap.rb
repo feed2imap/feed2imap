@@ -121,7 +121,7 @@ class ImapAccount
   def cleanup(folder, dryrun = false)
     puts "-- Considering #{folder}:"
     @connection.select(folder)
-    a = ['NOT', 'NEW', 'NOT', 'FLAGGED', 'BEFORE', (Date::today - 10).strftime('%d-%b-%Y')]
+    a = ['SEEN', 'NOT', 'FLAGGED', 'BEFORE', (Date::today - 3).strftime('%d-%b-%Y')]
     todel = @connection.search(a)
     todel.each do |m|
       f = @connection.fetch(m, "FULL")
