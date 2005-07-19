@@ -50,6 +50,7 @@ class ImapAccount
 
   def initialize(uri)
     @uri = uri
+    self
   end
 
   # connects to the IMAP server
@@ -71,6 +72,7 @@ class ImapAccount
     @connection = Net::IMAP::new(uri.host, port, usessl)
     user, password = uri.userinfo.split(':',2)
     @connection.login(user, password)
+    self
   end
 
   # disconnect from the IMAP server
@@ -96,6 +98,7 @@ class ImapAccount
     @connection.append(folder, mail)
   end
 
+  # update a mail
   def updatemail(folder, mail, idx)
     @connection.select(folder)
     searchres = @connection.search(['HEADER', 'X-CacheIndex', "-#{idx}-"])
@@ -109,8 +112,36 @@ class ImapAccount
     @connection.append(folder, mail, flags)
   end
 
+  # convert to string
   def to_s
     uri.to_s
+  end
+
+  # remove mails in a folder according to a criteria
+  def cleanup(folder, dryrun = false)
+    puts "-- Considering #{folder}:"
+    @connection.select(folder)
+    a = ['NOT', 'NEW', 'NOT', 'FLAGGED', 'BEFORE', (Date::today - 10).strftime('%d-%b-%Y')]
+    todel = @connection.search(a)
+    todel.each do |m|
+      f = @connection.fetch(m, "FULL")
+      d = f[0].attr['INTERNALDATE']
+      s = f[0].attr['ENVELOPE'].subject
+      if s =~ /^=\?utf-8\?b\?/
+        s = Base64::decode64(s.gsub(/^=\?utf-8\?b\?(.*)\?=$/, '\1')).toISO_8859_1('utf-8')
+      end
+      if dryrun
+        puts "To remove: #{s} (#{d})"
+      else
+        puts "Removing: #{s} (#{d})"
+        @connection.store(m, "+FLAGS", [:Deleted])
+      end
+    end
+    puts "-- Deleted #{todel.length} messages."
+    if not dryrun
+      @connection.expunge
+    end
+    return todel.length
   end
 end
 

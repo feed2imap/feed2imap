@@ -1,0 +1,32 @@
+#!/usr/bin/ruby
+
+$:.unshift File.join(File.dirname(__FILE__), '..', 'lib')
+
+require 'feed2imap/feed2imap'
+require 'optparse'
+
+configf = ENV['HOME'] + '/.feed2imaprc'
+dryrun = false
+
+opts = OptionParser::new do |opts|
+  opts.banner = "Usage: feed2imap-cleaner [options]"
+  opts.separator ""
+  opts.separator "Options:"
+  opts.on("-d", "--dry-run", "Dont really remove messages") do |v|
+    dryrun = true
+  end
+  opts.on("-f", "--config <file>", "Select alternate config file") do |f|
+    configf = f
+  end
+end
+opts.parse!(ARGV)
+
+config = nil
+File::open(configf) { |f| config = F2IConfig::new(f) }
+config.imap_accounts.each_value do |ac|
+  ac.connect
+end
+config.feeds.each do |f|
+  f.imapaccount.cleanup(f.folder, dryrun)
+end
+
