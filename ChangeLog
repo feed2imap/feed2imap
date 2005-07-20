@@ -1,5 +1,7 @@
 Feed2Imap 0.4 (date unknown)
 ============================
+* Switched to a real SGML parser for the text version.
+* Much better output for the text version of emails.
 * New feed2imap-cleaner to remove old mails seen but not flagged
 * Feed2Imap version number wasn't displayed in the User-Agent
 * Better exception handling when parsing errors occur

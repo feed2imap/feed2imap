@@ -18,6 +18,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 =end
 
 require 'uri' # for URI::regexp
+require 'feed2imap/html2text-parser'
 
 # This class provides various converters
 class String
@@ -41,19 +42,37 @@ class String
 
   # Convert an HTML text to plain text
   def html2text
-    text = self.clone
-    # let's remove all CR
-    text.gsub!(/\n/, '')
-    # convert <p> and <br>
-    text.gsub!(/\s*<\/p>\s*/, '')
-    text.gsub!(/\s*<p(\s[^>]*)?>\s*/, "\n\n")
-    text.gsub!(/\s*<br(\s*)\/?(\s*)>\s*/, "\n")
-    # remove other tags
-    text.gsub!(/<[^>]*>/, '')
-    # remove leading and trailing whilespace
-    text.gsub!(/\A\s*/m, '')
-    text.gsub!(/\s*\Z/m, '')
-    text
+    if false
+      text = self.clone
+      # let's remove all CR
+      text.gsub!(/\n/, '')
+      # convert <p> and <br>
+      text.gsub!(/\s*<\/p>\s*/, '')
+      text.gsub!(/\s*<p(\s[^>]*)?>\s*/, "\n\n")
+      text.gsub!(/\s*<br(\s*)\/?(\s*)>\s*/, "\n")
+      # remove other tags
+      text.gsub!(/<[^>]*>/, '')
+      # remove leading and trailing whilespace
+      text.gsub!(/\A\s*/m, '')
+      text.gsub!(/\s*\Z/m, '')
+      text
+    else
+      text = self.clone
+      # parse HTML
+      p = HTML2TextParser::new(true)
+      p.feed(text)
+      p.close
+      text = p.savedata
+      # remove leading and trailing whilespace
+      text.gsub!(/\A\s*/m, '')
+      text.gsub!(/\s*\Z/m, '')
+      # remove whitespace around \n
+      text.gsub!(/ *\n/m, "\n")
+      text.gsub!(/\n */m, "\n")
+      # and duplicates \n
+      text.gsub!(/\n\n+/m, "\n\n")
+      text
+    end
   end
 
   # Remove white space around the text
