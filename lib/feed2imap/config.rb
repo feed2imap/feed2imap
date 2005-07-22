@@ -74,5 +74,6 @@ class ConfigFeed
 
   def initialize(name, url, imapaccount, folder)
     @name, @url, @imapaccount, @folder = name, url, imapaccount, folder
+    url.sub!(/^feed:/, '')
   end
 end
