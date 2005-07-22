@@ -1,0 +1,40 @@
+#!/usr/bin/make -f
+# debian/rules that uses debhelper.
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+build:
+
+clean:
+	dh_testdir
+	dh_testroot
+	dh_clean
+
+install: build
+
+binary-indep: build install
+	dh_testdir
+	dh_testroot
+	dh_installdirs
+	dh_installchangelogs ChangeLog
+	dh_installdocs README
+	dh_installexamples feed2imaprc-example
+	cp -r lib/* debian/tmp/usr/lib/ruby/1.8/
+	chmod --recursive 0644 debian/tmp/usr/lib/ruby/1.8/*
+	chmod 755 `find debian/tmp/usr/lib/ruby/1.8/ -type d`
+	install -m 655 bin/feed2imap debian/tmp/usr/bin
+	dh_compress
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+
+binary-arch: build install
+# Nothing here, not a binary package
+
+binary: binary-indep binary-arch
+
+.PHONY: build clean binary-indep binary-arch binary install

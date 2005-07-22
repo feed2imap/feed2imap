@@ -1,0 +1,16 @@
+Source: feed2imap
+Section: net
+Priority: optional
+Maintainer: Lucas Nussbaum <lucas@lucas-nussbaum.net>
+Build-Depends: debhelper (>> 4.0.0)
+Standards-Version: 3.6.2.1
+
+Package: feed2imap
+Architecture: all
+Depends: ruby
+Suggests: imap-client, imap-server
+Description: RSS/Atom feed aggregator that uploads items to an IMAP mail server
+ Feed2Imap is an RSS/Atom feed aggregator. After Downloading feeds
+ (over HTTP or HTTPS), it uploads them to a specified folder of an
+ IMAP mail server. The user can then access the feeds using a mail
+ reader like Mutt, Evolution, Mozilla Thunderbird or even a webmail.

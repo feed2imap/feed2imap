@@ -1,0 +1,6 @@
+feed2imap (0.4-1) unstable; urgency=low
+
+  * First Debian Package.
+
+ -- Lucas Nussbaum <lucas@lucas-nussbaum.net>  Fri, 22 Jul 2005 14:00:00 +0100
+
