@@ -37,13 +37,14 @@ class F2IConfig
     @conf['feeds'] ||= []
     @feeds = []
     @imap_accounts = ImapAccounts::new
-    @conf['feeds'].each { |f|
-      uri = URI::parse(f['target'])
-      path = uri.path
-      path = path[1..-1] if path[0,1] == '/'
-      @feeds.push(ConfigFeed::new(f['name'], f['url'],
-                                  @imap_accounts.add_account(uri), path))
-    }
+    @conf['feeds'].each do |f|
+      if f['disable'].nil?
+        uri = URI::parse(f['target'])
+        path = uri.path
+        path = path[1..-1] if path[0,1] == '/'
+        @feeds.push(ConfigFeed::new(f, @imap_accounts.add_account(uri), path))
+      end
+    end
   end
 
   def to_s
@@ -72,8 +73,17 @@ class ConfigFeed
   attr_reader :name, :url, :imapaccount, :folder
   attr_accessor :body
 
-  def initialize(name, url, imapaccount, folder)
-    @name, @url, @imapaccount, @folder = name, url, imapaccount, folder
-    url.sub!(/^feed:/, '')
+  def initialize(f, imapaccount, folder)
+    @name = f['name']
+    @url = f['url']
+    @url.sub!(/^feed:/, '') if @url =~ /^feed:/
+    @imapaccount, @folder = imapaccount, folder
+    @freq = f['min-frequency']
+    @freq = @freq.to_i if @freq
+  end
+
+  def needfetch(lastcheck)
+    return true if @freq.nil?
+    return (lastcheck + @freq * 3600) < Time::now
   end
 end

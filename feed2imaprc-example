@@ -1,6 +1,12 @@
+# name is the name of the feed (must be unique)
+# url is the HTTP[S] address where the feed has to be fetched
+# target is the IMAP URI where to put emails
+# min-frequency (in HOURS) is the minimum frequency with which this particular
+#      feed will be fetched
+# disable: if set to something, the feed will be ignored
 feeds: 
   - name: feed2imap
-	 url: http://home.gna.org/feed2imap/feed2imap.rss
+    url: http://home.gna.org/feed2imap/feed2imap.rss
     target: imap://lucaswebmail:password@imap.apinc.org/INBOX.Feeds.Feed2Imap
   - name: lucas
     url: http://www.lucas-nussbaum.net/dotclear/rss.php

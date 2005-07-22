@@ -1,5 +1,6 @@
 Feed2Imap 0.4 (date unknown)
 ============================
+* added min-frequency and disable config options. Added doc in example config.
 * You can now use WordPress's feed:http://something urls in feed2imaprc.
 * Switched to a real SGML parser for the text version.
 * Much better output for the text version of emails.

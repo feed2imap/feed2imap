@@ -87,9 +87,13 @@ class Feed2Imap
     @config.feeds.each do |f|
       ths << Thread::new do
         begin
-          f.body = HTTPFetcher::fetch(f.url, @cache.get_last_check(f.name))
+          lastcheck = @cache.get_last_check(f.name) 
+          if f.needfetch(lastcheck)
+            f.body = HTTPFetcher::fetch(f.url, @cache.get_last_check(f.name))
+            @cache.set_last_check(f.name, Time::now)
+          end
           # dump if requested
-          if @config.dumpdir
+          if @config.dumpdir and f.body
             fname = @config.dumpdir + '/' + f.name + '-' + Time::now.xmlschema
             File::open(fname, 'w') { |file| file.puts f.body }
           end
