@@ -1,5 +1,6 @@
 Feed2Imap 0.4 (date unknown)
 ============================
+* IMAPS now works thanks to a bug fixed in ruby 1.9.
 * Switched to a real SGML parser for the text version.
 * Much better output for the text version of emails.
 * New feed2imap-cleaner to remove old mails seen but not flagged
