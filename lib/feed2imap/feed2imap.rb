@@ -1,5 +1,3 @@
-#!/usr/bin/ruby
-
 =begin
 Feed2Imap - RSS/Atom Aggregator uploading to an IMAP Server
 Copyright (c) 2005 Lucas Nussbaum <lucas@lucas-nussbaum.net>

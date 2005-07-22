@@ -21,9 +21,10 @@ binary-indep: build install
 	dh_installdocs README
 	dh_installexamples feed2imaprc-example
 	cp -r lib/* debian/tmp/usr/lib/ruby/1.8/
-	chmod --recursive 0644 debian/tmp/usr/lib/ruby/1.8/*
-	chmod 755 `find debian/tmp/usr/lib/ruby/1.8/ -type d`
-	install -m 655 bin/feed2imap debian/tmp/usr/bin
+	rm -rf `find debian/tmp -name .svn -type d`
+	chmod --recursive 0644 debian/tmp/*
+	chmod 755 `find debian/tmp -type d`
+	install -m 755 bin/feed2imap debian/tmp/usr/bin
 	dh_compress
 	dh_installdeb
 	dh_shlibdeps
