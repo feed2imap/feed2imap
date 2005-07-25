@@ -1,33 +1,34 @@
-.TH feed2imap 1 "Jul 25, 2005"  
+.TH feed2imap\-cleaner 1 "Jul 25, 2005"  
 .SH NAME
-feed2imap \- clever RSS/ATOM feed aggregator
+feed2imap\-cleaner \- Removes old items from IMAP folders
 .SH SYNOPSIS
-\fBfeed2imap\fR [OPTIONS]
+\fBfeed2imap\-cleaner\fR [OPTIONS]
 .SH DESCRIPTION
-feed2imap is an RSS/Atom feed aggregator. After
-Downloading feeds (over HTTP or HTTPS), it uploads them to a specified
-folder of an IMAP mail server. The user can then access the feeds using
-Mutt, Evolution, Mozilla Thunderbird or even a webmail.
+feed2imap\-cleaner deletes old items from IMAP folders specified in the configuration file. The actual query string used to determine whether an item is old is :
+"SEEN NOT FLAGGED BEFORE (3 days ago)". Which means that an item WON'T be deleted if it satisfies one of the following conditions :
+.TP 0.2i
+\(bu
+It isn't 3 days old ;
+.TP 0.2i
+\(bu
+It hasn't been read yet ;
+.TP 0.2i
+\(bu
+It is flagged (marked as Important, for example).
 .TP 
-\fB\-V\fR, \fB\-\-version\fR 
-Show version information.
-.TP 
-\fB\-v\fR, \fB\-\-verbose\fR 
-Run in verbose mode.
-.TP 
-\fB\-c\fR, \fB\-\-rebuild\-cache\fR 
-Rebuilds the cache. Fetches all items and mark them as already seen. Useful if you lose your .feed2imap.cache file.
+\fB\-d\fR, \fB\-\-dry\-run\fR 
+Don't remove anything, but show what would be removed if run without this option.
 .TP 
 \fB\-f\fR, \fB\-\-config \fIfile\fB\fR 
 Use another config file (~/.feed2imaprc is the default).
+.SH BUGS
+Deletion criterias should probably be more configurable.
 .SH "SEE ALSO"
 Homepage : 
 http://home.gna.org/feed2imap/
 .PP
 \fBfeed2imaprc\fR(5),
-\fBfeed2imap\-cleaner\fR(1),
-\fBfeed2imap\-dumpconfig\fR(1),
-\fBfeed2imap\-opmlimport\fR(1)
+\fBfeed2imap\fR(1)
 .SH AUTHOR
 Copyright (C) 2005 Lucas Nussbaum lucas@lucas\-nussbaum.net
 .PP

@@ -1,0 +1,97 @@
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook V4.1//EN"
+	"http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd"
+	[
+	<!ENTITY program   "feed2imap-cleaner">
+	<!ENTITY command   "<command>&program;</command>">
+	<!ENTITY firstname "Lucas">
+	<!ENTITY surname   "Nussbaum">
+	<!ENTITY address   "lucas@lucas-nussbaum.net">
+	]>
+<refentry>
+<refentryinfo>
+	<author>
+		<firstname>&firstname;</firstname>
+		<surname>&surname;</surname>
+	</author>
+	<address>&address;</address>
+	<copyright>
+		<year>2005</year>
+		<holder>&firstname; &surname;</holder>
+	</copyright>
+	<date>Jul 25, 2005</date>
+</refentryinfo>
+<refmeta>
+	<refentrytitle>&program;</refentrytitle>
+	<manvolnum>1</manvolnum>
+</refmeta>
+<refnamediv>
+	<refname>&program;</refname>
+	<refpurpose>Removes old items from IMAP folders</refpurpose>
+</refnamediv>
+<refsynopsisdiv>
+	<cmdsynopsis>
+		<command>feed2imap-cleaner</command> [OPTIONS]
+	</cmdsynopsis>
+</refsynopsisdiv>
+<refsect1>
+	<title>DESCRIPTION</title>
+
+	<para><command>feed2imap-cleaner</command> deletes old items from IMAP folders specified in the configuration file. The actual query string used to determine whether an item is old is :
+	"SEEN NOT FLAGGED BEFORE (3 days ago)". Which means that an item WON'T be deleted if it satisfies one of the following conditions :</para>
+	
+	<itemizedlist>
+	<listitem><para>It isn't 3 days old ;</para></listitem>
+	<listitem><para>It hasn't been read yet ;</para></listitem>
+	<listitem><para>It is flagged (marked as Important, for example).</para></listitem>
+	</itemizedlist>
+
+<variablelist>
+	<varlistentry>
+		<term>
+			<option>-d</option></term><term><option>--dry-run</option>
+		</term>
+		<listitem>
+			<para>Don't remove anything, but show what would be removed if run without this option.</para> 
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<option>-f</option></term><term><option>--config <replaceable>file</replaceable></option>
+		</term>
+		<listitem>
+			<para>Use another config file (~/.feed2imaprc is the default).</para> 
+		</listitem>
+	</varlistentry></variablelist>
+</refsect1>
+<refsect1>
+	<title>BUGS</title>
+	<para>Deletion criterias should probably be more configurable.</para>
+
+</refsect1>
+<refsect1>
+	<title>SEE ALSO</title>
+
+	<para>Homepage : 
+	<ulink url="http://home.gna.org/feed2imap/">http://home.gna.org/feed2imap/</ulink></para>
+
+	<para>
+	<citerefentry><refentrytitle>feed2imaprc</refentrytitle><manvolnum>5</manvolnum></citerefentry>,
+	<citerefentry><refentrytitle>feed2imap</refentrytitle><manvolnum>1</manvolnum></citerefentry>
+	</para>
+</refsect1>
+<refsect1>
+	<title>AUTHOR</title>
+	<para>Copyright (C) 2005 Lucas Nussbaum <email>lucas@lucas-nussbaum.net</email></para>
+
+	<para>This program is free software; you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by the
+	Free Software Foundation; either version 2 of the License, or (at your
+	option) any later version.</para>
+
+	<para>This program is distributed in the hope that it will be useful, but
+	WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+	or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+	more details.</para>
+
+</refsect1>
+</refentry>

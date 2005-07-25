@@ -1,0 +1,73 @@
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook V4.1//EN"
+	"http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd"
+	[
+	<!ENTITY program   "feed2imap-opmlimport">
+	<!ENTITY command   "<command>&program;</command>">
+	<!ENTITY firstname "Lucas">
+	<!ENTITY surname   "Nussbaum">
+	<!ENTITY address   "lucas@lucas-nussbaum.net">
+	]>
+<refentry>
+<refentryinfo>
+	<author>
+		<firstname>&firstname;</firstname>
+		<surname>&surname;</surname>
+	</author>
+	<address>&address;</address>
+	<copyright>
+		<year>2005</year>
+		<holder>&firstname; &surname;</holder>
+	</copyright>
+	<date>Jul 25, 2005</date>
+</refentryinfo>
+<refmeta>
+	<refentrytitle>&program;</refentrytitle>
+	<manvolnum>1</manvolnum>
+</refmeta>
+<refnamediv>
+	<refname>&program;</refname>
+	<refpurpose>Convert an OPML subscription list to a feed2imap config file</refpurpose>
+</refnamediv>
+<refsynopsisdiv>
+	<cmdsynopsis>
+		<command>feed2imap-opmlimport</command>
+	</cmdsynopsis>
+</refsynopsisdiv>
+<refsect1>
+	<title>DESCRIPTION</title>
+
+	<para><command>feed2imap-opmlimport</command> reads an OPML subscription list on standard input and outputs a feed2imap configuration file on standard output. The resulting configuration file will require some tweaking.</para>
+
+</refsect1>
+<refsect1>
+	<title>BUGS</title>
+	<para>Should probably accept parameters to be able to change default values.</para>
+
+</refsect1>
+<refsect1>
+	<title>SEE ALSO</title>
+
+	<para>Homepage : 
+	<ulink url="http://home.gna.org/feed2imap/">http://home.gna.org/feed2imap/</ulink></para>
+
+	<para>
+	<citerefentry><refentrytitle>feed2imaprc</refentrytitle><manvolnum>5</manvolnum></citerefentry>,
+	<citerefentry><refentrytitle>feed2imap</refentrytitle><manvolnum>1</manvolnum></citerefentry>
+	</para>
+</refsect1>
+<refsect1>
+	<title>AUTHOR</title>
+	<para>Copyright (C) 2005 Lucas Nussbaum <email>lucas@lucas-nussbaum.net</email></para>
+
+	<para>This program is free software; you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by the
+	Free Software Foundation; either version 2 of the License, or (at your
+	option) any later version.</para>
+
+	<para>This program is distributed in the hope that it will be useful, but
+	WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+	or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+	more details.</para>
+
+</refsect1>
+</refentry>

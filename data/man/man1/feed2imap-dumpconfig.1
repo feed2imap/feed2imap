@@ -1,22 +1,10 @@
-.TH feed2imap 1 "Jul 25, 2005"  
+.TH feed2imap\-dumpconfig 1 "Jul 25, 2005"  
 .SH NAME
-feed2imap \- clever RSS/ATOM feed aggregator
+feed2imap\-dumpconfig \- Dump feed2imap config
 .SH SYNOPSIS
-\fBfeed2imap\fR [OPTIONS]
+\fBfeed2imap\-dumpconfig\fR [OPTIONS]
 .SH DESCRIPTION
-feed2imap is an RSS/Atom feed aggregator. After
-Downloading feeds (over HTTP or HTTPS), it uploads them to a specified
-folder of an IMAP mail server. The user can then access the feeds using
-Mutt, Evolution, Mozilla Thunderbird or even a webmail.
-.TP 
-\fB\-V\fR, \fB\-\-version\fR 
-Show version information.
-.TP 
-\fB\-v\fR, \fB\-\-verbose\fR 
-Run in verbose mode.
-.TP 
-\fB\-c\fR, \fB\-\-rebuild\-cache\fR 
-Rebuilds the cache. Fetches all items and mark them as already seen. Useful if you lose your .feed2imap.cache file.
+feed2imap\-dumpconfig dumps the content of your feed2imaprc to screen.
 .TP 
 \fB\-f\fR, \fB\-\-config \fIfile\fB\fR 
 Use another config file (~/.feed2imaprc is the default).
@@ -25,9 +13,7 @@ Homepage :
 http://home.gna.org/feed2imap/
 .PP
 \fBfeed2imaprc\fR(5),
-\fBfeed2imap\-cleaner\fR(1),
-\fBfeed2imap\-dumpconfig\fR(1),
-\fBfeed2imap\-opmlimport\fR(1)
+\fBfeed2imap\fR(1)
 .SH AUTHOR
 Copyright (C) 2005 Lucas Nussbaum lucas@lucas\-nussbaum.net
 .PP

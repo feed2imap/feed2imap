@@ -1,0 +1,106 @@
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook V4.1//EN"
+	"http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd"
+	[
+	<!ENTITY program   "feed2imap">
+	<!ENTITY command   "<command>&program;</command>">
+	<!ENTITY firstname "Lucas">
+	<!ENTITY surname   "Nussbaum">
+	<!ENTITY address   "lucas@lucas-nussbaum.net">
+	]>
+<refentry>
+<refentryinfo>
+	<author>
+		<firstname>&firstname;</firstname>
+		<surname>&surname;</surname>
+	</author>
+	<address>&address;</address>
+	<copyright>
+		<year>2005</year>
+		<holder>&firstname; &surname;</holder>
+	</copyright>
+	<date>Jul 25, 2005</date>
+</refentryinfo>
+<refmeta>
+	<refentrytitle>&program;</refentrytitle>
+	<manvolnum>1</manvolnum>
+</refmeta>
+<refnamediv>
+	<refname>&program;</refname>
+	<refpurpose>clever RSS/ATOM feed aggregator</refpurpose>
+</refnamediv>
+<refsynopsisdiv>
+	<cmdsynopsis>
+		<command>feed2imap</command> [OPTIONS]
+	</cmdsynopsis>
+</refsynopsisdiv>
+<refsect1>
+	<title>DESCRIPTION</title>
+
+	<para><command>feed2imap</command> is an RSS/Atom feed aggregator. After
+	Downloading feeds (over HTTP or HTTPS), it uploads them to a specified
+	folder of an IMAP mail server. The user can then access the feeds using
+	Mutt, Evolution, Mozilla Thunderbird or even a webmail.</para>
+
+<variablelist>
+	<varlistentry>
+		<term>
+			<option>-V</option></term><term><option>--version</option>
+		</term>
+		<listitem>
+			<para>Show version information.</para> 
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<option>-v</option></term><term><option>--verbose</option>
+		</term>
+		<listitem>
+			<para>Run in verbose mode.</para> 
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<option>-c</option></term><term><option>--rebuild-cache</option>
+		</term>
+		<listitem>
+			<para>Rebuilds the cache. Fetches all items and mark them as already seen. Useful if you lose your .feed2imap.cache file.</para> 
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<option>-f</option></term><term><option>--config <replaceable>file</replaceable></option>
+		</term>
+		<listitem>
+			<para>Use another config file (~/.feed2imaprc is the default).</para> 
+		</listitem>
+	</varlistentry></variablelist>
+</refsect1>
+<refsect1>
+	<title>SEE ALSO</title>
+
+	<para>Homepage : 
+	<ulink url="http://home.gna.org/feed2imap/">http://home.gna.org/feed2imap/</ulink></para>
+
+	<para>
+	<citerefentry><refentrytitle>feed2imaprc</refentrytitle><manvolnum>5</manvolnum></citerefentry>,
+	<citerefentry><refentrytitle>feed2imap-cleaner</refentrytitle><manvolnum>1</manvolnum></citerefentry>,
+	<citerefentry><refentrytitle>feed2imap-dumpconfig</refentrytitle><manvolnum>1</manvolnum></citerefentry>,
+	<citerefentry><refentrytitle>feed2imap-opmlimport</refentrytitle><manvolnum>1</manvolnum></citerefentry>
+	</para>
+</refsect1>
+<refsect1>
+	<title>AUTHOR</title>
+	<para>Copyright (C) 2005 Lucas Nussbaum <email>lucas@lucas-nussbaum.net</email></para>
+
+	<para>This program is free software; you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by the
+	Free Software Foundation; either version 2 of the License, or (at your
+	option) any later version.</para>
+
+	<para>This program is distributed in the hope that it will be useful, but
+	WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+	or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+	more details.</para>
+
+</refsect1>
+</refentry>
