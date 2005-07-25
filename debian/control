@@ -2,12 +2,12 @@ Source: feed2imap
 Section: net
 Priority: optional
 Maintainer: Lucas Nussbaum <lucas@lucas-nussbaum.net>
-Build-Depends: debhelper (>= 4.2.32)
+Build-Depends: debhelper (>= 4.2.28), ruby
 Standards-Version: 3.6.2.1
 
 Package: feed2imap
 Architecture: all
-Depends: ruby1.8, librmail-ruby1.8
+Depends: ruby, ruby1.8, librmail-ruby1.8
 Recommends: libopenssl-ruby1.8
 Suggests: imap-client, imap-server
 Description: feed aggregator (RSS/Atom) which puts items on a IMAP mail server
