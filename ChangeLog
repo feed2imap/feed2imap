@@ -1,5 +1,7 @@
-Feed2Imap 0.4 (date unknown)
+Feed2Imap 0.4 (25/07/2005)
 ============================
+* now available as a Debian package.
+* added manpages for everything.
 * added min-frequency and disable config options. Added doc in example config.
 * You can now use WordPress's feed:http://something urls in feed2imaprc.
 * Switched to a real SGML parser for the text version.
