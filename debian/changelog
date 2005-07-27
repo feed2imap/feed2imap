@@ -1,3 +1,16 @@
+feed2imap (0.4-2) unstable; urgency=low
+
+  * changed to a non-native Debian package.
+  * Changed Build-Depends to Build-Depends-Indep
+  * Now installs to /usr/lib/ruby/1.8 instead of /usr/lib/site_ruby/1.8.
+  * DH_VERBOSE turned off.
+  * Set debhelper compatibility level to 4.
+  * Improved Description.
+  * Now uses dh_fixperms to fix permissions.
+  * Removed unused install target in debian/rules.
+
+ -- Lucas Nussbaum <lucas@lucas-nussbaum.net>  Wed, 27 Jul 2005 11:26:25 +0200
+
 feed2imap (0.4-1) unstable; urgency=low
 
   * First Debian Package.
