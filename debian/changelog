@@ -1,3 +1,9 @@
+feed2imap (0.4-3) unstable; urgency=low
+
+  * Added website adress to Description.
+
+ -- Lucas Nussbaum <lucas@lucas-nussbaum.net>  Thu, 28 Jul 2005 12:40:21 +0200
+
 feed2imap (0.4-2) unstable; urgency=low
 
   * changed to a non-native Debian package.

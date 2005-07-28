@@ -19,3 +19,4 @@ Description: feed aggregator (RSS/Atom) which puts items on a IMAP mail server
  The main advantage over rss2email is that feed2imap uploads
  emails itself to a specified folder. You don't have to play
  with procmail or your MUA's filtering rules to classify mails.
+ Website: http://home.gna.org/feed2imap/
