@@ -1,8 +1,23 @@
+feed2imap (0.4-5) unstable; urgency=low
+
+  * Improved description in debian/control.
+
+ -- Lucas Nussbaum <lucas@lucas-nussbaum.net>  Tue, 16 Aug 2005 08:23:13 +0200
+
+feed2imap (0.4-4) unstable; urgency=low
+
+  * Added more precise copyright statement
+  * Added a debian/watch file
+
+ -- Lucas Nussbaum <lucas@lucas-nussbaum.net>  Tue,  2 Aug 2005 12:24:21 +0200
+
 feed2imap (0.4-3) unstable; urgency=low
 
   * Added website adress to Description.
+  * 0.4-2 was using debian/tmp instead of debian/feed2imap in
+    debian/rules
 
- -- Lucas Nussbaum <lucas@lucas-nussbaum.net>  Thu, 28 Jul 2005 12:40:21 +0200
+ -- Lucas Nussbaum <lucas@lucas-nussbaum.net>  Tue,  2 Aug 2005 11:12:04 +0200
 
 feed2imap (0.4-2) unstable; urgency=low
 

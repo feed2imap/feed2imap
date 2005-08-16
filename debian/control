@@ -16,7 +16,9 @@ Description: feed aggregator (RSS/Atom) which puts items on a IMAP mail server
  folder of an IMAP mail server. The user can then access the
  feeds using a mail reader like Mutt, Evolution, Mozilla
  Thunderbird or even a webmail.
+ .
  The main advantage over rss2email is that feed2imap uploads
  emails itself to a specified folder. You don't have to play
  with procmail or your MUA's filtering rules to classify mails.
- Website: http://home.gna.org/feed2imap/
+ .
+ Homepage: http://home.gna.org/feed2imap/

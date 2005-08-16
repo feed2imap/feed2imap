@@ -17,7 +17,7 @@ binary-indep: build
 	dh_installdirs
 	dh_installchangelogs ChangeLog
 	dh_installdocs README
-	ruby setup.rb config --prefix=debian/tmp/usr --siteruby=debian/tmp/usr/lib/ruby
+	ruby setup.rb config --prefix=debian/feed2imap/usr --siteruby=debian/feed2imap/usr/lib/ruby
 	ruby setup.rb install
 	dh_fixperms
 	dh_compress
