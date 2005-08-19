@@ -2,6 +2,8 @@ require 'rake/testtask'
 require 'rake/rdoctask'
 require 'rake/packagetask'
 
+task :default => [:package]
+
 Rake::TestTask.new do |t|
 	t.libs << "test"
 	t.test_files = FileList['test/tc_*.rb']
