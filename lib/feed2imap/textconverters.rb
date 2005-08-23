@@ -27,10 +27,33 @@ class String
     return (self =~ /<p>/) || (self =~ /<br>/) || (self =~ /<br\s*(\/)?\s*>/)
   end
 
+  # returns true if the text contains escaped HTML (with HTML entities)
+  def escaped_html?
+    return (self =~ /&lt;img src=/) || (self =~ /&lt;a href=/) || (self =~ /&lt;br(\/| \/|)&gt;/)
+  end
+
+  # un-escape HTML in the text
+  def unescape_html
+    {
+      '<' => '&lt;',
+      '>' => '&gt;',
+      "'" => '&apos;',
+      '"' => '&quot;',
+      '&' => '&amp;',
+      "\047" => '&#39;'
+    }.each do |k, v|
+      gsub!(v, k)
+    end
+    self
+  end
+
   # convert text to HTML
   def text2html
     text = self.clone
     return text if text.html?
+    if text.escaped_html?
+      return text.unescape_html
+    end
     # paragraphs
     text.gsub!(/\A\s*(.*)\Z/m, '<p>\1</p>')
     text.gsub!(/\s*\n(\s*\n)+\s*/, "</p>\n<p>")
