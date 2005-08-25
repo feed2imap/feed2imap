@@ -4,6 +4,9 @@
 # min-frequency (in HOURS) is the minimum frequency with which this particular
 #      feed will be fetched
 # disable: if set to something, the feed will be ignored
+#
+# If your login contains an @ character, replace it with %40. Other reserved
+# characters can be escaped in the same way (see man ascii to get their code)
 feeds: 
   - name: feed2imap
     url: http://home.gna.org/feed2imap/feed2imap.rss

@@ -70,7 +70,7 @@ class ImapAccount
     # use given port if port given
     port = uri.port if uri.port 
     @connection = Net::IMAP::new(uri.host, port, usessl)
-    user, password = uri.userinfo.split(':',2)
+    user, password = URI::unescape(uri.userinfo).split(':',2)
     @connection.login(user, password)
     self
   end

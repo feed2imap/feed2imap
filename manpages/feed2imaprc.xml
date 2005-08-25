@@ -38,6 +38,10 @@
 	<para>See <filename>/usr/share/doc/feed2imap/examples/feed2imaprc</filename>.</para>
 </refsect1>
 <refsect1>
+	<title>RESERVED CHARACTERS</title>
+	<para>Some characters are reserved in RFC2396 (URI). If you need to include a reserved character in the login/password part of your target URI, replace it with its hex code. For example, @ can be replaced by %40.</para>
+</refsect1>
+<refsect1>
 	<title>BUGS</title>
 	<para>This manpage should probably give more details.</para>
 </refsect1>
