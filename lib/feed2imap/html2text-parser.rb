@@ -62,7 +62,9 @@ class HTML2TextParser < SGMLParser
           @href = a[1]
         end
       end
-      @links << @href.gsub(/^("|'|)(.*)("|')$/,'\2')
+      if @href
+        @links << @href.gsub(/^("|'|)(.*)("|')$/,'\2')
+      end
     end
   end
 

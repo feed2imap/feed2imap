@@ -76,9 +76,9 @@ test de caractères étendus : éàèç ah ah
 
   def test_link
     inputtext = <<-EOF
-<p>ceci est un <a href="http://slashdot.org" style="">lien</a>. Ceci est un <a href=http://linuxfr.org/>autre lien</a></p>
+<p>ceci est un <a href="http://slashdot.org" style="">lien</a>. Ceci est un <a href=http://linuxfr.org/>autre lien</a> <a name="namedlink">named link</a></p>
     EOF
-    outputtext = "ceci est un lien[1]. Ceci est un autre lien[2]\n\n[1] http://slashdot.org\n[2] http://linuxfr.org/"
+    outputtext = "ceci est un lien[1]. Ceci est un autre lien[2] named link\n\n[1] http://slashdot.org\n[2] http://linuxfr.org/"
     assert_equal(outputtext, inputtext.html2text)
   end
 end
