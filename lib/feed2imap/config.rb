@@ -40,7 +40,7 @@ class F2IConfig
     @conf['feeds'].each do |f|
       if f['disable'].nil?
         uri = URI::parse(f['target'])
-        path = uri.path
+        path = URI::unescape(uri.path)
         path = path[1..-1] if path[0,1] == '/'
         @feeds.push(ConfigFeed::new(f, @imap_accounts.add_account(uri), path))
       end

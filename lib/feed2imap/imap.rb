@@ -20,8 +20,8 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # Imap connection handling
 require 'feed2imap/rubyimap'
 begin
-  require 'openssl'
-rescue
+require 'openssl'
+rescue LoadError
 end
 require 'uri'
 

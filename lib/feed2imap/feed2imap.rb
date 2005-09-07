@@ -28,6 +28,10 @@ require 'logger'
 require 'thread'
 
 class Feed2Imap
+  def Feed2Imap.version
+    return F2I_VERSION
+  end
+
   def initialize(verbose, cacherebuild, configfile)
     @logger = Logger::new(STDOUT)
     if verbose

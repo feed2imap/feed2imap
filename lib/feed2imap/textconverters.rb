@@ -17,7 +17,8 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 =end
 
-require 'uri' # for URI::regexp
+# for URI::regexp
+require 'uri'
 require 'feed2imap/html2text-parser'
 
 # This class provides various converters

@@ -17,7 +17,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 =end
 
-require 'feed2imap/sgml-parser.rb'
+require 'feed2imap/sgml-parser'
 
 # this class provides a simple SGML parser that removes HTML tags
 class HTML2TextParser < SGMLParser

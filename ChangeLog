@@ -1,7 +1,9 @@
-Feed2Imap 0.5 (XX/XX/2005)
+Feed2Imap 0.5 (XX/09/2005)
 ============================
+* Feed2Imap can now work without libopenssl.
 * Fixed a bug in the HTML2Text converter with <a> tags without href.
-* Reserved characters (eg @) can now be included in the login/password.
+* Reserved characters (eg @) can now be included in the login, password or
+  folder.
 * Feed2Imap is now included in Debian (package name: feed2imap).
 * Much better handling of feeds with escaped HTML (LinuxFR for example).
 

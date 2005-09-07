@@ -17,7 +17,7 @@ require "socket"
 require "monitor"
 require "digest/md5"
 begin
-  require "openssl"
+require "openssl"
 rescue LoadError
 end
 

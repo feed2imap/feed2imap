@@ -17,20 +17,14 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 =end
 
-require 'feed2imap'
 require 'net/http'
 # get openssl if available
 begin
-  require 'net/https'
-rescue
+require 'net/https'
+rescue LoadError
 end
 require 'uri'
 
-if defined?(F2I_VERSION)
-  USERAGENT = "Feed2Imap v#{F2I_VERSION} http://home.gna.org/feed2imap/"
-else
-  USERAGENT = 'Feed2Imap http://home.gna.org/feed2imap/'
-end
 
 # max number of redirections
 MAXREDIR = 5
@@ -40,10 +34,16 @@ class HTTPFetcher
   def HTTPFetcher::fetcher(baseuri, uri, lastcheck, recursion)
     http = Net::HTTP::new(uri.host, uri.port)
     http.use_ssl = true if uri.scheme == 'https'
-    if lastcheck == Time::at(0)
-      req = Net::HTTP::Get::new(uri.request_uri, {'User-Agent' => USERAGENT })
+    if defined?(Feed2Imap)
+      useragent = "Feed2Imap v#{Feed2Imap.version} http://home.gna.org/feed2imap/"
     else
-      req = Net::HTTP::Get::new(uri.request_uri, {'User-Agent' => USERAGENT, 'If-Modified-Since' => lastcheck.httpdate})
+      useragent = 'Feed2Imap http://home.gna.org/feed2imap/'
+    end
+
+    if lastcheck == Time::at(0)
+      req = Net::HTTP::Get::new(uri.request_uri, {'User-Agent' => useragent })
+    else
+      req = Net::HTTP::Get::new(uri.request_uri, {'User-Agent' => useragent, 'If-Modified-Since' => lastcheck.httpdate})
     end
     if uri.userinfo
       login, pw = uri.userinfo.split(':')
