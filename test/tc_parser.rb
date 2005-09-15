@@ -9,6 +9,7 @@ class ParserTest < Test::Unit::TestCase
   DATADIR = 'test/parserdata'
   def test_parser
     return if not File::exist?(DATADIR)
+    allok = true
     Dir.foreach(DATADIR) do |f|
       next if f !~ /.xml$/
       str = File::read(DATADIR + '/' + f)
@@ -18,15 +19,20 @@ class ParserTest < Test::Unit::TestCase
       chanstr = chanstr.unpack('U*').pack('C*')
       if File::exist?(DATADIR + '/' + f.gsub(/.xml$/, '.output'))
         output = File::read(DATADIR + '/' + f.gsub(/.xml$/, '.output'))
-        File::open(DATADIR + '/' + f.gsub(/.xml$/, '.output.new'), "w") do |f|
-          f.print(chanstr)
+        File::open(DATADIR + '/' + f.gsub(/.xml$/, '.output.new'), "w") do |fd|
+          fd.print(chanstr)
         end
-        assert_equal(output, chanstr)
+        if output != chanstr
+          puts "Test failed for #{f}. Try diff -u #{DATADIR + '/' + f.gsub(/.xml$/, '.output')}{,.new}"
+          allok = false
+        end
       else
+        puts "Missing #{DATADIR + '/' + f.gsub(/.xml$/, '.output')}."
         File::open(DATADIR + '/' + f.gsub(/.xml$/, '.output.new'), "w") do |f|
           f.print(chanstr)
         end
       end
+      assert(allok)
     end
   end
 end
