@@ -32,7 +32,7 @@ class ParserTest < Test::Unit::TestCase
           f.print(chanstr)
         end
       end
-      assert(allok)
     end
+    assert(allok)
   end
 end
