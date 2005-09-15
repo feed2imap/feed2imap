@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+	<title>Planète GNOME-FR</title>
+	<link>http://planete.gnomefr.org/</link>
+	<language>en</language>
+	<description>Planète GNOME-FR - http://planete.gnomefr.org/</description>
+
+<item>
+	<title>Vincent Noel: I might need some supplies</title>
+	<guid>tag:blogger.com,1999:blog-4152371.post-112672929388862296</guid>
+	<link>http://members.cox.net/vnoel/weblog/2005/09/i-might-need-some-supplies.html</link>
+	<description>&lt;div&gt;How are you supposed to trust these guys ?&lt;img src=&quot;http://members.cox.net/vnoel/weblog/uploaded_images/Screenshot-Flight%20Details-798819.png&quot; /&gt;
+&lt;/div&gt;</description>
+	<pubDate>mer, 14 sep 2005 20:21:47 +0000</pubDate>
+</item>
+<item>
+	<title>Vincent Noel: nautilus and gworkspace</title>
+	<guid>tag:blogger.com,1999:blog-4152371.post-112672530169652252</guid>
+	<link>http://members.cox.net/vnoel/weblog/2005/09/nautilus-and-gworkspace.html</link>
+	<description>&lt;div&gt;Is it my imagination or is nautilus, with every release, getting closer to the interface of &lt;a href=&quot;http://www.gnustep.it/enrico/gworkspace/&quot;&gt;GWorkspace&lt;/a&gt; ?&lt;blockquote&gt;
+&lt;a href=&quot;http://www.gnome.org/~vnoel/screenshots/nautilus_gworkspace.png&quot;&gt;
+&lt;img src=&quot;http://www.gnome.org/~vnoel/screenshots/nautilus_gworkspace_small.png&quot; /&gt;
+&lt;/a&gt;
+&lt;/blockquote&gt;
+&lt;br /&gt;Everything is there : the &quot;places&quot; (vertical in nautilus and horizontal in GWorkspace), the path bar (thankfully scaled down, but the idea is the same), the icon/list views... Of course, I guess inspiration mostly comes from the MacOS X rework of GWorkspace, but it's weird to think that this UI has been there for years, just waiting for somebody to pimp it up.&lt;br /&gt;Now there is just the &lt;a href=&quot;http://actsofvolition.com/images/screenshots/next-column-view.png&quot;&gt;column view&lt;/a&gt; left to implement, and we'll be at 1:1 features ratio (although with good drag-n-drop management the current path bar could replace that view in most of the cases).&lt;/div&gt;</description>
+	<pubDate>mer, 14 sep 2005 19:15:01 +0000</pubDate>
+</item>
+</channel>
+</rss>
