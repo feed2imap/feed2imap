@@ -18,7 +18,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 =end
 
 # Feed2Imap version
-F2I_VERSION = '0.4'
+F2I_VERSION = '0.5'
 
 require 'feed2imap/config'
 require 'feed2imap/cache'

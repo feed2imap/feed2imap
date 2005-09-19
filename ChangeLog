@@ -1,4 +1,4 @@
-Feed2Imap 0.5 (XX/09/2005)
+Feed2Imap 0.5 (19/09/2005)
 ============================
 * Fixed a parser problem with items with multiple children in the description.
 * Mails were upload with \n only, but \r\n are needed.
