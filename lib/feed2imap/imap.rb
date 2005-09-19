@@ -95,7 +95,7 @@ class ImapAccount
   # Put the mail in the given folder
   # You should check whether the folder exist first.
   def putmail(folder, mail)
-    @connection.append(folder, mail)
+    @connection.append(folder, mail.gsub(/\n/, "\r\n"))
   end
 
   # update a mail
@@ -109,7 +109,7 @@ class ImapAccount
       searchres.each { |m| @connection.store(m, "+FLAGS", [:Deleted]) }
       @connection.expunge
     end
-    @connection.append(folder, mail, flags)
+    @connection.append(folder, mail.gsub(/\n/, "\r\n"), flags)
   end
 
   # convert to string
