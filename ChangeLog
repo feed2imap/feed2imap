@@ -1,5 +1,6 @@
 Feed2Imap 0.5 (XX/09/2005)
 ============================
+* Fixed a parser problem with items with multiple children in the description.
 * Mails were upload with \n only, but \r\n are needed.
 * Feed2Imap can now work without libopenssl.
 * Fixed a bug in the HTML2Text converter with <a> tags without href.

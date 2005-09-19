@@ -146,10 +146,16 @@ class Item
       # Content
       if (e = item.elements['content:encoded']) ||
         (e = item.elements['description'] || item.elements['rss:description'])
-        if e.cdatas[0]
-          @content = e.cdatas[0].to_s.toUTF8(@channel.encoding).rmWhiteSpace!
-        elsif e.text
-          @content = e.text.toUTF8(@channel.encoding).text2html
+        if e.children.length > 1
+          s = ''
+          e.children.each { |c| s += c.to_s }
+          @content = s.toUTF8(@channel.encoding).rmWhiteSpace!
+        elsif e.children.length == 1
+          if e.cdatas[0]
+            @content = e.cdatas[0].to_s.toUTF8(@channel.encoding).rmWhiteSpace!
+          elsif e.text
+            @content = e.text.toUTF8(@channel.encoding).text2html
+          end
         end
       end
       # Date

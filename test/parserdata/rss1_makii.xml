@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-2"?>
+<rss version="2.0">
+   <channel>
+      <title>EMU dreams</title>
+      <link>http://www.emudreams.pl/</link>
+      <description>... when dreams come true ...</description>
+      <language>pl</language>
+      <docs>http://www.emudreams.pl/rss.php3</docs>
+      <generator>PHP/4.1.2</generator>
+      <item>
+         <title>R. Belmont\'s WIP Emporium</title>
+         <link>http://emu.makii.pl/posthead.php3?shownews=12586</link>
+         <description>Graficznie <b>Final Lap R</b> nareszcie nic nie można zarzucić dzięki pracy <b>ElSemi</b>\'ego.</description>
+         <pubDate>Mon, 19 Sep 2005 00:00:00 +0200</pubDate>
+      </item>
+      <item>
+         <title>VBA Smooth v6.4</title>
+         <link>http://emu.makii.pl/posthead.php3?shownews=12583</link>
+         <description>Klon <b>VisualBoy Advance</b> potrafiący wykorzystać dobrodziejstwo plugin\'ów graficznych.</description>
+         <pubDate>Mon, 19 Sep 2005 00:00:00 +0200</pubDate>
+      </item>
+   </channel>
+</rss>

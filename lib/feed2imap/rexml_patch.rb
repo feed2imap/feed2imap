@@ -38,4 +38,10 @@ module REXML
       @encoding = enc || 'utf-8'
     end
   end
+
+  class Element
+    def children
+      @children
+    end
+  end
 end
