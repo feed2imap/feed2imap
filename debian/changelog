@@ -1,8 +1,11 @@
-feed2imap (0.4-5) unstable; urgency=low
+feed2imap (0.5-1) unstable; urgency=low
 
+  * New upstream release.
+    - Feed2Imap can now work without OpenSSL (closes: #326750, #327213).
+    - Fixed IMAP protocol incompatibility (closes: #328573).
   * Improved description in debian/control.
 
- -- Lucas Nussbaum <lucas@lucas-nussbaum.net>  Tue, 16 Aug 2005 08:23:13 +0200
+ -- Lucas Nussbaum <lucas@lucas-nussbaum.net>  Mon, 19 Sep 2005 16:20:24 +0200
 
 feed2imap (0.4-4) unstable; urgency=low
 
