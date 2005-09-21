@@ -20,12 +20,12 @@ Creator:
 Subject: 
 Category: 
 Content:
-<p><img src="<a href="http://planet.gnome.org/heads/hub.png">http://planet.gnome.org/heads/hub.png</a>" align="right" alt=""><ul>
-<li>I'm <a href="<a href="http://www.figuiere.net/hub/blog/?2005/02/09/83-all-mailers-suck">http://www.figuiere.net/hub/blog/?2005/02/09/83-all-mailers-suck</a>">ranting about Evolution, its speed and its antispam</a>, I'm <a href="<a href="http://www.advogato.org/person/robertc/diary.html?start=31">http://www.advogato.org/person/robertc/diary.html?start=31</a>">not alone</a>. Someone should really start to replace this antispam by what we find in Thunderbird / Mozilla, including flagging as <code>\Junk</code> over IMAP (I couldn't find any reference in RFCs and couldn't find the code in Thunderbird, anyone has an idea?) <a href="<a href="http://bugzilla.ximian.com/show_bug.cgi?id=72547">http://bugzilla.ximian.com/show_bug.cgi?id=72547</a>">see bug 72547</a>. For reference, marking one message as junk on my laptop take 15 to 20sec, even if the message is local.</li>
+<img src="http://planet.gnome.org/heads/hub.png" align="right" alt=""><ul>
+<li>I'm <a href="http://www.figuiere.net/hub/blog/?2005/02/09/83-all-mailers-suck">ranting about Evolution, its speed and its antispam</a>, I'm <a href="http://www.advogato.org/person/robertc/diary.html?start=31">not alone</a>. Someone should really start to replace this antispam by what we find in Thunderbird / Mozilla, including flagging as <code>\Junk</code> over IMAP (I couldn't find any reference in RFCs and couldn't find the code in Thunderbird, anyone has an idea?) <a href="http://bugzilla.ximian.com/show_bug.cgi?id=72547">see bug 72547</a>. For reference, marking one message as junk on my laptop take 15 to 20sec, even if the message is local.</li>
 </ul>
 <ul>
-<li>I'm ranting about MacOS X memory usage, I'm <a href="<a href="http://www.advogato.org/person/avriettea/diary.html?start=51">http://www.advogato.org/person/avriettea/diary.html?start=51</a>">not alone</a>. With 256MB the MacMini is barely usable. I'll get a 1GB memory...</li>
-</ul></p>
+<li>I'm ranting about MacOS X memory usage, I'm <a href="http://www.advogato.org/person/avriettea/diary.html?start=51">not alone</a>. With 256MB the MacMini is barely usable. I'll get a 1GB memory...</li>
+</ul>
 --------------------------------
 Title: Dave Neary: 21 Feb 2005
 Link: http://www.advogato.org/person/bolsh/diary.html?start=81
@@ -65,10 +65,10 @@ Creator:
 Subject: 
 Category: 
 Content:
-<p><img src="<a href="http://planet.gnome.org/heads/michael.png">http://planet.gnome.org/heads/michael.png</a>" align="right" alt=""><ul>
+<img src="http://planet.gnome.org/heads/michael.png" align="right" alt=""><ul>
 	<li>Up late; J. off to rescue Janine from being
 boxed in in Town. Got the machine-room spun up again.
-</li></ul></p>
+</li></ul>
 --------------------------------
 Title: Alex Graveley: Erotic cleft
 Link: http://www.beatniksoftware.com/blog/index.php?p=16
@@ -760,7 +760,7 @@ Creator:
 Subject: 
 Category: 
 Content:
-<p><img src="<a href="http://planet.gnome.org/heads/michael.png">http://planet.gnome.org/heads/michael.png</a>" align="right" alt=""><ul>
+<img src="http://planet.gnome.org/heads/michael.png" align="right" alt=""><ul>
 	<li>Hacked on the train at a command-line OO.o
 gallery creation tool: rather badly needed for the
 openclipart.org stuff.
@@ -770,7 +770,7 @@ ate, slept again.
 	</li><li>Up in the night, dealing with H. - nasty cold,
 can't breath - keeps saying 'nose' or 'mummy', slept in
 her bed for some hours.
-</li></ul></p>
+</li></ul>
 --------------------------------
 Title: Davyd Madeley: Planet UCC Lives
 Link: http://www.livejournal.com/users/davyd/135461.html
@@ -1158,7 +1158,7 @@ Creator:
 Subject: 
 Category: 
 Content:
-<p><img src="<a href="http://planet.gnome.org/heads/michael.png">http://planet.gnome.org/heads/michael.png</a>" align="right" alt=""><ul>
+<img src="http://planet.gnome.org/heads/michael.png" align="right" alt=""><ul>
 	<li>Interesting phone-call in the morning. Lovely
 patch for libbonobo on Win32 from Tor - apparently all the
 tests now pass.
@@ -1168,7 +1168,7 @@ Jacob again. Off to catch the plane - the very last person
 to check in, a dash to the plane, offered money to get
 off etc. Slept a little on the plane, lost a lot of a night
 somewhere here.
-</li></ul></p>
+</li></ul>
 --------------------------------
 Title: Todd Berman: Work. Life. Insanity.
 Link: http://off.net/~tberman/diary/archives/003159.html

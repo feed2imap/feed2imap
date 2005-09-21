@@ -12,6 +12,7 @@ class ParserTest < Test::Unit::TestCase
     allok = true
     Dir.foreach(DATADIR) do |f|
       next if f !~ /.xml$/
+#      puts "Checking #{f}"
       str = File::read(DATADIR + '/' + f)
       chan = Channel::new(str)
       # for easier reading, go to ISO

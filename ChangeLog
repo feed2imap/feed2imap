@@ -1,3 +1,7 @@
+Feed2Imap 0.6 (XX/09/2005)
+============================
+* Fix another bug related to escaped HTML.
+
 Feed2Imap 0.5 (19/09/2005)
 ============================
 * Fixed a parser problem with items with multiple children in the description.

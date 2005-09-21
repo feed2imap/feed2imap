@@ -25,7 +25,7 @@ require 'feed2imap/html2text-parser'
 class String
   # is this text HTML ? search for tags
   def html?
-    return (self =~ /<p>/) || (self =~ /<br>/) || (self =~ /<br\s*(\/)?\s*>/)
+    return (self =~ /<p>/) || (self =~ /<br>/) || (self =~ /<br\s*(\/)?\s*>/) || (self =~ /<\/a>/) || (self =~ /<img.*>/)
   end
 
   # returns true if the text contains escaped HTML (with HTML entities)

@@ -149,7 +149,7 @@ class Item
         if e.children.length > 1
           s = ''
           e.children.each { |c| s += c.to_s }
-          @content = s.toUTF8(@channel.encoding).rmWhiteSpace!
+          @content = s.toUTF8(@channel.encoding).rmWhiteSpace!.text2html
         elsif e.children.length == 1
           if e.cdatas[0]
             @content = e.cdatas[0].to_s.toUTF8(@channel.encoding).rmWhiteSpace!

@@ -1,0 +1,184 @@
+Title: Bastien's Blog
+Link: http://hadess.net
+
+--------------------------------
+Title: Work In Progress
+Link: http://hadess.net/?start=577
+Date: Wed Sep 21 01:16:39 UTC 2005
+Creator: Bastien Nocera
+Subject: 
+Category: 
+Content:
+Yay! Got <a href="http://pilot-link.org/">pilot-link</a> to sync over Bluetooth, without the crappy 'Set up a PPP server' bit. Now to download <a href="http://palmsource.palmgear.com/index.cfm?fuseaction=software.showsoftware&prodID=52957">BtSync</a>.
+
+--------------------------------
+Title: Student again
+Link: http://hadess.net/?start=576
+Date: Mon Sep 19 23:04:58 UTC 2005
+Creator: Bastien Nocera
+Subject: 
+Category: 
+Content:
+First day at <a href="http://www.surrey.ac.uk/">Uni</a>, registration, seeing the faces of my new classmates. Definitely the eldest one, the Frenchest one (not the foreignest one, there are 2 Russian girls in the class), and the only one doing it part-time. So I started skipping this afternoon (<i>Welcome to the bestest Uni in England</i> and <i>Where do I do sports</i> that's mostly interesting to 18-year olds who've never left home, like, hmm, most of them). Only the fresher's drinks to go to tomorrow, so I can try and get over the flu I picked up this week-end.<p>
+Done a bit of work on Bluetooth, mainly research, and general updating. <a href="http://noring.nocrew.org/">Fredrik Noring</a> has joined in to help with the ever-distant <a href="/?start=566">gnome-bluetooth-manager</a>. Busy adding new features to libbtctl for now, the fun work will come a bit later.<p>
+Watched <a href="http://us.imdb.com/title/tt0372588/">Team America</a>. Would
+be a funny film if it didn't feel so true.<p>
+
+
+--------------------------------
+Title: /summon
+Link: http://hadess.net/?start=575
+Date: Wed Sep 14 23:22:35 UTC 2005
+Creator: Bastien Nocera
+Subject: 
+Category: 
+Content:
+Lazy Web, oh Lazy Web, can you tell me a good Obex FTP client for Palm OS?<p>
+PS: <a href="http://www.imdb.com/title/tt0072271/">Texas Chainsaw Massacre</a> sucks. And <a href="http://blogs.gnome.org/view/calum?reverse=1">Calum</a> will be happy we only managed <a href="http://news.bbc.co.uk/sport1/hi/football/europe/4234188.stm">a draw</a>. Glory hunter, my arse.<p>
+
+--------------------------------
+Title: Won it!
+Link: http://hadess.net/?start=574
+Date: Mon Sep 12 22:16:44 UTC 2005
+Creator: Bastien Nocera
+Subject: 
+Category: 
+Content:
+You'd think that Brits would get behind the England and Wales team <a href="http://news.bbc.co.uk/sport1/hi/cricket/england/4237610.stm">winning the Ashes</a>, but <a href="http://blogs.gnome.org/view/calum/2005/09/12/0">no</a>. Calum, you're cheap. I hope Motherwell loses (again)[1].<p>
+All hail to McGratthie!<p>
+[1]: it's low, but you deserved it.
+
+--------------------------------
+Title: Film Feast
+Link: http://hadess.net/?start=573
+Date: Mon Sep 12 00:04:51 UTC 2005
+Creator: Bastien Nocera
+Subject: 
+Category: 
+Content:
+Could have been a fest, was a feast. Good and bad together.<br>
+<a href="http://www.imdb.com/title/tt0364569/">Oldboy</a>, as advised by <a href="http://jimmac.musichall.cz/weblog.php/Movies/OldBoy.php">Jakub</a>, a real treat, and a reminescence of Shinobi.<br>
+<a href="http://us.imdb.com/title/tt0107977/">Robin Hood: Men In Tights</a>, another Mel Brooks, not as funny as I remembered when I watched it more than 10 years ago.<br>
+<a href="http://www.imdb.com/title/tt0094625/">Akira</a>, which I'm probably one of the few to have watched after <a href="http://www.imdb.com/title/tt0293416/">Metropolis</a>, definitely one of the good mangas, although not really my style (I'd choose <a href="http://www.imdb.com/title/tt0113568/">Ghost In The Shell</a> or <a href="http://www.imdb.com/title/tt0245429/">Spirited Away</a> over <i>Akira</i>).<br>
+<a href="http://www.imdb.com/title/tt0357413/">Anchorman</a>, you can't believe the romance for a minute, and the jokes are rubbish.<br>
+<a href="http://us.imdb.com/title/tt0145653/">Angela's Ashes</a>, very much an inspiration for later films like <a href="http://www.imdb.com/title/tt0249462/">Billy Elliot</a> or <a href="http://www.imdb.com/title/tt0298845/">In America</a>.<p>
+I also took some time to get DAAP sharing working with Rhythmbox, thanks <a href="http://ishamael.tunkeymicket.com/">ish</a> for the work, I can now stream good music over the waves. Some more <a href="http://usefulinc.com/software/phonemgr">g-p-m</a> love, and we might be ready for another release soon.<p>
+
+<table align="center"><tr><td align=center>
+<img
+src="http://www.bbc.co.uk/weather/images/symbols/fiveday_sym/3.gif" align="center" border=0><br>
+<p align="center"><i>Can England fail to play in that nice weather?</i></p>
+</td></tr>
+</table><p>
+
+
+--------------------------------
+Title: McGratthie's on a roll
+Link: http://hadess.net/?start=572
+Date: Thu Sep 08 21:23:39 UTC 2005
+Creator: Bastien Nocera
+Subject: 
+Category: 
+Content:
+He got the 10 wickets out yesterday already! (Cricket lovers, don't despair, it's a private joke).<p>
+
+<table align="center"><tr><td align=center>
+<img
+src="/blog/images/30-08-05_2210.jpg" align="center" border=0><br>
+<p align="center"><i>Since <a href="http://www.fluendo.com">Fluendo</a>'s inception, xine lovers have gone underground</i></p>
+</td></tr>
+</table><p>
+
+Breakthrough in <a href="http://usefulinc.com/software/phonemgr/">gnome-phone-manager</a> hacking. No need for a phone, I can have a dummy one! Implemented the dummy backend, which allowed me to fix one bug, and reproduce another one. Now to bug Ross about the contact-lookup-applet's widget disabling itself when there's no completion in Evolution, and waiting for a restart to enable itself.<p>
+
+<table align="center"><tr><td>
+<img
+src="/blog/images/07-09-05_1930.jpg" align="middle" border=0><br>
+<p align="center"><i>No, Alan Cox isn't the Creeper, he just plays in it</i></p>
+</td></tr>
+</table><p>
+
+
+--------------------------------
+Title: It's all about timing
+Link: http://hadess.net/?start=571
+Date: Tue Sep 06 20:06:18 UTC 2005
+Creator: Bastien Nocera
+Subject: 
+Category: 
+Content:
+And time! It's about time that I finish blogging about my <a href="">trip to Barcelona</a>. Day 4, nice, got to visit the <a href="/files/photos/Barcelona_2005_day_4/">Sagrada Familia</a>. Very nice, convoluted, interweaved, and really overdone. After that, it all goes downhill.<p>
+
+<table align="center"><tr><td>
+<img
+src="/files/photos/Barcelona_2005_day_4/lq/img-2.jpg" align="center" border=0>
+</td></tr>
+<tr><td>
+<p align="center"><i>Over-engineered</i></p>
+</tr></td></table><p>
+
+Puketastic on the Thursday, don't know if it's the Barcelona water, or Christian's fridge contents, but the result wasn't anything for the weak.<p>
+I started my Friday recovery with the <a href="http://www.fluendo.com/">Fluendo</a> guys. I left, shortly after a failed attempt at setting a projector: if you can't get a room dark, a projector isn't very useful. Spent the evening with Andy and his bunch of cosmopolitan housemates. Meeting Cyril was funny, I was speaking English, and him Spanish before Andy, in his well-known style, blurted out <i>"But you're both French, you idiots"</i>. Out to <a href="http://www.bcn-nightlife.com/en/clubs/67">Danzatoria</a>: I can find Radio 2 DJs that can mix hip-hop better than the guy there. Good to know that young Israelis make jokes about the Holocaust. That still doesn't allow you to repeat the anti-semitic jokes your grand-father Helmut was telling you when you were a kid.<p>
+Saturday, footie with Christian, in an Irish pub managed by Frenchmen. England won it by the skin of their teeth. Then a good BBQ at <a href="http://thomas.apestaart.org/log">Thomas</a>', he's got the gear, but you can pick on him for using xmms on his entertainment systems. Welcome to the 1990's. And time to say good bye to everyone, on my way back on the Sunday.<p>
+I wouldn't live in Barcelona, but it's certainly a good place to have friends in, thanks guys.<p>
+<b>Back to the routine</b><p>
+Or not quite. I've received my welcome pack for <a href="http://www.surrey.ac.uk/">UniS</a>, starts Monday 19th. And I'll be going to Boston for the <a href="http://live.gnome.org/Boston2005">Summit</a> (thanks Havoc for sorting it out), and after that to Raleigh to meet my new boss.<p>
+<b>Random bits</b><p>
+Watched <a href="http://us.imdb.com/title/tt0094012/">Spaceballs</a> (full of one-liners, but was certainly more entertaining to watch in the '80s) and <a href="http://www.imdb.com/title/tt0386588/">Hitch</a> (got no excuses, again). And Christian, in addition to having a <a href="http://blogs.gnome.org/view/uraeus/2005/08/27/0">Crazy Frog Background</a>, also has the <a href="http://www.linuxrising.org/screenshots/rootbert.png">Crazy Frog music in his collection</a>.
+
+--------------------------------
+Title: Ouch
+Link: http://hadess.net/?start=570
+Date: Thu Sep 01 03:50:00 UTC 2005
+Creator: Bastien Nocera
+Subject: 
+Category: 
+Content:
+<p>So the evening was a tiny bit more eventful than prepared. First, Andrew Patrick (the good guy Wingo's mom name) got us down to a very nice tapas bar. Then, it got more furious. We ended up in Moog, and on the way I got offered unaldurated sex (for a fee), hachish, my balls grabbed (gratis), and 20 euros nicked out of my backpocket (gratis, again). The club was good, easy 80's upstairs, and hardcore noughts downstairs. The skinny really white guy standing next to me near the end was, well, Scottish. Would you believe. It's close to 6, and the second part of the night didn't go through. Shame, time to sleep now. Tada.
+</p>
+--------------------------------
+Title: Can cause excessive fan speed
+Link: http://hadess.net/?start=569
+Date: Tue Aug 30 16:17:51 UTC 2005
+Creator: Bastien Nocera
+Subject: 
+Category: 
+Content:
+After my problems with plane tickets, I still managed to make it to sunny Bacelona. I say sunny, but it's an understatement. For some reason, I'm a sweaty guy, and whether or not the thermometer in <a href="http://blogs.gnome.org/view/uraeus?reverse=1">Christian</a>'s flat tells the truth (stuck as it is on 30 celsius), it is damn hot, and my two showers a day compulsory if I want to go into the world.<p>
+I started my integration on Sunday, when after a few sips at a beach bar, we headed to an Irish pub, to watch <a href="http://news.bbc.co.uk/sport1/hi/football/eng_prem/4168930.stm">Newcastle v. ManU</a>. My home studies (read: the FIFA tournament on Friday evenings) came to use when I called Luque a <i>Tronco</i>, and the barkeep laughed. Headed towards a Thai restaurant (the original plan having failed, see below).<p>
+<table align="center"><tr><td>
+<img
+src="/files/photos/Barcelona_2005_day_3/lq/img-5.jpg" align="center" border=0>
+</td></tr>
+<tr><td>
+<p align="center"><i>Totum, not Totem, and it was closed. So close Andy...</i></p>
+</tr></td></table><p>
+Next day, woke up late, tried to go to the Picasso museum. Closed on Mondays. My debit card to buy a <i>Metro</i> travelcard, nearly eaten by the machine (saved by the keys, McGyver-style). Instead, I hung out at the <a href="http://fluendo.com">Fluendo</a> offices, and made a trip to the aquarium. I couldn't find how to disable the flash on my damn camera, so ended up taking only one picture. The other picture I got was from me standing next to a guy in a shark suit. It's like Disneyland in Catalan.<p>
+<table align="center"><tr><td>
+<img
+src="/files/photos/Barcelona_2005_day_3/lq/img-21.jpg" align="center" border=0>
+</td></tr>
+<tr><td>
+<p align="center"><i>Not a nudie booth</i></p>
+</tr></td></table><p>
+Yesterday evening, we went to a Mexican (apparently a bad one, it wasn't actually so bad), and then to see <a href="http://imdb.com/title/tt0399201/">La Isla</a>. I found the film really bad, and Thomas not so much. I guess Thomas has the culinary taste, and I have the film one.<p>
+<table align="center"><tr><td>
+<img
+src="/files/photos/Barcelona_2005_day_3/lq/img-24.jpg" align="center" border=0>
+</td></tr>
+<tr><td>
+<p align="center"><i>Well high</i></p>
+</tr></td></table><p>
+Today was a late one again, and I strolled to <i>Monjuic</i> via the <i>Teleferic</i> after lunch at the Italian restaurant.<p>
+Another couple of days still, so it's going to be fun. Much thanks to Christian for the hosting, and the Fluendo guys (even the Aussies!) for company.
+
+--------------------------------
+Title: I hate booking plane tickets
+Link: http://hadess.net/?start=568
+Date: Sat Aug 27 10:39:30 UTC 2005
+Creator: Bastien Nocera
+Subject: 
+Category: 
+Content:
+It's happened to me twice that I bought my tickets for the wrong week. One week off on the booking, and you end up paying more because you're not careful. I manage to top it this time, by booking my trip to Barcelona in the wrong direction. 160 quid later, I'm going in the right direction...<p>
+

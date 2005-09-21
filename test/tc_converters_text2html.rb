@@ -273,4 +273,15 @@ in which he interviewed me about the award.
     EOF
     assert_equal(output, input.unescape_html)
   end
+
+  def test_unescape_hadess
+    input = <<-EOF
+Yay! Got &lt;a href=&quot;http://pilot-link.org/&quot;&gt;pilot-link&lt;/a&gt; to sync over Bluetooth, without the crappy 'Set up a PPP server' bit. Now to download &lt;a href=&quot;http://palmsource.palmgear.com/index.cfm?fuseaction=software.showsoftware&amp;prodID=52957&quot;&gt;BtSync&lt;/a&gt;.
+    EOF
+
+    output = <<-EOF
+    EOF
+    assert_equal(output, input.text2html)
+  end
+
 end
