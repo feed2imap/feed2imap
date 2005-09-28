@@ -91,9 +91,10 @@ class Channel
       end
       # Link
       doc.root.each_element('/feed/link') do |e|
-        if e.attribute('type').value == 'text/html' or
-          e.attribute('type').value == 'application/xhtml' or
-          e.attribute('type').value == 'application/xhtml+xml'
+        if e.attribute('type') and (
+            e.attribute('type').value == 'text/html' or
+            e.attribute('type').value == 'application/xhtml' or
+            e.attribute('type').value == 'application/xhtml+xml')
           if (h = e.attribute('href')) && h
             @link = h.value.rmWhiteSpace!
           end
@@ -124,7 +125,6 @@ class Item
   attr_accessor :title, :link, :content, :date, :creator, :subject,
                 :category, :cacheditem
   attr_reader :channel
-
   def initialize(item = nil, channel = nil)
     @channel = channel
     @title, @link, @content, @date, @creator, @subject, @category = nil

@@ -46,6 +46,10 @@ class Feed2Imap
       @logger.fatal("Configuration file #{configfile} not found.")
       exit(1)
     end
+    if (File::stat(configfile).mode & 044) != 0
+      @logger.warn("Configuration file is readable by other users. It" +
+        "probably contains your password.")
+    end
     begin
       File::open(configfile) { 
         |f| @config = F2IConfig::new(f)

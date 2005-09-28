@@ -1,5 +1,7 @@
 Feed2Imap 0.6 (XX/09/2005)
 ============================
+* Issue a warning if the config file is world readable.
+* Fixed a small bug in Atom feeds parsing. And found a bug in Dotclear.
 * Fix another bug related to escaped HTML.
 
 Feed2Imap 0.5 (19/09/2005)
