@@ -47,7 +47,7 @@ class Feed2Imap
       exit(1)
     end
     if (File::stat(configfile).mode & 044) != 0
-      @logger.warn("Configuration file is readable by other users. It" +
+      @logger.warn("Configuration file is readable by other users. It " +
         "probably contains your password.")
     end
     begin
