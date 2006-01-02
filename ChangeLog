@@ -1,5 +1,7 @@
-Feed2Imap 0.6 (XX/09/2005)
+Feed2Imap 0.6 (XX/01/2006)
 ============================
+* Moved the RSS/Atom parser to a separate library (ruby-feedparser).
+* Locks the Cache file to avoid concurrent instances of feed2imap.
 * Issue a warning if the config file is world readable.
 * Fixed a small bug in Atom feeds parsing. And found a bug in Dotclear.
 * Fix another bug related to escaped HTML.
