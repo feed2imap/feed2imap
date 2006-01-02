@@ -62,14 +62,18 @@ class Feed2Imap
     # init cache
     @logger.info('Initializing cache')
     @cache = ItemCache::new
+    if not File::exist?(@config.cache + '.lock')
+      f = File::new(@config.cache + '.lock', 'w')
+      f.close
+    end
+    if File::new(@config.cache + '.lock').flock(File::LOCK_EX | File::LOCK_NB) == false
+      @logger.fatal("Another instance of feed2imap is already locking the cache file")
+      exit(1)
+    end
     if not File::exist?(@config.cache) 
       @logger.warn("Cache file #{@config.cache} not found, using a new one")
     else
       File::open(@config.cache) do |f|
-        if not f.flock(File::LOCK_UN)
-          @logger.fatal("Another instance of feed2imap is already locking the cache file")
-          exit(1)
-        end
         @cache.load(f)
       end
     end
