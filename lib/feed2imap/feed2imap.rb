@@ -18,14 +18,15 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 =end
 
 # Feed2Imap version
-F2I_VERSION = '0.5'
+F2I_VERSION = '0.5.1'
 
 require 'feed2imap/config'
 require 'feed2imap/cache'
-require 'feed2imap/channel'
 require 'feed2imap/httpfetcher'
 require 'logger'
 require 'thread'
+require 'feedparser'
+require 'feed2imap/itemtomail'
 
 class Feed2Imap
   def Feed2Imap.version
@@ -119,13 +120,13 @@ class Feed2Imap
     @config.feeds.each do |f|
       next if f.body.nil? # means 304
       begin
-        channel = Channel::new(f.body)
+        feed = FeedParser::Feed::new(f.body)
       rescue Exception => e
         @logger.fatal("Error while parsing #{f.name}: #{e}")
         next
       end
       begin
-        newitems, updateditems = @cache.get_new_items(f.name, channel.items)
+        newitems, updateditems = @cache.get_new_items(f.name, feed.items)
       rescue
         @logger.fatal("Exception caught when selecting new items for #{f.name}: #{$!}")
         puts $!.backtrace
@@ -134,8 +135,14 @@ class Feed2Imap
       @logger.info("#{f.name}: #{newitems.length} new items, #{updateditems.length} updated items.") if newitems.length > 0 or updateditems.length > 0
       begin
         if !cacherebuild
-          updateditems.each { |i| f.imapaccount.updatemail(f.folder, i.to_mail(f.name), i.cacheditem.index) }
-          newitems.each { |i| f.imapaccount.putmail(f.folder, i.to_mail(f.name)) }
+          updateditems.each do |i|
+            email = item_to_mail(i, i.cacheditem.index, true, f.name)
+            f.imapaccount.updatemail(f.folder, email, i.cacheditem.index)
+          end
+          newitems.each do |i|
+            email = item_to_mail(i, i.cacheditem.index, false, f.name)
+            f.imapaccount.putmail(f.folder, email)
+          end
         end
       rescue
         @logger.fatal("Exception caught while uploading mail to #{f.folder}: #{$!}")

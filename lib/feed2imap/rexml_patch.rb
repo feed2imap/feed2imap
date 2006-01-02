@@ -17,7 +17,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 =end
 
-require 'feed2imap/textconverters'
+require 'feedparser'
 
 # Patch for REXML
 # Very ugly patch to make REXML error-proof.
