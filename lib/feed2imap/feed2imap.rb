@@ -65,7 +65,13 @@ class Feed2Imap
     if not File::exist?(@config.cache) 
       @logger.warn("Cache file #{@config.cache} not found, using a new one")
     else
-      File::open(@config.cache) { |f| @cache.load(f) }
+      File::open(@config.cache) do |f|
+        if not f.flock(File::LOCK_UN)
+          @logger.fatal("Another instance of feed2imap is already locking the cache file")
+          exit(1)
+        end
+        @cache.load(f)
+      end
     end
     # connecting all IMAP accounts
     @logger.info('Connecting to IMAP accounts')
