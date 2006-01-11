@@ -4,7 +4,7 @@ $:.unshift File.join(File.dirname(__FILE__), '..', 'lib')
 
 require 'test/unit'
 require 'feed2imap/cache'
-require 'feed2imap/channel'
+require 'feedparser'
 require 'pp'
 
 class ItemCacheTest < Test::Unit::TestCase
@@ -25,15 +25,15 @@ class ItemCacheTest < Test::Unit::TestCase
     c = ItemCache::new
     assert_equal(0, c.nbchannels)
     assert_equal(0, c.nbitems)
-    i1 = Item::new
+    i1 = FeedParser::FeedItem::new
     i1.title = 'title1'
     i1.link = 'link1'
     i1.content = 'content1'
-    i2 = Item::new
+    i2 = FeedParser::FeedItem::new
     i2.title = 'title2'
     i2.link = 'link2'
     i2.content = 'content2'
-    i3 = Item::new
+    i3 = FeedParser::FeedItem::new
     i3.title = 'title3'
     i3.link = 'link3'
     i3.content = 'content3'
@@ -47,11 +47,11 @@ class ItemCacheTest < Test::Unit::TestCase
     c = ItemCache::new
     assert_equal(0, c.nbchannels)
     assert_equal(0, c.nbitems)
-    i1 = Item::new
+    i1 = FeedParser::FeedItem::new
     i1.title = 'title1'
     i1.link = 'link1'
     i1.content = 'content1'
-    i2 = Item::new
+    i2 = FeedParser::FeedItem::new
     i2.title = 'title2'
     i2.link = 'link2'
     i2.content = 'content2'
@@ -62,7 +62,7 @@ class ItemCacheTest < Test::Unit::TestCase
     idx2 = i2.cacheditem.index
     assert_equal(1, idx2)
     c.commit_cache('id')
-    i3 = Item::new
+    i3 = FeedParser::FeedItem::new
     i3.title = 'title 1 - updated'
     i3.link = 'link1'
     i3.content = 'content1'
@@ -70,7 +70,7 @@ class ItemCacheTest < Test::Unit::TestCase
     assert_equal([], news)
     assert_equal([i3], updated)
     assert_equal(idx1, i3.cacheditem.index)
-    i4 = Item::new
+    i4 = FeedParser::FeedItem::new
     i4.title = 'title 1 - updated'
     i4.link = 'link1'
     i4.content = 'content1 - modified'

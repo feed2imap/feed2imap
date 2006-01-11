@@ -33,7 +33,10 @@ MAXREDIR = 5
 class HTTPFetcher
   def HTTPFetcher::fetcher(baseuri, uri, lastcheck, recursion)
     http = Net::HTTP::new(uri.host, uri.port)
-    http.use_ssl = true if uri.scheme == 'https'
+    if uri.scheme == 'https'
+      http.use_ssl = true 
+      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    end
     if defined?(Feed2Imap)
       useragent = "Feed2Imap v#{Feed2Imap.version} http://home.gna.org/feed2imap/"
     else
