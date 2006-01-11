@@ -103,6 +103,7 @@ class Feed2Imap
     ths = []
     @config.feeds.each do |f|
       ths << Thread::new do
+	url = f.url
         begin
           lastcheck = @cache.get_last_check(f.name) 
           if f.needfetch(lastcheck)
@@ -116,11 +117,11 @@ class Feed2Imap
           end
         rescue Timeout::Error
           loggermon.synchronize do
-            @logger.fatal("Timeout::Error while fetching #{f.url}: #{$!}")
+            @logger.fatal("Timeout::Error while fetching #{url}: #{$!}")
           end
         rescue
           loggermon.synchronize do
-            @logger.fatal("Error while fetching #{f.url}: #{$!}")
+            @logger.fatal("Error while fetching #{url}: #{$!}")
           end
         end
       end
