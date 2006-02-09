@@ -29,6 +29,8 @@ require 'uri'
 # max number of redirections
 MAXREDIR = 5
 
+HTTPDEBUG = true
+
 # Class used to retrieve the feed over HTTP
 class HTTPFetcher
   def HTTPFetcher::fetcher(baseuri, uri, lastcheck, recursion)
@@ -66,7 +68,10 @@ class HTTPFetcher
       return response.body
     when Net::HTTPRedirection
       # if not modified
-      return nil if Net::HTTPNotModified === response
+      if Net::HTTPNotModified === response
+        puts "HTTPNotModified on #{uri}" if HTTPDEBUG
+        return nil 
+      end
       if recursion > 0
         redir = URI::join(uri.to_s, response['location'])
         return fetcher(baseuri, redir, lastcheck, recursion - 1)
