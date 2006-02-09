@@ -102,8 +102,7 @@ class Feed2Imap
     ths = []
     mutex = Mutex::new
     @config.feeds.each do |f|
-      ths << Thread::new do
-	url = f.url
+      ths << Thread::new(f) do
         begin
           mutex.lock
           lastcheck = @cache.get_last_check(f.name) 
@@ -126,11 +125,11 @@ class Feed2Imap
           end
         rescue Timeout::Error
           mutex.synchronize do
-            @logger.fatal("Timeout::Error while fetching #{url}: #{$!}")
+            @logger.fatal("Timeout::Error while fetching #{f.url}: #{$!}")
           end
         rescue
           mutex.synchronize do
-            @logger.fatal("Error while fetching #{url}: #{$!}")
+            @logger.fatal("Error while fetching #{f.url}: #{$!}")
           end
         end
       end
