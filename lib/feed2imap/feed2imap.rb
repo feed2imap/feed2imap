@@ -102,34 +102,34 @@ class Feed2Imap
     ths = []
     mutex = Mutex::new
     @config.feeds.each do |f|
-      ths << Thread::new(f) do
+      ths << Thread::new(f) do |feed|
         begin
           mutex.lock
-          lastcheck = @cache.get_last_check(f.name) 
-          if f.needfetch(lastcheck)
+          lastcheck = @cache.get_last_check(feed.name) 
+          if feed.needfetch(lastcheck)
             mutex.unlock
-            s = HTTPFetcher::fetch(f.url, @cache.get_last_check(f.name))
+            s = HTTPFetcher::fetch(feed.url, @cache.get_last_check(feed.name))
             mutex.lock
-            f.body = s
-            @cache.set_last_check(f.name, Time::now)
+            feed.body = s
+            @cache.set_last_check(feed.name, Time::now)
           end
           mutex.unlock
           # dump if requested
           if @config.dumpdir
             mutex.synchronize do
-              if f.body
-                fname = @config.dumpdir + '/' + f.name + '-' + Time::now.xmlschema
-                File::open(fname, 'w') { |file| file.puts f.body }
+              if feed.body
+                fname = @config.dumpdir + '/' + feed.name + '-' + Time::now.xmlschema
+                File::open(fname, 'w') { |file| file.puts feed.body }
               end
             end
           end
         rescue Timeout::Error
           mutex.synchronize do
-            @logger.fatal("Timeout::Error while fetching #{f.url}: #{$!}")
+            @logger.fatal("Timeout::Error while fetching #{feed.url}: #{$!}")
           end
         rescue
           mutex.synchronize do
-            @logger.fatal("Error while fetching #{f.url}: #{$!}")
+            @logger.fatal("Error while fetching #{feed.url}: #{$!}")
           end
         end
       end
