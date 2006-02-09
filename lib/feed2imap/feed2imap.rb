@@ -99,28 +99,37 @@ class Feed2Imap
     end
     # for each feed, fetch, upload to IMAP and cache
     @logger.info("Fetching feeds")
-    loggermon = Mutex::new
     ths = []
+    mutex = Mutex::new
     @config.feeds.each do |f|
       ths << Thread::new do
 	url = f.url
         begin
+          mutex.lock
           lastcheck = @cache.get_last_check(f.name) 
           if f.needfetch(lastcheck)
-            f.body = HTTPFetcher::fetch(f.url, @cache.get_last_check(f.name))
+            mutex.unlock
+            s = HTTPFetcher::fetch(f.url, @cache.get_last_check(f.name))
+            mutex.lock
+            f.body = s
             @cache.set_last_check(f.name, Time::now)
           end
+          mutex.unlock
           # dump if requested
-          if @config.dumpdir and f.body
-            fname = @config.dumpdir + '/' + f.name + '-' + Time::now.xmlschema
-            File::open(fname, 'w') { |file| file.puts f.body }
+          if @config.dumpdir
+            mutex.synchronize do
+              if f.body
+                fname = @config.dumpdir + '/' + f.name + '-' + Time::now.xmlschema
+                File::open(fname, 'w') { |file| file.puts f.body }
+              end
+            end
           end
         rescue Timeout::Error
-          loggermon.synchronize do
+          mutex.synchronize do
             @logger.fatal("Timeout::Error while fetching #{url}: #{$!}")
           end
         rescue
-          loggermon.synchronize do
+          mutex.synchronize do
             @logger.fatal("Error while fetching #{url}: #{$!}")
           end
         end
