@@ -50,8 +50,9 @@ def item_to_mail(item, index, updated, from = 'Feed2Imap')
       message.header['From'] = "#{item.creator.chomp} <feed2imap@acme.com>"
     end
   else
-    message.header['To'] = "#{from} <feed2imap@acme.com>"
+    message.header['From'] = "#{from} <feed2imap@acme.com>"
   end
+  message.header['To'] = "#{from} <feed2imap@acme.com>"
   if @date.nil?
     message.header['Date'] = Time::new.rfc2822
   else

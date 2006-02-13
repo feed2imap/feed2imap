@@ -114,7 +114,9 @@ class ImapAccount
 
   # convert to string
   def to_s
-    uri.to_s
+    u2 = uri.clone
+    u2.password = nil
+    u2.to_s
   end
 
   # remove mails in a folder according to a criteria

@@ -29,7 +29,7 @@ require 'uri'
 # max number of redirections
 MAXREDIR = 5
 
-HTTPDEBUG = true
+HTTPDEBUG = false
 
 # Class used to retrieve the feed over HTTP
 class HTTPFetcher
