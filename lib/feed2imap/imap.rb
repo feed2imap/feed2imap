@@ -95,7 +95,7 @@ class ImapAccount
   # Put the mail in the given folder
   # You should check whether the folder exist first.
   def putmail(folder, mail, date = Time::now)
-    @connection.append(folder, mail.gsub(/\n/, "\r\n"), [:Recent], date)
+    @connection.append(folder, mail.gsub(/\n/, "\r\n"), nil, date)
   end
 
   # update a mail

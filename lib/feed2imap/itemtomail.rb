@@ -53,7 +53,7 @@ def item_to_mail(item, index, updated, from = 'Feed2Imap')
     message.header['From'] = "#{from} <feed2imap@acme.com>"
   end
   message.header['To'] = "#{from} <feed2imap@acme.com>"
-  if @date.nil?
+  if item.date.nil?
     message.header['Date'] = Time::new.rfc2822
   else
     message.header['Date'] = item.date.rfc2822
