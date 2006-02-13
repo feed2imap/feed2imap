@@ -1,3 +1,8 @@
+Feed2Imap 0.7 (XX/02/2006)
+============================
+* Fixes the IMAPS disconnection problem (patch provided by Gael Utard
+  <gael.utard@laposte.net>)
+
 Feed2Imap 0.6 (11/01/2006)
 ============================
 * Moved the RSS/Atom parser to a separate library (ruby-feedparser).
