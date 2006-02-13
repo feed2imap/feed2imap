@@ -156,11 +156,12 @@ class Feed2Imap
         if !cacherebuild
           updateditems.each do |i|
             email = item_to_mail(i, i.cacheditem.index, true, f.name)
-            f.imapaccount.updatemail(f.folder, email, i.cacheditem.index)
+            f.imapaccount.updatemail(f.folder, email,
+                                     i.cacheditem.index, i.date || Time::new)
           end
           newitems.each do |i|
             email = item_to_mail(i, i.cacheditem.index, false, f.name)
-            f.imapaccount.putmail(f.folder, email)
+            f.imapaccount.putmail(f.folder, email, i.date || Time::new)
           end
         end
       rescue

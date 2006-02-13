@@ -5,6 +5,8 @@ Feed2Imap 0.7 (XX/02/2006)
 * Fixes some issues regarding parallel fetching of feeds.
 * Now displays the feed creator as sender of emails.
 * Don't display the password in error messages (fixes debian bug #350370).
+* Upload mail with the Item's time, not the upload's time (fixes debian
+  bug #350371).
 
 Feed2Imap 0.6 (11/01/2006)
 ============================

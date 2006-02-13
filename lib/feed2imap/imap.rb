@@ -94,12 +94,12 @@ class ImapAccount
 
   # Put the mail in the given folder
   # You should check whether the folder exist first.
-  def putmail(folder, mail)
-    @connection.append(folder, mail.gsub(/\n/, "\r\n"))
+  def putmail(folder, mail, date = Time::now)
+    @connection.append(folder, mail.gsub(/\n/, "\r\n"), [:Recent], date)
   end
 
   # update a mail
-  def updatemail(folder, mail, idx)
+  def updatemail(folder, mail, idx, date = Time::now)
     @connection.select(folder)
     searchres = @connection.search(['HEADER', 'X-CacheIndex', "-#{idx}-"])
     flags = nil
@@ -109,13 +109,13 @@ class ImapAccount
       searchres.each { |m| @connection.store(m, "+FLAGS", [:Deleted]) }
       @connection.expunge
     end
-    @connection.append(folder, mail.gsub(/\n/, "\r\n"), flags)
+    @connection.append(folder, mail.gsub(/\n/, "\r\n"), flags, date)
   end
 
   # convert to string
   def to_s
     u2 = uri.clone
-    u2.password = nil
+    u2.password = 'PASSWORD'
     u2.to_s
   end
 
