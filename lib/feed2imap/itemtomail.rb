@@ -43,8 +43,15 @@ end
 
 def item_to_mail(item, index, updated, from = 'Feed2Imap')
   message = RMail::Message::new
-  message.header['From'] = "#{from} <feed2imap@feed2imap.net>"
-  message.header['To'] = "#{from} <feed2imap@feed2imap.net>"
+  if item.creator and item.creator != ''
+    if item.creator.include?('@')
+      message.header['From'] = item.creator.chomp
+    else
+      message.header['From'] = "#{item.creator.chomp} <feed2imap@acme.com>"
+    end
+  else
+    message.header['To'] = "#{from} <feed2imap@acme.com>"
+  end
   if @date.nil?
     message.header['Date'] = Time::new.rfc2822
   else
