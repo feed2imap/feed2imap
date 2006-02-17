@@ -1,4 +1,4 @@
-Feed2Imap 0.7 (XX/02/2006)
+Feed2Imap 0.7 (17/02/2006)
 ============================
 * Fixes the IMAPS disconnection problem (patch provided by Gael Utard
   <gael.utard@laposte.net>) (fixes gna bug #2178).
