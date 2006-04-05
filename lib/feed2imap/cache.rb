@@ -30,9 +30,9 @@ class ItemCache
   end
 
   # Returns the really new items amongst items
-  def get_new_items(id, items)
+  def get_new_items(id, items, always_new = false)
     @channels[id] ||= CachedChannel::new
-    return @channels[id].get_new_items(items)
+    return @channels[id].get_new_items(items, always_new)
   end
 
   # Commit changes to the cache
@@ -116,7 +116,7 @@ class CachedChannel
   UPDATEDDEBUG = false
 
   # Returns the really new items amongst items
-  def get_new_items(items)
+  def get_new_items(items, always_new = false)
     # save number of new items
     @nbnewitems = items.length
     # set items' cached version if not set yet
@@ -130,7 +130,7 @@ class CachedChannel
       dups = false
       for i in 0...items.length do
         for j in i+1...items.length do
-          if items[i].cacheditem.link == items[j].cacheditem.link
+          if items[i].cacheditem == items[j].cacheditem
             if UPDATEDDEBUG
               puts "## Removed #{items[j].cacheditem.to_s}"
             end
@@ -148,6 +148,7 @@ class CachedChannel
       items.each { |i| puts "#{i.cacheditem.to_s}" }
       puts "-------Items already there :----------"
       @items.each { |i| puts "#{i.to_s}" }
+      puts "Items always considered as new: #{always_new.to_s}"
     end
     items.each do |i|
       found = false
@@ -163,18 +164,20 @@ class CachedChannel
         end
       end
       next if found
-      # Try to find an updated item
-      @items.each do |j|
-        # Do we need a better heuristic ?
-        if i.link and i.link == j.link
-          i.cacheditem.index = j.index
-          i.cacheditem.updated = true
-          updateditems.push(i)
-          found = true
-          # let's put j in front of itemstemp
-          @itemstemp.delete(j)
-          @itemstemp.unshift(i.cacheditem)
-          break
+      if not always_new
+        # Try to find an updated item
+        @items.each do |j|
+          # Do we need a better heuristic ?
+          if i.link and i.link == j.link
+            i.cacheditem.index = j.index
+            i.cacheditem.updated = true
+            updateditems.push(i)
+            found = true
+            # let's put j in front of itemstemp
+            @itemstemp.delete(j)
+            @itemstemp.unshift(i.cacheditem)
+            break
+          end
         end
       end
       next if found

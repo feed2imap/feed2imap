@@ -145,7 +145,7 @@ class Feed2Imap
         next
       end
       begin
-        newitems, updateditems = @cache.get_new_items(f.name, feed.items)
+        newitems, updateditems = @cache.get_new_items(f.name, feed.items, f.always_new)
       rescue
         @logger.fatal("Exception caught when selecting new items for #{f.name}: #{$!}")
         puts $!.backtrace

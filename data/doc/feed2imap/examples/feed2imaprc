@@ -4,6 +4,10 @@
 # min-frequency (in HOURS) is the minimum frequency with which this particular
 #      feed will be fetched
 # disable: if set to something, the feed will be ignored
+# always-new: feed2imap tries to use a clever algorithm to determine whether an item
+#      is new or has been updated. It doesn't work well with some web apps like
+#      mediawiki. When this flag is enabled, all items which don't match exactly
+#      a previously downloaded item are considered as new items.
 #
 # If your login contains an @ character, replace it with %40. Other reserved
 # characters can be escaped in the same way (see man ascii to get their code)
@@ -17,3 +21,8 @@ feeds:
   - name: linuxfr
     url: http://linuxfr.org/backend/news/rss20.rss
     target: imap://lucaswebmail:password@imap.apinc.org/INBOX.Feeds.LinuxFR
+  -
+    name: JabberFrWiki
+    url: http://wiki.jabberfr.org/index.php?title=Special:Recentchanges&feed=rss
+    target: imaps://lucaswebmail:password@imap.apinc.org/INBOX.Feeds.JabberFR
+    always-new: true
