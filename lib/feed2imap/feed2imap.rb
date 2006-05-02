@@ -66,7 +66,7 @@ class Feed2Imap
       f = File::new(@config.cache + '.lock', 'w')
       f.close
     end
-    if File::new(@config.cache + '.lock').flock(File::LOCK_EX | File::LOCK_NB) == false
+    if File::new(@config.cache + '.lock', 'w').flock(File::LOCK_EX | File::LOCK_NB) == false
       @logger.fatal("Another instance of feed2imap is already locking the cache file")
       exit(1)
     end

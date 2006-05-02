@@ -132,7 +132,7 @@ class CachedChannel
         for j in i+1...items.length do
           if items[i].cacheditem == items[j].cacheditem
             if UPDATEDDEBUG
-              puts "## Removed #{items[j].cacheditem.to_s}"
+              puts "## Removed duplicate #{items[j].cacheditem.to_s}"
             end
             items.delete_at(j)
             dups = true

@@ -1,7 +1,15 @@
 Feed2Imap 0.8 (XX/XX/2006)
 ============================
+* Fixed a small bug in the duplicate items handling which could have caused
+  some items to be ignored if they had the same url but different content.
+* New always-new flag in the config file to consider all items as new (for
+  feeds where items are wrongly marked as updated, e.g mediawiki feeds).
+  See example configuration file for more information.
 * Uses the http_proxy environment variable to determine the proxy server
-  if available. (fixes gna bug #5820, all credits go to Boyd Adamson)
+  if available. (fixes gna bug #5820, all credits go to Boyd Adamson
+  <boyd-adamson@usa.net>)
+* Fixes flocking on Solaris (fixes gna bug #5819). Again, all credits go to
+  Boyd Adamson <boyd-adamson@usa.net>.
 
 Feed2Imap 0.7 (17/02/2006)
 ============================
