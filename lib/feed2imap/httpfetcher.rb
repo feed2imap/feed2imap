@@ -34,7 +34,21 @@ HTTPDEBUG = false
 # Class used to retrieve the feed over HTTP
 class HTTPFetcher
   def HTTPFetcher::fetcher(baseuri, uri, lastcheck, recursion)
-    http = Net::HTTP::new(uri.host, uri.port)
+    proxy_host = nil
+    proxy_port = nil
+    proxy_user = nil
+    proxy_pass = nil
+    if ENV['http_proxy']
+        proxy_uri = URI.parse(ENV['http_proxy'])
+        proxy_host = proxy_uri.host
+        proxy_port = proxy_uri.port
+        proxy_user, proxy_pass = proxy_uri.userinfo.split(/:/) if proxy_uri.userinfo
+    end
+
+    http = Net::HTTP::Proxy(proxy_host,
+                            proxy_port,
+                            proxy_user,
+                            proxy_pass ).new(uri.host, uri.port)
     if uri.scheme == 'https'
       http.use_ssl = true 
       http.verify_mode = OpenSSL::SSL::VERIFY_NONE
