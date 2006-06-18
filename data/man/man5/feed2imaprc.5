@@ -5,8 +5,11 @@ feed2imaprc \- feed2imap configuration file
 \fBfeed2imaprc\fR is feed2imap's configuration file. It is usually located in \fB~/.feed2imaprc\fR.
 .SH EXAMPLE
 See \fB/usr/share/doc/feed2imap/examples/feed2imaprc\fR.
+.SH "RESERVED CHARACTERS"
+Some characters are reserved in RFC2396 (URI). If you need to include a reserved character in the login/password part of your target URI, replace it with its hex code. For example, @ can be replaced by %40.
 .SH BUGS
-This manpage should probably give more details.
+This manpage should probably give more details. However, the example configuration file is
+very well documented.
 .SH "SEE ALSO"
 Homepage : 
 http://home.gna.org/feed2imap/
