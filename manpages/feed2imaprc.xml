@@ -43,7 +43,8 @@
 </refsect1>
 <refsect1>
 	<title>BUGS</title>
-	<para>This manpage should probably give more details.</para>
+	<para>This manpage should probably give more details. However, the example configuration file is
+very well documented.</para>
 </refsect1>
 <refsect1>
 	<title>SEE ALSO</title>

@@ -61,7 +61,7 @@ class Feed2Imap
     end
     # init cache
     @logger.info('Initializing cache')
-    @cache = ItemCache::new
+    @cache = ItemCache::new(@config.updateddebug)
     if not File::exist?(@config.cache + '.lock')
       f = File::new(@config.cache + '.lock', 'w')
       f.close
@@ -187,7 +187,7 @@ class Feed2Imap
       begin
         ac.disconnect
       rescue
-        @logger.fatal("Exception caught while closing connection to #{ac.to_s}: #{$!}")
+        @logger.info("Exception caught while closing connection to #{ac.to_s}: #{$!}")
       end
     end
   end

@@ -26,7 +26,7 @@ DEFCACHE = ENV['HOME'] + '/.feed2imap.cache'
 
 # Feed2imap configuration
 class F2IConfig
-  attr_reader :imap_accounts, :cache, :feeds, :dumpdir
+  attr_reader :imap_accounts, :cache, :feeds, :dumpdir, :updateddebug
 
   # Load the configuration from the IO stream
   # TODO should do some sanity check on the data read.
@@ -36,6 +36,7 @@ class F2IConfig
     @dumpdir = @conf['dumpdir'] || nil
     @conf['feeds'] ||= []
     @feeds = []
+    @updateddebug =  (@conf['debug-updated'] and @conf['debug-updated'] != 'false')
     @imap_accounts = ImapAccounts::new
     @conf['feeds'].each do |f|
       if f['disable'].nil?

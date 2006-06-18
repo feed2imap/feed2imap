@@ -17,20 +17,28 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 =end
 
+# debug mode
+$updateddebug = false
+
 # This class manages a cache of items
 # (items which have already been seen)
 
 require 'digest/md5'
 
 class ItemCache
-  def initialize
+  def initialize(debug = false)
     @channels = {}
     @@cacheidx = 0
+    $updateddebug = debug
     self
   end
 
   # Returns the really new items amongst items
   def get_new_items(id, items, always_new = false)
+    if $updateddebug
+      puts "======================================================="
+      puts "GET_NEW_ITEMS FOR #{id}... (#{Time::now})"
+    end
     @channels[id] ||= CachedChannel::new
     return @channels[id].get_new_items(items, always_new)
   end
@@ -92,7 +100,8 @@ end
 
 class CachedChannel
   # Size of the cache for each feed
-  CACHESIZE = 50
+  # 100 items should be enough for everybody, even quite busy feeds
+  CACHESIZE = 100
 
   attr_accessor :lastcheck, :items
 
@@ -113,8 +122,6 @@ class CachedChannel
   # @nbnewitems is set by get_new_items, and is used to limit the number
   # of (old) items serialized.
 
-  UPDATEDDEBUG = false
-
   # Returns the really new items amongst items
   def get_new_items(items, always_new = false)
     # save number of new items
@@ -124,6 +131,10 @@ class CachedChannel
     updateditems = []
     @itemstemp = @items
     items.each { |i| i.cacheditem ||= CachedItem::new(i) }
+    if $updateddebug
+      puts "-------Items downloaded before dups removal (#{items.length}) :----------"
+      items.each { |i| puts "#{i.cacheditem.to_s}" }
+    end
     # remove dups
     dups = true
     while dups
@@ -131,7 +142,7 @@ class CachedChannel
       for i in 0...items.length do
         for j in i+1...items.length do
           if items[i].cacheditem == items[j].cacheditem
-            if UPDATEDDEBUG
+            if $updateddebug
               puts "## Removed duplicate #{items[j].cacheditem.to_s}"
             end
             items.delete_at(j)
@@ -143,10 +154,10 @@ class CachedChannel
       end
     end
     # debug : dump interesting info to stdout.
-    if UPDATEDDEBUG
-      puts "-------Items downloaded :----------"
+    if $updateddebug
+      puts "-------Items downloaded after dups removal (#{items.length}) :----------"
       items.each { |i| puts "#{i.cacheditem.to_s}" }
-      puts "-------Items already there :----------"
+      puts "-------Items already there (#{@items.length}) :----------"
       @items.each { |i| puts "#{i.to_s}" }
       puts "Items always considered as new: #{always_new.to_s}"
     end
@@ -168,7 +179,7 @@ class CachedChannel
         # Try to find an updated item
         @items.each do |j|
           # Do we need a better heuristic ?
-          if i.link and i.link == j.link
+          if j.is_ancestor_of(i)
             i.cacheditem.index = j.index
             i.cacheditem.updated = true
             updateditems.push(i)
@@ -187,7 +198,7 @@ class CachedChannel
       # add i.cacheditem to @itemstemp
       @itemstemp.unshift(i.cacheditem)
     end
-    if UPDATEDDEBUG
+    if $updateddebug
       puts "-------New items :----------"
       newitems.each { |i| puts "#{i.cacheditem.to_s}" }
       puts "-------Updated items :----------"
@@ -200,6 +211,9 @@ class CachedChannel
     # too old items must be dropped
     n = @nbnewitems > CACHESIZE ? @nbnewitems : CACHESIZE
     @items = @itemstemp[0..n]
+    if $updateddebug
+      puts "Committing: new items: #{@nbnewitems} / items kept: #{@items.length}"
+    end
     @itemstemp = []
     self
   end
@@ -212,13 +226,15 @@ end
 
 # This class is the only thing kept in the cache
 class CachedItem
-  attr_reader :title, :link, :hash
+  attr_reader :title, :link, :creator, :date, :hash
   attr_accessor :index
   attr_accessor :updated
 
   def initialize(item)
     @title = item.title
     @link = item.link
+    @date = item.date
+    @creator = item.creator
     if item.content.nil?
       @hash = nil
     else
@@ -227,14 +243,29 @@ class CachedItem
   end
 
   def ==(other)
-    @title == other.title and @link == other.link and @hash == other.hash
+    if $updateddebug and @title =~ /e325/ and other.title =~ /e325/
+      puts "Comparing #{self.to_s} and #{other.to_s}:"
+      puts "Title: #{@title == other.title}"
+      puts "Link: #{@link == other.link}"
+      puts "Creator: #{@creator == other.creator}"
+      puts "Date: #{@date == other.date}"
+      puts "Hash: #{@hash == other.hash}"
+    end
+    @title == other.title and @link == other.link and
+        (@creator.nil? or other.creator.nil? or @creator == other.creator) and
+	(@date.nil? or other.date.nil? or @date == other.date) and @hash == other.hash
   end
 
   def create_index
     @index = ItemCache.getindex
   end
 
+  def is_ancestor_of(other)
+    (@link and other.link and @link == other.link) and
+      ((@creator and other.creator and @creator == other.creator) or (@creator.nil?))
+  end
+
   def to_s
-    "\"#{@title}\" #{@link} #{@hash}"
+    "\"#{@title}\" #{@creator}/#{@date} #{@link} #{@hash}"
   end
 end
