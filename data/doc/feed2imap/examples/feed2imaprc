@@ -22,15 +22,14 @@
 feeds: 
   - name: feed2imap
     url: http://home.gna.org/feed2imap/feed2imap.rss
-    target: imap://lucaswebmail:password@imap.apinc.org/INBOX.Feeds.Feed2Imap
+    target: imap://luser:password@imap.apinc.org/INBOX.Feeds.Feed2Imap
   - name: lucas
-    url: http://www.lucas-nussbaum.net/dotclear/rss.php
-    target: imap://lucaswebmail:password@imap.apinc.org/INBOX.Feeds.Lucas
+    url: http://www.lucas-nussbaum.net/blog/?feed=rss2
+    target: imap://luser:password@imap.apinc.org/INBOX.Feeds.Lucas
   - name: linuxfr
     url: http://linuxfr.org/backend/news/rss20.rss
-    target: imap://lucaswebmail:password@imap.apinc.org/INBOX.Feeds.LinuxFR
-  -
-    name: JabberFrWiki
+    target: imap://luser:password@imap.apinc.org/INBOX.Feeds.LinuxFR
+  - name: JabberFrWiki
     url: http://wiki.jabberfr.org/index.php?title=Special:Recentchanges&feed=rss
-    target: imaps://lucaswebmail:password@imap.apinc.org/INBOX.Feeds.JabberFR
+    target: imaps://luser:password@imap.apinc.org/INBOX.Feeds.JabberFR
     always-new: true

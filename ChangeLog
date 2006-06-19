@@ -15,6 +15,7 @@ Feed2Imap 0.8 (XX/XX/2006)
 * When disconnecting from the IMAP server, don't display an exception in
   non-verbose mode if the "connection is reset by peer" (fixes Debian bug
   #367282).
+* Handling of exceptions in needMIME (fixes gna bug #5872).
 
 Feed2Imap 0.7 (17/02/2006)
 ============================

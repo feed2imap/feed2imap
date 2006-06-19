@@ -31,11 +31,16 @@ require 'feed2imap/rubymail_patch'
 class String
   def needMIME
     utf8 = false
-    self.unpack('U*').each do |c|
-      if c > 127
-        utf8 = true
-        break
+    begin
+      self.unpack('U*').each do |c|
+        if c > 127
+          utf8 = true
+          break
+        end
       end
+    rescue
+      # safe fallback in case of problems
+      utf8 = true
     end
     utf8
   end
