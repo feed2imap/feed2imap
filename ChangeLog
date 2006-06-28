@@ -1,4 +1,4 @@
-Feed2Imap 0.8 (XX/XX/2006)
+Feed2Imap 0.8 (28/06/2006)
 ============================
 * Uses the http_proxy environment variable to determine the proxy server
   if available. (fixes gna bug #5820, all credits go to Boyd Adamson
