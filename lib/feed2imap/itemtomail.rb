@@ -77,7 +77,7 @@ def item_to_mail(item, index, updated, from = 'Feed2Imap')
   end
   textpart = RMail::Message::new
   textpart.header['Content-Type'] = 'text/plain; charset=utf-8'
-  textpart.header['Content-Transfer-Encoding'] = '7bit'
+  textpart.header['Content-Transfer-Encoding'] = '8bit'
   textpart.body = item.to_text
   htmlpart = RMail::Message::new
   htmlpart.header['Content-Type'] = 'text/html; charset=utf-8'

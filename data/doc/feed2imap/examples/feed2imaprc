@@ -16,6 +16,12 @@
 #   an item is new or has been updated. It doesn't work well with some web apps
 #   like mediawiki. When this flag is enabled, all items which don't match
 #   exactly a previously downloaded item are considered as new items.
+# Snownews/Liferea scripts support :
+#   execurl: Command to execute that will display the RSS/Atom feed on stdout
+#   filter: Command to execute which will receive the RSS/Atom feed on stdin,
+#    modify it, and output it on stdout.
+#   For more information: http://kiza.kcore.de/software/snownews/snowscripts/
+#
 #
 # If your login contains an @ character, replace it with %40. Other reserved
 # characters can be escaped in the same way (see man ascii to get their code)
@@ -26,10 +32,11 @@ feeds:
   - name: lucas
     url: http://www.lucas-nussbaum.net/blog/?feed=rss2
     target: imap://luser:password@imap.apinc.org/INBOX.Feeds.Lucas
-  - name: linuxfr
-    url: http://linuxfr.org/backend/news/rss20.rss
-    target: imap://luser:password@imap.apinc.org/INBOX.Feeds.LinuxFR
   - name: JabberFrWiki
     url: http://wiki.jabberfr.org/index.php?title=Special:Recentchanges&feed=rss
     target: imaps://luser:password@imap.apinc.org/INBOX.Feeds.JabberFR
     always-new: true
+  - name: LeMonde
+    execurl: "wget -q -O /dev/stdout http://www.lemonde.fr/rss/sequence/0,2-3208,1-0,0.xml"
+    filter: "/home/lucas/lemonde_getbody"
+    target: imap://luser:password@imap.apinc.org/INBOX.Feeds.LeMonde

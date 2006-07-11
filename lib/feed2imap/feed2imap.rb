@@ -18,7 +18,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 =end
 
 # Feed2Imap version
-F2I_VERSION = '0.8'
+F2I_VERSION = '0.9'
 
 require 'feed2imap/config'
 require 'feed2imap/cache'
@@ -27,6 +27,7 @@ require 'logger'
 require 'thread'
 require 'feedparser'
 require 'feed2imap/itemtomail'
+require 'open3'
 
 class Feed2Imap
   def Feed2Imap.version
@@ -98,7 +99,7 @@ class Feed2Imap
       end
     end
     # for each feed, fetch, upload to IMAP and cache
-    @logger.info("Fetching feeds")
+    @logger.info("Fetching and filtering feeds")
     ths = []
     mutex = Mutex::new
     @config.feeds.each do |f|
@@ -108,7 +109,20 @@ class Feed2Imap
           lastcheck = @cache.get_last_check(feed.name) 
           if feed.needfetch(lastcheck)
             mutex.unlock
-            s = HTTPFetcher::fetch(feed.url, @cache.get_last_check(feed.name))
+            if feed.url
+              s = HTTPFetcher::fetch(feed.url, @cache.get_last_check(feed.name))
+            elsif feed.execurl
+              s = %x{#{feed.execurl}}
+            else
+              @logger.warn("No way to fetch feed #{feed.name} !")
+            end
+            if feed.filter
+              Open3::popen3(feed.filter) do |stdin, stdout|
+                stdin.puts s
+                stdin.close
+                s = stdout.read
+              end
+            end
             mutex.lock
             feed.body = s
             @cache.set_last_check(feed.name, Time::now)

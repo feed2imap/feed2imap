@@ -71,7 +71,7 @@ end
 
 # A configured feed. simple data container.
 class ConfigFeed
-  attr_reader :name, :url, :imapaccount, :folder, :always_new
+  attr_reader :name, :url, :imapaccount, :folder, :always_new, :execurl, :filter
   attr_accessor :body
 
   def initialize(f, imapaccount, folder)
@@ -81,6 +81,8 @@ class ConfigFeed
     @imapaccount, @folder = imapaccount, folder
     @freq = f['min-frequency']
     @always_new =  (f['always-new'] and f['always-new'] != 'false')
+    @execurl = f['execurl']
+    @filter = f['filter']
     @freq = @freq.to_i if @freq
   end
 

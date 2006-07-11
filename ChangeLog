@@ -1,3 +1,10 @@
+Feed2Imap 0.9 (XX/XX/2006)
+============================
+* Now uses Content-Transfer-Encoding: 8bit (thanks Arnt Gulbrandsen
+  <arnt@gulbrandsen.priv.no>)
+* Now supports Snowscripts, using the 'execurl' and 'filter' config
+  keywords. For more information, see the example configuration file.
+
 Feed2Imap 0.8 (28/06/2006)
 ============================
 * Uses the http_proxy environment variable to determine the proxy server
