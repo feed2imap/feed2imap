@@ -82,7 +82,11 @@ def item_to_mail(item, index, updated, from = 'Feed2Imap')
   htmlpart = RMail::Message::new
   htmlpart.header['Content-Type'] = 'text/html; charset=utf-8'
   htmlpart.header['Content-Transfer-Encoding'] = '7bit'
-  htmlpart.body = '<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html><body>' + item.to_html + '</body></html>'
+  if item.respond_to?(:to_html_with_headers)
+    htmlpart.body = item.to_html_with_headers
+  else
+    htmlpart.body = '<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html><body>' + item.to_html + '</body></html>'
+  end
   message.add_part(textpart)
   message.add_part(htmlpart)
   return message.to_s
