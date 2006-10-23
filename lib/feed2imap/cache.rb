@@ -40,6 +40,7 @@ class ItemCache
       puts "GET_NEW_ITEMS FOR #{id}... (#{Time::now})"
     end
     @channels[id] ||= CachedChannel::new
+    @channels[id].parsefailures = 0
     return @channels[id].get_new_items(items, always_new, ignore_hash)
   end
 
@@ -67,6 +68,12 @@ class ItemCache
   # returns number of failures
   def fetch_failed(id)
     @channels[id].fetch_failed
+  end
+
+  # Parsing failure.
+  # returns number of failures
+  def parse_failed(id)
+    @channels[id].parse_failed
   end
 
   # Load the cache from an IO stream
@@ -110,7 +117,7 @@ class CachedChannel
   # 100 items should be enough for everybody, even quite busy feeds
   CACHESIZE = 100
 
-  attr_accessor :lastcheck, :items, :failures
+  attr_accessor :lastcheck, :items, :failures, :parsefailures
 
   def initialize
     @lastcheck = Time::at(0)
@@ -118,6 +125,7 @@ class CachedChannel
     @itemstemp = [] # see below
     @nbnewitems = 0
     @failures = 0
+    @parsefailures = 0
   end
 
   # Let's explain @items and @itemstemp.
@@ -232,6 +240,12 @@ class CachedChannel
   # returns the number of items
   def nbitems
     @items.length
+  end
+
+  def parse_failed
+    @parsefailures = 0 if @parsefailures.nil?
+    @parsefailures += 1
+    return @parsefailures
   end
 
   def fetch_failed

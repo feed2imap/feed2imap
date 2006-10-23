@@ -182,7 +182,13 @@ class Feed2Imap
       begin
         feed = FeedParser::Feed::new(f.body)
       rescue Exception => e
-        @logger.fatal("Error while parsing #{f.name}: #{e}")
+        n = @cache.parse_failed(feed.name)
+        m = "Error while parsing #{f.name}: #{e} (failed #{n} times)"
+        if n > @config.max_failures
+          @logger.fatal(m)
+        else
+          @logger.info(m)
+        end
         next
       end
       begin
