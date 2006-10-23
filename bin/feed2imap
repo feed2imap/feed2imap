@@ -9,13 +9,20 @@ verbose = false
 version = false
 cacherebuild = false
 configf = ENV['HOME'] + '/.feed2imaprc'
+progname = File::basename($PROGRAM_NAME)
 opts = OptionParser::new do |opts|
-  opts.banner = "Usage: ./feed2imap.rb [options]"
+  opts.banner = "Usage: #{progname} [options]"
   opts.separator ""
   opts.separator "Options:"
+
   opts.on("-v", "--verbose", "Verbose mode") do |v|
     verbose = true
   end
+
+  opts.on("-d", "--debug", "Debug mode") do |v|
+    verbose = :debug
+  end
+
   opts.on("-V", "--version", "Display Feed2Imap version") do |v|
     version = true
   end
@@ -26,7 +33,13 @@ opts = OptionParser::new do |opts|
     configf = f
   end
 end
-opts.parse!(ARGV)
+begin
+  opts.parse!(ARGV)
+rescue OptionParser::ParseError => pe
+  opts.warn pe
+  puts opts
+  exit 1
+end
 
 if version
   puts "Feed2Imap v.#{F2I_VERSION}"

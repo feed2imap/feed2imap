@@ -4,6 +4,14 @@ Feed2Imap 0.9 (XX/XX/2006)
   <arnt@gulbrandsen.priv.no>)
 * Now supports Snowscripts, using the 'execurl' and 'filter' config
   keywords. For more information, see the example configuration file.
+* Slightly better option parsing. Thanks to Paul van Tilburg for the
+  patch.
+* A debug mode was added, and the normal mode was improved, so it is
+  no longer necessary to redirect feed2imap output to /dev/null:
+  transient errors are only reported after they have happened a
+  certain number of times (default 5).
+* An ignore-hash option was added for feeds whose content change all
+  the time.
 
 Feed2Imap 0.8 (28/06/2006)
 ============================

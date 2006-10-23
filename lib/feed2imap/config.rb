@@ -26,7 +26,7 @@ DEFCACHE = ENV['HOME'] + '/.feed2imap.cache'
 
 # Feed2imap configuration
 class F2IConfig
-  attr_reader :imap_accounts, :cache, :feeds, :dumpdir, :updateddebug
+  attr_reader :imap_accounts, :cache, :feeds, :dumpdir, :updateddebug, :max_failures
 
   # Load the configuration from the IO stream
   # TODO should do some sanity check on the data read.
@@ -36,6 +36,7 @@ class F2IConfig
     @dumpdir = @conf['dumpdir'] || nil
     @conf['feeds'] ||= []
     @feeds = []
+    @max_failures = @conf['max-failures'].to_i || 5
     @updateddebug =  (@conf['debug-updated'] and @conf['debug-updated'] != 'false')
     @imap_accounts = ImapAccounts::new
     @conf['feeds'].each do |f|
@@ -71,7 +72,7 @@ end
 
 # A configured feed. simple data container.
 class ConfigFeed
-  attr_reader :name, :url, :imapaccount, :folder, :always_new, :execurl, :filter
+  attr_reader :name, :url, :imapaccount, :folder, :always_new, :execurl, :filter, :ignore_hash
   attr_accessor :body
 
   def initialize(f, imapaccount, folder)
@@ -83,6 +84,7 @@ class ConfigFeed
     @always_new =  (f['always-new'] and f['always-new'] != 'false')
     @execurl = f['execurl']
     @filter = f['filter']
+    @ignore_hash = f['ignore-hash'] || false
     @freq = @freq.to_i if @freq
   end
 

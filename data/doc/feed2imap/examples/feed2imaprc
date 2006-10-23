@@ -1,4 +1,7 @@
 # Global options:
+# max-failures: maximum number of failures allowed before they are reported in
+#   normal mode (default 5). By default, failures are only visible in verbose
+#   mode.
 # dumpdir: (for debugging purposes) directory where all fetched feeds will be
 #   dumped.
 # debug-updated: (for debugging purposes) if true, display a lot of information
@@ -16,6 +19,10 @@
 #   an item is new or has been updated. It doesn't work well with some web apps
 #   like mediawiki. When this flag is enabled, all items which don't match
 #   exactly a previously downloaded item are considered as new items.
+# ignore-hash: Some feeds change the content of their items all the time, so
+#   feed2imap detects that they have been updated at each run. When this flag
+#   is enabled, feed2imap ignores the content of an item when determining
+#   whether the item is already known.
 # Snownews/Liferea scripts support :
 #   execurl: Command to execute that will display the RSS/Atom feed on stdout
 #   filter: Command to execute which will receive the RSS/Atom feed on stdin,

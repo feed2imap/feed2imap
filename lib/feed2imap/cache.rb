@@ -34,13 +34,13 @@ class ItemCache
   end
 
   # Returns the really new items amongst items
-  def get_new_items(id, items, always_new = false)
+  def get_new_items(id, items, always_new = false, ignore_hash = false)
     if $updateddebug
       puts "======================================================="
       puts "GET_NEW_ITEMS FOR #{id}... (#{Time::now})"
     end
     @channels[id] ||= CachedChannel::new
-    return @channels[id].get_new_items(items, always_new)
+    return @channels[id].get_new_items(items, always_new, ignore_hash)
   end
 
   # Commit changes to the cache
@@ -59,7 +59,14 @@ class ItemCache
   def set_last_check(id, time)
     @channels[id] ||= CachedChannel::new
     @channels[id].lastcheck = time
+    @channels[id].failures = 0
     self
+  end
+
+  # Fetching failure.
+  # returns number of failures
+  def fetch_failed(id)
+    @channels[id].fetch_failed
   end
 
   # Load the cache from an IO stream
@@ -103,13 +110,14 @@ class CachedChannel
   # 100 items should be enough for everybody, even quite busy feeds
   CACHESIZE = 100
 
-  attr_accessor :lastcheck, :items
+  attr_accessor :lastcheck, :items, :failures
 
   def initialize
     @lastcheck = Time::at(0)
     @items = []
     @itemstemp = [] # see below
     @nbnewitems = 0
+    @failures = 0
   end
 
   # Let's explain @items and @itemstemp.
@@ -123,7 +131,7 @@ class CachedChannel
   # of (old) items serialized.
 
   # Returns the really new items amongst items
-  def get_new_items(items, always_new = false)
+  def get_new_items(items, always_new = false, ignore_hash = false)
     # save number of new items
     @nbnewitems = items.length
     # set items' cached version if not set yet
@@ -165,7 +173,10 @@ class CachedChannel
       found = false
       # Try to find a perfect match
       @items.each do |j|
-        if i.cacheditem == j
+        # note that simple_compare only CachedItem, not RSSItem, so we have to use
+        # j.simple_compare(i) and not i.simple_compare(j)
+        if (i.cacheditem == j and not ignore_hash) or
+            (j.simple_compare(i) and ignore_hash)
           i.cacheditem.index = j.index
           found = true
           # let's put j in front of itemstemp
@@ -222,6 +233,12 @@ class CachedChannel
   def nbitems
     @items.length
   end
+
+  def fetch_failed
+    @failures = 0 if @failures.nil?
+    @failures += 1
+    return @failures
+  end
 end
 
 # This class is the only thing kept in the cache
@@ -243,7 +260,7 @@ class CachedItem
   end
 
   def ==(other)
-    if $updateddebug and @title =~ /e325/ and other.title =~ /e325/
+    if $updateddebug
       puts "Comparing #{self.to_s} and #{other.to_s}:"
       puts "Title: #{@title == other.title}"
       puts "Link: #{@link == other.link}"
@@ -254,6 +271,11 @@ class CachedItem
     @title == other.title and @link == other.link and
         (@creator.nil? or other.creator.nil? or @creator == other.creator) and
 	(@date.nil? or other.date.nil? or @date == other.date) and @hash == other.hash
+  end
+
+  def simple_compare(other)
+    @title == other.title and @link == other.link and
+        (@creator.nil? or other.creator.nil? or @creator == other.creator) 
   end
 
   def create_index

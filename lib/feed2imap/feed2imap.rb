@@ -36,14 +36,17 @@ class Feed2Imap
 
   def initialize(verbose, cacherebuild, configfile)
     @logger = Logger::new(STDOUT)
-    if verbose
+    if verbose == :debug
       @logger.level = Logger::DEBUG
+      require 'pp'
+    elsif verbose == true
+      @logger.level = Logger::INFO
     else
       @logger.level = Logger::WARN
     end
     @logger.info("Feed2Imap V.#{F2I_VERSION} started")
     # reading config
-    @logger.info('Reading configuration file')
+    @logger.info('Reading configuration file ...')
     if not File::exist?(configfile)
       @logger.fatal("Configuration file #{configfile} not found.")
       exit(1)
@@ -60,8 +63,13 @@ class Feed2Imap
       @logger.fatal("Error while reading configuration file, exiting: #{$!}")
       exit(1)
     end
+    if @logger.level == Logger::DEBUG
+      @logger.debug("Configuration read:")
+      pp(@config)
+    end
+
     # init cache
-    @logger.info('Initializing cache')
+    @logger.info('Initializing cache ...')
     @cache = ItemCache::new(@config.updateddebug)
     if not File::exist?(@config.cache + '.lock')
       f = File::new(@config.cache + '.lock', 'w')
@@ -78,8 +86,9 @@ class Feed2Imap
         @cache.load(f)
       end
     end
+
     # connecting all IMAP accounts
-    @logger.info('Connecting to IMAP accounts')
+    @logger.info('Connecting to IMAP accounts ...')
     @config.imap_accounts.each_value do |ac|
       begin
         ac.connect
@@ -88,8 +97,9 @@ class Feed2Imap
         exit(1)
       end
     end
+
     # check that IMAP folders exist
-    @logger.info("Checking IMAP folders")
+    @logger.info("Checking IMAP folders ...")
     @config.feeds.each do |f|
       begin
         f.imapaccount.create_folder(f.folder) if not f.imapaccount.folder_exist?(f.folder)
@@ -99,7 +109,7 @@ class Feed2Imap
       end
     end
     # for each feed, fetch, upload to IMAP and cache
-    @logger.info("Fetching and filtering feeds")
+    @logger.info("Fetching and filtering feeds ...")
     ths = []
     mutex = Mutex::new
     @config.feeds.each do |f|
@@ -126,6 +136,8 @@ class Feed2Imap
             mutex.lock
             feed.body = s
             @cache.set_last_check(feed.name, Time::now)
+          else
+            @logger.debug("Feed #{feed.name} doesn't need to be checked again for now.")
           end
           mutex.unlock
           # dump if requested
@@ -139,19 +151,34 @@ class Feed2Imap
           end
         rescue Timeout::Error
           mutex.synchronize do
-            @logger.fatal("Timeout::Error while fetching #{feed.url}: #{$!}")
+            n = @cache.fetch_failed(feed.name)
+            m = "Timeout::Error while fetching #{feed.url}: #{$!} (failed #{n} times)"
+            if n > @config.max_failures
+              @logger.fatal(m)
+            else
+              @logger.info(m)
+            end
           end
         rescue
           mutex.synchronize do
-            @logger.fatal("Error while fetching #{feed.url}: #{$!}")
+            n = @cache.fetch_failed(feed.name)
+            m = "Error while fetching #{feed.url}: #{$!} (failed #{n} times)"
+            if n > @config.max_failures
+              @logger.fatal(m)
+            else
+              @logger.info(m)
+            end
           end
         end
       end
     end
     ths.each { |t| t.join }
-    @logger.info("Parsing and uploading")
+    @logger.info("Parsing and uploading ...")
     @config.feeds.each do |f|
-      next if f.body.nil? # means 304
+      if f.body.nil? # means 304
+        @logger.debug("Feed #{f.name} did not change.")
+        next
+      end
       begin
         feed = FeedParser::Feed::new(f.body)
       rescue Exception => e
@@ -159,13 +186,13 @@ class Feed2Imap
         next
       end
       begin
-        newitems, updateditems = @cache.get_new_items(f.name, feed.items, f.always_new)
+        newitems, updateditems = @cache.get_new_items(f.name, feed.items, f.always_new, f.ignore_hash)
       rescue
         @logger.fatal("Exception caught when selecting new items for #{f.name}: #{$!}")
         puts $!.backtrace
         next
       end
-      @logger.info("#{f.name}: #{newitems.length} new items, #{updateditems.length} updated items.") if newitems.length > 0 or updateditems.length > 0
+      @logger.info("#{f.name}: #{newitems.length} new items, #{updateditems.length} updated items.") if newitems.length > 0 or updateditems.length > 0 or @logger.level == Logger::DEBUG
       begin
         if !cacherebuild
           updateditems.each do |i|
@@ -190,17 +217,18 @@ class Feed2Imap
         next
       end
     end
-    @logger.info("Finished. Saving cache")
+    @logger.info("Finished. Saving cache ...")
     begin
       File::open(@config.cache, 'w') { |f| @cache.save(f) }
     rescue
       @logger.fatal("Exception caught while writing cache to #{@config.cache}: #{$!}")
     end
-    @logger.info("Closing IMAP connections")
+    @logger.info("Closing IMAP connections ...")
     @config.imap_accounts.each_value do |ac|
       begin
         ac.disconnect
       rescue
+        # servers tend to cause an exception to be raised here, hence the INFO level.
         @logger.info("Exception caught while closing connection to #{ac.to_s}: #{$!}")
       end
     end
