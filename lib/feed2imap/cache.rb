@@ -176,6 +176,7 @@ class CachedChannel
       puts "-------Items already there (#{@items.length}) :----------"
       @items.each { |i| puts "#{i.to_s}" }
       puts "Items always considered as new: #{always_new.to_s}"
+      puts "Items compared ignoring the hash: #{ignore_hash.to_s}"
     end
     items.each do |i|
       found = false

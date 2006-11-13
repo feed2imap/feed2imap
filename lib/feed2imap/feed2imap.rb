@@ -232,6 +232,7 @@ class Feed2Imap
     @logger.info("Closing IMAP connections ...")
     @config.imap_accounts.each_value do |ac|
       begin
+        ac.logout
         ac.disconnect
       rescue
         # servers tend to cause an exception to be raised here, hence the INFO level.

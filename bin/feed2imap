@@ -11,6 +11,7 @@ cacherebuild = false
 configf = ENV['HOME'] + '/.feed2imaprc'
 progname = File::basename($PROGRAM_NAME)
 opts = OptionParser::new do |opts|
+  opts.program_name = progname
   opts.banner = "Usage: #{progname} [options]"
   opts.separator ""
   opts.separator "Options:"

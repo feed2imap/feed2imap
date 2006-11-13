@@ -36,7 +36,7 @@ class F2IConfig
     @dumpdir = @conf['dumpdir'] || nil
     @conf['feeds'] ||= []
     @feeds = []
-    @max_failures = (@conf['max-failures'] || 5).to_i
+    @max_failures = (@conf['max-failures'] || 10).to_i
     @updateddebug =  (@conf['debug-updated'] and @conf['debug-updated'] != 'false')
     @imap_accounts = ImapAccounts::new
     @conf['feeds'].each do |f|

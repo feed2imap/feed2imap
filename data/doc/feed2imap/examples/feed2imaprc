@@ -1,7 +1,7 @@
 # Global options:
 # max-failures: maximum number of failures allowed before they are reported in
-#   normal mode (default 5). By default, failures are only visible in verbose
-#   mode.
+#   normal mode (default 10). By default, failures are only visible in verbose
+#   mode. Most feeds tend to suffer from temporary failures.
 # dumpdir: (for debugging purposes) directory where all fetched feeds will be
 #   dumped.
 # debug-updated: (for debugging purposes) if true, display a lot of information
