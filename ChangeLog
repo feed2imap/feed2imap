@@ -9,7 +9,7 @@ Feed2Imap 0.9 (XX/XX/2006)
 * A debug mode was added, and the normal mode was improved, so it is
   no longer necessary to redirect feed2imap output to /dev/null:
   transient errors are only reported after they have happened a
-  certain number of times (default 5).
+  certain number of times (default 10).
 * An ignore-hash option was added for feeds whose content change all
   the time.
 
