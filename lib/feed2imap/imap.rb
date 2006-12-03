@@ -77,7 +77,10 @@ class ImapAccount
 
   # disconnect from the IMAP server
   def disconnect
-    @connection.disconnect if @connection
+    if @connection
+      @connection.logout
+      @connection.disconnect
+    end
   end
 
   # Returns true if the folder exist
