@@ -23,6 +23,8 @@
 #   feed2imap detects that they have been updated at each run. When this flag
 #   is enabled, feed2imap ignores the content of an item when determining
 #   whether the item is already known.
+# dumpdir: (for debugging purposes) directory where all fetched feeds will be
+#   dumped.
 # Snownews/Liferea scripts support :
 #   execurl: Command to execute that will display the RSS/Atom feed on stdout
 #   filter: Command to execute which will receive the RSS/Atom feed on stdin,
