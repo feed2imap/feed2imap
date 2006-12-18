@@ -1,5 +1,6 @@
 Feed2Imap 0.9 (XX/XX/2006)
 ============================
+* Per-feed dumpdir option (helps debugging)
 * Now uses Content-Transfer-Encoding: 8bit (thanks Arnt Gulbrandsen
   <arnt@gulbrandsen.priv.no>)
 * Now supports Snowscripts, using the 'execurl' and 'filter' config

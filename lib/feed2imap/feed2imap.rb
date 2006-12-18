@@ -149,6 +149,15 @@ class Feed2Imap
               end
             end
           end
+          # dump this feed if requested
+          if feed.dumpdir
+            mutex.synchronize do
+              if feed.body
+                fname = feed.dumpdir + '/' + feed.name + '-' + Time::now.xmlschema
+                File::open(fname, 'w') { |file| file.puts feed.body }
+              end
+            end
+          end
         rescue Timeout::Error
           mutex.synchronize do
             n = @cache.fetch_failed(feed.name)

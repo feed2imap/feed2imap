@@ -72,7 +72,7 @@ end
 
 # A configured feed. simple data container.
 class ConfigFeed
-  attr_reader :name, :url, :imapaccount, :folder, :always_new, :execurl, :filter, :ignore_hash
+  attr_reader :name, :url, :imapaccount, :folder, :always_new, :execurl, :filter, :ignore_hash, :dumpdir
   attr_accessor :body
 
   def initialize(f, imapaccount, folder)
@@ -86,6 +86,7 @@ class ConfigFeed
     @filter = f['filter']
     @ignore_hash = f['ignore-hash'] || false
     @freq = @freq.to_i if @freq
+    @dumpdir = f['dumpdir'] || nil
   end
 
   def needfetch(lastcheck)
