@@ -50,6 +50,7 @@ class ImapAccount
 
   def initialize(uri)
     @uri = uri
+    @existing_folders = []
     self
   end
 
@@ -83,26 +84,26 @@ class ImapAccount
     end
   end
 
-  # Returns true if the folder exist
-  def folder_exist?(folder)
-    return !@connection.list('', folder).nil?
-  end
-
-  # Creates the given folder
-  def create_folder(folder)
-    @connection.create(folder)
-    @connection.subscribe(folder)
-    self
+  # tests if the folder exists and create it if not
+  def create_folder_if_not_exists(folder)
+    return if @existing_folders.include?(folder)
+    if !@connection.list('', folder).nil?
+      @connection.create(folder)
+      @connection.subscribe(folder)
+    end
+    @existing_folders << folder
   end
 
   # Put the mail in the given folder
   # You should check whether the folder exist first.
   def putmail(folder, mail, date = Time::now)
+    create_folder_if_not_exists(folder)
     @connection.append(folder, mail.gsub(/\n/, "\r\n"), nil, date)
   end
 
   # update a mail
   def updatemail(folder, mail, idx, date = Time::now)
+    create_folder_if_not_exists(folder)
     @connection.select(folder)
     searchres = @connection.search(['HEADER', 'X-CacheIndex', "-#{idx}-"])
     flags = nil

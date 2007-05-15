@@ -1,5 +1,7 @@
 Feed2Imap 0.9 (XX/XX/2006)
 ============================
+* Folder creation moved to upload. This should make feed2imap run
+  slightly faster.
 * Per-feed dumpdir option (helps debugging)
 * Now uses Content-Transfer-Encoding: 8bit (thanks Arnt Gulbrandsen
   <arnt@gulbrandsen.priv.no>)

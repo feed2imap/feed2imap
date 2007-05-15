@@ -98,16 +98,6 @@ class Feed2Imap
       end
     end
 
-    # check that IMAP folders exist
-    @logger.info("Checking IMAP folders ...")
-    @config.feeds.each do |f|
-      begin
-        f.imapaccount.create_folder(f.folder) if not f.imapaccount.folder_exist?(f.folder)
-      rescue
-        @logger.fatal("Error while creating IMAP folder #{f.folder}: #{$!}")
-        exit(1)
-      end
-    end
     # for each feed, fetch, upload to IMAP and cache
     @logger.info("Fetching and filtering feeds ...")
     ths = []
