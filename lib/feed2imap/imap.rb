@@ -87,7 +87,7 @@ class ImapAccount
   # tests if the folder exists and create it if not
   def create_folder_if_not_exists(folder)
     return if @existing_folders.include?(folder)
-    if !@connection.list('', folder).nil?
+    if @connection.list('', folder).nil?
       @connection.create(folder)
       @connection.subscribe(folder)
     end
