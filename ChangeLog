@@ -1,4 +1,4 @@
-Feed2Imap 0.9 (XX/XX/2006)
+Feed2Imap 0.9 (15/05/2007)
 ============================
 * Folder creation moved to upload. This should make feed2imap run
   slightly faster.
