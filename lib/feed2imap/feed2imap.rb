@@ -18,7 +18,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 =end
 
 # Feed2Imap version
-F2I_VERSION = '0.9'
+F2I_VERSION = '0.9.2'
 
 require 'feed2imap/config'
 require 'feed2imap/cache'
@@ -244,9 +244,14 @@ class Feed2Imap
     end
     @logger.info("Finished. Saving cache ...")
     begin
-      File::open(@config.cache, 'w') { |f| @cache.save(f) }
+      File::open("#{@config.cache}.new", 'w') { |f| @cache.save(f) }
     rescue
-      @logger.fatal("Exception caught while writing cache to #{@config.cache}: #{$!}")
+      @logger.fatal("Exception caught while writing new cache to #{@config.cache}.new: #{$!}")
+    end
+    begin
+      File::rename("#{@config.cache}.new", @config.cache)
+    rescue
+      @logger.fatal("Exception caught while renaming #{@config.cache}.new to #{@config.cache}: #{$!}")
     end
     @logger.info("Closing IMAP connections ...")
     @config.imap_accounts.each_value do |ac|
