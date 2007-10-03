@@ -187,7 +187,6 @@ class Feed2Imap
     ths.each { |t| t.join }
     @logger.info("Parsing and uploading ...")
     @config.feeds.each do |f|
-      everything_ok = true
       if f.body.nil? # means 304
         @logger.debug("Feed #{f.name} did not change.")
         next
@@ -228,15 +227,11 @@ class Feed2Imap
       rescue
         @logger.fatal("Exception caught while uploading mail to #{f.folder}: #{$!}")
         puts $!.backtrace
-        everything_ok = false
-        next
+        @logger.fatal("We can't recover from IMAP errors, so we are exiting.")
+        exit(1)
       end
       begin
-        if everything_ok
-          @cache.commit_cache(f.name)
-        else
-          @logger.fatal("Not updating cache for #{f.name} because something went wrong earlier.")
-        end
+        @cache.commit_cache(f.name)
       rescue
         @logger.fatal("Exception caught while updating cache for #{f.name}: #{$!}")
         next
