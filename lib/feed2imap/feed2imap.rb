@@ -102,7 +102,7 @@ class Feed2Imap
     @logger.info("Fetching and filtering feeds ...")
     ths = []
     mutex = Mutex::new
-    sparefetchers = 8 # max number of fetchers running at the same time.
+    sparefetchers = 16 # max number of fetchers running at the same time.
     sparefetchers_mutex = Mutex::new
     sparefetchers_cond = ConditionVariable::new
     @config.feeds.each do |f|
@@ -113,11 +113,10 @@ class Feed2Imap
           if feed.needfetch(lastcheck)
             mutex.unlock
             sparefetchers_mutex.synchronize do
-              if sparefetchers <= 0
+              while sparefetchers <= 0
                 sparefetchers_cond.wait(sparefetchers_mutex)
-              else
-                sparefetchers -= 1
               end
+              sparefetchers -= 1
             end
             if feed.url
               s = HTTPFetcher::fetch(feed.url, @cache.get_last_check(feed.name))
@@ -188,6 +187,7 @@ class Feed2Imap
     ths.each { |t| t.join }
     @logger.info("Parsing and uploading ...")
     @config.feeds.each do |f|
+      everything_ok = true
       if f.body.nil? # means 304
         @logger.debug("Feed #{f.name} did not change.")
         next
@@ -228,10 +228,15 @@ class Feed2Imap
       rescue
         @logger.fatal("Exception caught while uploading mail to #{f.folder}: #{$!}")
         puts $!.backtrace
+        everything_ok = false
         next
       end
       begin
-        @cache.commit_cache(f.name)
+        if everything_ok
+          @cache.commit_cache(f.name)
+        else
+          @logger.fatal("Not updating cache for #{f.name} because something went wrong earlier.")
+        end
       rescue
         @logger.fatal("Exception caught while updating cache for #{f.name}: #{$!}")
         next

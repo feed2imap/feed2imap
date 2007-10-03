@@ -7,6 +7,8 @@ Feed2Imap 0.9.2 (XX/10/2007)
   16 should be a reasonable default for everybody.
   Closes Gna #9032.
 * Reduce the default HTTP timeout to 30s.
+* Don't update the cache if uploading items failed (should avoid
+  missing some items).
 
 Feed2Imap 0.9.1 (15/05/2007)
 ============================
