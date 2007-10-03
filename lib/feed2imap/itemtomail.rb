@@ -83,7 +83,6 @@ def item_to_mail(item, index, updated, from = 'Feed2Imap')
   htmlpart.header['Content-Type'] = 'text/html; charset=utf-8'
   htmlpart.header['Content-Transfer-Encoding'] = '8bit'
   htmlpart.body = item.to_html
-  end
   message.add_part(textpart)
   message.add_part(htmlpart)
   return message.to_s
