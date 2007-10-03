@@ -12,6 +12,7 @@ Feed2Imap 0.9.2 (XX/10/2007)
 * Safer cache writing. Should avoid some cache corruption problems.
 * Now exits when we receive an IMAP error, instead of trying to recover. We
   shouldn't receive IMAP errors anyway. Closes Debian #405070.
+* Fixed content-type-encoding in HTML emails. Reported by Arnt Gulbrandse.
 
 Feed2Imap 0.9.1 (15/05/2007)
 ============================
