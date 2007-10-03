@@ -3,9 +3,10 @@ Feed2Imap 0.9.2 (XX/10/2007)
 * resynchronized rubyimap.rb with stdlib. Might fix Debian bug #405070.
 * upload items in reverse order, to upload the older first
   Closes Gna bug #8986. Thanks go do Rial Juan for the patch.
-* Don't allow more than 8 fetchers to run at the same time.
-  8 should be a reasonable default for everybody.
+* Don't allow more than 16 fetchers to run at the same time.
+  16 should be a reasonable default for everybody.
   Closes Gna #9032.
+* Reduce the default HTTP timeout to 30s.
 
 Feed2Imap 0.9.1 (15/05/2007)
 ============================

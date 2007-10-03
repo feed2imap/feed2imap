@@ -49,6 +49,8 @@ class HTTPFetcher
                             proxy_port,
                             proxy_user,
                             proxy_pass ).new(uri.host, uri.port)
+    http.read_timeout = 30 # should be enough for everybody...
+    http.open_timeout = 30
     if uri.scheme == 'https'
       http.use_ssl = true 
       http.verify_mode = OpenSSL::SSL::VERIFY_NONE
