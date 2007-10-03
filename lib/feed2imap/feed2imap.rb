@@ -102,6 +102,9 @@ class Feed2Imap
     @logger.info("Fetching and filtering feeds ...")
     ths = []
     mutex = Mutex::new
+    sparefetchers = 8 # max number of fetchers running at the same time.
+    sparefetchers_mutex = Mutex::new
+    sparefetchers_cond = ConditionVariable::new
     @config.feeds.each do |f|
       ths << Thread::new(f) do |feed|
         begin
@@ -109,6 +112,13 @@ class Feed2Imap
           lastcheck = @cache.get_last_check(feed.name) 
           if feed.needfetch(lastcheck)
             mutex.unlock
+            sparefetchers_mutex.synchronize do
+              if sparefetchers <= 0
+                sparefetchers_cond.wait(sparefetchers_mutex)
+              else
+                sparefetchers -= 1
+              end
+            end
             if feed.url
               s = HTTPFetcher::fetch(feed.url, @cache.get_last_check(feed.name))
             elsif feed.execurl
@@ -122,6 +132,10 @@ class Feed2Imap
                 stdin.close
                 s = stdout.read
               end
+            end
+            sparefetchers_mutex.synchronize do
+              sparefetchers += 1
+              sparefetchers_cond.signal
             end
             mutex.lock
             feed.body = s
