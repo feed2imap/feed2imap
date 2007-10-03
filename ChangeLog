@@ -1,3 +1,9 @@
+Feed2Imap 0.9.2 (XX/10/2007)
+============================
+* resynchronized rubyimap.rb with stdlib. Might fix Debian bug #405070.
+* upload items in reverse order, to upload the older first
+  Closes Gna bug #8986. Thanks go do Rial Juan for the patch.
+
 Feed2Imap 0.9.1 (15/05/2007)
 ============================
 * Fixed bug with folder creation.

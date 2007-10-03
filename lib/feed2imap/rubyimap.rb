@@ -1,3 +1,7 @@
+# File fetched from
+# http://svn.ruby-lang.org/cgi-bin/viewvc.cgi/trunk/lib/net/imap.rb?view=log
+############################################################################
+
 #
 # = net/imap.rb
 #
@@ -16,8 +20,9 @@
 require "socket"
 require "monitor"
 require "digest/md5"
+require "strscan"
 begin
-require "openssl"
+  require "openssl"
 rescue LoadError
 end
 
@@ -273,8 +278,10 @@ module Net
     # is the type of authentication this authenticator supports
     # (for instance, "LOGIN").  The +authenticator+ is an object
     # which defines a process() method to handle authentication with
-    # the server.  See Net::IMAP::LoginAuthenticator and 
-    # Net::IMAP::CramMD5Authenticator for examples.
+    # the server.  See Net::IMAP::LoginAuthenticator, 
+    # Net::IMAP::CramMD5Authenticator, and Net::IMAP::DigestMD5Authenticator
+    # for examples.
+    # 
     #
     # If +auth_type+ refers to an existing authenticator, it will be
     # replaced by the new one.
@@ -284,8 +291,8 @@ module Net
 
     # Disconnects from the server.
     def disconnect
-      if @usessl
-        @sock.to_io.shutdown
+      if SSL::SSLSocket === @sock
+        @sock.io.shutdown
       else
         @sock.shutdown
       end
@@ -324,6 +331,24 @@ module Net
     # done with the connection.
     def logout
       send_command("LOGOUT")
+    end
+
+    # Sends a STARTTLS command to start TLS session.
+    def starttls(ctx = nil)
+      if @sock.kind_of?(OpenSSL::SSL::SSLSocket)
+        raise RuntimeError, "already using SSL"
+      end
+      send_command("STARTTLS") do |resp|
+        if resp.kind_of?(TaggedResponse) && resp.name == "OK"
+          if ctx
+            @sock = OpenSSL::SSL::SSLSocket.new(@sock, ctx)
+          else
+            @sock = OpenSSL::SSL::SSLSocket.new(@sock)
+          end
+          @sock.sync_close = true
+          @sock.connect
+        end
+      end
     end
 
     # Sends an AUTHENTICATE command to authenticate the client.
@@ -1210,7 +1235,7 @@ module Net
 
     class RawData # :nodoc:
       def send_data(imap)
-        imap.send(:put_string, @data)
+        imap.send!(:put_string, @data)
       end
 
       private
@@ -1222,7 +1247,7 @@ module Net
 
     class Atom # :nodoc:
       def send_data(imap)
-        imap.send(:put_string, @data)
+        imap.send!(:put_string, @data)
       end
 
       private
@@ -1234,7 +1259,7 @@ module Net
 
     class QuotedString # :nodoc:
       def send_data(imap)
-        imap.send(:send_quoted_string, @data)
+        imap.send!(:send_quoted_string, @data)
       end
 
       private
@@ -1246,7 +1271,7 @@ module Net
 
     class Literal # :nodoc:
       def send_data(imap)
-        imap.send(:send_literal, @data)
+        imap.send!(:send_literal, @data)
       end
 
       private
@@ -1258,7 +1283,7 @@ module Net
 
     class MessageSet # :nodoc:
       def send_data(imap)
-        imap.send(:put_string, format_internal(@data))
+        imap.send!(:put_string, format_internal(@data))
       end
 
       private
@@ -1768,7 +1793,7 @@ module Net
       T_TEXT    = :TEXT
 
       BEG_REGEXP = /\G(?:\
-(?# 1:  SPACE   )( )|\
+(?# 1:  SPACE   )( +)|\
 (?# 2:  NIL     )(NIL)(?=[\x80-\xff(){ \x00-\x1f\x7f%*"\\\[\]+])|\
 (?# 3:  NUMBER  )(\d+)(?=[\x80-\xff(){ \x00-\x1f\x7f%*"\\\[\]+])|\
 (?# 4:  ATOM    )([^\x80-\xff(){ \x00-\x1f\x7f%*"\\\[\]+]+)|\
@@ -2620,7 +2645,7 @@ module Net
         token = match(T_ATOM)
         name = token.value.upcase
         case name
-        when /\A(?:ALERT|PARSE|READ-ONLY|READ-WRITE|TRYCREATE)\z/n
+        when /\A(?:ALERT|PARSE|READ-ONLY|READ-WRITE|TRYCREATE|NOMODSEQ)\z/n
           result = ResponseCode.new(name, nil)
         when /\A(?:PERMANENTFLAGS)\z/n
           match(T_SPACE)
@@ -2927,7 +2952,7 @@ module Net
             elsif $7
               return Token.new(T_RPAR, $+)
             else
-              parse_error("[Net::IMAP BUG] BEG_REGEXP is invalid")
+              parse_error("[Net::IMAP BUG] DATA_REGEXP is invalid")
             end
           else
             @str.index(/\S*/n, @pos)
@@ -2981,7 +3006,7 @@ module Net
           $stderr.printf("@str: %s\n", @str.dump)
           $stderr.printf("@pos: %d\n", @pos)
           $stderr.printf("@lex_state: %s\n", @lex_state)
-          if @token.symbol
+          if @token
             $stderr.printf("@token.symbol: %s\n", @token.symbol)
             $stderr.printf("@token.value: %s\n", @token.value.inspect)
           end
@@ -3065,6 +3090,106 @@ module Net
       end
     end
     add_authenticator "CRAM-MD5", CramMD5Authenticator
+
+    # Authenticator for the "DIGEST-MD5" authentication type.  See
+    # #authenticate().
+    class DigestMD5Authenticator
+      def process(challenge)
+	case @stage
+	when STAGE_ONE
+	  @stage = STAGE_TWO
+	  sparams = {}
+	  c = StringScanner.new(challenge)
+	  while c.scan(/(?:\s*,)?\s*(\w+)=("(?:[^\\"]+|\\.)*"|[^,]+)\s*/)
+	    k, v = c[1], c[2]
+	    if v =~ /^"(.*)"$/
+	      v = $1
+	      if v =~ /,/
+		v = v.split(',')
+	      end
+	    end
+	    sparams[k] = v
+	  end
+
+	  raise DataFormatError, "Bad Challenge: '#{challenge}'" unless c.rest.size == 0
+	  raise Error, "Server does not support auth (qop = #{sparams['qop'].join(',')})" unless sparams['qop'].include?("auth")
+
+	  response = {
+	    :nonce => sparams['nonce'],
+	    :username => @user,
+	    :realm => sparams['realm'],
+	    :cnonce => Digest::MD5.hexdigest("%.15f:%.15f:%d" % [Time.now.to_f, rand, Process.pid.to_s]),
+	    :'digest-uri' => 'imap/' + sparams['realm'],
+	    :qop => 'auth',
+	    :maxbuf => 65535,
+	    :nc => "%08d" % nc(sparams['nonce']),
+	    :charset => sparams['charset'],
+	  }
+
+	  response[:authzid] = @authname unless @authname.nil?
+
+	  # now, the real thing
+	  a0 = Digest::MD5.digest( [ response.values_at(:username, :realm), @password ].join(':') )
+
+	  a1 = [ a0, response.values_at(:nonce,:cnonce) ].join(':')
+	  a1 << ':' + response[:authzid] unless response[:authzid].nil?
+
+	  a2 = "AUTHENTICATE:" + response[:'digest-uri']
+	  a2 << ":00000000000000000000000000000000" if response[:qop] and response[:qop] =~ /^auth-(?:conf|int)$/
+
+	  response[:response] = Digest::MD5.hexdigest(
+	    [
+	     Digest::MD5.hexdigest(a1),
+	     response.values_at(:nonce, :nc, :cnonce, :qop),
+	     Digest::MD5.hexdigest(a2)
+	    ].join(':')
+	  )
+
+	  return response.keys.map { |k| qdval(k.to_s, response[k]) }.join(',')
+	when STAGE_TWO
+	  @stage = nil
+	  # if at the second stage, return an empty string
+	  if challenge =~ /rspauth=/
+	    return ''
+	  else
+	    raise ResponseParseError, challenge
+	  end
+	else
+	  raise ResponseParseError, challenge
+	end
+      end
+
+      def initialize(user, password, authname = nil)
+	@user, @password, @authname = user, password, authname
+	@nc, @stage = {}, STAGE_ONE
+      end
+
+      private
+
+      STAGE_ONE = :stage_one
+      STAGE_TWO = :stage_two
+
+      def nc(nonce)
+	if @nc.has_key? nonce
+	  @nc[nonce] = @nc[nonce] + 1
+	else
+	  @nc[nonce] = 1
+	end
+	return @nc[nonce]
+      end
+
+      # some reponses needs quoting
+      def qdval(k, v)
+	return if k.nil? or v.nil?
+	if %w"username authzid realm nonce cnonce digest-uri qop".include? k
+	  v.gsub!(/([\\"])/, "\\\1")
+	  return '%s="%s"' % [k, v]
+	else
+	  return '%s=%s' % [k, v]
+	end
+      end
+    end
+    add_authenticator "DIGEST-MD5", DigestMD5Authenticator
 
     # Superclass of IMAP errors.
     class Error < StandardError
@@ -3251,4 +3376,3 @@ EOF
     imap.disconnect
   end
 end
-

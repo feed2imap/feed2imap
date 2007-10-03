@@ -205,7 +205,8 @@ class Feed2Imap
             f.imapaccount.updatemail(f.folder, email,
                                      i.cacheditem.index, i.date || Time::new)
           end
-          newitems.each do |i|
+          # reverse is needed to upload older items first (fixes gna#8986)
+          newitems.reverse.each do |i|
             email = item_to_mail(i, i.cacheditem.index, false, f.name)
             f.imapaccount.putmail(f.folder, email, i.date || Time::new)
           end
