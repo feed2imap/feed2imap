@@ -121,16 +121,32 @@ class Feed2Imap
             if feed.url
               s = HTTPFetcher::fetch(feed.url, @cache.get_last_check(feed.name))
             elsif feed.execurl
+              # avoid running more than one command at the same time.
+              # We need it because the called command might not be
+              # thread-safe, and we need to get the right exitcode
+              mutex.lock
               s = %x{#{feed.execurl}}
+              if $?.exitstatus != 0
+                @logger.warn("Command for #{feed.name} exited with status #{$?.exitstatus} !")
+              end
+              mutex.unlock
             else
               @logger.warn("No way to fetch feed #{feed.name} !")
             end
             if feed.filter
+              # avoid running more than one command at the same time.
+              # We need it because the called command might not be
+              # thread-safe, and we need to get the right exitcode.
+              mutex.lock
               Open3::popen3(feed.filter) do |stdin, stdout|
                 stdin.puts s
                 stdin.close
                 s = stdout.read
               end
+              if $?.exitstatus != 0
+                @logger.warn("Filter command for #{feed.name} exited with status #{$?.exitstatus}. Output might be corrupted !")
+              end
+              mutex.unlock
             end
             sparefetchers_mutex.synchronize do
               sparefetchers += 1
