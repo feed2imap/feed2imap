@@ -1,0 +1,84 @@
+/* couleur 1: fond, fond des titres. #f2ecbf */
+/* couleur 2: fond du main. #fefbd5 */
+/* couleur 3: titre, liens. #167f32 */
+/* couleur 4: liens survolés. 16af32 */
+body {
+	margin: 0px 0px 0px 0px;
+	color: white;
+	background-color: #f2ecbf;
+	font-size: 11pt;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+div.main {
+	max-width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+	margin-bottom: 10px;
+	padding: 30px 10px 10px 10px;
+	border: 3px solid #167f32;
+	color: black;
+	background-color: #fefbd5;
+}
+
+div.titre {
+	text-align: center;
+	background-color: #f2ecbf;
+	color: #167f32;
+	padding: 10px 10px 10px 10px;
+}
+
+
+h1 {
+	text-align: center;
+	font: 26pt georgia; 
+	letter-spacing: 5px; 
+	font-weight: bold;
+}
+
+h2 {
+	padding: 5px 5px 5px 50px;
+	background-color: #f2ecbf;
+	color: #167f32;
+}
+
+a:link, a:visited { 
+	font-weight: bold; 
+	text-decoration: none; 
+	color: #167f32;
+}
+
+a:hover, a:active { 
+	text-decoration: underline; 
+	color: #16af32;
+}
+
+h3 { 
+	font-style: italic;
+	font-size: 14pt;
+	letter-spacing: 1px; 
+	margin-bottom: 0px; 
+	margin-left: 10px;
+	margin-right: 10px;
+	color: #167f32;
+}
+
+p {
+	margin-left: 10px;
+	margin-right: 10px;
+	text-align: justify;
+}
+
+p.center {
+	text-align: center;
+}
+
+div.menu {
+	position: fixed;
+	background-color: #fefbd5;
+	border-bottom: 3px solid #167f32;
+	width: 100%;
+	color: #30501f;
+	text-align: center;
+}
