@@ -6,6 +6,7 @@
 #   dumped.
 # debug-updated: (for debugging purposes) if true, display a lot of information
 #   about the "updated-items" algorithm.
+# include-images: download images and include them in the mail? (true/false)
 # 
 # Per-feed options:
 # name: name of the feed (must be unique)
@@ -15,6 +16,7 @@
 # min-frequency: (in HOURS) is the minimum frequency with which this particular
 #   feed will be fetched
 # disable: if set to something, the feed will be ignored
+# include-images: download images and include them in the mail? (true/false)
 # always-new: feed2imap tries to use a clever algorithm to determine whether
 #   an item is new or has been updated. It doesn't work well with some web apps
 #   like mediawiki. When this flag is enabled, all items which don't match
