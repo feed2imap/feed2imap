@@ -3,7 +3,8 @@ Feed2Imap 0.9.3 (XX/02/2008)
 * Check the return code from external commands, and warn if != 0. Fixes
   Gna bug #10516.
 * Support for including images in the mails (see include-images config
-  option)
+  option). Based on a patch by Pavel Avgustinov, and with help from
+  Arnt Gulbrandsen.
 * Dropped rubymail_patch.rb 
 
 Feed2Imap 0.9.2 (28/10/2007)
