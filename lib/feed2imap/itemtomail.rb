@@ -110,10 +110,10 @@ def item_to_mail(item, index, updated, from = 'Feed2Imap', inline_images = false
         message.add_part(imgpart)
         # now to specify what to replace with
         newtag = "#{$1}src=\"cid:#{cid}\"#{$5}"
-        print "#{cid}: Replacing '#{$&}' with '#{newtag}'...\n"
+        #print "#{cid}: Replacing '#{$&}' with '#{newtag}'...\n"
         newtag
       rescue
-        print "Error while fetching image #{$2}: #{$!}...\n"
+        #print "Error while fetching image #{$2}: #{$!}...\n"
         $& # don't modify on exception
       end
     end
