@@ -3,7 +3,7 @@
 $:.unshift File.join(File.dirname(__FILE__), '..', 'lib')
 
 require 'test/unit'
-require 'feed2imap/rubymail_patch'
+require 'rmail'
 
 class MailTest < Test::Unit::TestCase
   def test_require_rmail

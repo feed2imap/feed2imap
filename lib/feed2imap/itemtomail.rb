@@ -26,7 +26,7 @@ require 'feedparser'
 require 'feedparser/text-output'
 require 'feedparser/html-output'
 require 'base64'
-require 'feed2imap/rubymail_patch'
+require 'rmail'
 require 'digest/md5'
 
 class String
