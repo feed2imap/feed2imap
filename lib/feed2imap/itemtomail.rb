@@ -27,6 +27,7 @@ require 'feedparser/text-output'
 require 'feedparser/html-output'
 require 'base64'
 require 'feed2imap/rubymail_patch'
+require 'digest/md5'
 
 class String
   def needMIME
@@ -46,7 +47,7 @@ class String
   end
 end
 
-def item_to_mail(item, index, updated, from = 'Feed2Imap')
+def item_to_mail(item, index, updated, from = 'Feed2Imap', include_images = false)
   message = RMail::Message::new
   if item.creator and item.creator != ''
     if item.creator.include?('@')
@@ -83,6 +84,31 @@ def item_to_mail(item, index, updated, from = 'Feed2Imap')
   htmlpart.header['Content-Type'] = 'text/html; charset=utf-8'
   htmlpart.header['Content-Transfer-Encoding'] = '8bit'
   htmlpart.body = item.to_html
+
+  # inline images as attachments
+  if inline_images
+    htmlpart.body.gsub!(/(<img[^>]+)src="(\S+?\/([^\/]+?\.(png|gif|jpe?g)))"([^>]*>)/i) do |match|
+      # $2 contains url, $3 the image name, $4 the image extension
+      begin
+        image = Base64.encode64(HTTPFetcher::fetch($2, Time.at(0)))
+        cid = "#{Digest::MD5.hexdigest($2)}@feed2imap.acme.com"
+        imgpart = RMail::Message.new
+        imgpart.header.set('Content-Type', "image/#{$4}", 'name' => $3)
+        imgpart.header.set('Content-Transfer-Encoding', 'base64')
+        imgpart.header.set('Content-ID', "<#{cid}>")
+        imgpart.body = image
+        message.add_part(imgpart)
+        # now to specify what to replace with
+        newtag = "#{$1}src=\"cid:#{cid}\"#{$5}"
+        print "#{cid}: Replacing '#{$&}' with '#{newtag}'...\n"
+        newtag
+      rescue
+        print "Error while fetching image #{$2}: #{$!}...\n"
+        $& # don't modify on exception
+      end
+    end
+  end
+
   message.add_part(textpart)
   message.add_part(htmlpart)
   return message.to_s

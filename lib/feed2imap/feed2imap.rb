@@ -230,13 +230,13 @@ class Feed2Imap
       begin
         if !cacherebuild
           updateditems.each do |i|
-            email = item_to_mail(i, i.cacheditem.index, true, f.name)
+            email = item_to_mail(i, i.cacheditem.index, true, f.name, true)
             f.imapaccount.updatemail(f.folder, email,
                                      i.cacheditem.index, i.date || Time::new)
           end
           # reverse is needed to upload older items first (fixes gna#8986)
           newitems.reverse.each do |i|
-            email = item_to_mail(i, i.cacheditem.index, false, f.name)
+            email = item_to_mail(i, i.cacheditem.index, false, f.name, true)
             f.imapaccount.putmail(f.folder, email, i.date || Time::new)
           end
         end
