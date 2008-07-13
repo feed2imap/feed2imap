@@ -8,6 +8,7 @@ Feed2Imap 0.9.3 (XX/02/2008)
 * Dropped rubymail_patch.rb 
 * Added option to wrap text output. Thanks to Maxime Petazzoni for
   the patch.
+* When updating an email, remove the Recent flag.
 
 Feed2Imap 0.9.2 (28/10/2007)
 ============================

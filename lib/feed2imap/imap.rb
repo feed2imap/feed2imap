@@ -112,6 +112,7 @@ class ImapAccount
       flags = @connection.fetch(searchres[0], 'FLAGS')[0].attr['FLAGS']
       searchres.each { |m| @connection.store(m, "+FLAGS", [:Deleted]) }
       @connection.expunge
+      flags -= [ :Recent ] # avoids errors with dovecot
     end
     @connection.append(folder, mail.gsub(/\n/, "\r\n"), flags, date)
   end
