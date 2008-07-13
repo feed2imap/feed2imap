@@ -47,7 +47,7 @@ class String
   end
 end
 
-def item_to_mail(item, index, updated, from = 'Feed2Imap', inline_images = false)
+def item_to_mail(item, index, updated, from = 'Feed2Imap', inline_images = false, wrapto = false)
   message = RMail::Message::new
   if item.creator and item.creator != ''
     if item.creator.include?('@')
@@ -77,9 +77,9 @@ def item_to_mail(item, index, updated, from = 'Feed2Imap', inline_images = false
     end
   end
   textpart = RMail::Message::new
-  textpart.header['Content-Type'] = 'text/plain; charset=utf-8'
+  textpart.header['Content-Type'] = 'text/plain; charset=utf-8; format=flowed'
   textpart.header['Content-Transfer-Encoding'] = '8bit'
-  textpart.body = item.to_text
+  textpart.body = item.to_text(true, wrapto)
   htmlpart = RMail::Message::new
   htmlpart.header['Content-Type'] = 'text/html; charset=utf-8'
   htmlpart.header['Content-Transfer-Encoding'] = '8bit'

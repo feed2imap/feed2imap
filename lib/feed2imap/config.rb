@@ -64,7 +64,13 @@ class F2IConfig
       s += "#{i}. #{f.name}\n"
       s += "    URL: #{f.url}\n"
       s += "    IMAP Account: #{f.imapaccount}\n"
-      s += "    Folder: #{f.folder}\n\n"
+      s += "    Folder: #{f.folder}\n"
+
+      if not f.wrapto
+        s += "    Not wrapped.\n"
+      end
+
+      s += "\n"
       i += 1
     end
     s
@@ -73,7 +79,7 @@ end
 
 # A configured feed. simple data container.
 class ConfigFeed
-  attr_reader :name, :url, :imapaccount, :folder, :always_new, :execurl, :filter, :ignore_hash, :dumpdir, :include_images
+  attr_reader :name, :url, :imapaccount, :folder, :always_new, :execurl, :filter, :ignore_hash, :dumpdir, :wrapto, :include_images
   attr_accessor :body
 
   def initialize(f, imapaccount, folder, f2iconfig)
@@ -88,6 +94,7 @@ class ConfigFeed
     @ignore_hash = f['ignore-hash'] || false
     @freq = @freq.to_i if @freq
     @dumpdir = f['dumpdir'] || nil
+    @wrapto = if f['wrapto'] == nil then 72 else f['wrapto'].to_i end
     @include_images = f2iconfig.include_images
     if f['include-images']
        @include_images = (f['include-images'] != 'false')
