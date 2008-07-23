@@ -1,4 +1,4 @@
-Feed2Imap 0.9.3 (XX/02/2008)
+Feed2Imap 0.9.3 (23/07/2008)
 ============================
 * Check the return code from external commands, and warn if != 0. Fixes
   Gna bug #10516.
@@ -9,6 +9,7 @@ Feed2Imap 0.9.3 (XX/02/2008)
 * Added option to wrap text output. Thanks to Maxime Petazzoni for
   the patch.
 * When updating an email, remove the Recent flag.
+* You need to use ruby-feedparser 0.6 or greater with that release.
 
 Feed2Imap 0.9.2 (28/10/2007)
 ============================
