@@ -19,6 +19,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 # Feed2Imap version
 F2I_VERSION = '0.9.3'
+F2I_WARNFETCHTIME = 10
 
 require 'feed2imap/config'
 require 'feed2imap/cache'
@@ -118,6 +119,7 @@ class Feed2Imap
               end
               sparefetchers -= 1
             end
+            fetch_start = Time::now
             if feed.url
               s = HTTPFetcher::fetch(feed.url, @cache.get_last_check(feed.name))
             elsif feed.execurl
@@ -147,6 +149,9 @@ class Feed2Imap
                 @logger.warn("Filter command for #{feed.name} exited with status #{$?.exitstatus}. Output might be corrupted !")
               end
               mutex.unlock
+            end
+            if Time::now - fetch_start > F2I_WARNFETCHTIME
+              @logger.info("Fetching feed #{feed.name} took #{(Time::now - fetch_start).to_i}s")
             end
             sparefetchers_mutex.synchronize do
               sparefetchers += 1

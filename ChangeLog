@@ -1,3 +1,9 @@
+Feed2Imap 0.9.4 (23/07/2008)
+============================
+* Warn (INFO level, so only displayed with feed2imap -v) if fetching a
+  feed takes more than 10s, as this might cause massive delays
+  in feed2imap run times.
+
 Feed2Imap 0.9.3 (23/07/2008)
 ============================
 * Check the return code from external commands, and warn if != 0. Fixes
