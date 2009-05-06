@@ -51,18 +51,14 @@ def item_to_mail(item, index, updated, from = 'Feed2Imap', inline_images = false
   message = RMail::Message::new
   if item.creator and item.creator != ''
     if item.creator.include?('@')
-      hdr_from = item.creator.chomp
+      message.header['From'] = item.creator.chomp
     else
-      hdr_from = "#{item.creator.chomp} <feed2imap@acme.com>"
+      message.header['From'] = "=?utf-8?b?#{Base64::encode64(item.creator.chomp).gsub("\n",'')}?= <feed2imap@acme.com>"
     end
   else
-    hdr_from = "#{from} <feed2imap@acme.com>"
+    message.header['From'] = "=?utf-8?b?#{Base64::encode64(from).gsub("\n",'')}?= <feed2imap@acme.com>"
   end
-
-  hdr_to = "#{from} <feed2imap@acme.com>"
-
-  message.header['From'] = "=?utf-8?b?#{Base64::encode64(hdr_from)}?="
-  message.header['To'] = "=?utf-8?b?#{Base64::encode64(hdr_to)}?="
+  message.header['To'] = "=?utf-8?b?#{Base64::encode64(from).gsub("\n",'')}?= <feed2imap@acme.com>"
 
   if item.date.nil?
     message.header['Date'] = Time::new.rfc2822
