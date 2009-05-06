@@ -87,14 +87,8 @@ def item_to_mail(item, id, updated, from = 'Feed2Imap', inline_images = false, w
   htmlpart.body = item.to_html
 
   # inline images as attachments
+  imgs = []
   if inline_images
-    message.header.set('Content-Type', 'multipart/related', 'type'=> 'multipart/alternative')
-    texthtml = RMail::Message::new
-    texthtml.header.set('Content-Type', 'multipart/alternative')
-    texthtml.add_part(textpart)
-    texthtml.add_part(htmlpart)
-    message.add_part(texthtml)
-
     cids = []
     htmlpart.body.gsub!(/(<img[^>]+)src="(\S+?\/([^\/]+?\.(png|gif|jpe?g)))"([^>]*>)/i) do |match|
       # $2 contains url, $3 the image name, $4 the image extension
@@ -111,7 +105,7 @@ def item_to_mail(item, id, updated, from = 'Feed2Imap', inline_images = false, w
           imgpart.header.set('Content-Disposition', 'attachment', 'filename' => $3)
           imgpart.header.set('Content-Transfer-Encoding', 'base64')
           imgpart.body = image
-          message.add_part(imgpart)
+          imgs << imgpart
         end
         # now to specify what to replace with
         newtag = "#{$1}src=\"cid:#{cid}\"#{$5}"
@@ -121,6 +115,17 @@ def item_to_mail(item, id, updated, from = 'Feed2Imap', inline_images = false, w
         #print "Error while fetching image #{$2}: #{$!}...\n"
         $& # don't modify on exception
       end
+    end
+  end
+  if imgs.length > 0
+    message.header.set('Content-Type', 'multipart/related', 'type'=> 'multipart/alternative')
+    texthtml = RMail::Message::new
+    texthtml.header.set('Content-Type', 'multipart/alternative')
+    texthtml.add_part(textpart)
+    texthtml.add_part(htmlpart)
+    message.add_part(texthtml)
+    imgs.each do |i|
+      message.add_part(i)
     end
   else
     message.header['Content-Type'] = 'multipart/alternative'
