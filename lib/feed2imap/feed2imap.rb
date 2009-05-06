@@ -234,14 +234,17 @@ class Feed2Imap
       @logger.info("#{f.name}: #{newitems.length} new items, #{updateditems.length} updated items.") if newitems.length > 0 or updateditems.length > 0 or @logger.level == Logger::DEBUG
       begin
         if !cacherebuild
+          fn = f.name.gsub(/[^0-9A-Za-z]/,'')
           updateditems.each do |i|
-            email = item_to_mail(i, i.cacheditem.index, true, f.name, f.include_images, f.wrapto)
+            id = "<#{fn}-#{i.cacheditem.index}@acme.com>"
+            email = item_to_mail(i, id, true, f.name, f.include_images, f.wrapto)
             f.imapaccount.updatemail(f.folder, email,
-                                     i.cacheditem.index, i.date || Time::new)
+                                     id, i.date || Time::new)
           end
           # reverse is needed to upload older items first (fixes gna#8986)
           newitems.reverse.each do |i|
-            email = item_to_mail(i, i.cacheditem.index, false, f.name, f.include_images, f.wrapto)
+            id = "<#{fn}-#{i.cacheditem.index}@acme.com>"
+            email = item_to_mail(i, id, false, f.name, f.include_images, f.wrapto)
             f.imapaccount.putmail(f.folder, email, i.date || Time::new)
           end
         end

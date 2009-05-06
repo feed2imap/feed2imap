@@ -47,7 +47,7 @@ class String
   end
 end
 
-def item_to_mail(item, index, updated, from = 'Feed2Imap', inline_images = false, wrapto = false)
+def item_to_mail(item, id, updated, from = 'Feed2Imap', inline_images = false, wrapto = false)
   message = RMail::Message::new
   if item.creator and item.creator != ''
     if item.creator.include?('@')
@@ -66,7 +66,7 @@ def item_to_mail(item, index, updated, from = 'Feed2Imap', inline_images = false
     message.header['Date'] = item.date.rfc2822
   end
   message.header['X-Feed2Imap-Version'] = F2I_VERSION if defined?(F2I_VERSION)
-  message.header['X-CacheIndex'] = "-#{index}-"
+  message.header['Message-Id'] = id
   message.header['X-F2IStatus'] = "Updated" if updated
   # treat subject. Might need MIME encoding.
   subj = item.title or (item.date and item.date.to_s) or item.link

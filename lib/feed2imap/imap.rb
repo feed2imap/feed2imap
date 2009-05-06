@@ -102,10 +102,10 @@ class ImapAccount
   end
 
   # update a mail
-  def updatemail(folder, mail, idx, date = Time::now)
+  def updatemail(folder, mail, id, date = Time::now)
     create_folder_if_not_exists(folder)
     @connection.select(folder)
-    searchres = @connection.search(['HEADER', 'X-CacheIndex', "-#{idx}-"])
+    searchres = @connection.search(['HEADER', 'Message-Id', id])
     flags = nil
     if searchres.length > 0
       # we get the flags from the first result and delete everything
