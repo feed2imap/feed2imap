@@ -95,20 +95,24 @@ def item_to_mail(item, index, updated, from = 'Feed2Imap', inline_images = false
     texthtml.add_part(htmlpart)
     message.add_part(texthtml)
 
+    cids = []
     htmlpart.body.gsub!(/(<img[^>]+)src="(\S+?\/([^\/]+?\.(png|gif|jpe?g)))"([^>]*>)/i) do |match|
       # $2 contains url, $3 the image name, $4 the image extension
       begin
         image = Base64.encode64(HTTPFetcher::fetch($2, Time.at(0)).chomp) + "\n"
         cid = "#{Digest::MD5.hexdigest($2)}@feed2imap.acme.com"
-        imgpart = RMail::Message.new
-        imgpart.header.set('Content-ID', "<#{cid}>")
-        type = $4
-        type = 'jpeg' if type.downcase == 'jpg' # hack hack hack
-        imgpart.header.set('Content-Type', "image/#{type}", 'name' => $3)
-        imgpart.header.set('Content-Disposition', 'attachment', 'filename' => $3)
-        imgpart.header.set('Content-Transfer-Encoding', 'base64')
-        imgpart.body = image
-        message.add_part(imgpart)
+        if not cids.include?(cid)
+          cids << cid
+          imgpart = RMail::Message.new
+          imgpart.header.set('Content-ID', "<#{cid}>")
+          type = $4
+          type = 'jpeg' if type.downcase == 'jpg' # hack hack hack
+          imgpart.header.set('Content-Type', "image/#{type}", 'name' => $3)
+          imgpart.header.set('Content-Disposition', 'attachment', 'filename' => $3)
+          imgpart.header.set('Content-Transfer-Encoding', 'base64')
+          imgpart.body = image
+          message.add_part(imgpart)
+        end
         # now to specify what to replace with
         newtag = "#{$1}src=\"cid:#{cid}\"#{$5}"
         #print "#{cid}: Replacing '#{$&}' with '#{newtag}'...\n"
