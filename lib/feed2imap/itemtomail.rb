@@ -80,7 +80,7 @@ def item_to_mail(item, id, updated, from = 'Feed2Imap', inline_images = false, w
   textpart = RMail::Message::new
   textpart.header['Content-Type'] = 'text/plain; charset=utf-8; format=flowed'
   textpart.header['Content-Transfer-Encoding'] = '8bit'
-  textpart.body = item.to_text(true, wrapto)
+  textpart.body = item.to_text(true, wrapto, false)
   htmlpart = RMail::Message::new
   htmlpart.header['Content-Type'] = 'text/html; charset=utf-8'
   htmlpart.header['Content-Transfer-Encoding'] = '8bit'
