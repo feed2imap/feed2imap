@@ -51,3 +51,12 @@ feeds:
     execurl: "wget -q -O /dev/stdout http://www.lemonde.fr/rss/sequence/0,2-3208,1-0,0.xml"
     filter: "/home/lucas/lemonde_getbody"
     target: imap://luser:password@imap.apinc.org/INBOX.Feeds.LeMonde
+# It is also possible to reuse the same string in the target parameter:
+# target-refix: &target "imap://user:pass@host/rss."
+# feeds:
+#   - name: test1
+#     target: [ *target, 'test1' ]
+#     ...
+#   - name: test2
+#     target: [ *target, 'test2' ]
+#     ...
