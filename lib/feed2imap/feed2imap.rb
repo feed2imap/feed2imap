@@ -135,16 +135,24 @@ class Feed2Imap
             else
               @logger.warn("No way to fetch feed #{feed.name} !")
             end
-            if feed.filter
+            if feed.filter and s != nil
               # avoid running more than one command at the same time.
               # We need it because the called command might not be
               # thread-safe, and we need to get the right exitcode.
               mutex.lock
-              Open3::popen3(feed.filter) do |stdin, stdout|
+              # hack hack hack, avoid buffering problems
+              stdin, stdout, stderr = Open3::popen3(feed.filter)
+              inth = Thread::new do
                 stdin.puts s
                 stdin.close
-                s = stdout.read
               end
+              output = nil
+              outh = Thread::new do
+                output = stdout.read
+              end
+              inth.join
+              outh.join
+              s = output
               if $?.exitstatus != 0
                 @logger.warn("Filter command for #{feed.name} exited with status #{$?.exitstatus}. Output might be corrupted !")
               end
