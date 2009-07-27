@@ -1,8 +1,6 @@
 # File fetched from
 # http://svn.ruby-lang.org/cgi-bin/viewvc.cgi/trunk/lib/net/imap.rb?view=log
 # Current rev: 24263
-# Also added a patch from https://gna.org/bugs/?13977 to fix a problem with
-# dovecot 1.2.1
 ############################################################################
 #
 # = net/imap.rb
@@ -2822,7 +2820,7 @@ module Net
         token = match(T_ATOM)
         name = token.value.upcase
         case name
-        when /\A(?:ALERT|PARSE|READ-ONLY|READ-WRITE|TRYCREATE|NOMODSEQ|CLOSED)\z/n
+        when /\A(?:ALERT|PARSE|READ-ONLY|READ-WRITE|TRYCREATE|NOMODSEQ)\z/n
           result = ResponseCode.new(name, nil)
         when /\A(?:PERMANENTFLAGS)\z/n
           match(T_SPACE)
