@@ -1,4 +1,4 @@
-Feed2Imap 0.9.4 (18/06/2009)
+Feed2Imap 0.9.4 (27/07/2009)
 ============================
 * Warn (INFO level, so only displayed with feed2imap -v) if fetching a
   feed takes more than 10s, as this might cause massive delays
@@ -11,6 +11,7 @@ Feed2Imap 0.9.4 (18/06/2009)
 * Require ruby-feedparser 0.7, better email formatting
 * Made it possible to re-use substrings in targets
 * Fix buffering problem with filters
+* Added a patch from Haegar to fix problem with dovecot 1.2.1
 
 Feed2Imap 0.9.3 (23/07/2008)
 ============================

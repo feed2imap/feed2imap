@@ -1,6 +1,8 @@
 # File fetched from
 # http://svn.ruby-lang.org/cgi-bin/viewvc.cgi/trunk/lib/net/imap.rb?view=log
-# Current rev: 22784
+# Current rev: 24263
+# Also added a patch from https://gna.org/bugs/?13977 to fix a problem with
+# dovecot 1.2.1
 ############################################################################
 #
 # = net/imap.rb
@@ -842,6 +844,44 @@ module Net
       return thread_internal("UID THREAD", algorithm, search_keys, charset)
     end
 
+    # Sends an IDLE command that waits for notifications of new or expunged
+    # messages.  Yields responses from the server during the IDLE.
+    #
+    # Use #idle_done() to leave IDLE.
+    def idle(&response_handler)
+      raise LocalJumpError, "no block given" unless response_handler
+
+      response = nil
+
+      synchronize do
+        tag = Thread.current[:net_imap_tag] = generate_tag
+        put_string("#{tag} IDLE#{CRLF}")
+
+        begin
+          add_response_handler(response_handler)
+          @idle_done_cond = new_cond
+          @idle_done_cond.wait
+          @idle_done_cond = nil
+        ensure
+          remove_response_handler(response_handler)
+          put_string("DONE#{CRLF}")
+          response = get_tagged_response(tag, "IDLE")
+        end
+      end
+
+      return response
+    end
+
+    # Leaves IDLE.
+    def idle_done
+      synchronize do
+        if @idle_done_cond.nil?
+          raise Net::IMAP::Error, "not during IDLE"
+        end
+        @idle_done_cond.signal
+      end
+    end
+
     # Decode a string from modified UTF-7 format to UTF-8.
     #
     # UTF-7 is a 7-bit encoding of Unicode [UTF7].  IMAP uses a
@@ -875,6 +915,16 @@ module Net
           "&" + base64.delete("=\n").tr("/", ",") + "-"
         end
       }.force_encoding("ASCII-8BIT")
+    end
+
+    # Formats +time+ as an IMAP-style date.
+    def self.format_date(time)
+      return time.strftime('%d-%b-%Y')
+    end
+
+    # Formats +time+ as an IMAP-style date-time.
+    def self.format_datetime(time)
+      return time.strftime('%d-%b-%Y %H:%M %z')
     end
 
     private
@@ -944,6 +994,7 @@ module Net
       @response_handlers = []
       @tagged_response_arrival = new_cond
       @continuation_request_arrival = new_cond
+      @idle_done_cond = nil
       @logout_command_tag = nil
       @debug_output_bol = true
       @exception = nil
@@ -951,7 +1002,7 @@ module Net
       @greeting = get_response
       if @greeting.name == "BYE"
         @sock.close
-        raise ByeResponseError, @greeting.raw_data
+        raise ByeResponseError, @greeting
       end
 
       @client_thread = Thread.current
@@ -997,7 +1048,7 @@ module Net
               end
               if resp.name == "BYE" && @logout_command_tag.nil?
                 @sock.close
-                @exception = ByeResponseError.new(resp.raw_data)
+                @exception = ByeResponseError.new(resp)
                 break
               end
             when ContinuationRequest
@@ -1029,9 +1080,9 @@ module Net
       resp = @tagged_responses.delete(tag)
       case resp.name
       when /\A(?:NO)\z/ni
-        raise NoResponseError, resp.data.text
+        raise NoResponseError, resp
       when /\A(?:BAD)\z/ni
-        raise BadResponseError, resp.data.text
+        raise BadResponseError, resp
       else
         return resp
       end
@@ -2771,7 +2822,7 @@ module Net
         token = match(T_ATOM)
         name = token.value.upcase
         case name
-        when /\A(?:ALERT|PARSE|READ-ONLY|READ-WRITE|TRYCREATE|NOMODSEQ)\z/n
+        when /\A(?:ALERT|PARSE|READ-ONLY|READ-WRITE|TRYCREATE|NOMODSEQ|CLOSED)\z/n
           result = ResponseCode.new(name, nil)
         when /\A(?:PERMANENTFLAGS)\z/n
           match(T_SPACE)
@@ -2780,11 +2831,16 @@ module Net
           match(T_SPACE)
           result = ResponseCode.new(name, number)
         else
-          match(T_SPACE)
-          @lex_state = EXPR_CTEXT
-          token = match(T_TEXT)
-          @lex_state = EXPR_BEG
-          result = ResponseCode.new(name, token.value)
+          token = lookahead
+          if token.symbol == T_SPACE
+            shift_token
+            @lex_state = EXPR_CTEXT
+            token = match(T_TEXT)
+            @lex_state = EXPR_BEG
+            result = ResponseCode.new(name, token.value)
+          else
+            result = ResponseCode.new(name, nil)
+          end
         end
         match(T_RBRA)
         @lex_state = EXPR_RTEXT
@@ -3332,6 +3388,16 @@ module Net
     # Superclass of all errors used to encapsulate "fail" responses
     # from the server.
     class ResponseError < Error
+
+      # The response that caused this error
+      attr_accessor :response
+
+      def initialize(response)
+        @response = response
+
+        super @response.data.text
+      end
+
     end
 
     # Error raised upon a "NO" response from the server, indicating
