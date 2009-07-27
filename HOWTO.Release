@@ -1,0 +1,9 @@
+edit version in lib/feed2imap/feed2imap.rb
+edit version in Rakefile
+rake package
+cd pkg/
+gpg --detach myfile (see https://gna.org/cookbook/?func=detailitem&item_id=117)
+sftp lnu@download.gna.org:/upload/feed2imap/
+
+website:
+modify, commit to svn

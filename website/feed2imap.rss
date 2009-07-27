@@ -6,6 +6,20 @@
 		<description>New releases of Feed2Imap</description> 
 		<language>en</language> 
 		<item>
+			<title>Feed2Imap 0.9.4 (27/07/2009)</title> 
+			<link>http://download.gna.org/feed2imap/feed2imap-0.9.4.tgz</link> 
+			<pubDate>Mon, 27 Jul 2009 23:54:00 +0200</pubDate>
+			<description>Feed2Imap 0.9.4 has been released.
+
+You can download it from here :
+http://download.gna.org/feed2imap/feed2imap-0.9.4.tgz
+
+Feed2Imap homepage :
+http://home.gna.org/feed2imap/
+</description> 
+</item>
+
+		<item>
 			<title>Feed2Imap 0.9.3 (23/07/2008)</title> 
 			<link>http://download.gna.org/feed2imap/feed2imap-0.9.3.tgz</link> 
 			<pubDate>Wed, 23 Jul 2008 18:19:00 +0200</pubDate>
