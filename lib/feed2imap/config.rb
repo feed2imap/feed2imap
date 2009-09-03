@@ -48,7 +48,7 @@ class F2IConfig
         path = URI::unescape(uri.path)
         path = path[1..-1] if path[0,1] == '/'
         if uri.scheme == 'maildir'
-          @feeds.push(ConfigFeed::new(f, maildir_account, path))
+          @feeds.push(ConfigFeed::new(f, maildir_account, path, self))
         else
           @feeds.push(ConfigFeed::new(f, @imap_accounts.add_account(uri), path, self))
         end
