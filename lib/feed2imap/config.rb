@@ -20,6 +20,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 require 'yaml'
 require 'uri'
 require 'feed2imap/imap'
+require 'feed2imap/maildir'
 
 # Default cache file
 DEFCACHE = ENV['HOME'] + '/.feed2imap.cache'
@@ -40,12 +41,17 @@ class F2IConfig
     @updateddebug =  (@conf['debug-updated'] and @conf['debug-updated'] != 'false')
     @include_images = (@conf['include-images'] and @conf['include-images'] != 'false')
     @imap_accounts = ImapAccounts::new
+    maildir_account = MaildirAccount::new
     @conf['feeds'].each do |f|
       if f['disable'].nil?
         uri = URI::parse(f['target'].to_s)
         path = URI::unescape(uri.path)
         path = path[1..-1] if path[0,1] == '/'
-        @feeds.push(ConfigFeed::new(f, @imap_accounts.add_account(uri), path, self))
+        if uri.scheme == 'maildir'
+          @feeds.push(ConfigFeed::new(f, maildir_account, path))
+        else
+          @feeds.push(ConfigFeed::new(f, @imap_accounts.add_account(uri), path, self))
+        end
       end
     end
   end
