@@ -37,7 +37,6 @@ class MaildirAccount
     mail_files = find_mails(dir, idx)
     flags = nil
     if mail_files.length > 0
-      puts "UPDATE: #{mail_files}"
       # get the info from the first result and delete everything
       info = maildir_file_info(mail_files[0])
       mail_files.each { |f| File.delete(File.join(dir, f)) }
@@ -138,10 +137,8 @@ class MaildirAccount
       Dir[File.join(subdir, '*')].each do |fn|
         File.open(fn) do |f|
           mail = RMail::Parser.read(f)
-          cache_index = mail.header['X-CacheIndex']
-          next if not (cache_index and
-                       cache_index =~ /^-[0-9]+-/ and
-                       cache_index[1..-2].to_i == idx)
+          cache_index = mail.header['Message-Id']
+          next if not (cache_index and cache_index == idx)
           dir_paths.push(File.join(d, File.basename(fn)))
         end
       end
