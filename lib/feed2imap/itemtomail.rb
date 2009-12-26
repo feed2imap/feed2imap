@@ -47,18 +47,18 @@ class String
   end
 end
 
-def item_to_mail(item, id, updated, from = 'Feed2Imap', inline_images = false, wrapto = false)
+def item_to_mail(config, item, id, updated, from = 'Feed2Imap', inline_images = false, wrapto = false)
   message = RMail::Message::new
   if item.creator and item.creator != ''
     if item.creator.include?('@')
       message.header['From'] = item.creator.chomp
     else
-      message.header['From'] = "=?utf-8?b?#{Base64::encode64(item.creator.chomp).gsub("\n",'')}?= <feed2imap@acme.com>"
+      message.header['From'] = "=?utf-8?b?#{Base64::encode64(item.creator.chomp).gsub("\n",'')}?= <#{config.default_email}>"
     end
   else
-    message.header['From'] = "=?utf-8?b?#{Base64::encode64(from).gsub("\n",'')}?= <feed2imap@acme.com>"
+    message.header['From'] = "=?utf-8?b?#{Base64::encode64(from).gsub("\n",'')}?= <#{config.default_email}>"
   end
-  message.header['To'] = "=?utf-8?b?#{Base64::encode64(from).gsub("\n",'')}?= <feed2imap@acme.com>"
+  message.header['To'] = "=?utf-8?b?#{Base64::encode64(from).gsub("\n",'')}?= <#{config.default_email}>"
 
   if item.date.nil?
     message.header['Date'] = Time::new.rfc2822
@@ -94,7 +94,7 @@ def item_to_mail(item, id, updated, from = 'Feed2Imap', inline_images = false, w
       # $2 contains url, $3 the image name, $4 the image extension
       begin
         image = Base64.encode64(HTTPFetcher::fetch($2, Time.at(0)).chomp) + "\n"
-        cid = "#{Digest::MD5.hexdigest($2)}@feed2imap.acme.com"
+        cid = "#{Digest::MD5.hexdigest($2)}@#{config.hostname}"
         if not cids.include?(cid)
           cids << cid
           imgpart = RMail::Message.new

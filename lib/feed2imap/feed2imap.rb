@@ -244,15 +244,15 @@ class Feed2Imap
         if !cacherebuild
           fn = f.name.gsub(/[^0-9A-Za-z]/,'')
           updateditems.each do |i|
-            id = "<#{fn}-#{i.cacheditem.index}@acme.com>"
-            email = item_to_mail(i, id, true, f.name, f.include_images, f.wrapto)
+            id = "<#{fn}-#{i.cacheditem.index}@#{@config.hostname}>"
+            email = item_to_mail(@config, i, id, true, f.name, f.include_images, f.wrapto)
             f.imapaccount.updatemail(f.folder, email,
                                      id, i.date || Time::new)
           end
           # reverse is needed to upload older items first (fixes gna#8986)
           newitems.reverse.each do |i|
-            id = "<#{fn}-#{i.cacheditem.index}@acme.com>"
-            email = item_to_mail(i, id, false, f.name, f.include_images, f.wrapto)
+            id = "<#{fn}-#{i.cacheditem.index}@#{@config.hostname}>"
+            email = item_to_mail(@config, i, id, false, f.name, f.include_images, f.wrapto)
             f.imapaccount.putmail(f.folder, email, i.date || Time::new)
           end
         end

@@ -21,13 +21,19 @@ require 'yaml'
 require 'uri'
 require 'feed2imap/imap'
 require 'feed2imap/maildir'
+require 'etc'
+require 'socket'
 
 # Default cache file
 DEFCACHE = ENV['HOME'] + '/.feed2imap.cache'
 
+# Hostname and login name of the current user
+HOSTNAME = Socket.gethostname
+LOGNAME = Etc.getlogin
+
 # Feed2imap configuration
 class F2IConfig
-  attr_reader :imap_accounts, :cache, :feeds, :dumpdir, :updateddebug, :max_failures, :include_images
+  attr_reader :imap_accounts, :cache, :feeds, :dumpdir, :updateddebug, :max_failures, :include_images, :default_email, :hostname
 
   # Load the configuration from the IO stream
   # TODO should do some sanity check on the data read.
@@ -40,6 +46,8 @@ class F2IConfig
     @max_failures = (@conf['max-failures'] || 10).to_i
     @updateddebug =  (@conf['debug-updated'] and @conf['debug-updated'] != 'false')
     @include_images = (@conf['include-images'] and @conf['include-images'] != 'false')
+    @default_email = (@conf['default-email'] || "#{LOGNAME}@#{HOSTNAME}")
+    @hostname = HOSTNAME # FIXME: should this be configurable as well?
     @imap_accounts = ImapAccounts::new
     maildir_account = MaildirAccount::new
     @conf['feeds'].each do |f|

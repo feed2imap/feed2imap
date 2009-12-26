@@ -7,6 +7,7 @@
 # debug-updated: (for debugging purposes) if true, display a lot of information
 #   about the "updated-items" algorithm.
 # include-images: download images and include them in the mail? (true/false)
+# default-email: default email address in the format foo@example.com
 # 
 # Per-feed options:
 # name: name of the feed (must be unique)
