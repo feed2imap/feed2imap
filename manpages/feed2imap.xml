@@ -38,7 +38,7 @@
 
 	<para><command>feed2imap</command> is an RSS/Atom feed aggregator. After
 	Downloading feeds (over HTTP or HTTPS), it uploads them to a specified
-	folder of an IMAP mail server. The user can then access the feeds using
+	folder of an IMAP mail server, or copies them to a local maildir. The user can then access the feeds using
 	Mutt, Evolution, Mozilla Thunderbird or even a webmail.</para>
 
 <variablelist>

@@ -12,8 +12,8 @@
 # Per-feed options:
 # name: name of the feed (must be unique)
 # url: HTTP[S] address where the feed has to be fetched
-# target: the IMAP URI where to put emails. Should start with imap:// for IMAP
-#   and imaps:// for IMAPS.
+# target: the IMAP URI where to put emails. Should start with imap:// for IMAP,
+#   imaps:// for IMAPS and maildir:// for a path to a local maildir.
 # min-frequency: (in HOURS) is the minimum frequency with which this particular
 #   feed will be fetched
 # disable: if set to something, the feed will be ignored
