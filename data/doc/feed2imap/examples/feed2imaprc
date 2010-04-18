@@ -8,6 +8,8 @@
 #   about the "updated-items" algorithm.
 # include-images: download images and include them in the mail? (true/false)
 # default-email: default email address in the format foo@example.com
+# disable-ssl-verification: disable SSL certification when connecting
+#   to IMAPS accounts (true/false)
 # 
 # Per-feed options:
 # name: name of the feed (must be unique)

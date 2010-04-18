@@ -30,6 +30,7 @@ require 'uri'
 # using the same IMAP account will create only one
 # IMAP connection.
 class ImapAccounts < Hash
+
   def add_account(uri)
     u = URI::Generic::build({ :scheme => uri.scheme,
                               :userinfo => uri.userinfo,
@@ -47,6 +48,11 @@ end
 # once the connection has been established
 class ImapAccount
   attr_reader :uri
+
+  @@no_ssl_verify = false
+  def ImapAccount::no_ssl_verify=(v)
+    @@no_ssl_verify = v
+  end
 
   def initialize(uri)
     @uri = uri
@@ -70,7 +76,7 @@ class ImapAccount
     end
     # use given port if port given
     port = uri.port if uri.port 
-    @connection = Net::IMAP::new(uri.host, port, usessl)
+    @connection = Net::IMAP::new(uri.host, port, usessl, nil, !@@no_ssl_verify)
     user, password = URI::unescape(uri.userinfo).split(':',2)
     @connection.login(user, password)
     self

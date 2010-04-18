@@ -47,6 +47,7 @@ class F2IConfig
     @updateddebug =  (@conf['debug-updated'] and @conf['debug-updated'] != 'false')
     @include_images = (@conf['include-images'] and @conf['include-images'] != 'false')
     @default_email = (@conf['default-email'] || "#{LOGNAME}@#{HOSTNAME}")
+    ImapAccount.no_ssl_verify = (@conf['disable-ssl-verification'] and @conf['disable-ssl-verification'] != 'false')
     @hostname = HOSTNAME # FIXME: should this be configurable as well?
     @imap_accounts = ImapAccounts::new
     maildir_account = MaildirAccount::new

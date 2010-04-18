@@ -6,6 +6,8 @@ Feed2Imap 0.9.5 (XX/XX/2010)?
 * Use Message-ID instead of X-CacheIndex
 * Do not use acme.com
 * Update rubyimap.rb
+* Provide a way to disable SSL certification verification when
+  connecting to IMAPS accounts
 
 Feed2Imap 0.9.4 (27/07/2009)
 ============================
