@@ -7,7 +7,7 @@ require 'find'
 task :default => [:package]
 
 PKG_NAME = 'feed2imap'
-PKG_VERSION = '0.9.4'
+PKG_VERSION = '1.0'
 PKG_FILES = [ 'ChangeLog', 'README', 'COPYING', 'setup.rb', 'Rakefile']
 Find.find('bin/', 'lib/', 'test/', 'data/') do |f|
 	if FileTest.directory?(f) and f =~ /\.svn/

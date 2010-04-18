@@ -1,5 +1,5 @@
-Feed2Imap 0.9.5 (XX/XX/2010)?
-============================
+Feed2Imap 1.0 (18/04/2010)
+==========================
 * Removed patch from Haegar as it's no longer needed with the new
   rubyimap.rb (see discussion in https://gna.org/bugs/?13977)
 * Support writing to maildirs instead of through IMAP
