@@ -25,6 +25,10 @@ class MaildirAccount
 
   attr_reader :uri
 
+  def initialize
+    @seq_num = 0
+  end
+
   def putmail(folder, mail, date = Time::now)
     store_message(folder_dir(folder), date, nil) do |f|
       f.puts(mail)
@@ -84,7 +88,6 @@ class MaildirAccount
   end
 
   def store_message(dir, date, info, &block)
-    # TODO: handle `date'
 
     guarantee_maildir(dir)
 
@@ -93,7 +96,7 @@ class MaildirAccount
       timer = 30
       fd = nil
       while timer >= 0
-        new_fn = new_maildir_basefn
+        new_fn = new_maildir_basefn(date)
         tmp_path = File.join(dir, 'tmp', new_fn)
         new_path = File.join(dir, 'new', new_fn)
         begin
@@ -160,11 +163,12 @@ class MaildirAccount
     return (colon and basename.slice(colon + 1, -1))
   end
 
-  # Shamelessly taken from
+  # Re-written and no longer shamelessly taken from
   # http://gitorious.org/sup/mainline/blobs/master/lib/sup/maildir.rb
-  def new_maildir_basefn
-    Kernel::srand()
-    "#{Time.now.to_i.to_s}.#{$$}#{Kernel.rand(1000000)}.#{MYHOSTNAME}"
+  def new_maildir_basefn(date)
+    fn = "#{date.to_i.to_s}.#{@seq_num.to_s}.#{MYHOSTNAME}"
+    @seq_num = @seq_num + 1
+    fn
   end
 end
 
