@@ -35,7 +35,7 @@ class MaildirAccount
     end
   end
 
-  def updatemail(folder, mail, idx, date = Time::now)
+  def updatemail(folder, mail, idx, date = Time::now, reupload_if_updated = true)
     dir = folder_dir(folder)
     guarantee_maildir(dir)
     mail_files = find_mails(dir, idx)
@@ -44,6 +44,9 @@ class MaildirAccount
       # get the info from the first result and delete everything
       info = maildir_file_info(mail_files[0])
       mail_files.each { |f| File.delete(File.join(dir, f)) }
+    elsif not reupload_if_updated
+      # mail not present, and we don't want to re-upload it
+      return
     end
     store_message(dir, date, info) { |f| f.puts(mail) }
   end
