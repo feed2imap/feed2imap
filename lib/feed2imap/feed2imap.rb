@@ -247,7 +247,7 @@ class Feed2Imap
             id = "<#{fn}-#{i.cacheditem.index}@#{@config.hostname}>"
             email = item_to_mail(@config, i, id, true, f.name, f.include_images, f.wrapto)
             f.imapaccount.updatemail(f.folder, email,
-                                     id, i.date || Time::new)
+                                     id, i.date || Time::new, f.reupload_if_updated)
           end
           # reverse is needed to upload older items first (fixes gna#8986)
           newitems.reverse.each do |i|

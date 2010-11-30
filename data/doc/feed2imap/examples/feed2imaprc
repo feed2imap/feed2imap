@@ -7,6 +7,8 @@
 # debug-updated: (for debugging purposes) if true, display a lot of information
 #   about the "updated-items" algorithm.
 # include-images: download images and include them in the mail? (true/false)
+# reupload-if-updated: when an item is updated, and was previously deleted,
+#   reupload it? (true/false, default true)
 # default-email: default email address in the format foo@example.com
 # disable-ssl-verification: disable SSL certification when connecting
 #   to IMAPS accounts (true/false)
@@ -20,6 +22,8 @@
 #   feed will be fetched
 # disable: if set to something, the feed will be ignored
 # include-images: download images and include them in the mail? (true/false)
+# reupload-if-updated: when an item is updated, and was previously deleted,
+#   reupload it? (true/false, default true)
 # always-new: feed2imap tries to use a clever algorithm to determine whether
 #   an item is new or has been updated. It doesn't work well with some web apps
 #   like mediawiki. When this flag is enabled, all items which don't match

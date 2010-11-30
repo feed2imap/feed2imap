@@ -33,7 +33,7 @@ LOGNAME = Etc.getlogin
 
 # Feed2imap configuration
 class F2IConfig
-  attr_reader :imap_accounts, :cache, :feeds, :dumpdir, :updateddebug, :max_failures, :include_images, :default_email, :hostname
+  attr_reader :imap_accounts, :cache, :feeds, :dumpdir, :updateddebug, :max_failures, :include_images, :default_email, :hostname, :reupload_if_updated
 
   # Load the configuration from the IO stream
   # TODO should do some sanity check on the data read.
@@ -45,9 +45,10 @@ class F2IConfig
     @feeds = []
     @max_failures = (@conf['max-failures'] || 10).to_i
     @updateddebug =  (@conf['debug-updated'] and @conf['debug-updated'] != 'false')
-    @include_images = (@conf['include-images'] and @conf['include-images'] != 'false')
+    @include_images = !(@conf.has_key?('include-images') and @conf['include-images'] != 'false')
+    @reupload_if_updated = !(@conf.has_key?('reupload-if-updated') and @conf['reupload-if-updated'] == false)
     @default_email = (@conf['default-email'] || "#{LOGNAME}@#{HOSTNAME}")
-    ImapAccount.no_ssl_verify = (@conf['disable-ssl-verification'] and @conf['disable-ssl-verification'] != 'false')
+    ImapAccount.no_ssl_verify = (@conf.has_key?('disable-ssl-verification') and @conf['disable-ssl-verification'] == true)
     @hostname = HOSTNAME # FIXME: should this be configurable as well?
     @imap_accounts = ImapAccounts::new
     maildir_account = MaildirAccount::new
@@ -94,7 +95,7 @@ end
 
 # A configured feed. simple data container.
 class ConfigFeed
-  attr_reader :name, :url, :imapaccount, :folder, :always_new, :execurl, :filter, :ignore_hash, :dumpdir, :wrapto, :include_images
+  attr_reader :name, :url, :imapaccount, :folder, :always_new, :execurl, :filter, :ignore_hash, :dumpdir, :wrapto, :include_images, :reupload_if_updated
   attr_accessor :body
 
   def initialize(f, imapaccount, folder, f2iconfig)
@@ -111,8 +112,12 @@ class ConfigFeed
     @dumpdir = f['dumpdir'] || nil
     @wrapto = if f['wrapto'] == nil then 72 else f['wrapto'].to_i end
     @include_images = f2iconfig.include_images
-    if f['include-images']
-       @include_images = (f['include-images'] != 'false')
+    if f.has_key?('include-images')
+       @include_images = (f['include-images'] != false)
+    end
+    @reupload_if_updated = f2iconfig.reupload_if_updated
+    if f.has_key?('reupload-if-updated')
+       @reupload_if_updated = (f['reupload-if-updated'] != false)
     end
   end
 

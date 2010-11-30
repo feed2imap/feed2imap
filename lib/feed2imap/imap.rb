@@ -108,7 +108,7 @@ class ImapAccount
   end
 
   # update a mail
-  def updatemail(folder, mail, id, date = Time::now)
+  def updatemail(folder, mail, id, date = Time::now, reupload_if_updated = true)
     create_folder_if_not_exists(folder)
     @connection.select(folder)
     searchres = @connection.search(['HEADER', 'Message-Id', id])
@@ -119,6 +119,9 @@ class ImapAccount
       searchres.each { |m| @connection.store(m, "+FLAGS", [:Deleted]) }
       @connection.expunge
       flags -= [ :Recent ] # avoids errors with dovecot
+    elsif not reupload_if_updated
+      # mail not present, and we don't want to re-upload it
+      return
     end
     @connection.append(folder, mail.gsub(/\n/, "\r\n"), flags, date)
   end
