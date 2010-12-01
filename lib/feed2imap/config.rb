@@ -109,7 +109,8 @@ class ConfigFeed
     @name = f['name']
     @url = f['url']
     @url.sub!(/^feed:/, '') if @url =~ /^feed:/
-    @imapaccount, @folder = imapaccount, folder
+    @imapaccount = imapaccount
+    @folder = encode_utf7 folder
     @freq = f['min-frequency']
 
     @always_new = false
@@ -135,5 +136,20 @@ class ConfigFeed
   def needfetch(lastcheck)
     return true if @freq.nil?
     return (lastcheck + @freq * 3600) < Time::now
+  end
+
+  def encode_utf7(s)
+    if "foo".respond_to?(:force_encoding)
+      return Net::IMAP::encode_utf7 s
+    else
+      # this is a copy of the Net::IMAP::encode_utf7 w/o the force_encoding
+      return s.gsub(/(&)|([^\x20-\x7e]+)/u) {
+        if $1
+          "&-"
+        else
+          base64 = [$&.unpack("U*").pack("n*")].pack("m")
+          "&" + base64.delete("=\n").tr("/", ",") + "-"
+        end }
+    end
   end
 end
