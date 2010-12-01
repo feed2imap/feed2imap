@@ -44,9 +44,16 @@ class F2IConfig
     @conf['feeds'] ||= []
     @feeds = []
     @max_failures = (@conf['max-failures'] || 10).to_i
-    @updateddebug =  (@conf['debug-updated'] and @conf['debug-updated'] != 'false')
-    @include_images = !(@conf.has_key?('include-images') and @conf['include-images'] != 'false')
-    @reupload_if_updated = !(@conf.has_key?('reupload-if-updated') and @conf['reupload-if-updated'] == false)
+
+    @updatedebug = false
+    @updatedebug = @conf['debug-updated'] if @conf.has_key?('debug-updated')
+
+    @include_images = true
+    @include_images = @conf['include-images'] if @conf.has_key?('include-images')
+
+    @reupload_if_updated = true
+    @reupload_if_updated = @conf['reupload-if-updated'] if @conf.has_key?('reupload-if-updated')
+
     @default_email = (@conf['default-email'] || "#{LOGNAME}@#{HOSTNAME}")
     ImapAccount.no_ssl_verify = (@conf.has_key?('disable-ssl-verification') and @conf['disable-ssl-verification'] == true)
     @hostname = HOSTNAME # FIXME: should this be configurable as well?
@@ -104,21 +111,25 @@ class ConfigFeed
     @url.sub!(/^feed:/, '') if @url =~ /^feed:/
     @imapaccount, @folder = imapaccount, folder
     @freq = f['min-frequency']
-    @always_new =  (f['always-new'] and f['always-new'] != 'false')
+
+    @always_new = false
+    @always_new = f['always-new'] if f.has_key?('always-new')
+
     @execurl = f['execurl']
     @filter = f['filter']
-    @ignore_hash = f['ignore-hash'] || false
+
+    @ignore_hash = false
+    @ignore_hash = f['ignore-hash'] if f.has_key?('ignore-hash')
+
     @freq = @freq.to_i if @freq
     @dumpdir = f['dumpdir'] || nil
     @wrapto = if f['wrapto'] == nil then 72 else f['wrapto'].to_i end
+
     @include_images = f2iconfig.include_images
-    if f.has_key?('include-images')
-       @include_images = (f['include-images'] != false)
-    end
+    @include_images = f['include-images'] if f.has_key?('include-images')
+
     @reupload_if_updated = f2iconfig.reupload_if_updated
-    if f.has_key?('reupload-if-updated')
-       @reupload_if_updated = (f['reupload-if-updated'] != false)
-    end
+    @reupload_if_updated = f['reupload-if-updated'] if f.has_key?('reupload-if-updated')
   end
 
   def needfetch(lastcheck)
