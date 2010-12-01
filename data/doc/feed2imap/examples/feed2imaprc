@@ -67,3 +67,5 @@ feeds:
 #   - name: test2
 #     target: [ *target, 'test2' ]
 #     ...
+
+# vim: ft=yaml:sts=2:expandtab
