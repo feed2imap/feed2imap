@@ -45,8 +45,8 @@ class F2IConfig
     @feeds = []
     @max_failures = (@conf['max-failures'] || 10).to_i
 
-    @updatedebug = false
-    @updatedebug = @conf['debug-updated'] if @conf.has_key?('debug-updated')
+    @updateddebug = false
+    @updateddebug = @conf['debug-updated'] if @conf.has_key?('debug-updated')
 
     @include_images = true
     @include_images = @conf['include-images'] if @conf.has_key?('include-images')
