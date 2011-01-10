@@ -50,6 +50,9 @@ begin
 		s.version = PKG_VERSION
 		s.requirements << 'feedparser'
 		s.require_path = 'lib'
+		s.executables = PKG_FILES.grep(%r{\Abin\/.}).map { |bin|
+		  bin.gsub(%r{\Abin/}, '')
+		}
 		s.files = PKG_FILES
 		s.description = "RSS/Atom feed aggregator"
 	end
