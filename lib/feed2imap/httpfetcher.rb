@@ -17,6 +17,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 =end
 
+require 'zlib'
 require 'net/http'
 # get openssl if available
 begin
@@ -61,11 +62,14 @@ class HTTPFetcher
       useragent = 'Feed2Imap http://home.gna.org/feed2imap/'
     end
 
-    if lastcheck == Time::at(0)
-      req = Net::HTTP::Get::new(uri.request_uri, {'User-Agent' => useragent })
-    else
-      req = Net::HTTP::Get::new(uri.request_uri, {'User-Agent' => useragent, 'If-Modified-Since' => lastcheck.httpdate})
+    headers = {
+      'User-Agent' => useragent,
+      'Accept-Encoding' => 'gzip',
+    }
+    if lastcheck != Time::at(0)
+      headers.merge!('If-Modified-Since' => lastcheck.httpdate)
     end
+    req = Net::HTTP::Get::new(uri.request_uri, headers)
     if uri.userinfo
       login, pw = uri.userinfo.split(':')
       req.basic_auth(login, pw)
@@ -81,7 +85,12 @@ class HTTPFetcher
     end
     case response
     when Net::HTTPSuccess
-      return response.body
+      case response['Content-Encoding']
+      when 'gzip'
+        return Zlib::GzipReader.new(StringIO.new(response.body)).read
+      else
+        return response.body
+      end
     when Net::HTTPRedirection
       # if not modified
       if Net::HTTPNotModified === response
