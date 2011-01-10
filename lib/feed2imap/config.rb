@@ -23,6 +23,7 @@ require 'feed2imap/imap'
 require 'feed2imap/maildir'
 require 'etc'
 require 'socket'
+require 'set'
 
 # Default cache file
 DEFCACHE = ENV['HOME'] + '/.feed2imap.cache'
@@ -33,7 +34,7 @@ LOGNAME = Etc.getlogin
 
 # Feed2imap configuration
 class F2IConfig
-  attr_reader :imap_accounts, :cache, :feeds, :dumpdir, :updateddebug, :max_failures, :include_images, :default_email, :hostname, :reupload_if_updated
+  attr_reader :imap_accounts, :cache, :feeds, :dumpdir, :updateddebug, :max_failures, :include_images, :default_email, :hostname, :reupload_if_updated, :parts
 
   # Load the configuration from the IO stream
   # TODO should do some sanity check on the data read.
@@ -48,8 +49,13 @@ class F2IConfig
     @updateddebug = false
     @updateddebug = @conf['debug-updated'] if @conf.has_key?('debug-updated')
 
+    @parts = %w(text html)
+    @parts = Array(@conf['parts']) if @conf.has_key?('parts') && !@conf['parts'].empty?
+    @parts = Set.new(@parts)
+
     @include_images = true
     @include_images = @conf['include-images'] if @conf.has_key?('include-images')
+    @parts << 'html' if @include_images && ! @parts.include?('html')
 
     @reupload_if_updated = true
     @reupload_if_updated = @conf['reupload-if-updated'] if @conf.has_key?('reupload-if-updated')

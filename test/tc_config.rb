@@ -34,6 +34,17 @@ feeds:
     url: http://something2
     target: imaps://login:pasword@ezaezae/Feeds/B
 EOF
+CONFPARTS = <<EOF
+parts: text
+include-images: false
+feeds: 
+  - name: feed1
+    url: http://something
+    target: imap://login:pasword@ezaezae/Feeds/A
+  - name: feed2
+    url: http://something2
+    target: imap://login:pasword@ezaezae/Feeds/B
+EOF
 
 class ConfigTest < Test::Unit::TestCase
   def test_cache
@@ -60,5 +71,12 @@ class ConfigTest < Test::Unit::TestCase
     conf = F2IConfig::new(sio)
     assert_equal('http://something', conf.feeds[0].url)
     assert_equal('http://something2', conf.feeds[1].url)
+  end
+
+  def test_parts
+    sio = StringIO::new CONFPARTS
+    conf = F2IConfig::new(sio)
+    assert conf.parts.include?('text')
+    assert ! conf.parts.include?('html')
   end
 end

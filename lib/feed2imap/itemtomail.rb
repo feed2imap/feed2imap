@@ -77,14 +77,20 @@ def item_to_mail(config, item, id, updated, from = 'Feed2Imap', inline_images = 
       message.header['Subject'] = subj
     end
   end
-  textpart = RMail::Message::new
-  textpart.header['Content-Type'] = 'text/plain; charset=utf-8; format=flowed'
-  textpart.header['Content-Transfer-Encoding'] = '8bit'
-  textpart.body = item.to_text(true, wrapto, false)
-  htmlpart = RMail::Message::new
-  htmlpart.header['Content-Type'] = 'text/html; charset=utf-8'
-  htmlpart.header['Content-Transfer-Encoding'] = '8bit'
-  htmlpart.body = item.to_html
+  textpart = htmlpart = nil
+  parts = config.parts
+  if parts.include?('text')
+    textpart = parts.size == 1 ? message : RMail::Message::new
+    textpart.header['Content-Type'] = 'text/plain; charset=utf-8; format=flowed'
+    textpart.header['Content-Transfer-Encoding'] = '8bit'
+    textpart.body = item.to_text(true, wrapto, false)
+  end
+  if parts.include?('html')
+    htmlpart = parts.size == 1 ? message : RMail::Message::new
+    htmlpart.header['Content-Type'] = 'text/html; charset=utf-8'
+    htmlpart.header['Content-Transfer-Encoding'] = '8bit'
+    htmlpart.body = item.to_html
+  end
 
   # inline images as attachments
   imgs = []
@@ -127,7 +133,7 @@ def item_to_mail(config, item, id, updated, from = 'Feed2Imap', inline_images = 
     imgs.each do |i|
       message.add_part(i)
     end
-  else
+  elsif parts.size != 1
     message.header['Content-Type'] = 'multipart/alternative'
     message.add_part(textpart)
     message.add_part(htmlpart)
