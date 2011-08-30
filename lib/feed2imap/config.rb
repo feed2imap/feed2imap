@@ -34,7 +34,7 @@ LOGNAME = Etc.getlogin
 
 # Feed2imap configuration
 class F2IConfig
-  attr_reader :imap_accounts, :cache, :feeds, :dumpdir, :updateddebug, :max_failures, :include_images, :default_email, :hostname, :reupload_if_updated, :parts
+  attr_reader :imap_accounts, :cache, :feeds, :dumpdir, :updateddebug, :max_failures, :include_images, :default_email, :hostname, :reupload_if_updated, :parts, :timeout
 
   # Load the configuration from the IO stream
   # TODO should do some sanity check on the data read.
@@ -59,6 +59,8 @@ class F2IConfig
 
     @reupload_if_updated = true
     @reupload_if_updated = @conf['reupload-if-updated'] if @conf.has_key?('reupload-if-updated')
+
+    @timeout = if @conf['timeout'] == nil then 30 else @conf['timeout'].to_i end
 
     @default_email = (@conf['default-email'] || "#{LOGNAME}@#{HOSTNAME}")
     ImapAccount.no_ssl_verify = (@conf.has_key?('disable-ssl-verification') and @conf['disable-ssl-verification'] == true)
@@ -137,6 +139,7 @@ class ConfigFeed
 
     @reupload_if_updated = f2iconfig.reupload_if_updated
     @reupload_if_updated = f['reupload-if-updated'] if f.has_key?('reupload-if-updated')
+
   end
 
   def needfetch(lastcheck)

@@ -121,7 +121,9 @@ class Feed2Imap
             end
             fetch_start = Time::now
             if feed.url
-              s = HTTPFetcher::fetch(feed.url, @cache.get_last_check(feed.name))
+              fetcher = HTTPFetcher::new
+              fetcher::timeout = @config.timeout
+              s = fetcher::fetch(feed.url, @cache.get_last_check(feed.name))
             elsif feed.execurl
               # avoid running more than one command at the same time.
               # We need it because the called command might not be

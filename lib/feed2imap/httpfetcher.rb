@@ -34,7 +34,14 @@ HTTPDEBUG = false
 
 # Class used to retrieve the feed over HTTP
 class HTTPFetcher
-  def HTTPFetcher::fetcher(baseuri, uri, lastcheck, recursion)
+
+  @timeout = 30 # should be enough for everybody...
+
+  def timeout=(value)
+    @timeout = value
+  end
+
+  def fetcher(baseuri, uri, lastcheck, recursion)
     proxy_host = nil
     proxy_port = nil
     proxy_user = nil
@@ -50,8 +57,8 @@ class HTTPFetcher
                             proxy_port,
                             proxy_user,
                             proxy_pass ).new(uri.host, uri.port)
-    http.read_timeout = 30 # should be enough for everybody...
-    http.open_timeout = 30
+    http.read_timeout = @timeout
+    http.open_timeout = @timeout
     if uri.scheme == 'https'
       http.use_ssl = true 
       http.verify_mode = OpenSSL::SSL::VERIFY_NONE
@@ -108,8 +115,8 @@ class HTTPFetcher
     end
   end
     
-  def HTTPFetcher::fetch(url, lastcheck)
+  def fetch(url, lastcheck)
     uri = URI::parse(url)
-    return HTTPFetcher::fetcher(uri, uri, lastcheck, MAXREDIR)
+    return fetcher(uri, uri, lastcheck, MAXREDIR)
   end
 end
