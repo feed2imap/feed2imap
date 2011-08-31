@@ -49,7 +49,6 @@ class MaildirAccount
       return
     end
     store_message(dir, date, info) { |f| f.puts(mail) }
-    puts info
   end
 
   def to_s
