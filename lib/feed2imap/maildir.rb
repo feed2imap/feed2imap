@@ -49,6 +49,7 @@ class MaildirAccount
       return
     end
     store_message(dir, date, info) { |f| f.puts(mail) }
+    puts info
   end
 
   def to_s
@@ -163,7 +164,7 @@ class MaildirAccount
     basename = File.basename(file)
     colon = basename.rindex(':')
 
-    return (colon and basename.slice(colon + 1, -1))
+    return (colon and basename[colon + 1 .. -1])
   end
 
   # Re-written and no longer shamelessly taken from
