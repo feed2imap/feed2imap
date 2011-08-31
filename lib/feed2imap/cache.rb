@@ -189,7 +189,6 @@ class CachedChannel
           i.cacheditem.index = j.index
           found = true
           # let's put j in front of itemstemp
-          puts "got existing:  #{j.to_s}"
           @itemstemp.delete(j)
           @itemstemp.unshift(j)
           break
