@@ -193,22 +193,16 @@ class CachedChannel
           @itemstemp.unshift(j)
           break
         end
-      end
-      next if found
-      if not always_new
-        # Try to find an updated item
-        @items.each do |j|
-          # Do we need a better heuristic ?
-          if j.is_ancestor_of(i)
-            i.cacheditem.index = j.index
-            i.cacheditem.updated = true
-            updateditems.push(i)
-            found = true
-            # let's put j in front of itemstemp
-            @itemstemp.delete(j)
-            @itemstemp.unshift(i.cacheditem)
-            break
-          end
+        # If we didn't find exact match, try to check if we have an update
+        if j.is_ancestor_of(i)
+          i.cacheditem.index = j.index
+          i.cacheditem.updated = true
+          updateditems.push(i)
+          found = true
+          # let's put j in front of itemstemp
+          @itemstemp.delete(j)
+          @itemstemp.unshift(i.cacheditem)
+          break
         end
       end
       next if found

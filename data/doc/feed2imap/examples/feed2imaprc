@@ -12,6 +12,7 @@
 # default-email: default email address in the format foo@example.com
 # disable-ssl-verification: disable SSL certification when connecting
 #   to IMAPS accounts (true/false)
+# timeout: time before getting timeout when fetching feeds (default 30) in seconds
 # 
 # Per-feed options:
 # name: name of the feed (must be unique)
