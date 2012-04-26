@@ -23,11 +23,9 @@ require 'fcntl'
 class MaildirAccount
   MYHOSTNAME = Socket.gethostname
 
-  attr_reader :uri
+  @@seq_num = 0
 
-  def initialize
-    @seq_num = 0
-  end
+  attr_reader :uri
 
   def putmail(folder, mail, date = Time::now)
     store_message(folder_dir(folder), date, nil) do |f|
@@ -169,8 +167,8 @@ class MaildirAccount
   # Re-written and no longer shamelessly taken from
   # http://gitorious.org/sup/mainline/blobs/master/lib/sup/maildir.rb
   def new_maildir_basefn(date)
-    fn = "#{date.to_i.to_s}.#{@seq_num.to_s}.#{MYHOSTNAME}"
-    @seq_num = @seq_num + 1
+    fn = "#{date.to_i.to_s}.#{@@seq_num.to_s}.#{MYHOSTNAME}"
+    @@seq_num += 1
     fn
   end
 end
