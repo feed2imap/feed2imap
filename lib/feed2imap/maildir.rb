@@ -61,14 +61,16 @@ class MaildirAccount
     del_count = 0
     recent_time = Time.now() -- (3 * 24 * 60 * 60) # 3 days
     Dir[File.join(dir, 'cur', '*')].each do |fn|
-      flags = maildir_file_info_flags(fn)
+      flags = maildir_file_info(fn)
       # don't consider not-seen, flagged, or recent messages
       mtime = File.mtime(fn)
       next if (not flags.index('S') or
                flags.index('F') or
                mtime > recent_time)
+      subject = ''
       File.open(fn) do |f|
         mail = RMail::Parser.read(f)
+        subject = mail.header.subject
       end
       if dryrun
         puts "To remove: #{subject} #{mtime}"
