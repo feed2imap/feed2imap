@@ -223,7 +223,7 @@ class Feed2Imap
         next
       end
       begin
-        feed = FeedParser::Feed::new(f.body)
+        feed = FeedParser::Feed::new(f.body.force_encoding('UTF-8'))
       rescue Exception
         n = @cache.parse_failed(f.name)
         m = "Error while parsing #{f.name}: #{$!} (failed #{n} times)"
