@@ -71,7 +71,6 @@ class F2IConfig
       if f['disable'].nil?
         uri = URI::parse(f['target'].to_s)
         path = URI::unescape(uri.path)
-        path = path[1..-1] if path[0,1] == '/'
         if uri.scheme == 'maildir'
           @feeds.push(ConfigFeed::new(f, maildir_account, path, self))
         else
