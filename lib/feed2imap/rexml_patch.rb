@@ -26,7 +26,7 @@ require 'feedparser'
 module REXML
   module Encoding
     def decode(str)
-      return str.toUTF8(@encoding)
+      return str.encode(@encoding)
     end
 
     def encode(str)

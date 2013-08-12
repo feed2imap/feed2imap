@@ -144,7 +144,9 @@ class ImapAccount
       d = f[0].attr['INTERNALDATE']
       s = f[0].attr['ENVELOPE'].subject
       if s =~ /^=\?utf-8\?b\?/
-        s = Base64::decode64(s.gsub(/^=\?utf-8\?b\?(.*)\?=$/, '\1')).toISO_8859_1('utf-8')
+        s = Base64::decode64(s.gsub(/^=\?utf-8\?b\?(.*)\?=$/, '\1')).force_encoding('utf-8')
+      elsif s =~ /^=\?iso-8859-1\?b\?/
+        s = Base64::decode64(s.gsub(/^=\?iso-8859-1\?b\?(.*)\?=$/, '\1')).force_encoding('iso-8859-1').encode('utf-8')
       end
       if dryrun
         puts "To remove: #{s} (#{d})"
