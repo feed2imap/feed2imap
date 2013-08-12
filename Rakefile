@@ -4,7 +4,7 @@ require 'rake/packagetask'
 require 'rake'
 require 'find'
 
-task :default => [:package]
+task :default => [:test]
 
 PKG_NAME = 'feed2imap'
 PKG_VERSION = '1.0'
