@@ -1,5 +1,5 @@
 require 'rake/testtask'
-require 'rake/rdoctask'
+require 'rdoc/task'
 require 'rake/packagetask'
 require 'rake'
 require 'find'
@@ -22,7 +22,7 @@ Rake::TestTask.new do |t|
 	t.test_files = FileList['test/tc_*.rb']
 end
 
-Rake::RDocTask.new do |rd|
+RDoc::Task.new do |rd|
 	rd.main = 'README'
 	rd.rdoc_files.include('lib/*.rb', 'lib/feed2imap/*.rb')
 	rd.options << '--all'
@@ -41,7 +41,7 @@ end
 
 # "Gem" part of the Rakefile
 begin
-	require 'rake/gempackagetask'
+	require 'rubygems/package_task'
 
 	spec = Gem::Specification.new do |s|
 		s.platform = Gem::Platform::RUBY
@@ -57,7 +57,7 @@ begin
 		s.description = "RSS/Atom feed aggregator"
 	end
 
-	Rake::GemPackageTask.new(spec) do |pkg|
+	Gem::PackageTask.new(spec) do |pkg|
 		pkg.need_zip = true
 		pkg.need_tar = true
 	end
