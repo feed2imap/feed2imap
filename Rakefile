@@ -19,7 +19,7 @@ end
 Rake::TestTask.new do |t|
   t.libs << "libs/feed2imap"
 	t.libs << "test"
-	t.test_files = FileList['test/tc_*.rb']
+	t.test_files = FileList['test/tc_*.rb'] - ['test/tc_httpfetcher.rb']
 end
 
 RDoc::Task.new do |rd|
