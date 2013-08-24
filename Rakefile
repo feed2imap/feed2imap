@@ -7,7 +7,7 @@ require 'find'
 task :default => [:test]
 
 PKG_NAME = 'feed2imap'
-PKG_VERSION = '1.0'
+PKG_VERSION = '1.1'
 PKG_FILES = [ 'ChangeLog', 'README', 'COPYING', 'setup.rb', 'Rakefile']
 Find.find('bin/', 'lib/', 'test/', 'data/') do |f|
 	if FileTest.directory?(f) and f =~ /\.svn/
@@ -55,6 +55,7 @@ begin
 		}
 		s.files = PKG_FILES
 		s.description = "RSS/Atom feed aggregator"
+		s.authors = ['Lucas Nussbaum']
 	end
 
 	Gem::PackageTask.new(spec) do |pkg|
