@@ -11,7 +11,7 @@ class TestMaildir < Test::Unit::TestCase
     @tmpdirs = []
   end
 
-  def tear_down
+  def teardown
     @tmpdirs.each do |dir|
       FileUtils.rm_rf(dir)
     end
