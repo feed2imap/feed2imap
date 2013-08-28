@@ -7,7 +7,7 @@ require 'find'
 task :default => [:test]
 
 PKG_NAME = 'feed2imap'
-PKG_VERSION = '1.1'
+PKG_VERSION = '1.2'
 PKG_FILES = [ 'ChangeLog', 'README', 'COPYING', 'setup.rb', 'Rakefile']
 Find.find('bin/', 'lib/', 'test/', 'data/') do |f|
 	if FileTest.directory?(f) and f =~ /\.svn/
@@ -48,7 +48,7 @@ begin
 		s.summary = "RSS/Atom feed aggregator"
 		s.name = PKG_NAME
 		s.version = PKG_VERSION
-		s.requirements << 'feedparser'
+		s.add_runtime_dependency 'ruby-feedparser', '0.9'
 		s.require_path = 'lib'
 		s.executables = PKG_FILES.grep(%r{\Abin\/.}).map { |bin|
 		  bin.gsub(%r{\Abin/}, '')
