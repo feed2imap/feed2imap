@@ -1,0 +1,40 @@
+#!/usr/bin/ruby
+
+require 'fileutils'
+require 'yaml'
+
+base = File.expand_path(File.dirname(__FILE__))
+tmp = File.join(base, 'tmp')
+
+FileUtils.rm_rf(tmp)
+FileUtils.mkdir_p(tmp)
+
+# target maildir
+maildir = File.join(tmp,'Mail')
+FileUtils.mkdir_p(File.join(maildir, 'new'))
+FileUtils.mkdir_p(File.join(maildir, 'cur'))
+FileUtils.mkdir_p(File.join(maildir, 'tmp'))
+
+cache = File.join(tmp, 'cache')
+config_data = <<EOF
+cache: #{cache}
+feeds:
+  - name: CNPQ
+    url: http://www.cnpq.br/web/guest/noticias/-/asset_publisher/6QsO/rss?p_p_cacheability=cacheLevelPage
+    target: maildir://#{maildir}
+  - name: XKCD
+    url: http://www.xkcd.com/atom.xml
+    target: maildir://#{maildir}
+EOF
+config = File.join(tmp, 'feed2imap.yaml')
+File.open(config, 'w') do |f|
+  f.write(config_data)
+end
+
+system('ruby', "-I#{base}/lib", "#{base}/bin/feed2imap", '--config', config, '--verbose') || exit(1)
+
+print "Open target maildir with mutt? [Y/n]"
+response = gets.strip
+if response.downcase == 'y' || response == ''
+  exec('mutt', '-f', maildir)
+end
