@@ -18,7 +18,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 =end
 
 # Feed2Imap version
-F2I_VERSION = '1.0'
+F2I_VERSION = '1.2.2'
 F2I_WARNFETCHTIME = 10
 
 require 'feed2imap/config'
@@ -223,7 +223,7 @@ class Feed2Imap
         next
       end
       begin
-        feed = FeedParser::Feed::new(f.body)
+        feed = FeedParser::Feed::new(f.body.force_encoding('UTF-8'), f.url)
       rescue Exception
         n = @cache.parse_failed(f.name)
         m = "Error while parsing #{f.name}: #{$!} (failed #{n} times)"

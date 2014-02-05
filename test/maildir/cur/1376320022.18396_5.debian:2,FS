@@ -1,0 +1,11 @@
+Date: Mon, 12 Aug 2013 17:07:02 +0200
+From: Antonio Terceiro <terceiro@debian.org>
+To: terceiro@debian.org
+Subject: a flagged message
+Message-ID: <flagged-message-id@debian.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+User-Agent: Mutt/1.5.21 (2010-09-15)
+
+This message is flagged.

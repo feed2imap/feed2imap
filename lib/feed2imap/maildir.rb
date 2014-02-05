@@ -19,6 +19,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 require 'uri'
 require 'fileutils'
 require 'fcntl'
+require 'rmail'
+require 'socket'
 
 class MaildirAccount
   MYHOSTNAME = Socket.gethostname
@@ -67,9 +69,10 @@ class MaildirAccount
       next if (not flags.index('S') or
                flags.index('F') or
                mtime > recent_time)
-      File.open(fn) do |f|
-        mail = RMail::Parser.read(f)
+      mail = File.open(fn) do |f|
+        RMail::Parser.read(f)
       end
+      subject = mail.header['Subject']
       if dryrun
         puts "To remove: #{subject} #{mtime}"
       else
@@ -141,9 +144,10 @@ class MaildirAccount
       Dir[File.join(subdir, '*')].each do |fn|
         File.open(fn) do |f|
           mail = RMail::Parser.read(f)
-          cache_index = mail.header['Message-Id']
-          next if not (cache_index and cache_index == idx)
-          dir_paths.push(File.join(d, File.basename(fn)))
+          cache_index = mail.header['Message-ID']
+          if cache_index && (cache_index == idx || cache_index == "<#{idx}>")
+            dir_paths.push(File.join(d, File.basename(fn)))
+          end
         end
       end
     end
@@ -171,5 +175,15 @@ class MaildirAccount
     @@seq_num += 1
     fn
   end
+
+  def maildir_file_info_flags(fn)
+    parts = fn.split(',')
+    if parts.size == 1
+      ''
+    else
+      parts.last
+    end
+  end
+
 end
 
