@@ -45,6 +45,15 @@ feeds:
     url: http://something2
     target: imap://login:pasword@ezaezae/Feeds/B
 EOF
+CONFARRAYTARGET = <<EOF
+parts: text
+include-images: false
+prefix: &target "maildir:///tmp/Maildir/"
+feeds:
+  - name: feed1
+    url: http://something
+    target: [ *target, "feed1" ]
+EOF
 
 class ConfigTest < Test::Unit::TestCase
   def test_cache
@@ -79,4 +88,11 @@ class ConfigTest < Test::Unit::TestCase
     assert conf.parts.include?('text')
     assert ! conf.parts.include?('html')
   end
+
+  def test_url_array
+    sio = StringIO::new CONFARRAYTARGET
+    conf = F2IConfig::new(sio)
+    assert_equal "/tmp/Maildir/feed1", conf.feeds.first.folder
+  end
+
 end
