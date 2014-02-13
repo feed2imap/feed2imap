@@ -16,7 +16,10 @@ FileUtils.mkdir_p(File.join(maildir, 'cur'))
 FileUtils.mkdir_p(File.join(maildir, 'tmp'))
 
 cache = File.join(tmp, 'cache')
-config_data = <<EOF
+
+case ARGV.length
+when 0
+  config_data = <<EOF
 cache: #{cache}
 feeds:
   - name: CNPQ
@@ -26,15 +29,31 @@ feeds:
     url: http://www.xkcd.com/atom.xml
     target: maildir://#{maildir}
 EOF
+when 1
+  config_data = <<EOF
+cache: #{cache}
+feeds:
+  - name: Test
+    url: #{ARGV.first}
+    target: maildir://#{maildir}
+EOF
+else
+  puts("usage: %s [FEED]" % $PROGRAM_NAME)
+  exit(1)
+end
+
 config = File.join(tmp, 'feed2imap.yaml')
 File.open(config, 'w') do |f|
   f.write(config_data)
 end
 
-system('ruby', "-I#{base}/lib", "#{base}/bin/feed2imap", '--config', config, '--verbose') || exit(1)
+unless system('ruby', "-I#{base}/lib", "#{base}/bin/feed2imap", '--config', config, '--verbose')
+  puts("E: feed2imap failed")
+  exit(1)
+end
 
 print "Open target maildir with mutt? [Y/n]"
-response = gets.strip
+response = $stdin.gets.strip
 if response.downcase == 'y' || response == ''
   exec('mutt', '-f', maildir)
 end
