@@ -6,7 +6,6 @@ require 'yaml'
 base = File.expand_path(File.dirname(__FILE__))
 tmp = File.join(base, 'tmp')
 
-FileUtils.rm_rf(tmp)
 FileUtils.mkdir_p(tmp)
 
 # target maildir
@@ -46,6 +45,7 @@ config = File.join(tmp, 'feed2imap.yaml')
 File.open(config, 'w') do |f|
   f.write(config_data)
 end
+FileUtils.chmod 0600, config
 
 unless system('ruby', "-I#{base}/lib", "#{base}/bin/feed2imap", '--config', config, '--verbose')
   puts("E: feed2imap failed")
