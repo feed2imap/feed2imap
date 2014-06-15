@@ -96,10 +96,11 @@ def item_to_mail(config, item, id, updated, from = 'Feed2Imap', inline_images = 
   imgs = []
   if inline_images
     cids = []
+    fetcher = HTTPFetcher::new
     htmlpart.body.gsub!(/(<img[^>]+)src="(\S+?\/([^\/]+?\.(png|gif|jpe?g)))"([^>]*>)/i) do |match|
       # $2 contains url, $3 the image name, $4 the image extension
       begin
-        image = Base64.encode64(HTTPFetcher::fetch($2, Time.at(0)).chomp) + "\n"
+        image = Base64.encode64(fetcher.fetch($2, Time.at(0)).chomp) + "\n"
         cid = "#{Digest::MD5.hexdigest($2)}@#{config.hostname}"
         if not cids.include?(cid)
           cids << cid
