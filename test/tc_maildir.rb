@@ -21,6 +21,10 @@ class TestMaildir < Test::Unit::TestCase
     folder = create_maildir
     msgs = message_count(folder)
 
+    four_days_ago = Time.now - (4 * 24 * 60 * 60)
+    old_message = Dir.glob(File.join(folder, '**/*:2,S')).first
+    FileUtils.touch old_message, mtime: four_days_ago
+
     maildir_account.cleanup(folder)
 
     assert_equal msgs - 1, message_count(folder)
