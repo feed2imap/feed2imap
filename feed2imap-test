@@ -47,7 +47,7 @@ File.open(config, 'w') do |f|
 end
 FileUtils.chmod 0600, config
 
-unless system('ruby', "-I#{base}/lib", "#{base}/bin/feed2imap", '--config', config, '--verbose')
+unless system('ruby', "-I#{base}/lib", "#{base}/bin/feed2imap", '--config', config, '--debug')
   puts("E: feed2imap failed")
   exit(1)
 end
