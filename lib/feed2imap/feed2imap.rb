@@ -18,7 +18,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 =end
 
 # Feed2Imap version
-F2I_VERSION = '1.2.2'
+F2I_VERSION = '1.2.3'
 F2I_WARNFETCHTIME = 10
 
 require 'feed2imap/config'
