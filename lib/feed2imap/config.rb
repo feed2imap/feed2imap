@@ -68,6 +68,7 @@ class F2IConfig
     @imap_accounts = ImapAccounts::new
     maildir_account = MaildirAccount::new
     @conf['feeds'].each do |f|
+      f['name'] = f['name'].to_s
       if f['disable'].nil?
         uri = URI::parse(Array(f['target']).join(''))
         path = URI::unescape(uri.path)

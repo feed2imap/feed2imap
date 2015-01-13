@@ -54,6 +54,15 @@ feeds:
     url: http://something
     target: [ *target, "feed1" ]
 EOF
+CONFINTNAME = <<EOF
+parts: text
+include-images: false
+prefix: &target "maildir:///tmp/Maildir/"
+feeds:
+  - name: 10
+    url: http://something
+    target: [ *target, "feed1" ]
+EOF
 
 class ConfigTest < Test::Unit::TestCase
   def test_cache
@@ -93,6 +102,12 @@ class ConfigTest < Test::Unit::TestCase
     sio = StringIO::new CONFARRAYTARGET
     conf = F2IConfig::new(sio)
     assert_equal "/tmp/Maildir/feed1", conf.feeds.first.folder
+  end
+
+  def test_integer_as_name
+    sio = StringIO.new CONFINTNAME
+    conf = F2IConfig.new(sio)
+    assert_equal "10", conf.feeds.first.name
   end
 
 end
