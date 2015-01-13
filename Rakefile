@@ -18,7 +18,6 @@ Find.find('bin/', 'lib/', 'test/', 'data/') do |f|
 end
 Rake::TestTask.new do |t|
   t.verbose = true
-  t.libs << "libs/feed2imap"
   t.libs << "test"
   t.test_files = FileList['test/tc_*.rb'] - ['test/tc_httpfetcher.rb']
 end
