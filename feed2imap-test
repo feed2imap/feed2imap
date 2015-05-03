@@ -24,6 +24,11 @@ feeds:
   - name: CNPQ
     url: http://www.cnpq.br/web/guest/noticias/-/asset_publisher/6QsO/rss?p_p_cacheability=cacheLevelPage
     target: maildir://#{maildir}
+    filter: /bin/cat
+  - name: Planet Debian (broken filter)
+    url: http://planet.debian.org/atom.xml
+    target: maildir://#{maildir}
+    filter: /bin/epicfail
   - name: XKCD
     url: http://www.xkcd.com/atom.xml
     target: maildir://#{maildir}

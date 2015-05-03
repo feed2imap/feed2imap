@@ -130,7 +130,7 @@ class Feed2Imap
               # thread-safe, and we need to get the right exitcode
               mutex.lock
               s = %x{#{feed.execurl}}
-              if $?.exitstatus != 0
+              if $? && $?.exitstatus != 0
                 @logger.warn("Command for #{feed.name} exited with status #{$?.exitstatus} !")
               end
               mutex.unlock
@@ -143,22 +143,25 @@ class Feed2Imap
               # thread-safe, and we need to get the right exitcode.
               mutex.lock
               # hack hack hack, avoid buffering problems
-              stdin, stdout, stderr = Open3::popen3(feed.filter)
-              inth = Thread::new do
-                stdin.puts s
-                stdin.close
+              begin
+                stdin, stdout, stderr = Open3::popen3(feed.filter)
+                inth = Thread::new do
+                  stdin.puts s
+                  stdin.close
+                end
+                output = nil
+                outh = Thread::new do
+                  output = stdout.read
+                end
+                inth.join
+                outh.join
+                s = output
+                if $? && $?.exitstatus != 0
+                  @logger.warn("Filter command for #{feed.name} exited with status #{$?.exitstatus}. Output might be corrupted !")
+                end
+              ensure
+                mutex.unlock
               end
-              output = nil
-              outh = Thread::new do
-                output = stdout.read
-              end
-              inth.join
-              outh.join
-              s = output
-              if $?.exitstatus != 0
-                @logger.warn("Filter command for #{feed.name} exited with status #{$?.exitstatus}. Output might be corrupted !")
-              end
-              mutex.unlock
             end
             if Time::now - fetch_start > F2I_WARNFETCHTIME
               @logger.info("Fetching feed #{feed.name} took #{(Time::now - fetch_start).to_i}s")
