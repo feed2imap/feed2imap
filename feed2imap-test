@@ -20,6 +20,7 @@ case ARGV.length
 when 0
   config_data = <<EOF
 cache: #{cache}
+include-images: true
 feeds:
   - name: CNPQ
     url: http://www.cnpq.br/web/guest/noticias/-/asset_publisher/6QsO/rss?p_p_cacheability=cacheLevelPage
