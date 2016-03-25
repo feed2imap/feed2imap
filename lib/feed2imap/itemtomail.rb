@@ -91,11 +91,11 @@ def item_to_mail(config, item, id, updated, from = 'Feed2Imap', inline_images = 
   # inline images as attachments
   imgs = []
   if inline_images
+    fetcher = HTTPFetcher.new
     html = htmlpart.body.decoded
     html.gsub!(/(<img[^>]+)src="(\S+?\/([^\/]+?\.(png|gif|jpe?g)))"([^>]*>)/i) do |match|
       # $2 contains url, $3 the image name, $4 the image extension
       begin
-        fetcher = HTTPFetcher.new
         image = Base64.encode64(fetcher.fetch($2, Time.at(0)).chomp)
         "#{$1}src=\"data:image/#{$4};base64,#{image}\"#{$5}"
       rescue
