@@ -20,13 +20,11 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 =end
 
 require 'rexml/document'
-require 'time'
-require 'rmail'
+require 'mail'
 require 'feedparser'
 require 'feedparser/text-output'
 require 'feedparser/html-output'
 require 'base64'
-require 'rmail'
 require 'digest/md5'
 
 class String
@@ -48,81 +46,74 @@ class String
 end
 
 def item_to_mail(config, item, id, updated, from = 'Feed2Imap', inline_images = false, wrapto = false)
-  message = RMail::Message::new
-  if item.creator and item.creator != ''
-    if item.creator.include?('@')
-      message.header['From'] = item.creator.chomp
-    else
-      message.header['From'] = "=?utf-8?b?#{Base64::encode64(item.creator.chomp).gsub("\n",'')}?= <#{config.default_email}>"
-    end
-  else
-    message.header['From'] = "=?utf-8?b?#{Base64::encode64(from).gsub("\n",'')}?= <#{config.default_email}>"
-  end
-  message.header['To'] = "=?utf-8?b?#{Base64::encode64(from).gsub("\n",'')}?= <#{config.default_email}>"
+  message = Mail::new do
+    message_id id
+    to      "#{from} <#{config.default_email}>"
+    from    (
+      if item.creator and item.creator != ''
+        if item.creator.include?('@')
+          item.creator.chomp
+        else
+          "#{item.creator.chomp} <#{config.default_email}>"
+        end
+      else
+        "#{from} <#{config.default_email}>"
+      end
+    )
 
-  if item.date.nil?
-    message.header['Date'] = Time::new.rfc2822
-  else
-    message.header['Date'] = item.date.rfc2822
+    date    item.date unless item.date.nil?
+
+    subject item.title or (item.date and item.date.to_s) or item.link
+    transport_encoding '8bit'
   end
-  message.header['X-Feed2Imap-Version'] = F2I_VERSION if defined?(F2I_VERSION)
-  message.header['Message-Id'] = id
-  message.header['X-F2IStatus'] = "Updated" if updated
-  # treat subject. Might need MIME encoding.
-  subj = item.title or (item.date and item.date.to_s) or item.link
-  if subj
-    if subj.needMIME
-      message.header['Subject'] = "=?utf-8?b?#{Base64::encode64(subj).gsub("\n",'')}?="
-    else
-      message.header['Subject'] = subj
-    end
-  end
+
+  message['X-Feed2Imap-Version'] = F2I_VERSION if defined?(F2I_VERSION)
+  message['X-F2IStatus'] = 'Updated' if updated
+
+
   textpart = htmlpart = nil
   parts = config.parts
   if parts.include?('text')
-    textpart = parts.size == 1 ? message : RMail::Message::new
-    textpart.header['Content-Type'] = 'text/plain; charset=utf-8; format=flowed'
-    textpart.header['Content-Transfer-Encoding'] = '8bit'
-    textpart.body = item.to_text(true, wrapto, false)
+    textpart = Mail::Part.new do
+        content_type 'text/plain; charset=utf-8; format=flowed'
+        content_transfer_encoding '8bit'
+        body item.to_text(true, wrapto, false)
+    end
   end
   if parts.include?('html')
-    htmlpart = parts.size == 1 ? message : RMail::Message::new
-    htmlpart.header['Content-Type'] = 'text/html; charset=utf-8'
-    htmlpart.header['Content-Transfer-Encoding'] = '8bit'
-    htmlpart.body = item.to_html
+    htmlpart = Mail::Part.new do
+        content_type 'text/html; charset=utf-8'
+        content_transfer_encoding '8bit'
+        body item.to_html
+    end
   end
 
   # inline images as attachments
-  imgs = []
   if inline_images
-    cids = []
-    htmlpart.body.gsub!(/(<img[^>]+)src="(\S+?\/([^\/]+?\.(png|gif|jpe?g)))"([^>]*>)/i) do |match|
+    fetcher = HTTPFetcher.new
+    html = htmlpart.body.decoded
+    html.gsub!(/(<img[^>]+)src="(\S+?\/([^\/]+?\.(png|gif|jpe?g)))"([^>]*>)/i) do |match|
       # $2 contains url, $3 the image name, $4 the image extension
       begin
-        fetcher = HTTPFetcher.new
-        image = Base64.encode64(fetcher.fetch($2, Time.at(0)).chomp)
+        if $2.include? " "
+            url = URI::escape $2
+        else
+            url = $2
+        end
+        image = Base64.encode64(fetcher.fetch(url, Time.at(0)).chomp)
         "#{$1}src=\"data:image/#{$4};base64,#{image}\"#{$5}"
       rescue
-        #print "Error while fetching image #{$2}: #{$!}...\n"
+        @logger.error "Error while fetching image #{$2}: #{$!}..."
         $& # don't modify on exception
       end
     end
+    htmlpart.body = html
   end
-  if imgs.length > 0
-    message.header.set('Content-Type', 'multipart/related', 'type'=> 'multipart/alternative')
-    texthtml = RMail::Message::new
-    texthtml.header.set('Content-Type', 'multipart/alternative')
-    texthtml.add_part(textpart)
-    texthtml.add_part(htmlpart)
-    message.add_part(texthtml)
-    imgs.each do |i|
-      message.add_part(i)
-    end
-  elsif parts.size != 1
-    message.header['Content-Type'] = 'multipart/alternative'
-    message.add_part(textpart)
-    message.add_part(htmlpart)
-  end
+  
+  # textpart/htmlpart are nil when not set
+  # Mail then ignores them if nil; if both are given it sets multipart/alternative
+  message.text_part = textpart
+  message.html_part = htmlpart
+  
   return message.to_s
 end
-
