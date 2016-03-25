@@ -96,7 +96,12 @@ def item_to_mail(config, item, id, updated, from = 'Feed2Imap', inline_images = 
     html.gsub!(/(<img[^>]+)src="(\S+?\/([^\/]+?\.(png|gif|jpe?g)))"([^>]*>)/i) do |match|
       # $2 contains url, $3 the image name, $4 the image extension
       begin
-        image = Base64.encode64(fetcher.fetch($2, Time.at(0)).chomp)
+        if $2.include? " "
+            url = URI::escape $2
+        else
+            url = $2
+        end
+        image = Base64.encode64(fetcher.fetch(url, Time.at(0)).chomp)
         "#{$1}src=\"data:image/#{$4};base64,#{image}\"#{$5}"
       rescue
         @logger.error "Error while fetching image #{$2}: #{$!}..."
