@@ -89,7 +89,6 @@ def item_to_mail(config, item, id, updated, from = 'Feed2Imap', inline_images = 
   end
 
   # inline images as attachments
-  imgs = []
   if inline_images
     fetcher = HTTPFetcher.new
     html = htmlpart.body.decoded
@@ -110,26 +109,11 @@ def item_to_mail(config, item, id, updated, from = 'Feed2Imap', inline_images = 
     end
     htmlpart.body = html
   end
-
-
-  if imgs.length > 0
-    # The old code explicitly used 'multipart/related' here, so force it
-    # We then have the structure "related: (alternative: text/html)/images"
-    #
-    # We could obtain easier code here, if 'alternative: text/html/images' would suffice.
-    message.content_type "multipart/related"
-    message.part do |p|
-      p.text_part = textpart
-      p.html_part = htmlpart
-    end
-    imgs.each do |i|
-      message.attachments[i[:name]] = i
-    end
-  else
-    # textpart/htmlpart are nil when not set
-    # Mail then ignores them if nil; if both are given it sets multipart/alternative
-    message.text_part = textpart
-    message.html_part = htmlpart
-  end
+  
+  # textpart/htmlpart are nil when not set
+  # Mail then ignores them if nil; if both are given it sets multipart/alternative
+  message.text_part = textpart
+  message.html_part = htmlpart
+  
   return message.to_s
 end
