@@ -2,6 +2,9 @@
 
 $:.unshift File.join(File.dirname(__FILE__), '..', 'lib')
 
+require 'rexml/document'
+REXML::Document.entity_expansion_text_limit=102400
+
 require 'feed2imap/feed2imap'
 require 'optparse'
 
