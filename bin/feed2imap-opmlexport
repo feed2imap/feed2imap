@@ -1,0 +1,40 @@
+#!/usr/bin/python
+
+from __future__ import division, absolute_import
+from __future__ import print_function, unicode_literals
+
+
+from datetime import datetime
+import fileinput
+
+
+from xml.sax.saxutils import escape
+import yaml
+
+
+def main():
+    buf = ''
+    for line in fileinput.input():
+        buf += line.decode('utf-8')
+    feeds = yaml.load(buf)
+    body = ''
+    xml_tmpl = '''<opml version="1.0">
+  <head>
+    <title>{title}</title>
+    <dateModified>{date}</dateModified>
+  </head>
+  <body>
+{body}</body>
+</opml>'''
+    outline_tmpl = '<outline title="{name}" type="rss" xmlUrl="{url}" />'
+    for feed in feeds['feeds']:
+        body += outline_tmpl.format(name=escape(feed['name']),
+                                    url=escape(feed['url'])) + "\n"
+    output = xml_tmpl.format(title='feed2imap RSS feeds',
+                             date=datetime.now(),
+                             body=body).encode('utf-8')
+    print(output)
+
+
+if __name__ == '__main__':
+    main()
