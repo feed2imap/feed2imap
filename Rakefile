@@ -65,3 +65,10 @@ begin
 rescue LoadError
   puts "Will not generate gem."
 end
+
+task :release => :repackage do
+  sh 'git', 'tag', 'v' + PKG_VERSION
+  sh 'git', 'push'
+  sh 'git', 'push', '--tags'
+  sh 'gem', 'push', "pkg/#{PKG_NAME}/#{PKG_VERSION}.gem"
+end
