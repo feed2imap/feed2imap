@@ -39,7 +39,6 @@ class MaildirAccount
     dir = folder_dir(folder)
     guarantee_maildir(dir)
     mail_files = find_mails(dir, idx)
-    flags = nil
     if mail_files.length > 0
       # get the info from the first result and delete everything
       info = maildir_file_info(mail_files[0])
