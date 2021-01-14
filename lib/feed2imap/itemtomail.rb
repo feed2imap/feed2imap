@@ -25,6 +25,7 @@ require 'rmail'
 require 'feedparser'
 require 'feedparser/text-output'
 require 'feedparser/html-output'
+require 'feed2imap/version'
 require 'base64'
 require 'rmail'
 require 'digest/md5'
@@ -65,7 +66,7 @@ def item_to_mail(config, item, id, updated, from = 'Feed2Imap', inline_images = 
   else
     message.header['Date'] = item.date.rfc2822
   end
-  message.header['X-Feed2Imap-Version'] = F2I_VERSION if defined?(F2I_VERSION)
+  message.header['X-Feed2Imap-Version'] = Feed2Imap::VERSION
   message.header['Message-Id'] = id
   message.header['X-F2IStatus'] = "Updated" if updated
   # treat subject. Might need MIME encoding.

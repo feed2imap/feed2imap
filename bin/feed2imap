@@ -43,7 +43,7 @@ rescue OptionParser::ParseError => pe
 end
 
 if version
-  puts "Feed2Imap v.#{F2I_VERSION}"
+  puts "Feed2Imap v.#{Feed2Imap::VERSION}"
 else
   Feed2Imap::new(verbose, cacherebuild, configf)
 end

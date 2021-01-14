@@ -17,10 +17,9 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 =end
 
-# Feed2Imap version
-F2I_VERSION = '1.2.5'
 F2I_WARNFETCHTIME = 10
 
+require 'feed2imap/version'
 require 'feed2imap/config'
 require 'feed2imap/cache'
 require 'feed2imap/httpfetcher'
@@ -32,7 +31,7 @@ require 'open3'
 
 class Feed2Imap
   def Feed2Imap.version
-    return F2I_VERSION
+    return Feed2Imap::VERSION
   end
 
   def initialize(verbose, cacherebuild, configfile)
@@ -45,7 +44,7 @@ class Feed2Imap
     else
       @logger.level = Logger::WARN
     end
-    @logger.info("Feed2Imap V.#{F2I_VERSION} started")
+    @logger.info("Feed2Imap V.#{Feed2Imap::VERSION} started")
     # reading config
     @logger.info('Reading configuration file ...')
     if not File::exist?(configfile)
