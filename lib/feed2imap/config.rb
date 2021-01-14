@@ -17,6 +17,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 =end
 
+require 'cgi'
 require 'yaml'
 require 'uri'
 require 'feed2imap/imap'
@@ -71,7 +72,7 @@ class F2IConfig
       f['name'] = f['name'].to_s
       if f['disable'].nil?
         uri = URI::parse(Array(f['target']).join(''))
-        path = URI::unescape(uri.path)
+        path = CGI::unescape(uri.path)
         if uri.scheme == 'maildir'
           @feeds.push(ConfigFeed::new(f, maildir_account, path, self))
         else

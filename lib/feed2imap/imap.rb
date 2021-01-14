@@ -23,6 +23,7 @@ begin
 require 'openssl'
 rescue LoadError
 end
+require 'cgi'
 require 'uri'
 
 # This class is a container of IMAP accounts.
@@ -77,7 +78,7 @@ class ImapAccount
     # use given port if port given
     port = uri.port if uri.port 
     @connection = Net::IMAP::new(uri.host, port, usessl, nil, !@@no_ssl_verify)
-    user, password = URI::unescape(uri.userinfo).split(':',2)
+    user, password = CGI::unescape(uri.userinfo).split(':',2)
     @connection.login(user, password)
     self
   end
