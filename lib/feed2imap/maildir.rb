@@ -122,7 +122,7 @@ class MaildirAccount
           File.link tmp_path, new_path
           stored = true
         ensure
-          File.unlink tmp_path if File.exists? tmp_path
+          File.unlink tmp_path if File.exist? tmp_path
         end
       end
 
