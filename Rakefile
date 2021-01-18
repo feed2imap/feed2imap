@@ -50,6 +50,7 @@ begin
     s.name = PKG_NAME
     s.version = PKG_VERSION
     s.add_runtime_dependency 'ruby-feedparser', '>= 0.9'
+    s.add_runtime_dependency 'rmail', '>= 1.1.4'
     s.require_path = 'lib'
     s.executables = PKG_FILES.grep(%r{\Abin\/.}).map { |bin|
       bin.gsub(%r{\Abin/}, '')
