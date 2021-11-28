@@ -90,7 +90,7 @@ def item_to_mail(config, item, id, updated, from = 'Feed2Imap', inline_images = 
     htmlpart = parts.size == 1 ? message : RMail::Message::new
     htmlpart.header['Content-Type'] = 'text/html; charset=utf-8'
     htmlpart.header['Content-Transfer-Encoding'] = '8bit'
-    htmlpart.body = item.to_html
+    htmlpart.body = item.to_html_with_headers
   end
 
   # inline images as attachments
