@@ -26,6 +26,7 @@ require 'feed2imap/httpfetcher'
 require 'logger'
 require 'thread'
 require 'feedparser'
+require 'feed2imap/rexml_settings'
 require 'feed2imap/itemtomail'
 require 'open3'
 
