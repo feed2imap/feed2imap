@@ -9,7 +9,7 @@ task :default => [:test]
 
 PKG_NAME = 'feed2imap'
 PKG_VERSION = Feed2Imap::VERSION
-PKG_FILES = [ 'ChangeLog', 'README', 'COPYING', 'setup.rb', 'Rakefile']
+PKG_FILES = [ 'ChangeLog', 'README', 'COPYING', 'Rakefile']
 Find.find('bin/', 'lib/', 'test/', 'data/') do |f|
   if FileTest.directory?(f) and f =~ /\.svn/
     Find.prune
