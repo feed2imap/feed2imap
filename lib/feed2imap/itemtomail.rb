@@ -96,7 +96,6 @@ def item_to_mail(config, item, id, updated, from = 'Feed2Imap', inline_images = 
   # inline images as attachments
   imgs = []
   if inline_images
-    cids = []
     htmlpart.body.gsub!(/(<img[^>]+)src="(\S+?\/([^\/]+?\.(png|gif|jpe?g)))"([^>]*>)/i) do |match|
       # $2 contains url, $3 the image name, $4 the image extension
       begin

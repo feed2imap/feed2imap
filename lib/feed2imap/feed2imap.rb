@@ -153,8 +153,16 @@ class Feed2Imap
                 outh = Thread::new do
                   output = stdout.read
                 end
+                err = nil
+                errth = Thread::new do
+                  err = stderr.read.chomp
+                end
                 inth.join
                 outh.join
+                errth.join
+                err.lines do |e|
+                  @logger.warn(e.chomp)
+                end
                 s = output
                 if $? && $?.exitstatus != 0
                   @logger.warn("Filter command for #{feed.name} exited with status #{$?.exitstatus}. Output might be corrupted !")
