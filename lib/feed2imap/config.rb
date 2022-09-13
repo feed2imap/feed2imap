@@ -40,7 +40,7 @@ class F2IConfig
   # Load the configuration from the IO stream
   # TODO should do some sanity check on the data read.
   def initialize(io)
-    @conf = YAML::load(io)
+    @conf = YAML::load(io, aliases: true)
     @cache = @conf['cache'] || DEFCACHE
     @dumpdir = @conf['dumpdir'] || nil
     @conf['feeds'] ||= []
