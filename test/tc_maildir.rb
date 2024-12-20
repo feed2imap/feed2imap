@@ -1,7 +1,7 @@
 require 'test/unit'
 require 'fileutils'
 require 'tmpdir'
-require 'mocha/setup'
+require 'mocha/test_unit'
 
 require 'feed2imap/maildir'
 
