@@ -2,6 +2,7 @@
 
 require 'fileutils'
 require 'yaml'
+require 'uri'
 
 base = File.expand_path(File.dirname(__FILE__))
 tmp = File.join(base, 'tmp')
@@ -34,17 +35,18 @@ feeds:
     url: http://www.xkcd.com/atom.xml
     target: maildir://#{maildir}
 EOF
-when 1
-  config_data = <<EOF
-cache: #{cache}
-feeds:
-  - name: Test
-    url: #{ARGV.first}
-    target: maildir://#{maildir}
-EOF
 else
-  puts("usage: %s [FEED]" % $PROGRAM_NAME)
-  exit(1)
+  feeds = ARGV.map do |url|
+    {
+      "name" => URI.parse(url).hostname,
+      "url" => url,
+      "target" => "maildir://#{maildir}",
+    }
+  end
+  config_data = YAML.dump({
+    "cache" => cache,
+    "feeds" => feeds,
+  })
 end
 
 config = File.join(tmp, 'feed2imap.yaml')
