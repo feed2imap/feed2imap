@@ -77,7 +77,19 @@ class ImapAccount
     end
     # use given port if port given
     port = uri.port if uri.port 
-    @connection = Net::IMAP::new(uri.host, port, usessl, nil, !@@no_ssl_verify)
+    if usessl
+      ssl_options = {
+        verify_mode: @@no_ssl_verify ? OpenSSL::SSL::VERIFY_NONE : OpenSSL::SSL::VERIFY_PEER,
+      }
+    else
+      ssl_options = false
+    end
+
+    @connection = Net::IMAP::new(
+      uri.host,
+      port: port,
+      ssl: ssl_options,
+    )
     user, password = CGI::unescape(uri.userinfo).split(':',2)
     @connection.login(user, password)
     self

@@ -33,7 +33,7 @@ feeds:
     filter: /bin/epicfail
   - name: XKCD
     url: http://www.xkcd.com/atom.xml
-    target: maildir://#{maildir}
+    target: imaps://foo:bar@localhost/bla
 EOF
 else
   feeds = ARGV.map do |url|
