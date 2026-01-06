@@ -3,6 +3,7 @@
 require 'fileutils'
 require 'yaml'
 require 'uri'
+require 'digest/sha1'
 
 base = File.expand_path(File.dirname(__FILE__))
 tmp = File.join(base, 'tmp')
@@ -15,9 +16,9 @@ FileUtils.mkdir_p(File.join(maildir, 'new'))
 FileUtils.mkdir_p(File.join(maildir, 'cur'))
 FileUtils.mkdir_p(File.join(maildir, 'tmp'))
 
-cache = File.join(tmp, 'cache')
-
 target = ENV["TARGET"] || "maildir://#{maildir}"
+
+cache = File.join(tmp, 'cache-' + Digest::SHA1.hexdigest(target))
 
 case ARGV.length
 when 0
