@@ -17,6 +17,8 @@ FileUtils.mkdir_p(File.join(maildir, 'tmp'))
 
 cache = File.join(tmp, 'cache')
 
+target = ENV["TARGET"] || "maildir://#{maildir}"
+
 case ARGV.length
 when 0
   config_data = <<EOF
@@ -25,22 +27,22 @@ include-images: true
 feeds:
   - name: Antonio Terceiro
     url: https://terceiro.xyz/feed.xml
-    target: maildir://#{maildir}
+    target: #{target}
     filter: /bin/cat
   - name: Planet Debian (broken filter)
     url: http://planet.debian.org/atom.xml
-    target: maildir://#{maildir}
+    target: #{target}
     filter: /bin/epicfail
   - name: XKCD
     url: http://www.xkcd.com/atom.xml
-    target: imaps://foo:bar@localhost/bla
+    target: #{target}
 EOF
 else
   feeds = ARGV.map do |url|
     {
       "name" => URI.parse(url).hostname,
       "url" => url,
-      "target" => "maildir://#{maildir}",
+      "target" => target,
     }
   end
   config_data = YAML.dump({
@@ -63,5 +65,6 @@ end
 print "Open target maildir with mutt? [Y/n]"
 response = $stdin.gets.strip
 if response.downcase == 'y' || response == ''
-  exec('mutt', '-f', maildir)
+  target.sub!(%r[^maildir://], '')
+  exec('mutt', '-f', target)
 end
