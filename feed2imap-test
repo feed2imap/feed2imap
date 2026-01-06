@@ -36,6 +36,9 @@ feeds:
   - name: XKCD
     url: http://www.xkcd.com/atom.xml
     target: #{target}
+  - name: Outras Palavras - Tecnologia em Disputa
+    url: https://outraspalavras.net/category/tecnologiaemdisputa/feed/
+    target: #{target}
 EOF
 else
   feeds = ARGV.map do |url|
